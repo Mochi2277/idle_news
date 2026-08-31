@@ -178,7 +178,7 @@ const GROUPS = {
   "JO1": ["jo1", "ジェイオーワン"],
   "INI": ["ini", "アイエヌアイ"],
   "ME:I": ["me:i", "ミーアイ"],
-  "IS:SUE": ["is:sue", "issue", "イッシュ"],
+  "IS:SUE": ["is:sue", "イッシュ"],
   "DXTEEN": ["dxteen", "ディーエックスティーン"],
   "KO1KEYZ": ["ko1keyz", "コイキーズ"],
   "OCTPATH": ["octpath", "オクトパス"],
