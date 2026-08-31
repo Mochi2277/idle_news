@@ -60,7 +60,7 @@ const KEYWORDS = [
   "BOYNEXTDOOR", "보이넥스트도어", "KATSEYE", "PLAVE", "플레이브", "TWS", "투어스",
   "EXO", "엑소", "Red Velvet", "레드벨벳", "SHINee", "샤이니", "NMIXX", "엔믹스",
   "KISS OF LIFE", "키스오브라이프", "MEOVV", "미야오", "ARTMS", "izna", "이즈나",
-  "Hearts2Hearts", "ALLDAY PROJECT"
+  "Hearts2Hearts", "ALLDAY PROJECT", "ALPHA DRIVE ONE"
 ];
 
 /**
