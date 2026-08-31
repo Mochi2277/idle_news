@@ -37,6 +37,7 @@ jobs:
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          COLUMN_COUNT: ${{ vars.COLUMN_COUNT }}   # 未設定なら 3
         run: node scripts/generate-column.mjs
 
       - name: Commit data

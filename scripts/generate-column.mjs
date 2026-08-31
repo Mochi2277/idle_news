@@ -1,16 +1,17 @@
 /**
- * 1日1本の「コラム」を生成する。
+ * 「今日のコラム」を1日 最大 COLUMN_COUNT 本(既定3)生成する。ネタが足りなければ本数は減る。
  *
- *  1. articles.json から「今日(JST)」の記事を取り出す(少なすぎる時だけ直近48hに拡大)
- *  2. グループタグでクラスタ化し、報道量(件数・媒体数・日韓横断)でトピック候補を上位抽出
- *  3. 候補記事の本文を用意(RSSの content:encoded、無ければ記事ページから抽出)
- *  4. Gemini に「候補から1トピック選び、参考記事だけを根拠にコラムを書く」よう依頼
- *  5. 出典リンク付きで src/_data/columns.json に追記
+ *  1. articles.json から「今日(JST)の 00:00〜現在」の記事を取り出す(少なすぎる時だけ直近48hに拡大)
+ *  2. グループタグでクラスタ化し、報道量(件数・媒体数・日韓横断)でトピックをスコア順に並べる
+ *  3. 直近数本 + 今日すでに書いたトピックを除き、上位から不足本数ぶんを対象にする
+ *  4. トピックごとに、その記事の本文を用意して AI にコラムを書かせる(1トピック=1本)
+ *  5. 出典リンク付きで src/_data/columns.json に追記(slug: 今日=YYYY-MM-DD、2本目以降は -2, -3 …)
  *
- * GEMINI_API_KEY が無い / 対象記事が無い / 当日分が既にある 場合は何もせず正常終了する。
+ * API キーが無い / 対象記事が無い / 今日ぶんが既に COLUMN_COUNT 本ある 場合は何もせず正常終了。
  * 予期しない失敗でもニュース側のデプロイを止めないよう、常に exit 0。
- * 環境変数: GEMINI_API_KEY(必須), GEMINI_MODEL(任意。既定は gemini-flash-latest ほかを順に試行),
- *           COLUMN_FORCE=1(当日分があっても再生成), COLUMN_DRY_RUN=1(API未使用でクラスタ確認)
+ * 環境変数: OPENAI_API_KEY か GEMINI_API_KEY(どちらか必須), OPENAI_MODEL / GEMINI_MODEL(任意),
+ *           COLUMN_COUNT(1日の本数。既定3), COLUMN_FORCE=1(今日ぶんを作り直す),
+ *           COLUMN_DRY_RUN=1(API未使用でトピックとプロンプトを表示)
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -37,15 +38,15 @@ const MODEL_CANDIDATES = [
 const FORCE = process.env.COLUMN_FORCE === "1";
 const DRY_RUN = process.env.COLUMN_DRY_RUN === "1";
 
-const FALLBACK_HOURS = 48;           // 昨日ぶんが少なすぎる時だけ、この時間まで広げる
+const COLUMN_COUNT = Number(process.env.COLUMN_COUNT || 3); // 1日に作る最大本数(ネタが無ければ減る)
+const FALLBACK_HOURS = 48;           // 今日ぶんが少なすぎる時だけ、この時間まで広げる
 const MIN_POOL = 20;                 // これ未満なら FALLBACK_HOURS に拡大
-const MAX_CANDIDATE_CLUSTERS = 3;    // Gemini に見せるトピック候補数
 const MAX_ARTICLES_PER_CLUSTER = 7;  // 1トピックあたりの参考記事数
 const MIN_CLUSTER_SIZE = 2;          // これ未満のクラスタは無視
-const MAX_EXTRACT_FETCHES = 24;      // 記事ページ抽出の最大回数(礼儀)
-const SOURCE_TEXT_MAX = 1200;        // 1記事あたり Gemini に渡す本文の最大文字数
-const KEEP_COLUMNS = 90;
-const AVOID_RECENT_TOPICS = 4;       // 直近N本と同じトピックは避ける
+const MAX_EXTRACT_FETCHES = 30;      // 記事ページ抽出の最大回数(礼儀)
+const SOURCE_TEXT_MAX = 1200;        // 1記事あたり AI に渡す本文の最大文字数
+const KEEP_COLUMNS = 120;
+const AVOID_RECENT_TOPICS = 6;       // 直近N本と同じトピックは避ける
 
 const log = (...a) => console.log(...a);
 
@@ -160,25 +161,22 @@ async function prepareSources(clusters) {
   return out;
 }
 
-function buildPrompt(candidateNames, sources, todayStr) {
+function buildPrompt(topicName, sources, todayStr) {
   const list = sources
     .map(
       (s) =>
-        `【${s.n}】[配信 ${s.date || "不明"}] (${s.cluster} / ${s.source}) ${s.title}\n${s.text}`
+        `【${s.n}】[配信 ${s.date || "不明"}] (${s.source}) ${s.title}\n${s.text}`
     )
     .join("\n\n");
   return `あなたは日本と韓国のアイドルを専門に扱うニュースメディアの編集者だ。
-本日の主な動きをまとめるコラムを1本執筆する。以下の「トピック候補」と「参考記事」だけを情報源にすること。
+「${topicName}」に関する本日の動きをまとめるコラムを1本執筆する。以下の「参考記事」だけを情報源にすること。
 本日の日付は ${todayStr}。各参考記事には配信日を [配信 YYYY-MM-DD] で示している。
-
-# トピック候補
-${candidateNames.map((x, i) => `${i + 1}. ${x}`).join("\n")}
 
 # 参考記事
 ${list}
 
 # 執筆ルール
-- トピック候補の中から、最も報道量が多く読者の関心が高いと思われるものを1つ選ぶ。
+- topic は "${topicName}" とする。
 - 本文は日本語で 500〜900 文字。
 - 文体は「である・だ」調（常体）で統一する。「です・ます」調は使わない。
 - 事実は参考記事に明記されている内容だけを書く。推測・憶測、参考記事に無い固有名詞は書かない。
@@ -326,16 +324,24 @@ async function main() {
   }
 
   const articles = readJson(ARTICLES_FILE, []);
-  const columns = readJson(COLUMNS_FILE, []);
+  let columns = readJson(COLUMNS_FILE, []);
   const today = jstDate();
-  log(`[column] articles=${articles.length} columns=${columns.length} today(JST)=${today}`);
 
-  if (!FORCE && columns[0]?.date === today) {
-    log(`SKIP: 本日(${today})のコラムは既に存在します。COLUMN_FORCE=1 で再生成できます。`);
+  // FORCE のときは今日ぶんを消して作り直す
+  const todaysExisting = columns.filter((c) => c.date === today);
+  if (FORCE) columns = columns.filter((c) => c.date !== today);
+  const baseCount = FORCE ? 0 : todaysExisting.length;
+  const need = COLUMN_COUNT - baseCount;
+  log(
+    `[column] articles=${articles.length} columns=${columns.length} today(JST)=${today} ` +
+      `既存(今日)=${baseCount} 目標=${COLUMN_COUNT} 追加予定=${Math.max(need, 0)}`
+  );
+  if (need <= 0 && !DRY_RUN) {
+    log(`SKIP: 本日(${today})のコラムは既に ${baseCount} 本あります。COLUMN_FORCE=1 で作り直せます。`);
     return;
   }
 
-  // 基本は「今日(JST)の 00:00〜現在」を対象にする(実行は毎日20時JST)
+  // 「今日(JST)の 00:00〜現在」を対象に(実行は毎日20時JST)。少なすぎる時だけ48hに拡大。
   const dayStart = jstMidnight(0);
   const dayEnd = jstMidnight(-1);
   const inToday = (a) => {
@@ -344,91 +350,117 @@ async function main() {
   };
   let recent = articles.filter(inToday);
   let windowLabel = `今日 ${today} (JST)`;
-
   if (recent.length < MIN_POOL) {
     recent = articles.filter((a) => new Date(a.date).getTime() >= Date.now() - FALLBACK_HOURS * 3600 * 1000);
     windowLabel = `直近 ${FALLBACK_HOURS}h (今日ぶんが ${MIN_POOL} 件未満のため拡大)`;
   }
   log(`対象記事: ${recent.length} 件 / ${windowLabel}`);
 
-  const recentTopics = columns.slice(0, AVOID_RECENT_TOPICS).map((c) => c.topic);
-  const clusters = buildClusters(recent)
-    .filter((c) => !recentTopics.includes(c.name))
-    .slice(0, MAX_CANDIDATE_CLUSTERS);
-
-  if (clusters.length === 0) {
+  // 避けるトピック = 直近N本 + 今日すでに書いたもの(FORCE時は後者なし)
+  const avoid = new Set(
+    [...columns.slice(0, AVOID_RECENT_TOPICS).map((c) => c.topic), ...todaysExisting.map((c) => c.topic)]
+      .filter(Boolean)
+      .map(normName)
+  );
+  const allClusters = buildClusters(recent).filter((c) => !avoid.has(normName(c.name)));
+  if (allClusters.length === 0) {
     log("SKIP: コラムにできるトピッククラスタがありません。");
     return;
   }
-  log(
-    "トピック候補: " +
-      clusters.map((c) => `${c.name}(${c.items.length}件/score ${c.score.toFixed(1)})`).join(", ")
-  );
 
-  const sources = await prepareSources(clusters);
-  const prompt = buildPrompt(clusters.map((c) => c.name), sources, today);
+  const wantCount = DRY_RUN ? COLUMN_COUNT : Math.max(need, 0);
+  const targets = allClusters.slice(0, wantCount);
+  log(
+    `対象トピック(${targets.length}): ` +
+      targets.map((c) => `${c.name}(${c.items.length}件/score ${c.score.toFixed(1)})`).join(", ")
+  );
 
   if (DRY_RUN) {
-    log("\n===== DRY RUN: プロンプト =====\n");
-    log(prompt);
+    for (const c of targets) {
+      const src = await prepareSources([c]);
+      log(`\n===== DRY RUN: 「${c.name}」のプロンプト =====\n`);
+      log(buildPrompt(c.name, src, today));
+    }
     return;
   }
 
-  let result, usedModel;
-  try {
-    ({ result, model: usedModel } = await generateColumn(prompt));
-  } catch (e) {
-    log(`ERROR: 文章生成に失敗: ${e.message}`);
-    return;
-  }
-
-  const body = String(result.body_md || "").trim();
-  const title = String(result.title || "").trim();
-  if (!body || !title) {
-    log("ERROR: 生成結果が不十分(title/body欠落)。");
-    return;
-  }
-
-  // 本文で実際に参照された番号 + used_sources を採用し、こちらの正規URLに差し替える
-  const cited = new Set(
-    [...(result.used_sources || []), ...[...body.matchAll(/\[(\d+)\]/g)].map((m) => Number(m[1]))]
+  const usedSlugs = new Set(
+    columns.filter((c) => c.date === today).map((c) => c.slug)
   );
-  const byN = new Map(sources.map((s) => [s.n, s]));
-  const usedSources = [...cited]
-    .filter((x) => byN.has(x))
-    .sort((a, b) => a - b)
-    .map((x) => {
-      const s = byN.get(x);
-      return { n: x, title: s.title, source: s.source, url: s.url };
-    });
-
-  const topic = String(result.topic || clusters[0].name);
-
-  // トピックに対応するクラスタの記事から、多数派の地域を求める
-  const norm = (s) => s.toLowerCase().replace(/\s+/g, "");
-  const picked =
-    clusters.find((c) => norm(c.name) === norm(topic) || norm(topic).includes(norm(c.name))) ||
-    clusters[0];
-  const rc = { jp: 0, kr: 0 };
-  for (const a of picked.items) if (rc[a.region] !== undefined) rc[a.region] += 1;
-  const region = rc.kr > rc.jp ? "kr" : "jp";
-
-  const entry = {
-    date: today,
-    slug: today,
-    topic,
-    region,
-    title,
-    dek: String(result.dek || "").trim(),
-    body_md: body,
-    sources: usedSources,
-    model: usedModel,
-    generated_at: new Date().toISOString()
+  const nextSlug = () => {
+    let n = usedSlugs.size + 1;
+    let s = n === 1 ? today : `${today}-${n}`;
+    while (usedSlugs.has(s)) {
+      n += 1;
+      s = `${today}-${n}`;
+    }
+    usedSlugs.add(s);
+    return s;
   };
 
-  const next = [entry, ...columns.filter((c) => c.date !== today)].slice(0, KEEP_COLUMNS);
+  const made = [];
+  for (const cluster of targets) {
+    const src = await prepareSources([cluster]);
+    let result, usedModel;
+    try {
+      ({ result, model: usedModel } = await generateColumn(buildPrompt(cluster.name, src, today)));
+    } catch (e) {
+      log(`  ${cluster.name}: 生成失敗 ${e.message}`);
+      continue;
+    }
+    const body = String(result.body_md || "").trim();
+    const title = String(result.title || "").trim();
+    if (!body || !title) {
+      log(`  ${cluster.name}: 生成結果が不十分(title/body欠落)`);
+      continue;
+    }
+
+    const cited = new Set([
+      ...(result.used_sources || []),
+      ...[...body.matchAll(/\[(\d+)\]/g)].map((m) => Number(m[1]))
+    ]);
+    const byN = new Map(src.map((s) => [s.n, s]));
+    const usedSources = [...cited]
+      .filter((x) => byN.has(x))
+      .sort((a, b) => a - b)
+      .map((x) => {
+        const s = byN.get(x);
+        return { n: x, title: s.title, source: s.source, url: s.url };
+      });
+
+    const rc = { jp: 0, kr: 0 };
+    for (const a of cluster.items) if (rc[a.region] !== undefined) rc[a.region] += 1;
+    const region = rc.kr > rc.jp ? "kr" : "jp";
+
+    const slug = nextSlug();
+    made.push({
+      date: today,
+      slug,
+      topic: cluster.name,
+      region,
+      title,
+      dek: String(result.dek || "").trim(),
+      body_md: body,
+      sources: usedSources,
+      model: usedModel,
+      generated_at: new Date().toISOString()
+    });
+    log(`  OK: ${title} [${slug}] (出典 ${usedSources.length}件)`);
+  }
+
+  if (made.length === 0) {
+    log("ERROR: 生成できたコラムがありません。");
+    return;
+  }
+
+  const next = [...made, ...columns].slice(0, KEEP_COLUMNS);
   fs.writeFileSync(COLUMNS_FILE, JSON.stringify(next, null, 2) + "\n", "utf8");
-  log(`OK: コラムを生成しました → ${entry.title} (出典 ${usedSources.length}件)`);
+  log(`OK: コラムを ${made.length} 本生成 (今日 合計 ${baseCount + made.length} 本)`);
+}
+
+/** 名前を大まかに正規化(小文字・空白除去)。 */
+function normName(s) {
+  return String(s || "").toLowerCase().replace(/\s+/g, "");
 }
 
 main()

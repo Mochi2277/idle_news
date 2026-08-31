@@ -23,18 +23,21 @@ feeds.json ─▶ scripts/fetch-feeds.mjs ─▶ src/_data/articles.json ─▶ 
 - RSSに全文が入っている場合は `body` として保持（コラム生成用。クライアント配信用JSONからは除外）。
 - 取得に失敗したフィードは自動スキップ。
 
-## コラム（1日1本・AI生成）
+## コラム（1日 最大3本・AI生成）
 
 ```
 scripts/generate-column.mjs
   1. 「今日(JST)の00:00〜現在」の記事を対象にする（20件未満のときだけ直近48hに拡大）
-  2. グループタグでクラスタ化し、報道量(件数・媒体数・日韓横断)で上位トピックを抽出
-  3. 候補記事の本文を用意（RSSの全文、無ければ記事ページから抽出）
-  4. Gemini/OpenAI に「候補から1つ選び、参考記事だけを根拠に “今日の動き” コラムを書く」よう依頼（JSON出力）
-  5. 出典リンク付きで src/_data/columns.json に追記 → /columns/ と /columns/<公開日> を生成
+  2. グループタグでクラスタ化し、報道量(件数・媒体数・日韓横断)でトピックをスコア順に並べる
+  3. 直近数本 + 今日すでに書いたトピックを除き、上位から「不足本数」ぶんを対象にする
+  4. トピックごとに本文を用意し、AI にコラムを書かせる（1トピック=1本）
+  5. 出典リンク付きで src/_data/columns.json に追記
+     slug は 今日=YYYY-MM-DD、2本目以降は -2 / -3 …
 ```
 
 - `.github/workflows/column.yml` が毎日 20:00 JST に実行。
+- **本数**は既定 3本（`COLUMN_COUNT` を Variables に置けば変更可）。トピックが足りなければ 2本／1本／0本。
+  再実行すると不足分だけ追加。`COLUMN_FORCE=1` で今日ぶんを作り直し。
 - **文章生成プロバイダ**（Secrets に登録）:
   - `OPENAI_API_KEY` があれば **OpenAI を優先**（既定モデル `gpt-4o-mini`、`OPENAI_MODEL` で変更可）。失敗時は Gemini へ。
   - 無ければ `GEMINI_API_KEY`（無料）。`gemini-flash-latest` → `gemini-3.6-flash` → `gemini-2.5-flash-lite` を自動フォールバック。
