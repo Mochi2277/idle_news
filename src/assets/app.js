@@ -72,7 +72,9 @@
     const q = state.q.toLowerCase();
     return ALL.filter(matchesKey).filter((a) => {
       if (!q) return true;
-      const hay = `${a.title} ${a.summary} ${(a.groups || []).map((g) => g.name).join(" ")}`.toLowerCase();
+      const hay = `${a.title} ${a.title_ja || ""} ${a.summary} ${a.summary_ja || ""} ${(a.groups || [])
+        .map((g) => g.name)
+        .join(" ")}`.toLowerCase();
       return hay.includes(q);
     });
   }
@@ -137,14 +139,21 @@
         const chips = (a.groups || [])
           .map((g) => `<a class="chip" href="#g:${g.slug}">${esc(g.name)}</a>`)
           .join("");
+        const title = a.title_ja || a.title;
+        const summary = a.summary_ja || a.summary;
+        const orig =
+          a.title_ja && a.title_ja !== a.title
+            ? `<p class="card-orig">${esc(a.title)}</p>`
+            : "";
         return `<li class="card" style="animation-delay:${delay}ms">
   <div class="card-meta">
     <span class="tag tag-${a.region}">${regionLabel(a.region)}</span>
     <span class="src">${esc(a.source)}</span>
     <time>${fmtDate(a.date)}</time>
   </div>
-  <h2 class="card-title"><a href="articles/${esc(a.id)}/">${esc(a.title)}</a></h2>
-  <p class="card-summary">${esc(a.summary)}</p>
+  <h2 class="card-title"><a href="articles/${esc(a.id)}/">${esc(title)}</a></h2>
+  ${orig}
+  <p class="card-summary">${esc(summary)}</p>
   ${chips ? `<div class="chips">${chips}</div>` : ""}
 </li>`;
       })

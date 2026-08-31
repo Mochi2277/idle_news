@@ -6,8 +6,8 @@ pagination:
   alias: article
 permalink: "/articles/{{ article.id }}/"
 eleventyComputed:
-  title: "{{ article.title }}"
-  description: "{{ article.summary }}"
+  title: "{{ article.title_ja or article.title }}"
+  description: "{{ article.summary_ja or article.summary }}"
 ---
 
 <article class="container detail">
@@ -17,9 +17,12 @@ eleventyComputed:
     <time>{{ article.date | dateJP }}</time>
   </div>
 
-  <h1>{{ article.title }}</h1>
+  <h1>{{ article.title_ja or article.title }}</h1>
+  {% if article.title_ja and article.title_ja != article.title %}
+  <p class="detail-orig">原題: {{ article.title }}</p>
+  {% endif %}
 
-  <p class="detail-summary">{{ article.summary }}</p>
+  <p class="detail-summary">{{ article.summary_ja or article.summary }}</p>
 
   {% if article.groups and article.groups.length %}
   <div class="chips">

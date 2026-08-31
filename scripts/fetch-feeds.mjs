@@ -23,6 +23,10 @@ const MAX_ITEMS = 300;          // 保持する記事の最大数
 const SUMMARY_MAX = 280;        // 要約の最大文字数
 const KEEP_DAYS = 120;          // これより古い記事は捨てる
 
+const TRANSLATE = true;         // 英語(韓国系)記事の見出し・要約を日本語へ自動翻訳する
+const TRANSLATE_MAX = 50;       // 1回の実行で翻訳するフィールド数の上限(無料枠・レート制限の保護)
+                               // 既訳はキャッシュされるので、数回の実行で全記事が日本語化される
+
 /**
  * mode:"strict" のフィードで「アイドル/アーティスト関連」と判定するためのキーワード。
  * mode:"loose" のフィードでは使わない(除外ワードに当たらなければ通す)。
@@ -182,11 +186,105 @@ const parser = new Parser({
 
 // CI で rss-parser がソケットを掴んだままプロセスが終了しないことがあるので、
 // 全体の上限時間を設けて確実に終わらせる。unref で監視タイマー自体は event loop を延命しない。
-const WATCHDOG_MS = 90000;
+const WATCHDOG_MS = 210000; // 翻訳(逐次HTTP)を含むため長めに
 setTimeout(() => {
   console.error(`watchdog: ${WATCHDOG_MS}ms を超えたため強制終了します`);
   process.exit(1);
 }, WATCHDOG_MS).unref();
+
+/* ---------------- 自動翻訳(無料・APIキー不要) ---------------- */
+
+/** かな が無く英字を含む = 英語記事とみなす(日本語のDanmee等は翻訳しない)。 */
+function looksEnglish(s) {
+  if (!s) return false;
+  if (/[぀-ヿ]/.test(s)) return false; // ひらがな・カタカナがあれば日本語扱い
+  return /[a-z]/i.test(s);
+}
+
+let translateBudget = TRANSLATE_MAX;
+let translateFails = 0;
+let translateBlocked = false;
+
+/** タイムアウト付き fetch(AbortSignal.timeout は終了時に警告を出すことがあるので手動制御)。 */
+async function fetchWithTimeout(url, ms) {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), ms);
+  try {
+    return await fetch(url, { headers: { "User-Agent": "Mozilla/5.0" }, signal: ctrl.signal });
+  } finally {
+    clearTimeout(t);
+  }
+}
+
+/** MyMemory(公式・無料・キー不要。匿名は約5000語/日、1リクエスト約500字まで)。 */
+async function viaMyMemory(text) {
+  const q = text.slice(0, 480);
+  const url =
+    "https://api.mymemory.translated.net/get?langpair=en|ja&q=" + encodeURIComponent(q);
+  const res = await fetchWithTimeout(url, 12000);
+  if (!res.ok) throw new Error(`MyMemory HTTP ${res.status}`);
+  const data = await res.json();
+  if (data.responseStatus !== 200) throw new Error(`MyMemory ${data.responseStatus}`);
+  const out = (data.responseData?.translatedText || "").trim();
+  if (!out || /MYMEMORY WARNING|QUOTA/i.test(out)) throw new Error("MyMemory quota/empty");
+  return out;
+}
+
+/** Google翻訳の非公式エンドポイント(予備。IPによっては429)。 */
+async function viaGoogle(text) {
+  const url =
+    "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=ja&dt=t&q=" +
+    encodeURIComponent(text.slice(0, 1800));
+  const res = await fetchWithTimeout(url, 12000);
+  if (!res.ok) throw new Error(`Google HTTP ${res.status}`);
+  const data = await res.json();
+  const out = (data[0] || []).map((seg) => (seg && seg[0]) || "").join("").trim();
+  if (!out) throw new Error("Google empty");
+  return out;
+}
+
+/** 複数プロバイダを順に試して日本語へ。全滅が3回続いたら以降スキップ。失敗時 null。 */
+async function translateToJa(text) {
+  if (translateBlocked || translateBudget <= 0) return null;
+  translateBudget -= 1;
+  for (const provider of [viaMyMemory, viaGoogle]) {
+    try {
+      const out = await provider(text);
+      translateFails = 0;
+      await new Promise((r) => setTimeout(r, 150));
+      return out;
+    } catch {
+      /* 次のプロバイダへ */
+    }
+  }
+  translateFails += 1;
+  if (translateFails >= 3) {
+    translateBlocked = true;
+    console.warn("  翻訳を停止(全プロバイダ連続失敗)");
+  }
+  return null;
+}
+
+/** merged の英語記事に title_ja / summary_ja を付与(既訳はスキップ=キャッシュ)。 */
+async function translateArticles(articles) {
+  if (!TRANSLATE) return;
+  let done = 0;
+  for (const a of articles) {
+    if (translateBlocked || translateBudget <= 0) break;
+    if (!("title_ja" in a) && looksEnglish(a.title)) {
+      const t = await translateToJa(a.title);
+      if (t) {
+        a.title_ja = t;
+        done += 1;
+      }
+    }
+    if (!("summary_ja" in a) && looksEnglish(a.summary)) {
+      const s = await translateToJa(a.summary);
+      if (s) a.summary_ja = s;
+    }
+  }
+  console.log(`翻訳: 新規 ${done} 件を日本語化 (残り予算 ${Math.max(translateBudget, 0)})`);
+}
 
 function hash(str) {
   return crypto.createHash("sha1").update(str).digest("hex").slice(0, 12);
@@ -208,7 +306,12 @@ function stripHtml(s = "") {
 /** いまはRSSの説明文を整形するだけ。将来ここをAI要約に差し替え可能。 */
 function summarize(item) {
   const raw = item.contentSnippet || item.summary || item.content || item["content:encoded"] || "";
-  const text = stripHtml(raw);
+  const text = stripHtml(raw)
+    // WordPress系フィード末尾の定型句を除去
+    .replace(/\s*The post\b.*$/i, "")
+    .replace(/\s*(Read more|続きを読む|関連記事)\b.*$/i, "")
+    .replace(/\s*\[[^\]]*\]$/, "")
+    .trim();
   if (text.length <= SUMMARY_MAX) return text;
   return text.slice(0, SUMMARY_MAX).replace(/\s+\S*$/, "") + "…";
 }
@@ -315,6 +418,8 @@ async function main() {
     .map((a) => ({ ...a, groups: groupsFor(`${a.title || ""} ${a.summary || ""}`) }))
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(0, MAX_ITEMS);
+
+  await translateArticles(merged);
 
   fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
   fs.writeFileSync(OUT_FILE, JSON.stringify(merged, null, 2) + "\n", "utf8");

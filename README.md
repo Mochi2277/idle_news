@@ -17,6 +17,9 @@ feeds.json ─▶ scripts/fetch-feeds.mjs ─▶ src/_data/articles.json ─▶ 
   - `strict` … `KEYWORDS`（アイドル/アーティスト関連語）に一致した記事だけ採用
   - `loose` … `EXCLUDE`（グラビア・水着等）に当たらなければ採用
 - `GROUPS` 辞書で記事にグループ名を自動タグ付け（サイドバーの「グループ」欄になる）。
+- 英語（韓国系ソース）の見出し・要約は無料の翻訳API（MyMemory、失敗時はGoogle非公式）で
+  日本語化し `title_ja` / `summary_ja` に保存。一度訳したら再利用するので、毎回の実行では
+  新着分だけ翻訳する（1回あたり `TRANSLATE_MAX` 件まで）。無効化は `TRANSLATE = false`。
 - 取得に失敗したフィードは自動スキップ。
 
 ## フロントエンド
