@@ -152,6 +152,7 @@ async function prepareSources(clusters) {
         title: a.title_ja || a.title,
         source: a.source,
         url: a.link,
+        date: (a.date || "").slice(0, 10),
         text: text.slice(0, SOURCE_TEXT_MAX)
       });
     }
@@ -159,15 +160,16 @@ async function prepareSources(clusters) {
   return out;
 }
 
-function buildPrompt(candidateNames, sources) {
+function buildPrompt(candidateNames, sources, todayStr) {
   const list = sources
     .map(
       (s) =>
-        `【${s.n}】(${s.cluster} / ${s.source}) ${s.title}\n${s.text}`
+        `【${s.n}】[配信 ${s.date || "不明"}] (${s.cluster} / ${s.source}) ${s.title}\n${s.text}`
     )
     .join("\n\n");
-  return `あなたは日本と韓国のアイドルを専門に扱うニュースメディアの編集者です。
-昨日1日の報道を振り返るコラムを1本執筆します。以下の「トピック候補」と「参考記事」だけを情報源にしてください。
+  return `あなたは日本と韓国のアイドルを専門に扱うニュースメディアの編集者だ。
+昨日1日の報道を振り返るコラムを1本執筆する。以下の「トピック候補」と「参考記事」だけを情報源にすること。
+本日の日付は ${todayStr}。各参考記事には配信日を [配信 YYYY-MM-DD] で示している。
 
 # トピック候補
 ${candidateNames.map((x, i) => `${i + 1}. ${x}`).join("\n")}
@@ -178,10 +180,12 @@ ${list}
 # 執筆ルール
 - トピック候補の中から、最も報道量が多く読者の関心が高いと思われるものを1つ選ぶ。
 - 本文は日本語で 500〜900 文字。
-- 事実は参考記事に明記されている内容だけを書く。推測・憶測、参考記事に無い固有名詞や数字は書かない。
+- 文体は「である・だ」調（常体）で統一する。「です・ます」調は使わない。
+- 事実は参考記事に明記されている内容だけを書く。推測・憶測、参考記事に無い固有名詞は書かない。
+- 年号・年月日・数値は、参考記事に明記がある場合だけそのまま書く。明記がなければ「今年11月」「先日」「来月」のように相対表現にする。西暦を推測で補わない。
 - 事実を述べた文の末尾に、根拠となる参考記事の番号を [1] [2] のように付ける。
 - 直接引用は1文以内・「」でくくる。参考記事の文章をそのまま長く写さない。
-- 中立的なトーン。誇張・断定・煽りを避ける。見出しは40文字以内。
+- 中立的なトーン。誇張・断定・煽りを避ける。見出し(title)と dek も「である」調にする。見出しは40文字以内。
 - 出力は指定のJSONのみ。`;
 }
 
@@ -362,7 +366,7 @@ async function main() {
   );
 
   const sources = await prepareSources(clusters);
-  const prompt = buildPrompt(clusters.map((c) => c.name), sources);
+  const prompt = buildPrompt(clusters.map((c) => c.name), sources, today);
 
   if (DRY_RUN) {
     log("\n===== DRY RUN: プロンプト =====\n");
