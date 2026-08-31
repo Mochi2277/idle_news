@@ -1,5 +1,92 @@
 [
   {
+    "date": "2026-08-31",
+    "slug": "2026-08-31",
+    "topic": "KATSEYE",
+    "region": "kr",
+    "title": "KATSEYEのソフィア、ツアー欠場を発表",
+    "dek": "KATSEYEのソフィアが健康上の理由でツアーを欠場することが発表された。グループは4人体制で活動を続ける。",
+    "body_md": "KATSEYEのリーダー、ソフィア・ラフォルテザが健康上の理由で「THE WILDWORLD TOUR」のヨーロッパおよび英国公演を欠場することが発表された[1][2]。このツアーは9月1日にダブリンで開始され、9月17日まで続く予定である[2]。ソフィアは先月、精神的健康を優先するために活動を一時休止すると発表していた[2]。彼女は「自分の健康を今優先しなければ、長く活動を続けることができない」との考えを示している[2]。HYBEとGeffen Recordsは、ソフィアに必要なサポートとリソースを提供すると述べており、ファンに対して「温かい理解」を求めている[1][2]。\n\nソフィアの不在により、KATSEYEは4人での活動を続けることになる[2]。この状況は、今年2月に健康上の理由で活動を休止したメンバーのマノンに続くものである[2]。一方で、KATSEYEの最新EP「WILD」はビルボード200で2週連続トップ10入りを果たし、グループの人気は依然として高い[4]。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "ワイルドワールドツアーの日程に先立ち、ソフィアの休暇に関する最新情報をKATSEYEがお伝えします",
+        "source": "NME K-POP",
+        "url": "https://www.nme.com/news/music/katseye-give-update-on-sophias-hiatus-ahead-of-wildworld-tour-dates-3965933?utm_source=rss&utm_medium=rss&utm_campaign=katseye-give-update-on-sophias-hiatus-ahead-of-wildworld-tour-dates"
+      },
+      {
+        "n": 2,
+        "title": "キャットアイのソフィア、回復に専念、9月のヨーロッパと英国ツアーも欠場",
+        "source": "KBIZoom",
+        "url": "https://kbizoom.com/katseye-sophia-health-recovery-europe-uk-tour-absence/"
+      },
+      {
+        "n": 4,
+        "title": "KATSEYEの「WILD」がビルボード200のトップ10で2週間を費やす最初のアルバムになる",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1866901wpp/katseyes-wild-becomes-their-1st-album-to-spend-2-weeks-in-top-10-of-billboard-200"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-08-31T06:58:08.734Z"
+  },
+  {
+    "date": "2026-08-31",
+    "slug": "2026-08-31-2",
+    "topic": "BTS",
+    "region": "jp",
+    "title": "BTS、シカゴ公演とプライベート写真が話題",
+    "dek": "BTSがシカゴ公演で新衣装を披露し、注目を集めた。また、RMとJ-HOPEのプライベート写真も話題となっている。",
+    "body_md": "BTSがワールドツアー『ARIRANG』のシカゴ公演で新たな衣装を披露し、大きな話題を呼んでいる。公演は8月27日と28日にアメリカ・シカゴのソルジャー・フィールドで開催され、メンバー全員がブラックやグレー、ホワイトを基調としたシックなコーディネートで登場した。特にJIMINとVは透け感のあるメッシュトップスを着用し、RMはメッシュ素材をあしらったパンツでエッジの効いたスタイルを見せた[2]。これに対し、SNSでは「新衣装カッコ良すぎる」「クオズ色違いコーデ！」などの反響が寄せられている[2]。\n\n一方、BTSのRMは、ワールドツアーの合間に訪れたナイアガラの滝やシカゴの美術館でのプライベート写真をInstagramに公開した。特に、RMがJ-HOPEと「ポケモン化石博物館」を訪れた際の写真がファンの間で話題となっている。RMはレインコート姿でナイアガラの滝を眺める後ろ姿や、車を運転する姿を投稿し、ファンからは「仲良しクサズありがとう」「運転に慣れてないの可愛い」などの声が上がった[1]。\n\nまた、BTSのJungkookとVは、最近のARIRANGツアーコンサート中の「ファンサービス」シーンがSNSで物議を醸している。VがJungkookに馬乗りのジェスチャーをし、Jungkookがそれに応じて馬のように振る舞う場面が「クィアベイティング」として批判を受けている[3]。これに対し、「ファンサービスとしては不適切」との意見も見られる[3]。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "BTS RMがJ-HOPEと過ごすプラベ写真を公開！ナイアガラを見つめる後ろ姿や運転する姿に「仲良しクサズありがとう」「横顔に緊張感走ってる」",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000873326/"
+      },
+      {
+        "n": 2,
+        "title": "BTSジミン＆Vがメッシュ×レザーのおそろいコーデで登場！シカゴ公演の新衣装に「クオズ色違い！」「露出がお上手すぎ」「カッコ良すぎる」と反響",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000873249/"
+      },
+      {
+        "n": 3,
+        "title": "NSFW「ファンサービス」のためのBTSのJungkookとV Flamed",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/bts-jungkook-v-flamed-nsfw-fan-service/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-08-31T06:58:14.620Z"
+  },
+  {
+    "date": "2026-08-31",
+    "slug": "2026-08-31-3",
+    "topic": "BLACKPINK",
+    "region": "kr",
+    "title": "BLACKPINKのJENNIE、新EPとMVで注目集める",
+    "dek": "JENNIEの最新EP『Fallen Angel』がリリースされ、MVも公開された。特にMVの終盤が話題を呼んでいる。",
+    "body_md": "BLACKPINKのメンバーであるJENNIEが、最新EP『Fallen Angel』をリリースした。このEPには「Fallen Angel」「Heaven」「Less Than A Lover」の3曲が収録されており、特に「Fallen Angel」のミュージックビデオが大きな注目を集めている[1]。  \n  \n「Fallen Angel」は、愛する人と共に現実から逃避し、安らぎを求める切実な思いを描いた楽曲である。MVでは、幻想的な世界観が映像に落とし込まれており、白鳥が泳ぐ湖のシーンから始まり、やがて水中へと沈んでいくJENNIEの姿が描かれる。このシーンはシェイクスピアの『ハムレット』のオフィーリアを想起させるものであり、その後も様々な幻想的な場面が続く[1]。  \n  \nしかし、MVの終盤に登場するシーンが特に話題を呼んでいる。子供たちが白い衣装に赤いベールをかぶり、JENNIEを炎に包まれた建物へと導く場面が「サタニックだ」と一部のネットユーザーから非難を受けている[2]。このシーンでは、JENNIEが棘で作られた繭の中に横たわる自分自身を目にし、無垢と喪失、孤独、救済といったテーマが象徴的に表現されている[1]。  \n  \nJENNIEは先日ソロアーティストとして来日し、日本のステージで「Fallen Angel」を未発表の新曲として披露した。このステージは圧倒的なパフォーマンスと存在感で観客を魅了し、大きな話題となっている[1]。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "JENNIE（BLACKPINK）最新EP『Fallen Angel』リリース！タイトル曲のMVも公開",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000873553/"
+      },
+      {
+        "n": 2,
+        "title": "BLACKPINKのジェニーは、ミュージックビデオで「子供を使う」という深刻な非難に直面しています",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/blackpink-jennie-faces-serious-accusations-using-kids-in-music-video/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-08-31T06:58:20.743Z"
+  },
+  {
     "date": "2026-08-30",
     "slug": "2026-08-30",
     "topic": "櫻坂46",
