@@ -1746,10 +1746,6 @@
     "region": "jp",
     "groups": [
       {
-        "name": "RIIZE",
-        "slug": "riize"
-      },
-      {
         "name": "櫻坂46",
         "slug": "櫻坂46"
       }
@@ -1765,10 +1761,6 @@
     "source": "The First Times",
     "region": "jp",
     "groups": [
-      {
-        "name": "RIIZE",
-        "slug": "riize"
-      },
       {
         "name": "THE RAMPAGE",
         "slug": "the-rampage"
