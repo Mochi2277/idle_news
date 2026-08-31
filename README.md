@@ -1,25 +1,38 @@
 # 日韓アイドル ニュースまとめ（プロトタイプ）
 
-日本・韓国のアイドル関連ニュースを **公式RSS** から自動収集し、
+日本・韓国のアイドル／アーティスト関連ニュースを **公式RSS** から自動収集し、
 「見出し + 要約 + 出典リンク」の形でまとめる静的サイトです。すべて無料の構成。
+
+公開URL: https://mochi2277.github.io/idle_news/
 
 ## 仕組み
 
 ```
-feeds.json ──▶ scripts/fetch-feeds.mjs ──▶ src/_data/articles.json ──▶ Eleventy ──▶ _site/（公開物）
-（収集元RSS）      （収集・要約・重複除去）        （記事データ）              （静的HTML生成）
+feeds.json ─▶ scripts/fetch-feeds.mjs ─▶ src/_data/articles.json ─▶ Eleventy ─▶ _site/（公開物）
+（収集元RSS）   （収集・要約・分類・重複除去）     （記事データ）           （静的HTML + data/articles.json）
 ```
 
 - **全文転載はしない**。RSSの説明文を整形した数百字の要約と、出典元へのリンクだけを載せます。
-- キーワードで「アイドル関連」に絞り込み（`scripts/fetch-feeds.mjs` の `KEYWORDS`）。
+- フィードごとに `mode` を指定：
+  - `strict` … `KEYWORDS`（アイドル/アーティスト関連語）に一致した記事だけ採用
+  - `loose` … `EXCLUDE`（グラビア・水着等）に当たらなければ採用
+- `GROUPS` 辞書で記事にグループ名を自動タグ付け（サイドバーの「グループ」欄になる）。
 - 取得に失敗したフィードは自動スキップ。
+
+## フロントエンド
+
+- トップページは `data/articles.json` を読み込んでクライアント側で描画（`src/assets/app.js`）。
+- 左サイドバー：キーワード検索 / エリア（日本・韓国）/ 年月 / グループ。
+- グループを選ぶと、日韓どちらのソースの記事もまとめて表示される（例：Stray Kids）。
+- URLハッシュで状態を保持（`#jp` `#m:2026-08` `#g:stray-kids`）。
+- 各記事の個別ページ（`/articles/<id>/`）はEleventyが静的生成（共有・SEO用）。
 
 ## ローカルで動かす
 
 ```bash
 npm install
 npm run fetch     # RSSを取得して src/_data/articles.json を更新
-npm run dev       # http://localhost:8080 でプレビュー
+npm run dev       # http://localhost:8080/idle_news/ でプレビュー
 ```
 
 `npm run build` は fetch + サイト生成をまとめて実行します。
@@ -29,24 +42,34 @@ npm run dev       # http://localhost:8080 でプレビュー
 `feeds.json` を編集するだけ。
 
 ```json
-{ "name": "サイト名", "url": "https://example.com/rss", "region": "jp", "enabled": true }
+{ "name": "サイト名", "url": "https://example.com/rss", "region": "jp", "mode": "strict", "enabled": true }
 ```
 
-`region` は `jp` か `kr`。`enabled: false` で一時停止。
+`region` は `jp` か `kr`。`mode` は `strict` か `loose`。`enabled: false` で一時停止。
 
-## 無料で公開する（GitHub Pages）
+## フィルタ・グループを調整する
 
-1. このフォルダを GitHub リポジトリにpush（リポジトリ名は任意）。
-2. リポジトリの **Settings ▸ Pages ▸ Build and deployment ▸ Source** を **GitHub Actions** にする。
-3. `.github/workflows/update.yml` が **6時間ごと**に自動で収集・ビルド・公開する。
-   - 手動実行は Actions タブの「Update & Deploy ▸ Run workflow」。
+`scripts/fetch-feeds.mjs` の以下を編集：
+
+- `KEYWORDS` … strict フィードで「関連」と判定する語
+- `EXCLUDE` … 全フィードで弾く語（グラビア系）。更新すると過去記事も遡って除外される
+- `GROUPS` … `"表示名": ["別名1", "別名2", ...]`。記事が1件以上あればサイドバーに自動で出る
+
+## 公開（GitHub Pages / 無料）
+
+1. GitHub リポジトリに push。
+2. **Settings ▸ Pages ▸ Source** を **GitHub Actions**。
+3. **Settings ▸ Actions ▸ General ▸ Workflow permissions** を **Read and write**。
+4. `.github/workflows/update.yml` が **6時間ごと**に収集・ビルド・公開（手動実行も可）。
+
+> **リポジトリ名を変えたとき**は `eleventy.config.js` の `pathPrefix: "/idle_news/"` を
+> 新しいリポジトリ名に合わせて変更すること（GitHub Pagesのサブパス配信のため）。
+> 独自ドメインを使う場合は `pathPrefix: "/"` に戻す。
 
 ## あとから拡張するなら
 
-- **AI要約**: `scripts/fetch-feeds.mjs` の `summarize()` を Claude API 呼び出しに差し替え。
-  出典明記 + 自分の言葉での要約にすると独自性が出ます。
+- **AI要約**: `summarize()` を Claude API 呼び出しに差し替え（出典明記 + 自分の言葉で要約すると独自性が出る）。
 - **画像**: 各記事ページには埋め込まず出典元へ誘導する現在の方針を推奨（権利面が安全）。
-- **カテゴリ**: グループ名でのタグ付け、検索、グループ別ページなど。
 - **収益化**: アクセスが安定してから広告やアフィリエイトを検討。
 
 ## 注意

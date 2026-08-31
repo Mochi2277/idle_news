@@ -10,7 +10,7 @@ eleventyComputed:
   description: "{{ article.summary }}"
 ---
 
-<article class="detail">
+<article class="container detail">
   <div class="card-meta">
     <span class="tag tag-{{ article.region }}">{{ article.region | regionLabel }}</span>
     <span class="src">{{ article.source }}</span>
@@ -21,9 +21,17 @@ eleventyComputed:
 
   <p class="detail-summary">{{ article.summary }}</p>
 
+  {% if article.groups and article.groups.length %}
+  <div class="chips">
+    {% for g in article.groups %}
+    <a class="chip" href="{{ '/' | url }}#g:{{ g.slug }}">{{ g.name }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
   <p class="detail-source">
     この情報の出典: <a href="{{ article.link }}" target="_blank" rel="noopener nofollow">{{ article.source }} で全文を読む</a>
   </p>
 
-  <p class="back"><a href="/">← 一覧に戻る</a></p>
+  <p class="back"><a href="{{ '/' | url }}">← 一覧に戻る</a></p>
 </article>

@@ -3,40 +3,47 @@ layout: base.njk
 title: 最新ニュース
 ---
 
-<div class="filters" data-filter-group>
-  <button class="filter is-active" data-filter="all">すべて</button>
-  <button class="filter" data-filter="jp">日本</button>
-  <button class="filter" data-filter="kr">韓国</button>
+<button class="menu-toggle" type="button" aria-label="メニュー">☰ メニュー</button>
+
+<div class="layout" data-app>
+  <aside class="sidebar" data-sidebar>
+    <div class="sidebar-inner">
+      <div class="sb-search">
+        <input type="search" id="search" placeholder="キーワード検索" autocomplete="off">
+      </div>
+
+      <nav class="sb-block" data-nav="region">
+        <h3 class="sb-title">エリア</h3>
+        <ul class="sb-list">
+          <li><a href="#all" data-key="all" class="sb-link is-active">すべて <span class="sb-count" data-count-all>0</span></a></li>
+          <li><a href="#jp" data-key="jp" class="sb-link"><span class="dot dot-jp"></span>日本 <span class="sb-count" data-count-jp>0</span></a></li>
+          <li><a href="#kr" data-key="kr" class="sb-link"><span class="dot dot-kr"></span>韓国 <span class="sb-count" data-count-kr>0</span></a></li>
+        </ul>
+      </nav>
+
+      <nav class="sb-block" data-nav="month">
+        <h3 class="sb-title">年月</h3>
+        <ul class="sb-list" data-month-list></ul>
+      </nav>
+
+      <nav class="sb-block" data-nav="group">
+        <h3 class="sb-title">グループ</h3>
+        <ul class="sb-list" data-group-list></ul>
+      </nav>
+    </div>
+  </aside>
+
+  <section class="content">
+    <div class="content-head">
+      <h1 class="content-title" data-view-title>最新ニュース</h1>
+      <span class="content-count" data-view-count></span>
+    </div>
+
+    <p class="loading" data-loading>読み込み中…</p>
+    <p class="empty" data-empty hidden>該当する記事がありません。</p>
+
+    <ul class="article-list" data-list></ul>
+  </section>
 </div>
 
-{% if articles.length == 0 %}
-  <p class="empty">まだ記事がありません。<code>npm run fetch</code> を実行すると収集されます。</p>
-{% endif %}
-
-<ul class="article-list">
-  {% for a in articles %}
-  <li class="card" data-region="{{ a.region }}">
-    <div class="card-meta">
-      <span class="tag tag-{{ a.region }}">{{ a.region | regionLabel }}</span>
-      <span class="src">{{ a.source }}</span>
-      <time>{{ a.date | dateJP }}</time>
-    </div>
-    <h2 class="card-title"><a href="/articles/{{ a.id }}/">{{ a.title }}</a></h2>
-    <p class="card-summary">{{ a.summary }}</p>
-  </li>
-  {% endfor %}
-</ul>
-
-<script>
-  const group = document.querySelector("[data-filter-group]");
-  const cards = document.querySelectorAll(".article-list .card");
-  group.addEventListener("click", (e) => {
-    const btn = e.target.closest(".filter");
-    if (!btn) return;
-    group.querySelectorAll(".filter").forEach((b) => b.classList.toggle("is-active", b === btn));
-    const f = btn.dataset.filter;
-    cards.forEach((c) => {
-      c.hidden = !(f === "all" || c.dataset.region === f);
-    });
-  });
-</script>
+<script src="{{ '/assets/app.js' | url }}" defer></script>

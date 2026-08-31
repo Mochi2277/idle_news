@@ -77,6 +77,100 @@ const EXCLUDE = [
   "gravure", "swimsuit", "bikini", "lingerie", "cleavage"
 ];
 
+/**
+ * グループ別サイドバー用のタグ付け辞書。
+ * canonical名: [別名(日本語/英語/ハングル/略称) ...]
+ * 記事タイトル+要約に別名が含まれると、その canonical 名がタグとして付く。
+ * 3〜4文字以下の英字別名は前後が英数字でない場合のみ一致(誤爆防止)。
+ * ここに足せば自動でサイドバーに項目が増える(記事が1件以上ある場合のみ表示)。
+ */
+const GROUPS = {
+  // --- K-POP ---
+  "BTS": ["bts", "방탄소년단", "防弾少年団", "バンタン"],
+  "SEVENTEEN": ["seventeen", "세븐틴", "セブチ", "セブンティーン"],
+  "Stray Kids": ["stray kids", "straykids", "스트레이 키즈", "스키즈", "スキズ", "ストレイキッズ", "skz"],
+  "TXT": ["tomorrow x together", "투모로우바이투게더", "txt", "トゥバ", "トゥモローバイトゥゲザー"],
+  "ENHYPEN": ["enhypen", "엔하이픈", "エンハイプン"],
+  "NCT": ["nct", "엔시티", "エヌシーティー"],
+  "aespa": ["aespa", "에스파", "エスパ"],
+  "NewJeans": ["newjeans", "new jeans", "뉴진스", "ニュージーンズ", "ニュジ"],
+  "IVE": ["ive", "아이브", "アイヴ"],
+  "LE SSERAFIM": ["le sserafim", "lesserafim", "르세라핌", "ルセラフィム", "ルセラ"],
+  "ITZY": ["itzy", "있지", "イッジ"],
+  "TWICE": ["twice", "트와이스", "トゥワイス", "トワイス"],
+  "BLACKPINK": ["blackpink", "black pink", "블랙핑크", "ブラックピンク", "ブルピン"],
+  "(G)I-DLE": ["(g)i-dle", "gi-dle", "g-idle", "아이들", "ジーアイドル", "アイドゥル"],
+  "ILLIT": ["illit", "아일릿", "アイリット"],
+  "BABYMONSTER": ["babymonster", "베이비몬스터", "ベイビーモンスター", "ベビモン"],
+  "RIIZE": ["riize", "라이즈", "ライズ"],
+  "ZEROBASEONE": ["zerobaseone", "zb1", "제로베이스원", "ゼロベースワン", "ゼベワン"],
+  "BOYNEXTDOOR": ["boynextdoor", "보이넥스트도어", "ボーイネクストドア", "ボイネク"],
+  "KATSEYE": ["katseye", "カットアイ"],
+  "PLAVE": ["plave", "플레이브", "プレイブ"],
+  "TWS": ["tws", "투어스", "トゥアス"],
+  "EXO": ["exo", "엑소", "エクソ"],
+  "Red Velvet": ["red velvet", "레드벨벳", "レドベル", "レッドベルベット"],
+  "SHINee": ["shinee", "샤이니", "シャイニー"],
+  "NMIXX": ["nmixx", "엔믹스", "エンミックス"],
+  "KISS OF LIFE": ["kiss of life", "키스오브라이프", "キスオブライフ"],
+  "Girls' Generation": ["girls' generation", "girls generation", "소녀시대", "少女時代", "snsd"],
+  "MAMAMOO": ["mamamoo", "마마무", "ママム"],
+  "Apink": ["apink", "에이핑크", "エーピンク"],
+  "TREASURE": ["treasure", "트레저", "トレジャー"],
+  "ATEEZ": ["ateez", "에이티즈", "エイティーズ"],
+  "THE BOYZ": ["the boyz", "더보이즈", "ザボーイズ"],
+  // --- 日本 ---
+  "乃木坂46": ["乃木坂46", "乃木坂", "nogizaka"],
+  "櫻坂46": ["櫻坂46", "櫻坂", "sakurazaka"],
+  "日向坂46": ["日向坂46", "日向坂", "hinatazaka"],
+  "AKB48": ["akb48"],
+  "=LOVE": ["=love", "イコラブ"],
+  "≠ME": ["≠me", "ノイミー"],
+  "Snow Man": ["snow man", "スノーマン", "スノ"],
+  "SixTONES": ["sixtones", "ストーンズ"],
+  "なにわ男子": ["なにわ男子", "naniwa danshi"],
+  "King & Prince": ["king & prince", "king&prince", "キンプリ"],
+  "timelesz": ["timelesz", "タイムレス"],
+  "Travis Japan": ["travis japan", "トラジャ"],
+  "JO1": ["jo1", "ジェイオーワン"],
+  "INI": ["ini", "アイエヌアイ"],
+  "ME:I": ["me:i", "ミーアイ"],
+  "FRUITS ZIPPER": ["fruits zipper", "フルーツジッパー", "フルジ"],
+  "CANDY TUNE": ["candy tune", "キャンディーチューン", "キャンチュ"],
+  "M!LK": ["m!lk", "ミルク"],
+  "ハロプロ": ["ハロプロ", "ハロー!プロジェクト", "モーニング娘", "アンジュルム", "juice=juice", "つばきファクトリー", "beyooooonds"],
+  "超ときめき♡宣伝部": ["超ときめき", "ときめき宣伝部", "とき宣"]
+};
+
+function escapeRegex(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+/** グループ名 → URLハッシュ用スラッグ。日本語はそのまま残す(hashに載せられる)。 */
+function slugify(name) {
+  return name
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+/** 記事テキストから該当グループの {name, slug} 配列を返す。 */
+function groupsFor(text) {
+  const hay = text.toLowerCase();
+  const out = [];
+  for (const [canon, aliases] of Object.entries(GROUPS)) {
+    const hit = aliases.some((al) => {
+      const a = al.toLowerCase();
+      if (/^[\x00-\x7f]+$/.test(a) && a.length <= 4) {
+        return new RegExp(`(^|[^a-z0-9])${escapeRegex(a)}([^a-z0-9]|$)`, "i").test(hay);
+      }
+      return hay.includes(a);
+    });
+    if (hit) out.push({ name: canon, slug: slugify(canon) });
+  }
+  return out;
+}
+
 const parser = new Parser({
   timeout: 15000,
   headers: {
@@ -149,13 +243,16 @@ function toArticle(item, feed) {
   if (!link) return null;
   const dateStr = item.isoDate || item.pubDate || null;
   const date = dateStr ? new Date(dateStr) : new Date();
+  const title = stripHtml(item.title || "(無題)");
+  const summary = summarize(item);
   return {
     id: hash(link),
-    title: stripHtml(item.title || "(無題)"),
+    title,
     link,
-    summary: summarize(item),
+    summary,
     source: feed.name,
     region: feed.region,
+    groups: groupsFor(`${title} ${summary}`),
     date: isNaN(date) ? new Date().toISOString() : date.toISOString()
   };
 }
@@ -201,6 +298,8 @@ async function main() {
   const merged = [...byId.values()]
     .filter((a) => !excludedNow(a))
     .filter((a) => new Date(a.date).getTime() >= cutoff)
+    // グループ辞書の更新を過去記事にも反映(常に付け直す)
+    .map((a) => ({ ...a, groups: groupsFor(`${a.title || ""} ${a.summary || ""}`) }))
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(0, MAX_ITEMS);
 

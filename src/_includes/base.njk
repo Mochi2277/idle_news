@@ -12,22 +12,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | url }}">
 </head>
 <body>
   <div class="bg-glow" aria-hidden="true"></div>
 
   <header class="site-header">
-    <a class="wordmark" href="/">
+    <a class="wordmark" href="{{ '/' | url }}">
       <span class="wordmark-mark">▶</span>
       <span class="wordmark-text">{{ site.title }}</span>
     </a>
     <p class="site-tagline">{{ site.description }}</p>
   </header>
 
-  <main class="container">
-    {{ content | safe }}
-  </main>
+  {{ content | safe }}
 
   <footer class="site-footer">
     <p>各ニュースの著作権は配信元に帰属します。本サイトは見出しと要約の紹介にとどめ、詳細は出典元でご確認ください。</p>
