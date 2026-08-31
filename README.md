@@ -27,10 +27,11 @@ feeds.json ─▶ scripts/fetch-feeds.mjs ─▶ src/_data/articles.json ─▶ 
 
 ```
 scripts/generate-column.mjs
-  1. 直近44hの記事をグループタグでクラスタ化し、報道量(件数・媒体数・日韓横断)で上位トピックを抽出
-  2. 候補記事の本文を用意（RSSの全文、無ければ記事ページから抽出）
-  3. Gemini に「候補から1つ選び、参考記事だけを根拠に日本語コラムを書く」よう依頼（JSON出力）
-  4. 出典リンク付きで src/_data/columns.json に追記 → /columns/ と /columns/<日付>/ を生成
+  1. 「昨日(JST)の00:00〜24:00」の記事を対象にする（20件未満のときだけ直近48hに拡大）
+  2. グループタグでクラスタ化し、報道量(件数・媒体数・日韓横断)で上位トピックを抽出
+  3. 候補記事の本文を用意（RSSの全文、無ければ記事ページから抽出）
+  4. Gemini に「候補から1つ選び、参考記事だけを根拠に “昨日の振り返り” コラムを書く」よう依頼（JSON出力）
+  5. 出典リンク付きで src/_data/columns.json に追記 → /columns/ と /columns/<公開日> を生成
 ```
 
 - `.github/workflows/column.yml` が毎日 07:00 JST に実行（`GEMINI_API_KEY` を Secrets に登録）。

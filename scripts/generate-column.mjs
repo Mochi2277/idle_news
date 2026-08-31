@@ -1,7 +1,7 @@
 /**
  * 1日1本の「コラム」を生成する。
  *
- *  1. articles.json から直近 WINDOW_HOURS の記事を取り出す
+ *  1. articles.json から「昨日(JST)」の記事を取り出す(少なすぎる時だけ直近48hに拡大)
  *  2. グループタグでクラスタ化し、報道量(件数・媒体数・日韓横断)でトピック候補を上位抽出
  *  3. 候補記事の本文を用意(RSSの content:encoded、無ければ記事ページから抽出)
  *  4. Gemini に「候補から1トピック選び、参考記事だけを根拠にコラムを書く」よう依頼
@@ -33,7 +33,8 @@ const MODEL_CANDIDATES = [
 const FORCE = process.env.COLUMN_FORCE === "1";
 const DRY_RUN = process.env.COLUMN_DRY_RUN === "1";
 
-const WINDOW_HOURS = 44;             // 対象記事の新しさ
+const FALLBACK_HOURS = 48;           // 昨日ぶんが少なすぎる時だけ、この時間まで広げる
+const MIN_POOL = 20;                 // これ未満なら FALLBACK_HOURS に拡大
 const MAX_CANDIDATE_CLUSTERS = 3;    // Gemini に見せるトピック候補数
 const MAX_ARTICLES_PER_CLUSTER = 7;  // 1トピックあたりの参考記事数
 const MIN_CLUSTER_SIZE = 2;          // これ未満のクラスタは無視
@@ -70,6 +71,13 @@ function safeCp(n) {
 /** JST(UTC+9) の YYYY-MM-DD */
 function jstDate(d = new Date()) {
   return new Date(d.getTime() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+}
+
+/** 「今日(JST)から daysAgo 日前」の 00:00 JST を表す UNIX ミリ秒。 */
+function jstMidnight(daysAgo) {
+  const j = new Date(Date.now() + 9 * 3600 * 1000);
+  const wall = Date.UTC(j.getUTCFullYear(), j.getUTCMonth(), j.getUTCDate() - daysAgo);
+  return wall - 9 * 3600 * 1000;
 }
 
 function readJson(file, fallback) {
@@ -155,7 +163,7 @@ function buildPrompt(candidateNames, sources) {
     )
     .join("\n\n");
   return `あなたは日本と韓国のアイドルを専門に扱うニュースメディアの編集者です。
-以下の「トピック候補」と「参考記事」だけを情報源として、本日のコラムを1本執筆してください。
+昨日1日の報道を振り返るコラムを1本執筆します。以下の「トピック候補」と「参考記事」だけを情報源にしてください。
 
 # トピック候補
 ${candidateNames.map((x, i) => `${i + 1}. ${x}`).join("\n")}
@@ -254,9 +262,21 @@ async function main() {
     return;
   }
 
-  const cutoff = Date.now() - WINDOW_HOURS * 3600 * 1000;
-  const recent = articles.filter((a) => new Date(a.date).getTime() >= cutoff);
-  log(`対象記事: ${recent.length} 件 (直近 ${WINDOW_HOURS}h)`);
+  // 基本は「昨日(JST)の 00:00〜24:00」を対象にする
+  const yStart = jstMidnight(1);
+  const yEnd = jstMidnight(0);
+  const inYesterday = (a) => {
+    const t = new Date(a.date).getTime();
+    return t >= yStart && t < yEnd;
+  };
+  let recent = articles.filter(inYesterday);
+  let windowLabel = `昨日 ${jstDate(new Date(yStart))} (JST)`;
+
+  if (recent.length < MIN_POOL) {
+    recent = articles.filter((a) => new Date(a.date).getTime() >= Date.now() - FALLBACK_HOURS * 3600 * 1000);
+    windowLabel = `直近 ${FALLBACK_HOURS}h (昨日ぶんが ${MIN_POOL} 件未満のため拡大)`;
+  }
+  log(`対象記事: ${recent.length} 件 / ${windowLabel}`);
 
   const recentTopics = columns.slice(0, AVOID_RECENT_TOPICS).map((c) => c.topic);
   const clusters = buildClusters(recent)
