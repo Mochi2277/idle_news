@@ -41,7 +41,7 @@ const KEYWORDS = [
   // 日本 - 事務所 / 男性アイドル
   "STARTO", "旧ジャニーズ", "Snow Man", "SixTONES", "なにわ男子", "Travis Japan",
   "timelesz", "King & Prince", "Hey! Say! JUMP", "Kis-My-Ft2", "A.B.C-Z", "WEST.",
-  "Aぇ! group", "少年忍者", "JO1", "INI", "DXTEEN", "ME:I", "IS:SUE", "IMP.", "OCTPATH", "KO1KEYZ"
+  "Aぇ! group", "少年忍者", "JO1", "INI", "DXTEEN", "ME:I", "IS:SUE", "IMP.", "OCTPATH", "KO1KEYZ",
   // 日本 - その他アイドル
   "FRUITS ZIPPER", "CANDY TUNE", "SWEET STEADY", "CUTIE STREET", "超ときめき",
   "私立恵比寿中学", "でんぱ組", "スタァライト", "22/7", "アップアップガールズ",
