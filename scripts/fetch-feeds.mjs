@@ -107,7 +107,7 @@ const GROUPS = {
   "(G)I-DLE": ["(g)i-dle", "gi-dle", "g-idle", "아이들", "ジーアイドル", "アイドゥル"],
   "ILLIT": ["illit", "아일릿", "アイリット"],
   "BABYMONSTER": ["babymonster", "베이비몬스터", "ベイビーモンスター", "ベビモン"],
-  "RIIZE": ["riize", "라이즈", "ライズ"],
+  "RIIZE": ["riize", "라이즈"],
   "ZEROBASEONE": ["zerobaseone", "zb1", "제로베이스원", "ゼロベースワン", "ゼベワン"],
   "BOYNEXTDOOR": ["boynextdoor", "보이넥스트도어", "ボーイネクストドア", "ボイネク"],
   "KATSEYE": ["katseye", "カットアイ"],
