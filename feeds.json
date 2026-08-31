@@ -1,0 +1,29 @@
+{
+  "_comment": "収集元の公式RSS。region は jp / kr。増やす・減らすはここを編集するだけ。取得に失敗したフィードは自動でスキップされます。",
+  "feeds": [
+    {
+      "name": "音楽ナタリー",
+      "url": "https://natalie.mu/music/feed/news",
+      "region": "jp",
+      "enabled": true
+    },
+    {
+      "name": "日刊スポーツ 芸能",
+      "url": "https://www.nikkansports.com/entertainment/atom.xml",
+      "region": "jp",
+      "enabled": true
+    },
+    {
+      "name": "Soompi",
+      "url": "https://www.soompi.com/feed",
+      "region": "kr",
+      "enabled": true
+    },
+    {
+      "name": "Koreaboo",
+      "url": "https://www.koreaboo.com/feed/",
+      "region": "kr",
+      "enabled": true
+    }
+  ]
+}

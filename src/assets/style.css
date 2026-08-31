@@ -1,0 +1,81 @@
+:root {
+  --bg: #fafafa;
+  --fg: #1c1c1e;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --accent: #d6336c;
+  --jp: #2563eb;
+  --kr: #dc2626;
+  --max: 760px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Meiryo, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.7;
+}
+
+a { color: var(--accent); }
+
+.site-header {
+  padding: 28px 20px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+  text-align: center;
+}
+.site-title { font-size: 1.4rem; font-weight: 700; text-decoration: none; color: var(--fg); }
+.site-tagline { margin: 6px 0 0; color: var(--muted); font-size: .85rem; }
+
+.container { max-width: var(--max); margin: 0 auto; padding: 24px 20px 60px; }
+
+.filters { display: flex; gap: 8px; margin-bottom: 20px; }
+.filter {
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: 6px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: .85rem;
+}
+.filter.is-active { background: var(--fg); color: #fff; border-color: var(--fg); }
+
+.article-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.card-meta {
+  display: flex; align-items: center; gap: 10px;
+  font-size: .75rem; color: var(--muted); margin-bottom: 6px; flex-wrap: wrap;
+}
+.tag { padding: 1px 8px; border-radius: 4px; color: #fff; font-weight: 600; }
+.tag-jp { background: var(--jp); }
+.tag-kr { background: var(--kr); }
+
+.card-title { font-size: 1.05rem; margin: 4px 0 6px; line-height: 1.4; }
+.card-title a { text-decoration: none; color: var(--fg); }
+.card-title a:hover { color: var(--accent); }
+.card-summary { margin: 0; font-size: .9rem; color: #333; }
+
+.empty { color: var(--muted); }
+
+.detail h1 { font-size: 1.4rem; line-height: 1.45; margin: 8px 0 16px; }
+.detail-summary { font-size: 1rem; }
+.detail-source {
+  margin-top: 24px; padding: 14px 16px;
+  background: #fff0f5; border: 1px solid #f3c6d8; border-radius: 10px; font-size: .9rem;
+}
+.back { margin-top: 28px; font-size: .9rem; }
+
+.site-footer {
+  max-width: var(--max); margin: 0 auto; padding: 20px; border-top: 1px solid var(--border);
+  color: var(--muted); font-size: .75rem; text-align: center;
+}

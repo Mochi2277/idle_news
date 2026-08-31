@@ -1,0 +1,42 @@
+---
+layout: base.njk
+title: 最新ニュース
+---
+
+<div class="filters" data-filter-group>
+  <button class="filter is-active" data-filter="all">すべて</button>
+  <button class="filter" data-filter="jp">日本</button>
+  <button class="filter" data-filter="kr">韓国</button>
+</div>
+
+{% if articles.length == 0 %}
+  <p class="empty">まだ記事がありません。<code>npm run fetch</code> を実行すると収集されます。</p>
+{% endif %}
+
+<ul class="article-list">
+  {% for a in articles %}
+  <li class="card" data-region="{{ a.region }}">
+    <div class="card-meta">
+      <span class="tag tag-{{ a.region }}">{{ a.region | regionLabel }}</span>
+      <span class="src">{{ a.source }}</span>
+      <time>{{ a.date | dateJP }}</time>
+    </div>
+    <h2 class="card-title"><a href="/articles/{{ a.id }}/">{{ a.title }}</a></h2>
+    <p class="card-summary">{{ a.summary }}</p>
+  </li>
+  {% endfor %}
+</ul>
+
+<script>
+  const group = document.querySelector("[data-filter-group]");
+  const cards = document.querySelectorAll(".article-list .card");
+  group.addEventListener("click", (e) => {
+    const btn = e.target.closest(".filter");
+    if (!btn) return;
+    group.querySelectorAll(".filter").forEach((b) => b.classList.toggle("is-active", b === btn));
+    const f = btn.dataset.filter;
+    cards.forEach((c) => {
+      c.hidden = !(f === "all" || c.dataset.region === f);
+    });
+  });
+</script>

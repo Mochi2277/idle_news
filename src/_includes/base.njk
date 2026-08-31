@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-title" href="/">{{ site.title }}</a>
+    <p class="site-tagline">{{ site.description }}</p>
+  </header>
+
+  <main class="container">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <p>各ニュースの著作権は配信元に帰属します。本サイトは見出しと要約の紹介にとどめ、詳細は出典元でご確認ください。</p>
+    <p>最終更新: {{ page.date | dateJP }}</p>
+  </footer>
+</body>
+</html>

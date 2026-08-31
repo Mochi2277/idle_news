@@ -1,0 +1,19 @@
+{
+  "name": "idol-news-site",
+  "version": "0.1.0",
+  "description": "日韓アイドル情報を公式RSSから自動収集してまとめるプロトタイプサイト",
+  "type": "module",
+  "scripts": {
+    "fetch": "node scripts/fetch-feeds.mjs",
+    "build": "npm run fetch && eleventy",
+    "build:only": "eleventy",
+    "dev": "eleventy --serve",
+    "clean": "node -e \"require('fs').rmSync('_site',{recursive:true,force:true})\""
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "dependencies": {
+    "rss-parser": "^3.13.0"
+  }
+}
