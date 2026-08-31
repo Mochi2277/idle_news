@@ -91,11 +91,23 @@ a:hover { color: var(--pink); }
   background-clip: text;
   color: transparent;
 }
+.site-kicker {
+  margin: 10px 0 0;
+  font-family: "Space Grotesk", "Noto Sans JP", sans-serif;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
 .site-tagline {
-  margin: 12px auto 0;
-  max-width: 44ch;
+  margin: 8px auto 0;
+  max-width: 34em;
   color: var(--text-dim);
-  font-size: .88rem;
+  font-size: .86rem;
+  text-wrap: balance;
+  word-break: auto-phrase; /* 日本語を語句単位で改行(対応ブラウザ) */
+  line-break: strict;
 }
 
 /* --- レイアウト --- */

@@ -1,5 +1,6 @@
 {
-  "title": "日韓アイドル ニュースまとめ",
-  "description": "日本・韓国のアイドル関連ニュースを公式RSSから自動収集してまとめています。",
+  "title": "Idol Pulse - Daily J-Pop & K-Pop News",
+  "name": "Idol Pulse",
+  "description": "日本・韓国のアイドル関連ニュースを、公式RSSから自動で集めてまとめています。",
   "lang": "ja"
 }

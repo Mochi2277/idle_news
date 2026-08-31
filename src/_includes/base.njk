@@ -20,8 +20,9 @@
   <header class="site-header">
     <a class="wordmark" href="{{ '/' | url }}">
       <span class="wordmark-mark">▶</span>
-      <span class="wordmark-text">{{ site.title }}</span>
+      <span class="wordmark-text">{{ site.name or site.title }}</span>
     </a>
+    <p class="site-kicker">Daily J-Pop &amp; K-Pop News</p>
     <p class="site-tagline">{{ site.description }}</p>
   </header>
 
