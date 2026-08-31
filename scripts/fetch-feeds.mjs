@@ -225,9 +225,13 @@ function isExcluded(item) {
   return EXCLUDE.some((k) => hay.includes(k.toLowerCase()));
 }
 
-/** アイドル/アーティスト関連キーワードを含むか。 */
+/**
+ * アイドル/アーティスト関連キーワードを含むか。
+ * カテゴリ(categories)は配信元によって過剰に付与される(例: Danmee は K-ドラマ記事にも
+ * アイドル系タグが付く)ので、判定はタイトルと要約本文のみで行う。
+ */
 function isRelevant(item) {
-  const hay = haystack(item);
+  const hay = `${item.title || ""} ${item.contentSnippet || ""}`.toLowerCase();
   return KEYWORDS.some((k) => hay.includes(k.toLowerCase()));
 }
 
@@ -294,9 +298,18 @@ async function main() {
     return EXCLUDE.some((k) => hay.includes(k.toLowerCase()));
   };
 
+  // 現在 strict のフィード名。過去に緩い判定で取り込んだ記事も、いまの基準で無関係なら落とす。
+  const strictSources = new Set(active.filter((f) => f.mode === "strict").map((f) => f.name));
+  const staleStrict = (a) => {
+    if (!strictSources.has(a.source)) return false;
+    const hay = `${a.title || ""} ${a.summary || ""}`.toLowerCase();
+    return !KEYWORDS.some((k) => hay.includes(k.toLowerCase()));
+  };
+
   const cutoff = Date.now() - KEEP_DAYS * 864e5;
   const merged = [...byId.values()]
     .filter((a) => !excludedNow(a))
+    .filter((a) => !staleStrict(a))
     .filter((a) => new Date(a.date).getTime() >= cutoff)
     // グループ辞書の更新を過去記事にも反映(常に付け直す)
     .map((a) => ({ ...a, groups: groupsFor(`${a.title || ""} ${a.summary || ""}`) }))

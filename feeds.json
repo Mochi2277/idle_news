@@ -23,6 +23,28 @@
       "enabled": true
     },
     {
+      "name": "Real Sound 音楽",
+      "url": "https://realsound.jp/music/feed",
+      "region": "jp",
+      "mode": "loose",
+      "enabled": true
+    },
+    {
+      "_note": "韓国エンタメ(日本語)。K-ドラマ記事が多いので strict でK-POP関連のみ採用。",
+      "name": "Danmee",
+      "url": "https://danmee.jp/feed/",
+      "region": "kr",
+      "mode": "strict",
+      "enabled": true
+    },
+    {
+      "name": "NME K-POP",
+      "url": "https://www.nme.com/tag/k-pop/feed",
+      "region": "kr",
+      "mode": "strict",
+      "enabled": true
+    },
+    {
       "name": "Soompi",
       "url": "https://www.soompi.com/feed",
       "region": "kr",
