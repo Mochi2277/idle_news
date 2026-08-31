@@ -193,15 +193,24 @@ async function callGemini(prompt) {
     body: JSON.stringify(body)
   });
   if (!res.ok) {
-    throw new Error(`Gemini HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
+    throw new Error(`Gemini HTTP ${res.status}: ${(await res.text()).slice(0, 500)}`);
   }
   const data = await res.json();
-  const text = data?.candidates?.[0]?.content?.parts?.map((p) => p.text).join("") || "";
-  if (!text) throw new Error("Gemini: 空のレスポンス");
+  const cand = data?.candidates?.[0];
+  const text = cand?.content?.parts?.map((p) => p.text).join("") || "";
+  if (!text) {
+    const reason =
+      data?.promptFeedback?.blockReason || cand?.finishReason || "不明";
+    throw new Error(`Gemini: 本文なし (reason=${reason}) ${JSON.stringify(data).slice(0, 400)}`);
+  }
   return JSON.parse(text);
 }
 
 async function main() {
+  log(
+    `[column] model=${MODEL} apiKey=${API_KEY ? API_KEY.slice(0, 6) + "…(" + API_KEY.length + "文字)" : "なし"} ` +
+      `force=${FORCE} dryRun=${DRY_RUN}`
+  );
   if (!API_KEY && !DRY_RUN) {
     log("SKIP: GEMINI_API_KEY が未設定のためコラム生成をスキップします。");
     return;
@@ -210,9 +219,10 @@ async function main() {
   const articles = readJson(ARTICLES_FILE, []);
   const columns = readJson(COLUMNS_FILE, []);
   const today = jstDate();
+  log(`[column] articles=${articles.length} columns=${columns.length} today(JST)=${today}`);
 
   if (!FORCE && columns[0]?.date === today) {
-    log(`SKIP: 本日(${today})のコラムは既に存在します。`);
+    log(`SKIP: 本日(${today})のコラムは既に存在します。COLUMN_FORCE=1 で再生成できます。`);
     return;
   }
 
