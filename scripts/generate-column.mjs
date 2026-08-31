@@ -23,7 +23,7 @@ const COLUMNS_FILE = path.join(ROOT, "src", "_data", "columns.json");
 
 // OpenAI のキーがあればそちらを優先(有料アカウントで安定)。無ければ Gemini(無料)。
 const OPENAI_KEY = process.env.OPENAI_API_KEY || "";
-const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4o-mini";
+const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4o";
 
 const API_KEY = process.env.GEMINI_API_KEY || "";
 // GEMINI_MODEL を指定すればそれを最優先。指定が無ければ以下を順に試す。
