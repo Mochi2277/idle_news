@@ -39,8 +39,20 @@ const KEYWORDS = [
 
 const parser = new Parser({
   timeout: 15000,
-  headers: { "User-Agent": "idol-news-bot/0.1 (+https://example.com)" }
+  headers: {
+    "User-Agent":
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+    Accept: "application/rss+xml, application/xml, text/xml; q=0.9, */*; q=0.8"
+  }
 });
+
+// CI で rss-parser がソケットを掴んだままプロセスが終了しないことがあるので、
+// 全体の上限時間を設けて確実に終わらせる。unref で監視タイマー自体は event loop を延命しない。
+const WATCHDOG_MS = 90000;
+setTimeout(() => {
+  console.error(`watchdog: ${WATCHDOG_MS}ms を超えたため強制終了します`);
+  process.exit(1);
+}, WATCHDOG_MS).unref();
 
 function hash(str) {
   return crypto.createHash("sha1").update(str).digest("hex").slice(0, 12);
@@ -130,7 +142,9 @@ async function main() {
   console.log(`\n合計 ${merged.length} 件を ${path.relative(ROOT, OUT_FILE)} に書き出しました。`);
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+main()
+  .then(() => process.exit(0)) // 未クローズのソケットが残っても確実に終了させる
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
