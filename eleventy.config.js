@@ -27,6 +27,12 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("json", (v) => JSON.stringify(v));
 
+  // グループ名などを X 用ハッシュタグに(記号・空白を除去、# を前置)
+  eleventyConfig.addFilter("hashtag", (s) => {
+    const t = String(s || "").replace(/[^\p{L}\p{N}]+/gu, "");
+    return t ? "#" + t : "";
+  });
+
   return {
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },
     // GitHub Pages のプロジェクトサイト( https://<user>.github.io/idle_news/ )配下で配信されるため、

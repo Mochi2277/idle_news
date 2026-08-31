@@ -34,6 +34,10 @@
   };
   const slug = (s) =>
     String(s).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-+|-+$/g, "");
+  const hashtag = (s) => {
+    const t = String(s || "").replace(/[^\p{L}\p{N}]+/gu, "");
+    return t ? "#" + t : "";
+  };
 
   function readHash() {
     state.key = decodeURIComponent(location.hash.replace(/^#/, "")).trim() || "all";
@@ -158,7 +162,8 @@
           ? `<span class="tag tag-${c.region}">${c.region === "kr" ? "韓国" : "日本"}</span> `
           : "";
         const absUrl = new URL(c.slug + "/", location.href).href;
-        const shareText = `${c.title}\n${c.dek || ""}`;
+        const tags = [hashtag(c.topic), "#Idol_Pulse"].filter(Boolean).join(" ");
+        const shareText = `${c.title}\n${c.dek || ""}\n\n${tags}`;
         const shareHref =
           "https://twitter.com/intent/tweet?text=" +
           encodeURIComponent(shareText) +

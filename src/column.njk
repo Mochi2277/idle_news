@@ -11,7 +11,9 @@ eleventyComputed:
 ---
 
 {%- set colUrl = site.url + "/columns/" + col.slug + "/" -%}
-{%- set shareText = col.title + "\n" + (col.dek or "") -%}
+{%- set tags = "#Idol_Pulse" -%}
+{%- if col.topic -%}{%- set tags = (col.topic | hashtag) + " " + tags -%}{%- endif -%}
+{%- set shareText = col.title + "\n" + (col.dek or "") + "\n\n" + tags -%}
 
 <article class="container col-detail">
   <div class="col-topbar">
