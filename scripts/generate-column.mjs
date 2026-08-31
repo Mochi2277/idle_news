@@ -402,10 +402,22 @@ async function main() {
       return { n: x, title: s.title, source: s.source, url: s.url };
     });
 
+  const topic = String(result.topic || clusters[0].name);
+
+  // トピックに対応するクラスタの記事から、多数派の地域を求める
+  const norm = (s) => s.toLowerCase().replace(/\s+/g, "");
+  const picked =
+    clusters.find((c) => norm(c.name) === norm(topic) || norm(topic).includes(norm(c.name))) ||
+    clusters[0];
+  const rc = { jp: 0, kr: 0 };
+  for (const a of picked.items) if (rc[a.region] !== undefined) rc[a.region] += 1;
+  const region = rc.kr > rc.jp ? "kr" : "jp";
+
   const entry = {
     date: today,
     slug: today,
-    topic: String(result.topic || clusters[0].name),
+    topic,
+    region,
     title,
     dek: String(result.dek || "").trim(),
     body_md: body,

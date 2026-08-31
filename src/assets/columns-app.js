@@ -41,6 +41,8 @@
 
   function titleForKey(k) {
     if (k === "all") return "コラム";
+    if (k === "jp") return "日本のコラム";
+    if (k === "kr") return "韓国のコラム";
     if (k.startsWith("m:")) return ymLabel(k.slice(2)) + "のコラム";
     if (k.startsWith("d:")) return ymdLabel(k.slice(2)) + "のコラム";
     if (k.startsWith("t:")) {
@@ -52,6 +54,8 @@
 
   function matchesKey(c) {
     const k = state.key;
+    if (k === "jp") return c.region === "jp";
+    if (k === "kr") return c.region === "kr";
     if (k.startsWith("m:")) return (c.date || "").startsWith(k.slice(2));
     if (k.startsWith("d:")) return (c.date || "").startsWith(k.slice(2));
     if (k.startsWith("t:")) return slug(c.topic) === k.slice(2);
@@ -69,6 +73,8 @@
 
   function buildSidebar() {
     $("[data-count-all]").textContent = ALL.length;
+    $("[data-count-jp]").textContent = ALL.filter((c) => c.region === "jp").length;
+    $("[data-count-kr]").textContent = ALL.filter((c) => c.region === "kr").length;
 
     const months = new Map();
     const daysBy = new Map();
@@ -148,8 +154,11 @@
     listEl.innerHTML = items
       .map((c, i) => {
         const delay = Math.min(i, 12) * 28;
+        const rtag = c.region
+          ? `<span class="tag tag-${c.region}">${c.region === "kr" ? "韓国" : "日本"}</span> `
+          : "";
         return `<li class="col-card" style="animation-delay:${delay}ms">
-  <time>${esc(c.date)}</time>
+  <div class="col-card-meta">${rtag}<time>${esc(c.date)}</time></div>
   <h2><a href="${esc(c.slug)}/">${esc(c.title)}</a></h2>
   ${c.dek ? `<p>${esc(c.dek)}</p>` : ""}
   ${c.topic ? `<a class="col-card-topic" href="#t:${slug(c.topic)}">${esc(c.topic)}</a>` : ""}

@@ -195,6 +195,7 @@ a:hover { color: var(--pink); }
   border-color: var(--border-hi);
   background: var(--surface-hi);
 }
+.col-card-meta { display: flex; align-items: center; gap: 8px; }
 .col-card time { font-size: .74rem; color: var(--text-mute); }
 .col-card h2 { margin: 6px 0 6px; font-size: 1.1rem; line-height: 1.5; }
 .col-card h2 a { color: var(--text); }
