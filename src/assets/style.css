@@ -197,6 +197,39 @@ a:hover { color: var(--pink); }
 }
 .col-card-meta { display: flex; align-items: center; gap: 8px; }
 .col-card time { font-size: .74rem; color: var(--text-mute); }
+
+/* Xでシェア ボタン */
+.share-x {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border-hi);
+  background: var(--surface);
+  color: var(--text-dim);
+  font-size: .78rem;
+  font-weight: 600;
+  transition: color .14s, border-color .14s, background .14s;
+}
+.share-x:hover { color: #fff; background: #000; border-color: #000; }
+.share-x-sm {
+  margin-left: auto;
+  padding: 4px;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  color: var(--text-mute);
+}
+
+.col-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.col-topbar .col-kicker { margin: 0; }
 .col-card h2 { margin: 6px 0 6px; font-size: 1.1rem; line-height: 1.5; }
 .col-card h2 a { color: var(--text); }
 .col-card h2 a:hover { color: var(--pink); }

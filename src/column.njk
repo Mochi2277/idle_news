@@ -10,8 +10,17 @@ eleventyComputed:
   description: "{{ col.dek }}"
 ---
 
+{%- set colUrl = site.url + "/columns/" + col.slug + "/" -%}
+{%- set shareText = col.title + "\n" + (col.dek or "") -%}
+
 <article class="container col-detail">
-  <p class="col-kicker">コラム ・ {{ col.date }}</p>
+  <div class="col-topbar">
+    <p class="col-kicker">コラム ・ {{ col.date }}</p>
+    <a class="share-x" href="https://twitter.com/intent/tweet?text={{ shareText | urlencode }}&url={{ colUrl | urlencode }}" target="_blank" rel="noopener" aria-label="Xでシェア">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      <span>シェア</span>
+    </a>
+  </div>
   <h1>{{ col.title }}</h1>
   {% if col.dek %}<p class="col-dek">{{ col.dek }}</p>{% endif %}
 
