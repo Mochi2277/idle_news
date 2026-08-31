@@ -21,6 +21,10 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ARTICLES_FILE = path.join(ROOT, "src", "_data", "articles.json");
 const COLUMNS_FILE = path.join(ROOT, "src", "_data", "columns.json");
 
+// OpenAI のキーがあればそちらを優先(有料アカウントで安定)。無ければ Gemini(無料)。
+const OPENAI_KEY = process.env.OPENAI_API_KEY || "";
+const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4o-mini";
+
 const API_KEY = process.env.GEMINI_API_KEY || "";
 // GEMINI_MODEL を指定すればそれを最優先。指定が無ければ以下を順に試す。
 // (Google は旧モデルを予告なく新規利用不可にするため複数フォールバックを持つ)
@@ -28,7 +32,7 @@ const MODEL_CANDIDATES = [
   process.env.GEMINI_MODEL,
   "gemini-flash-latest",
   "gemini-3.6-flash",
-  "gemini-2.0-flash"
+  "gemini-2.5-flash-lite"
 ].filter(Boolean);
 const FORCE = process.env.COLUMN_FORCE === "1";
 const DRY_RUN = process.env.COLUMN_DRY_RUN === "1";
@@ -181,25 +185,58 @@ ${list}
 - 出力は指定のJSONのみ。`;
 }
 
+/** ```json フェンスや前後の余分な文字を取り除いてから JSON.parse する。 */
+function parseJsonLoose(text) {
+  let t = String(text).trim().replace(/^```(?:json)?/i, "").replace(/```$/, "").trim();
+  const a = t.indexOf("{");
+  const b = t.lastIndexOf("}");
+  if (a >= 0 && b > a) t = t.slice(a, b + 1);
+  return JSON.parse(t);
+}
+
+const REQUIRED_KEYS = ["topic", "title", "dek", "body_md", "used_sources"];
+
+function jsonFormatHint() {
+  return `\n\n出力は次のキーだけを持つJSONオブジェクトを1つ、他の文字なしで返す:
+{"topic": "選んだトピック名", "title": "見出し(40字以内)", "dek": "リード1〜2文",
+ "body_md": "本文(markdown, 500〜900字, 事実の文末に [1] のような出典番号)", "used_sources": [使った番号の配列]}`;
+}
+
+/** OpenAI Chat Completions (JSONモード)。 */
+async function callOpenAI(prompt) {
+  const res = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Authorization: `Bearer ${OPENAI_KEY}` },
+    body: JSON.stringify({
+      model: OPENAI_MODEL,
+      temperature: 0.4,
+      response_format: { type: "json_object" },
+      messages: [
+        {
+          role: "system",
+          content: "あなたは日本と韓国のアイドルを専門に扱うニュースメディアの編集者。指示に厳密に従い、JSONオブジェクトだけを返す。"
+        },
+        { role: "user", content: prompt + jsonFormatHint() }
+      ]
+    })
+  });
+  if (!res.ok) throw new Error(`OpenAI HTTP ${res.status}: ${(await res.text()).slice(0, 500)}`);
+  const data = await res.json();
+  const text = data?.choices?.[0]?.message?.content || "";
+  if (!text) throw new Error("OpenAI: 空のレスポンス");
+  return { result: parseJsonLoose(text), model: `openai:${OPENAI_MODEL}` };
+}
+
 async function callGeminiModel(model, prompt) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${API_KEY}`;
   const body = {
-    contents: [{ role: "user", parts: [{ text: prompt }] }],
+    contents: [{ role: "user", parts: [{ text: prompt + jsonFormatHint() }] }],
     generationConfig: {
       temperature: 0.4,
-      maxOutputTokens: 2048,
+      maxOutputTokens: 8192,
       responseMimeType: "application/json",
-      responseSchema: {
-        type: "object",
-        properties: {
-          topic: { type: "string" },
-          title: { type: "string" },
-          dek: { type: "string" },
-          body_md: { type: "string" },
-          used_sources: { type: "array", items: { type: "integer" } }
-        },
-        required: ["topic", "title", "dek", "body_md", "used_sources"]
-      }
+      // 思考型モデルが出力枠を思考で使い切って本文が切れるのを防ぐ
+      thinkingConfig: { thinkingBudget: 0 }
     }
   };
   const res = await fetch(url, {
@@ -212,22 +249,25 @@ async function callGeminiModel(model, prompt) {
   }
   const data = await res.json();
   const cand = data?.candidates?.[0];
-  const text = cand?.content?.parts?.map((p) => p.text).join("") || "";
+  const text = (cand?.content?.parts || []).map((p) => p.text || "").join("");
+  const finish = cand?.finishReason || data?.promptFeedback?.blockReason || "不明";
   if (!text) {
-    const reason =
-      data?.promptFeedback?.blockReason || cand?.finishReason || "不明";
-    throw new Error(`Gemini: 本文なし (reason=${reason}) ${JSON.stringify(data).slice(0, 400)}`);
+    throw new Error(`Gemini: 本文なし (finishReason=${finish}) ${JSON.stringify(data).slice(0, 400)}`);
   }
-  return { result: JSON.parse(text), model };
+  try {
+    return { result: parseJsonLoose(text), model };
+  } catch (e) {
+    throw new Error(`Gemini JSONパース失敗 (finishReason=${finish}, ${text.length}字): ${e.message}`);
+  }
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /**
  * モデル候補を順に試す。
- *  - 404(モデル廃止)         → すぐ次の候補へ
- *  - 429/500/503(一時的)     → 同じモデルを指数バックオフで最大3回リトライ、ダメなら次の候補へ
- *  - 400/403(リクエスト不正) → 即中断(リトライしても無駄)
+ *  - 403(権限/キー不正)  → 即中断
+ *  - 429/500/503(一時的) → 同じモデルを指数バックオフで最大3回リトライ、ダメなら次の候補へ
+ *  - それ以外(404/400/JSON失敗など) → 次の候補へ
  */
 async function callGemini(prompt) {
   let lastErr;
@@ -240,18 +280,14 @@ async function callGemini(prompt) {
       } catch (e) {
         lastErr = e;
         const status = (e.message.match(/HTTP (\d+)/) || [])[1];
-        if (status === "404") {
-          log(`  ${model}: 利用不可 → 次の候補へ`);
-          break;
-        }
-        if (status === "400" || status === "403") throw e;
+        if (status === "403") throw e;
         if (["429", "500", "503"].includes(status) && attempt < 3) {
           const wait = 4000 * attempt;
           log(`  ${model}: 一時エラー HTTP ${status} → ${wait / 1000}s 後に再試行 (${attempt}/3)`);
           await sleep(wait);
           continue;
         }
-        log(`  ${model}: 失敗(${e.message.slice(0, 90)}) → 次の候補へ`);
+        log(`  ${model}: 失敗(${e.message.slice(0, 110)}) → 次の候補へ`);
         break;
       }
     }
@@ -259,14 +295,29 @@ async function callGemini(prompt) {
   throw lastErr;
 }
 
+/** OpenAIキーがあればそれを優先、失敗時 or 無ければ Gemini。 */
+async function generateColumn(prompt) {
+  if (OPENAI_KEY) {
+    try {
+      return await callOpenAI(prompt);
+    } catch (e) {
+      log(`OpenAI失敗(${e.message.slice(0, 140)}) → Geminiにフォールバック`);
+    }
+  }
+  return await callGemini(prompt);
+}
+
 async function main() {
+  const provider = OPENAI_KEY
+    ? `OpenAI(${OPENAI_MODEL})` + (API_KEY ? " → Geminiフォールバック" : "")
+    : `Gemini[${MODEL_CANDIDATES.join(", ")}]`;
   log(
-    `[column] models=[${MODEL_CANDIDATES.join(", ")}] ` +
-      `apiKey=${API_KEY ? API_KEY.slice(0, 6) + "…(" + API_KEY.length + "文字)" : "なし"} ` +
+    `[column] provider=${provider} ` +
+      `openaiKey=${OPENAI_KEY ? "あり" : "なし"} geminiKey=${API_KEY ? API_KEY.length + "文字" : "なし"} ` +
       `force=${FORCE} dryRun=${DRY_RUN}`
   );
-  if (!API_KEY && !DRY_RUN) {
-    log("SKIP: GEMINI_API_KEY が未設定のためコラム生成をスキップします。");
+  if (!API_KEY && !OPENAI_KEY && !DRY_RUN) {
+    log("SKIP: GEMINI_API_KEY も OPENAI_API_KEY も未設定のためコラム生成をスキップします。");
     return;
   }
 
@@ -321,9 +372,9 @@ async function main() {
 
   let result, usedModel;
   try {
-    ({ result, model: usedModel } = await callGemini(prompt));
+    ({ result, model: usedModel } = await generateColumn(prompt));
   } catch (e) {
-    log(`ERROR: Gemini呼び出しに失敗: ${e.message}`);
+    log(`ERROR: 文章生成に失敗: ${e.message}`);
     return;
   }
 

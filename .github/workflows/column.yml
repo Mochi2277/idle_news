@@ -32,6 +32,9 @@ jobs:
 
       - name: Generate column
         env:
+          # OPENAI_API_KEY があればそちらを優先。無ければ GEMINI_API_KEY(無料)。
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
         run: node scripts/generate-column.mjs

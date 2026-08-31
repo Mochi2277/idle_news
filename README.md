@@ -34,13 +34,15 @@ scripts/generate-column.mjs
   5. 出典リンク付きで src/_data/columns.json に追記 → /columns/ と /columns/<公開日> を生成
 ```
 
-- `.github/workflows/column.yml` が毎日 07:00 JST に実行（`GEMINI_API_KEY` を Secrets に登録）。
-- モデルは `gemini-flash-latest` → `gemini-3.6-flash` → `gemini-2.0-flash` の順に自動フォールバック
-  （`GEMINI_MODEL` を指定すればそれを最優先）。旧モデルが新規利用不可になっても動き続ける。1日1本なら無料枠で十分。
+- `.github/workflows/column.yml` が毎日 07:00 JST に実行。
+- **文章生成プロバイダ**（Secrets に登録）:
+  - `OPENAI_API_KEY` があれば **OpenAI を優先**（既定モデル `gpt-4o-mini`、`OPENAI_MODEL` で変更可）。失敗時は Gemini へ。
+  - 無ければ `GEMINI_API_KEY`（無料）。`gemini-flash-latest` → `gemini-3.6-flash` → `gemini-2.5-flash-lite` を自動フォールバック。
+    思考型モデルで出力が切れないよう thinkingBudget=0 / maxOutputTokens=8192 で呼ぶ。
 - 本文の `[n]` は末尾の「参考記事」リンクに対応。各コラムに「AIが作成した下書き」の注記あり。
-- 生成物が不十分／APIキー未設定／当日分が既にある場合は何もせず正常終了（デプロイは止めない）。
+- 生成失敗／APIキー未設定／当日分が既にある場合は何もせず正常終了（デプロイは止めない）。
 - ローカル確認: `COLUMN_DRY_RUN=1 node scripts/generate-column.mjs`（API未使用、クラスタとプロンプトを表示）。
-  実生成は `COLUMN_FORCE=1 GEMINI_API_KEY=... node scripts/generate-column.mjs`。
+  実生成は `COLUMN_FORCE=1 OPENAI_API_KEY=... node scripts/generate-column.mjs`。
 
 ## フロントエンド
 
