@@ -6,6 +6,7 @@
   "scripts": {
     "fetch": "node scripts/fetch-feeds.mjs",
     "column": "node scripts/generate-column.mjs",
+    "post-x": "node scripts/post-to-x.mjs",
     "build": "npm run fetch && eleventy",
     "build:only": "eleventy",
     "dev": "eleventy --serve",

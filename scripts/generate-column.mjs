@@ -1,7 +1,7 @@
 /**
  * 1日1本の「コラム」を生成する。
  *
- *  1. articles.json から「昨日(JST)」の記事を取り出す(少なすぎる時だけ直近48hに拡大)
+ *  1. articles.json から「今日(JST)」の記事を取り出す(少なすぎる時だけ直近48hに拡大)
  *  2. グループタグでクラスタ化し、報道量(件数・媒体数・日韓横断)でトピック候補を上位抽出
  *  3. 候補記事の本文を用意(RSSの content:encoded、無ければ記事ページから抽出)
  *  4. Gemini に「候補から1トピック選び、参考記事だけを根拠にコラムを書く」よう依頼
@@ -168,7 +168,7 @@ function buildPrompt(candidateNames, sources, todayStr) {
     )
     .join("\n\n");
   return `あなたは日本と韓国のアイドルを専門に扱うニュースメディアの編集者だ。
-昨日1日の報道を振り返るコラムを1本執筆する。以下の「トピック候補」と「参考記事」だけを情報源にすること。
+本日の主な動きをまとめるコラムを1本執筆する。以下の「トピック候補」と「参考記事」だけを情報源にすること。
 本日の日付は ${todayStr}。各参考記事には配信日を [配信 YYYY-MM-DD] で示している。
 
 # トピック候補
@@ -335,19 +335,19 @@ async function main() {
     return;
   }
 
-  // 基本は「昨日(JST)の 00:00〜24:00」を対象にする
-  const yStart = jstMidnight(1);
-  const yEnd = jstMidnight(0);
-  const inYesterday = (a) => {
+  // 基本は「今日(JST)の 00:00〜現在」を対象にする(実行は毎日20時JST)
+  const dayStart = jstMidnight(0);
+  const dayEnd = jstMidnight(-1);
+  const inToday = (a) => {
     const t = new Date(a.date).getTime();
-    return t >= yStart && t < yEnd;
+    return t >= dayStart && t < dayEnd;
   };
-  let recent = articles.filter(inYesterday);
-  let windowLabel = `昨日 ${jstDate(new Date(yStart))} (JST)`;
+  let recent = articles.filter(inToday);
+  let windowLabel = `今日 ${today} (JST)`;
 
   if (recent.length < MIN_POOL) {
     recent = articles.filter((a) => new Date(a.date).getTime() >= Date.now() - FALLBACK_HOURS * 3600 * 1000);
-    windowLabel = `直近 ${FALLBACK_HOURS}h (昨日ぶんが ${MIN_POOL} 件未満のため拡大)`;
+    windowLabel = `直近 ${FALLBACK_HOURS}h (今日ぶんが ${MIN_POOL} 件未満のため拡大)`;
   }
   log(`対象記事: ${recent.length} 件 / ${windowLabel}`);
 
