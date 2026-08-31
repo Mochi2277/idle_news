@@ -221,21 +221,39 @@ async function callGeminiModel(model, prompt) {
   return { result: JSON.parse(text), model };
 }
 
-/** モデル候補を順に試す。404(モデル廃止)は次の候補へ、それ以外は即エラー。 */
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * モデル候補を順に試す。
+ *  - 404(モデル廃止)         → すぐ次の候補へ
+ *  - 429/500/503(一時的)     → 同じモデルを指数バックオフで最大3回リトライ、ダメなら次の候補へ
+ *  - 400/403(リクエスト不正) → 即中断(リトライしても無駄)
+ */
 async function callGemini(prompt) {
   let lastErr;
   for (const model of MODEL_CANDIDATES) {
-    try {
-      const out = await callGeminiModel(model, prompt);
-      if (model !== MODEL_CANDIDATES[0]) log(`  (フォールバックモデル ${model} を使用)`);
-      return out;
-    } catch (e) {
-      lastErr = e;
-      if (/HTTP 404/.test(e.message)) {
-        log(`  ${model}: 利用不可 → 次の候補へ`);
-        continue;
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        const out = await callGeminiModel(model, prompt);
+        if (model !== MODEL_CANDIDATES[0]) log(`  (フォールバックモデル ${model} を使用)`);
+        return out;
+      } catch (e) {
+        lastErr = e;
+        const status = (e.message.match(/HTTP (\d+)/) || [])[1];
+        if (status === "404") {
+          log(`  ${model}: 利用不可 → 次の候補へ`);
+          break;
+        }
+        if (status === "400" || status === "403") throw e;
+        if (["429", "500", "503"].includes(status) && attempt < 3) {
+          const wait = 4000 * attempt;
+          log(`  ${model}: 一時エラー HTTP ${status} → ${wait / 1000}s 後に再試行 (${attempt}/3)`);
+          await sleep(wait);
+          continue;
+        }
+        log(`  ${model}: 失敗(${e.message.slice(0, 90)}) → 次の候補へ`);
+        break;
       }
-      throw e;
     }
   }
   throw lastErr;
