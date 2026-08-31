@@ -38,6 +38,11 @@
     return `${y}年${Number(m)}月`;
   };
 
+  const ymdLabel = (ymd) => {
+    const [y, m, d] = ymd.split("-");
+    return `${y}年${Number(m)}月${Number(d)}日`;
+  };
+
   const regionLabel = (r) => (r === "jp" ? "日本" : r === "kr" ? "韓国" : "その他");
 
   /* ---------- ルーティング ---------- */
@@ -51,6 +56,7 @@
     if (key === "jp") return "日本のニュース";
     if (key === "kr") return "韓国のニュース";
     if (key.startsWith("m:")) return ymLabel(key.slice(2));
+    if (key.startsWith("d:")) return ymdLabel(key.slice(2));
     if (key.startsWith("g:")) {
       const g = ALL.flatMap((a) => a.groups || []).find((x) => x.slug === key.slice(2));
       return g ? g.name : "グループ";
@@ -64,6 +70,7 @@
     if (k === "jp") return a.region === "jp";
     if (k === "kr") return a.region === "kr";
     if (k.startsWith("m:")) return (a.date || "").startsWith(k.slice(2));
+    if (k.startsWith("d:")) return (a.date || "").startsWith(k.slice(2));
     if (k.startsWith("g:")) return (a.groups || []).some((g) => g.slug === k.slice(2));
     return true;
   }
@@ -85,20 +92,39 @@
     $("[data-count-jp]").textContent = ALL.filter((a) => a.region === "jp").length;
     $("[data-count-kr]").textContent = ALL.filter((a) => a.region === "kr").length;
 
-    // 年月
-    const months = new Map();
+    // 年月 → 日（月をクリックで日が開く）
+    const months = new Map(); // ym -> count
+    const daysBy = new Map(); // ym -> Map(ymd -> count)
     for (const a of ALL) {
-      const ym = (a.date || "").slice(0, 7);
-      if (ym) months.set(ym, (months.get(ym) || 0) + 1);
+      const ymd = (a.date || "").slice(0, 10);
+      if (ymd.length !== 10) continue;
+      const ym = ymd.slice(0, 7);
+      months.set(ym, (months.get(ym) || 0) + 1);
+      if (!daysBy.has(ym)) daysBy.set(ym, new Map());
+      const dm = daysBy.get(ym);
+      dm.set(ymd, (dm.get(ymd) || 0) + 1);
     }
     monthListEl.innerHTML = [...months.entries()]
       .sort((a, b) => b[0].localeCompare(a[0]))
-      .map(
-        ([ym, n]) =>
-          `<li><a class="sb-link" data-key="m:${ym}" href="#m:${ym}">${ymLabel(ym)}<span class="sb-count">${n}</span></a></li>`
-      )
+      .map(([ym, n]) => {
+        const dayHtml = [...daysBy.get(ym).entries()]
+          .sort((a, b) => b[0].localeCompare(a[0]))
+          .map(
+            ([ymd, dn]) =>
+              `<li><a class="sb-link sb-day" data-key="d:${ymd}" href="#d:${ymd}">${Number(
+                ymd.slice(8)
+              )}日<span class="sb-count">${dn}</span></a></li>`
+          )
+          .join("");
+        return `<li class="sb-month" data-ym="${ym}">
+  <div class="sb-row">
+    <a class="sb-link" data-key="m:${ym}" href="#m:${ym}">${ymLabel(ym)}<span class="sb-count">${n}</span></a>
+    <button class="sb-exp" type="button" aria-label="日付を開閉">▸</button>
+  </div>
+  <ul class="sb-sub" hidden>${dayHtml}</ul>
+</li>`;
+      })
       .join("");
-    if (months.size > 10) monthListEl.classList.add("is-scroll");
 
     // グループ
     const groups = new Map();
@@ -123,6 +149,18 @@
     document.querySelectorAll(".sb-link").forEach((el) => {
       el.classList.toggle("is-active", el.dataset.key === state.key);
     });
+    // 選択中が 月 or 日 なら、その月のサブリストを開く
+    const k = state.key;
+    const ym = k.startsWith("d:") ? k.slice(2, 9) : k.startsWith("m:") ? k.slice(2) : null;
+    if (ym) openMonth(ym);
+  }
+
+  function openMonth(ym) {
+    const li = monthListEl.querySelector(`.sb-month[data-ym="${ym}"]`);
+    if (!li || li.classList.contains("is-open")) return;
+    li.classList.add("is-open");
+    const sub = li.querySelector(".sb-sub");
+    if (sub) sub.hidden = false;
   }
 
   /* ---------- 一覧描画 ---------- */
@@ -187,6 +225,16 @@
     });
 
   window.addEventListener("hashchange", onRoute);
+
+  // 年月の ▸ ボタンで日リストを開閉
+  monthListEl.addEventListener("click", (e) => {
+    const btn = e.target.closest(".sb-exp");
+    if (!btn) return;
+    const li = btn.closest(".sb-month");
+    const sub = li.querySelector(".sb-sub");
+    const open = li.classList.toggle("is-open");
+    if (sub) sub.hidden = !open;
+  });
 
   searchEl.addEventListener("input", () => {
     state.q = searchEl.value.trim();

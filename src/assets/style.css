@@ -187,19 +187,33 @@ a:hover { color: var(--pink); }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 18px 20px;
+  animation: cardin .4s ease both;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.col-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-hi);
+  background: var(--surface-hi);
 }
 .col-card time { font-size: .74rem; color: var(--text-mute); }
 .col-card h2 { margin: 6px 0 6px; font-size: 1.1rem; line-height: 1.5; }
 .col-card h2 a { color: var(--text); }
 .col-card h2 a:hover { color: var(--pink); }
-.col-card p { margin: 0 0 8px; font-size: .88rem; color: var(--text-dim); }
+.col-card p { margin: 0 0 10px; font-size: .88rem; color: var(--text-dim); }
 .col-card-topic {
   display: inline-block;
   font-size: .7rem;
+  font-weight: 600;
   color: var(--text-mute);
   border: 1px solid var(--border-hi);
   border-radius: 999px;
-  padding: 2px 10px;
+  padding: 3px 12px;
+  transition: color .14s, border-color .14s, background .14s;
+}
+a.col-card-topic:hover {
+  color: #fff;
+  border-color: transparent;
+  background: var(--grad);
 }
 
 /* --- コラム本文 --- */
@@ -326,6 +340,33 @@ a:hover { color: var(--pink); }
   font-variant-numeric: tabular-nums;
 }
 .sb-link.is-active .sb-count { color: var(--cyan); }
+
+/* 年月 → 日 のツリー */
+.sb-month { list-style: none; }
+.sb-row { display: flex; align-items: center; }
+.sb-row .sb-link { flex: 1; min-width: 0; }
+.sb-exp {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border: 0;
+  background: transparent;
+  color: var(--text-mute);
+  font-size: .7rem;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: transform .15s, color .15s, background .15s;
+}
+.sb-exp:hover { color: var(--text); background: var(--surface-hi); }
+.sb-month.is-open .sb-exp { transform: rotate(90deg); color: var(--cyan); }
+.sb-sub {
+  list-style: none;
+  margin: 2px 0 6px;
+  padding: 0 0 0 12px;
+  border-left: 1px solid var(--border);
+}
+.sb-sub .sb-link { font-size: .8rem; padding: 5px 10px; color: var(--text-mute); }
+.sb-sub .sb-link:hover { color: var(--text); }
 
 .dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
 .dot-jp { background: var(--jp); }

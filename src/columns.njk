@@ -4,29 +4,50 @@ title: コラム
 permalink: /columns/
 ---
 
-<div class="container">
-  <div class="content-head">
-    <h1 class="content-title">コラム</h1>
-    <span class="content-count">{% if columns.length %}{{ columns.length }}本{% endif %}</span>
-  </div>
+<button class="menu-toggle" type="button" aria-label="メニュー">☰ メニュー</button>
 
-  <p class="col-note">
-    その日いちばん話題になったトピックについてのコラムです。
-    事実関係は各記事の出典元でご確認ください。
-  </p>
+<div class="layout" data-colapp>
+  <aside class="sidebar" data-sidebar>
+    <div class="sidebar-inner">
+      <div class="sb-search">
+        <input type="search" id="search" placeholder="コラムを検索" autocomplete="off">
+      </div>
 
-  {% if columns.length == 0 %}
-  <p class="empty">まだコラムがありません。最初のコラムは翌朝に公開されます。</p>
-  {% endif %}
+      <nav class="sb-block">
+        <ul class="sb-list">
+          <li><a href="#all" data-key="all" class="sb-link is-active">すべて <span class="sb-count" data-count-all>0</span></a></li>
+        </ul>
+      </nav>
 
-  <ul class="col-list">
-    {% for c in columns %}
-    <li class="col-card">
-      <time>{{ c.date }}</time>
-      <h2><a href="{{ ('/columns/' + c.slug + '/') | url }}">{{ c.title }}</a></h2>
-      {% if c.dek %}<p>{{ c.dek }}</p>{% endif %}
-      <span class="col-card-topic">{{ c.topic }}</span>
-    </li>
-    {% endfor %}
-  </ul>
+      <nav class="sb-block">
+        <h3 class="sb-title">年月</h3>
+        <ul class="sb-list" data-month-list></ul>
+      </nav>
+
+      <nav class="sb-block">
+        <h3 class="sb-title">トピック</h3>
+        <ul class="sb-list" data-topic-list></ul>
+      </nav>
+    </div>
+  </aside>
+
+  <section class="content">
+    <div class="content-head">
+      <h1 class="content-title" data-view-title>コラム</h1>
+      <span class="content-count" data-view-count></span>
+    </div>
+
+    <p class="col-note">
+      その日いちばん話題になったトピックについてのコラムです。
+      事実関係は各記事の出典元でご確認ください。
+    </p>
+
+    <p class="loading" data-loading>読み込み中…</p>
+    <p class="empty" data-empty hidden>該当するコラムがありません。最初のコラムは翌朝に公開されます。</p>
+
+    <ul class="col-list" data-list></ul>
+  </section>
 </div>
+
+<script>window.__COLUMNS_JSON = "{{ '/data/columns.json' | url }}";</script>
+<script src="{{ '/assets/columns-app.js' | url }}" defer></script>
