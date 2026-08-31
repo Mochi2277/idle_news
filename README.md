@@ -32,7 +32,6 @@ scripts/generate-column.mjs
   3. 候補記事の本文を用意（RSSの全文、無ければ記事ページから抽出）
   4. Gemini/OpenAI に「候補から1つ選び、参考記事だけを根拠に “今日の動き” コラムを書く」よう依頼（JSON出力）
   5. 出典リンク付きで src/_data/columns.json に追記 → /columns/ と /columns/<公開日> を生成
-  6. scripts/post-to-x.mjs が「今日のコラム」を X に投稿（タイトル + リード + URL、OAuth 1.0a）
 ```
 
 - `.github/workflows/column.yml` が毎日 20:00 JST に実行。
@@ -44,13 +43,6 @@ scripts/generate-column.mjs
 - 生成失敗／APIキー未設定／当日分が既にある場合は何もせず正常終了（デプロイは止めない）。
 - ローカル確認: `COLUMN_DRY_RUN=1 node scripts/generate-column.mjs`（API未使用、クラスタとプロンプトを表示）。
   実生成は `COLUMN_FORCE=1 OPENAI_API_KEY=... node scripts/generate-column.mjs`。
-
-### X(Twitter) 自動投稿
-
-- Secrets に `X_API_KEY` / `X_API_SECRET` / `X_ACCESS_TOKEN` / `X_ACCESS_SECRET`（OAuth 1.0a、Read and Write 権限）。
-- 「今日のコラム」で、まだ投稿していない（`posted_x` が無い）ものだけ投稿し、成功後に `posted_x:true` を記録。
-- 投稿できない条件（キー未設定・今日のコラムが無い・投稿済み）は何もせず正常終了。
-- ローカル確認: `X_DRY_RUN=1 X_FORCE=1 node scripts/post-to-x.mjs`（本文だけ表示）。
 
 ## フロントエンド
 

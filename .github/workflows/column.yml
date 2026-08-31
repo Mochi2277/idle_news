@@ -39,16 +39,6 @@ jobs:
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
         run: node scripts/generate-column.mjs
 
-      - name: Post to X
-        continue-on-error: true
-        env:
-          X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_API_SECRET: ${{ secrets.X_API_SECRET }}
-          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
-          SITE_URL: https://mochi2277.github.io/idle_news
-        run: node scripts/post-to-x.mjs
-
       - name: Commit data
         continue-on-error: true
         run: |
