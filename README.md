@@ -34,7 +34,8 @@ scripts/generate-column.mjs
 ```
 
 - `.github/workflows/column.yml` が毎日 07:00 JST に実行（`GEMINI_API_KEY` を Secrets に登録）。
-- モデルは既定 `gemini-2.5-flash`（Variables に `GEMINI_MODEL` を置けば変更可）。1日1本なら無料枠で十分。
+- モデルは `gemini-flash-latest` → `gemini-3.6-flash` → `gemini-2.0-flash` の順に自動フォールバック
+  （`GEMINI_MODEL` を指定すればそれを最優先）。旧モデルが新規利用不可になっても動き続ける。1日1本なら無料枠で十分。
 - 本文の `[n]` は末尾の「参考記事」リンクに対応。各コラムに「AIが作成した下書き」の注記あり。
 - 生成物が不十分／APIキー未設定／当日分が既にある場合は何もせず正常終了（デプロイは止めない）。
 - ローカル確認: `COLUMN_DRY_RUN=1 node scripts/generate-column.mjs`（API未使用、クラスタとプロンプトを表示）。

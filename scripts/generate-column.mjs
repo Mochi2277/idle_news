@@ -9,7 +9,7 @@
  *
  * GEMINI_API_KEY が無い / 対象記事が無い / 当日分が既にある 場合は何もせず正常終了する。
  * 予期しない失敗でもニュース側のデプロイを止めないよう、常に exit 0。
- * 環境変数: GEMINI_API_KEY(必須), GEMINI_MODEL(既定 gemini-2.5-flash),
+ * 環境変数: GEMINI_API_KEY(必須), GEMINI_MODEL(任意。既定は gemini-flash-latest ほかを順に試行),
  *           COLUMN_FORCE=1(当日分があっても再生成), COLUMN_DRY_RUN=1(API未使用でクラスタ確認)
  */
 import fs from "node:fs";
@@ -22,7 +22,14 @@ const ARTICLES_FILE = path.join(ROOT, "src", "_data", "articles.json");
 const COLUMNS_FILE = path.join(ROOT, "src", "_data", "columns.json");
 
 const API_KEY = process.env.GEMINI_API_KEY || "";
-const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+// GEMINI_MODEL を指定すればそれを最優先。指定が無ければ以下を順に試す。
+// (Google は旧モデルを予告なく新規利用不可にするため複数フォールバックを持つ)
+const MODEL_CANDIDATES = [
+  process.env.GEMINI_MODEL,
+  "gemini-flash-latest",
+  "gemini-3.6-flash",
+  "gemini-2.0-flash"
+].filter(Boolean);
 const FORCE = process.env.COLUMN_FORCE === "1";
 const DRY_RUN = process.env.COLUMN_DRY_RUN === "1";
 
@@ -166,8 +173,8 @@ ${list}
 - 出力は指定のJSONのみ。`;
 }
 
-async function callGemini(prompt) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
+async function callGeminiModel(model, prompt) {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${API_KEY}`;
   const body = {
     contents: [{ role: "user", parts: [{ text: prompt }] }],
     generationConfig: {
@@ -203,12 +210,33 @@ async function callGemini(prompt) {
       data?.promptFeedback?.blockReason || cand?.finishReason || "不明";
     throw new Error(`Gemini: 本文なし (reason=${reason}) ${JSON.stringify(data).slice(0, 400)}`);
   }
-  return JSON.parse(text);
+  return { result: JSON.parse(text), model };
+}
+
+/** モデル候補を順に試す。404(モデル廃止)は次の候補へ、それ以外は即エラー。 */
+async function callGemini(prompt) {
+  let lastErr;
+  for (const model of MODEL_CANDIDATES) {
+    try {
+      const out = await callGeminiModel(model, prompt);
+      if (model !== MODEL_CANDIDATES[0]) log(`  (フォールバックモデル ${model} を使用)`);
+      return out;
+    } catch (e) {
+      lastErr = e;
+      if (/HTTP 404/.test(e.message)) {
+        log(`  ${model}: 利用不可 → 次の候補へ`);
+        continue;
+      }
+      throw e;
+    }
+  }
+  throw lastErr;
 }
 
 async function main() {
   log(
-    `[column] model=${MODEL} apiKey=${API_KEY ? API_KEY.slice(0, 6) + "…(" + API_KEY.length + "文字)" : "なし"} ` +
+    `[column] models=[${MODEL_CANDIDATES.join(", ")}] ` +
+      `apiKey=${API_KEY ? API_KEY.slice(0, 6) + "…(" + API_KEY.length + "文字)" : "なし"} ` +
       `force=${FORCE} dryRun=${DRY_RUN}`
   );
   if (!API_KEY && !DRY_RUN) {
@@ -253,9 +281,9 @@ async function main() {
     return;
   }
 
-  let result;
+  let result, usedModel;
   try {
-    result = await callGemini(prompt);
+    ({ result, model: usedModel } = await callGemini(prompt));
   } catch (e) {
     log(`ERROR: Gemini呼び出しに失敗: ${e.message}`);
     return;
@@ -289,7 +317,7 @@ async function main() {
     dek: String(result.dek || "").trim(),
     body_md: body,
     sources: usedSources,
-    model: MODEL,
+    model: usedModel,
     generated_at: new Date().toISOString()
   };
 
