@@ -1,81 +1,286 @@
+/* ============================================================
+   日韓アイドル ニュースまとめ — K-POP風ダークテーマ
+   ============================================================ */
+
 :root {
-  --bg: #fafafa;
-  --fg: #1c1c1e;
-  --muted: #6b7280;
-  --card: #ffffff;
-  --border: #e5e7eb;
-  --accent: #d6336c;
-  --jp: #2563eb;
-  --kr: #dc2626;
-  --max: 760px;
+  --bg: #07070c;
+  --bg-2: #0e0e17;
+  --surface: #14141f;
+  --surface-hi: #1b1b2b;
+  --border: #26263a;
+  --border-hi: #3a3a57;
+  --text: #f4f4f8;
+  --text-dim: #a6a6bf;
+  --text-mute: #6f6f8a;
+
+  --pink: #ff2d8e;
+  --violet: #9b5cff;
+  --cyan: #22d3ee;
+  --jp: #4f8cff;
+  --kr: #ff3d7f;
+
+  --grad: linear-gradient(100deg, var(--pink), var(--violet) 55%, var(--cyan));
+  --max: 900px;
+  --radius: 16px;
 }
 
 * { box-sizing: border-box; }
 
+html { -webkit-text-size-adjust: 100%; }
+
 body {
   margin: 0;
-  font-family: -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Meiryo, sans-serif;
+  min-height: 100vh;
   background: var(--bg);
-  color: var(--fg);
-  line-height: 1.7;
+  color: var(--text);
+  font-family: "Noto Sans JP", "Space Grotesk", -apple-system, "Hiragino Kaku Gothic ProN",
+    "Yu Gothic UI", Meiryo, sans-serif;
+  line-height: 1.75;
+  letter-spacing: .01em;
+  overflow-x: hidden;
 }
 
-a { color: var(--accent); }
+a { color: var(--cyan); text-decoration: none; }
+a:hover { color: var(--pink); }
 
+/* --- 背景グロー --- */
+.bg-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(48rem 48rem at 12% -8%, rgba(255, 45, 142, .18), transparent 60%),
+    radial-gradient(42rem 42rem at 92% 4%, rgba(34, 211, 238, .14), transparent 60%),
+    radial-gradient(60rem 40rem at 50% 120%, rgba(155, 92, 255, .16), transparent 60%),
+    var(--bg);
+}
+
+/* --- ヘッダー --- */
 .site-header {
-  padding: 28px 20px 20px;
-  border-bottom: 1px solid var(--border);
-  background: var(--card);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 48px 20px 28px;
   text-align: center;
 }
-.site-title { font-size: 1.4rem; font-weight: 700; text-decoration: none; color: var(--fg); }
-.site-tagline { margin: 6px 0 0; color: var(--muted); font-size: .85rem; }
 
-.container { max-width: var(--max); margin: 0 auto; padding: 24px 20px 60px; }
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Space Grotesk", "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  letter-spacing: -.02em;
+  color: var(--text);
+}
+.wordmark:hover { color: var(--text); }
 
-.filters { display: flex; gap: 8px; margin-bottom: 20px; }
-.filter {
+.wordmark-mark {
+  display: grid;
+  place-items: center;
+  width: 1.5em;
+  height: 1.5em;
+  font-size: .6em;
+  border-radius: 10px;
+  background: var(--grad);
+  color: #fff;
+  box-shadow: 0 0 24px rgba(255, 45, 142, .45);
+}
+
+.wordmark-text {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.site-tagline {
+  margin: 14px auto 0;
+  max-width: 40ch;
+  color: var(--text-dim);
+  font-size: .9rem;
+}
+
+/* --- コンテナ --- */
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 8px 20px 80px;
+}
+
+/* --- フィルター --- */
+.filters {
+  position: sticky;
+  top: 12px;
+  z-index: 5;
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  margin: 0 0 28px;
+  background: rgba(14, 14, 23, .75);
+  backdrop-filter: blur(12px);
   border: 1px solid var(--border);
-  background: var(--card);
-  padding: 6px 16px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.filter {
+  border: 0;
+  background: transparent;
+  color: var(--text-dim);
+  padding: 8px 20px;
   border-radius: 999px;
   cursor: pointer;
+  font: inherit;
+  font-weight: 600;
   font-size: .85rem;
+  transition: color .15s, background .15s;
 }
-.filter.is-active { background: var(--fg); color: #fff; border-color: var(--fg); }
+.filter:hover { color: var(--text); }
+.filter.is-active {
+  color: #fff;
+  background: var(--grad);
+  box-shadow: 0 4px 18px rgba(155, 92, 255, .4);
+}
 
-.article-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+/* --- 記事リスト --- */
+.article-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
 
 .card {
-  background: var(--card);
+  position: relative;
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px 18px;
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
 }
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18px;
+  bottom: 18px;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--grad);
+  opacity: 0;
+  transition: opacity .18s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-hi);
+  background: var(--surface-hi);
+}
+.card:hover::before { opacity: 1; }
+
 .card-meta {
-  display: flex; align-items: center; gap: 10px;
-  font-size: .75rem; color: var(--muted); margin-bottom: 6px; flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: .72rem;
+  color: var(--text-mute);
+  margin-bottom: 8px;
 }
-.tag { padding: 1px 8px; border-radius: 4px; color: #fff; font-weight: 600; }
-.tag-jp { background: var(--jp); }
-.tag-kr { background: var(--kr); }
 
-.card-title { font-size: 1.05rem; margin: 4px 0 6px; line-height: 1.4; }
-.card-title a { text-decoration: none; color: var(--fg); }
-.card-title a:hover { color: var(--accent); }
-.card-summary { margin: 0; font-size: .9rem; color: #333; }
+.tag {
+  padding: 2px 9px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: .68rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.tag-jp { background: linear-gradient(120deg, #3b6fd6, var(--jp)); }
+.tag-kr { background: linear-gradient(120deg, #d62b6a, var(--kr)); }
 
-.empty { color: var(--muted); }
+.src { color: var(--text-dim); font-weight: 600; }
 
-.detail h1 { font-size: 1.4rem; line-height: 1.45; margin: 8px 0 16px; }
-.detail-summary { font-size: 1rem; }
+.card-title {
+  font-size: 1.08rem;
+  line-height: 1.5;
+  margin: 4px 0 8px;
+  font-weight: 700;
+}
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--pink); }
+
+.card-summary {
+  margin: 0;
+  font-size: .9rem;
+  color: var(--text-dim);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.empty {
+  color: var(--text-dim);
+  text-align: center;
+  padding: 40px 0;
+}
+.empty code {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+/* --- 記事詳細 --- */
+.detail { padding-top: 8px; }
+.detail h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.85rem);
+  line-height: 1.5;
+  margin: 14px 0 20px;
+  font-weight: 700;
+}
+.detail h1::after {
+  content: "";
+  display: block;
+  width: 68px;
+  height: 4px;
+  margin-top: 16px;
+  border-radius: 4px;
+  background: var(--grad);
+}
+.detail-summary { font-size: 1.02rem; color: var(--text); }
+
 .detail-source {
-  margin-top: 24px; padding: 14px 16px;
-  background: #fff0f5; border: 1px solid #f3c6d8; border-radius: 10px; font-size: .9rem;
+  margin-top: 28px;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: .92rem;
+  color: var(--text-dim);
 }
-.back { margin-top: 28px; font-size: .9rem; }
+.detail-source a { font-weight: 600; }
 
+.back { margin-top: 32px; font-size: .9rem; }
+.back a { color: var(--text-dim); }
+.back a:hover { color: var(--pink); }
+
+/* --- フッター --- */
 .site-footer {
-  max-width: var(--max); margin: 0 auto; padding: 20px; border-top: 1px solid var(--border);
-  color: var(--muted); font-size: .75rem; text-align: center;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+  border-top: 1px solid var(--border);
+  color: var(--text-mute);
+  font-size: .74rem;
+  text-align: center;
+}
+.site-footer .updated { margin-top: 6px; }
+
+@media (max-width: 480px) {
+  .filters { width: 100%; justify-content: space-between; }
+  .filter { flex: 1; padding: 8px 6px; }
 }

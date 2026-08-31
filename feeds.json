@@ -1,29 +1,55 @@
 {
-  "_comment": "収集元の公式RSS。region は jp / kr。増やす・減らすはここを編集するだけ。取得に失敗したフィードは自動でスキップされます。",
+  "_comment": "収集元の公式RSS。region は jp / kr。mode は strict(アイドル/アーティスト関連キーワードに一致した記事だけ) か loose(除外ワード以外は通す)。増減はここを編集するだけ。取得失敗フィードは自動スキップ。",
   "feeds": [
     {
       "name": "音楽ナタリー",
       "url": "https://natalie.mu/music/feed/news",
       "region": "jp",
+      "mode": "loose",
+      "enabled": true
+    },
+    {
+      "name": "The First Times",
+      "url": "https://thefirsttimes.jp/feed/",
+      "region": "jp",
+      "mode": "strict",
       "enabled": true
     },
     {
       "name": "日刊スポーツ 芸能",
       "url": "https://www.nikkansports.com/entertainment/atom.xml",
       "region": "jp",
+      "mode": "strict",
       "enabled": true
     },
     {
       "name": "Soompi",
       "url": "https://www.soompi.com/feed",
       "region": "kr",
+      "mode": "loose",
       "enabled": true
     },
     {
       "name": "Koreaboo",
       "url": "https://www.koreaboo.com/feed/",
       "region": "kr",
+      "mode": "loose",
       "enabled": true
+    },
+    {
+      "name": "KBIZoom",
+      "url": "https://kbizoom.com/feed/",
+      "region": "kr",
+      "mode": "loose",
+      "enabled": true
+    },
+    {
+      "_note": "Cloudflareにより時々403で弾かれるため停止中。試すなら enabled:true に。",
+      "name": "한국경제 연예",
+      "url": "https://www.hankyung.com/feed/entertainment",
+      "region": "kr",
+      "mode": "strict",
+      "enabled": false
     }
   ]
 }
