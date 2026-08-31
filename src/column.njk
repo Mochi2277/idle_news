@@ -1,0 +1,39 @@
+---
+layout: base.njk
+pagination:
+  data: columns
+  size: 1
+  alias: col
+permalink: "/columns/{{ col.slug }}/"
+eleventyComputed:
+  title: "{{ col.title }}"
+  description: "{{ col.dek }}"
+---
+
+<article class="container col-detail">
+  <p class="col-kicker">コラム ・ {{ col.date }}</p>
+  <h1>{{ col.title }}</h1>
+  {% if col.dek %}<p class="col-dek">{{ col.dek }}</p>{% endif %}
+
+  <div class="col-body">{{ col.body_md | columnBody | safe }}</div>
+
+  {% if col.sources.length %}
+  <section class="col-sources">
+    <h2>参考記事</h2>
+    <ul>
+      {% for s in col.sources %}
+      <li id="src-{{ s.n }}">
+        <span class="cite">[{{ s.n }}]</span>
+        <a href="{{ s.url }}" target="_blank" rel="noopener nofollow">{{ s.title }}</a>
+        <span class="src">— {{ s.source }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <p class="col-disclaimer">
+    この記事は上記の参考記事をもとに {{ col.model }} が作成した下書きです。誤りが含まれる可能性があります。
+  </p>
+  <p class="back"><a href="{{ '/columns/' | url }}">← コラム一覧</a></p>
+</article>

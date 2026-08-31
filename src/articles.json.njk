@@ -2,4 +2,8 @@
 permalink: /data/articles.json
 eleventyExcludeFromCollections: true
 ---
-{{ articles | json | safe }}
+{%- set out = [] -%}
+{%- for a in articles -%}
+  {%- set _ = out.push({ id: a.id, title: a.title, title_ja: a.title_ja, link: a.link, summary: a.summary, summary_ja: a.summary_ja, source: a.source, region: a.region, groups: a.groups, date: a.date }) -%}
+{%- endfor -%}
+{{ out | json | safe }}

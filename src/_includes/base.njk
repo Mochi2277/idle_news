@@ -24,6 +24,10 @@
     </a>
     <p class="site-kicker">Daily J-Pop &amp; K-Pop News</p>
     <p class="site-tagline">{{ site.description }}</p>
+    <nav class="site-nav">
+      <a href="{{ '/' | url }}" class="{{ 'is-active' if page.url == '/' }}">ニュース</a>
+      <a href="{{ '/columns/' | url }}" class="{{ 'is-active' if '/columns/' in page.url }}">コラム</a>
+    </nav>
   </header>
 
   {{ content | safe }}

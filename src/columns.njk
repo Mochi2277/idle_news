@@ -1,0 +1,32 @@
+---
+layout: base.njk
+title: コラム
+permalink: /columns/
+---
+
+<div class="container">
+  <div class="content-head">
+    <h1 class="content-title">コラム</h1>
+    <span class="content-count">{% if columns.length %}{{ columns.length }}本{% endif %}</span>
+  </div>
+
+  <p class="col-note">
+    その日いちばん話題になったトピックを選び、関連ニュースをもとにAIが下書きした読み物です。
+    事実関係は各記事の出典元でご確認ください。
+  </p>
+
+  {% if columns.length == 0 %}
+  <p class="empty">まだコラムがありません。最初のコラムは翌朝に公開されます。</p>
+  {% endif %}
+
+  <ul class="col-list">
+    {% for c in columns %}
+    <li class="col-card">
+      <time>{{ c.date }}</time>
+      <h2><a href="{{ ('/columns/' + c.slug + '/') | url }}">{{ c.title }}</a></h2>
+      {% if c.dek %}<p>{{ c.dek }}</p>{% endif %}
+      <span class="col-card-topic">{{ c.topic }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

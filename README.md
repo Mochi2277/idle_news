@@ -20,7 +20,25 @@ feeds.json ─▶ scripts/fetch-feeds.mjs ─▶ src/_data/articles.json ─▶ 
 - 英語（韓国系ソース）の見出し・要約は無料の翻訳API（MyMemory、失敗時はGoogle非公式）で
   日本語化し `title_ja` / `summary_ja` に保存。一度訳したら再利用するので、毎回の実行では
   新着分だけ翻訳する（1回あたり `TRANSLATE_MAX` 件まで）。無効化は `TRANSLATE = false`。
+- RSSに全文が入っている場合は `body` として保持（コラム生成用。クライアント配信用JSONからは除外）。
 - 取得に失敗したフィードは自動スキップ。
+
+## コラム（1日1本・AI生成）
+
+```
+scripts/generate-column.mjs
+  1. 直近44hの記事をグループタグでクラスタ化し、報道量(件数・媒体数・日韓横断)で上位トピックを抽出
+  2. 候補記事の本文を用意（RSSの全文、無ければ記事ページから抽出）
+  3. Gemini に「候補から1つ選び、参考記事だけを根拠に日本語コラムを書く」よう依頼（JSON出力）
+  4. 出典リンク付きで src/_data/columns.json に追記 → /columns/ と /columns/<日付>/ を生成
+```
+
+- `.github/workflows/column.yml` が毎日 07:00 JST に実行（`GEMINI_API_KEY` を Secrets に登録）。
+- モデルは既定 `gemini-2.5-flash`（Variables に `GEMINI_MODEL` を置けば変更可）。1日1本なら無料枠で十分。
+- 本文の `[n]` は末尾の「参考記事」リンクに対応。各コラムに「AIが作成した下書き」の注記あり。
+- 生成物が不十分／APIキー未設定／当日分が既にある場合は何もせず正常終了（デプロイは止めない）。
+- ローカル確認: `COLUMN_DRY_RUN=1 node scripts/generate-column.mjs`（API未使用、クラスタとプロンプトを表示）。
+  実生成は `COLUMN_FORCE=1 GEMINI_API_KEY=... node scripts/generate-column.mjs`。
 
 ## フロントエンド
 

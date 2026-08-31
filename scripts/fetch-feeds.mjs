@@ -21,6 +21,7 @@ const OUT_FILE = path.join(ROOT, "src", "_data", "articles.json");
 
 const MAX_ITEMS = 300;          // 保持する記事の最大数
 const SUMMARY_MAX = 280;        // 要約の最大文字数
+const BODY_MAX = 3500;          // コラム生成用に保持する本文の最大文字数
 const KEEP_DAYS = 120;          // これより古い記事は捨てる
 
 const TRANSLATE = true;         // 英語(韓国系)記事の見出し・要約を日本語へ自動翻訳する
@@ -294,30 +295,61 @@ function hash(str) {
   return crypto.createHash("sha1").update(str).digest("hex").slice(0, 12);
 }
 
+function decodeEntities(s = "") {
+  return (
+    String(s)
+      // WordPressの二重エンコード(&amp;#8230; など)を先に戻す
+      .replace(/&amp;/g, "&")
+      .replace(/&#x([0-9a-f]+);/gi, (_, h) => codePoint(parseInt(h, 16)))
+      .replace(/&#(\d+);/g, (_, n) => codePoint(Number(n)))
+      .replace(/&nbsp;/g, " ")
+      .replace(/&hellip;/g, "…")
+      .replace(/&(?:ldquo|rdquo|quot);/g, '"')
+      .replace(/&(?:lsquo|rsquo|apos);/g, "'")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+  );
+}
+
+function codePoint(n) {
+  try {
+    return Number.isFinite(n) ? String.fromCodePoint(n) : " ";
+  } catch {
+    return " ";
+  }
+}
+
 function stripHtml(s = "") {
-  return s
-    .replace(/<[^>]*>/g, " ")
-    .replace(/&nbsp;/g, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
+  return decodeEntities(String(s).replace(/<[^>]*>/g, " "))
     .replace(/\s+/g, " ")
     .trim();
 }
 
-/** いまはRSSの説明文を整形するだけ。将来ここをAI要約に差し替え可能。 */
-function summarize(item) {
-  const raw = item.contentSnippet || item.summary || item.content || item["content:encoded"] || "";
-  const text = stripHtml(raw)
-    // WordPress系フィード末尾の定型句を除去
+/** WordPress系フィード末尾の定型句などを除去。 */
+function cleanText(s) {
+  return stripHtml(s)
     .replace(/\s*The post\b.*$/i, "")
     .replace(/\s*(Read more|続きを読む|関連記事)\b.*$/i, "")
     .replace(/\s*\[[^\]]*\]$/, "")
     .trim();
+}
+
+/** カード用の短い要約。 */
+function summarize(item) {
+  const raw = item.contentSnippet || item.summary || item.content || item["content:encoded"] || "";
+  const text = cleanText(raw);
   if (text.length <= SUMMARY_MAX) return text;
   return text.slice(0, SUMMARY_MAX).replace(/\s+\S*$/, "") + "…";
+}
+
+/**
+ * コラム生成用の本文(RSSに全文が入っている場合のみ)。
+ * クライアント配信用JSONからは除外され、build時のみ使われる。
+ */
+function fullBody(item) {
+  const raw = item["content:encoded"] || item.content || "";
+  const text = cleanText(raw);
+  return text.length > 200 ? text.slice(0, BODY_MAX) : "";
 }
 
 function haystack(item) {
@@ -356,11 +388,13 @@ function toArticle(item, feed) {
   const date = dateStr ? new Date(dateStr) : new Date();
   const title = stripHtml(item.title || "(無題)");
   const summary = summarize(item);
+  const body = fullBody(item);
   return {
     id: hash(link),
     title,
     link,
     summary,
+    ...(body ? { body } : {}),
     source: feed.name,
     region: feed.region,
     groups: groupsFor(`${title} ${summary}`),

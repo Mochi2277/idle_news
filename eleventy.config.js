@@ -1,5 +1,17 @@
+import MarkdownIt from "markdown-it";
+
+const md = new MarkdownIt({ html: false, linkify: true, breaks: true });
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+
+  // コラム本文(AI生成の markdown 文字列)を安全にHTML化し、[n] を出典へのリンクにする
+  eleventyConfig.addFilter("columnBody", (s) => {
+    if (!s) return "";
+    return md
+      .render(String(s))
+      .replace(/\[(\d{1,2})\]/g, '<a class="cite" href="#src-$1">[$1]</a>');
+  });
 
   eleventyConfig.addFilter("dateJP", (iso) => {
     const d = new Date(iso);
