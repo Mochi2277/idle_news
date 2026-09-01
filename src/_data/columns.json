@@ -1,5 +1,110 @@
 [
   {
+    "date": "2026-09-02",
+    "slug": "2026-09-02",
+    "topic": "Stray Kids",
+    "region": "kr",
+    "title": "Stray Kids、国立競技場公演と新たな挑戦",
+    "dek": "Stray Kidsが国立競技場での初単独公演を成功させた。Felixの新曲リリースも話題に。",
+    "body_md": "Stray Kidsが8月29日と30日に東京の国立競技場でワールドツアー「Stray Kids World Tour ＜RUN IT＞ in JAPAN」を開催し、14万人を動員した[2][4]。海外男性アーティストとして初の快挙であり、K-POPの歴史に新たな1ページを刻んだ[5]。この公演では、彼らの代表曲や新曲が披露され、ファンの熱狂的な支持を受けた[5]。また、同公演には日本のアーティストLiSAも訪れ、彼らのストイックな姿勢を称賛した[4]。\n\n一方で、Stray KidsのメンバーであるFelixは新たなデジタルシングル「Slow It Down」をリリースした[1]。この曲は、急速に進む現代社会で立ち止まることの重要性をテーマにしており、女優のRoh Yoon Seoがミュージックビデオに出演している。Stray Kidsのプロジェクト「SKZ-PLAYER」の一環であり、彼らの音楽的な多様性とクリエイティビティを示すものとなっている[1]。\n\nしかし、空港でのトラブルも報じられている。Bangchanが空港での危険な出来事に言及し、Felixの荷物が蹴られるという事件が発生したことをファンに伝えた[3]。このような事態は、ファンやメンバーにとって大きな懸念材料であり、今後の安全対策が求められるだろう。\n\nStray Kidsは、音楽チャートでも成功を収めている。最新のミニアルバム「THIS & THAT」は、Billboard 200で3週連続トップ10入りを果たし、彼らの人気と影響力を証明している[6]。このような成功は、彼らがこれからも高みを目指し続けることを示している。\n\nStray Kidsの活動は、音楽業界における新たなスタンダードを作り出していると言える。彼らの音楽的挑戦やファンとの絆は、今後も多くの注目を集め続けるだろう。次のステージでどのような驚きを見せてくれるのか、期待が高まるばかりである。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "Watch: Stray Kids’ Felix Lends Roh Yoon Seo A Helping Hand In Heartwarming “Slow It Down” MV",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1867350wpp/watch-stray-kids-felix-lends-roh-yoon-seo-a-helping-hand-in-heartwarming-slow-it-down-mv"
+      },
+      {
+        "n": 2,
+        "title": "Stray Kids初の国立競技場単独公演に14万人、9年目もまだ高みを目指して走り続ける",
+        "source": "音楽ナタリー",
+        "url": "https://natalie.mu/music/news/687452"
+      },
+      {
+        "n": 3,
+        "title": "Stray Kids’ Bangchan Speaks Out On Dangerous Incident At Airport, Causes Concern",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/stray-kids-bangchan-calling-someone-kicked-luggage-airport/"
+      },
+      {
+        "n": 4,
+        "title": "Stray Kids8人が初の国立競技場での単独公演を完走！集合ショット公開＆駆けつけたLiSAも「みんなのストイックさ溢れてた」と絶賛",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000873513/"
+      },
+      {
+        "n": 5,
+        "title": "【ライブレポート】Stray Kids、海外男性アーティスト史上初の国立競技場単独ライブ開催！「目を疑うほどの光景」（バンチャン）",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/report/0000873632/"
+      },
+      {
+        "n": 6,
+        "title": "Stray Kids’ “THIS & THAT” Achieves Their Biggest 3rd Week Yet In Top 10 Of Billboard 200",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1866898wpp/stray-kids-this-that-achieves-their-biggest-3rd-week-yet-in-top-10-of-billboard-200"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-01T15:22:09.595Z"
+  },
+  {
+    "date": "2026-09-02",
+    "slug": "2026-09-02-2",
+    "topic": "少女時代",
+    "region": "kr",
+    "title": "少女時代の新ユニットHYORYSUが巻き起こす波紋",
+    "dek": "少女時代の新ユニットHYORYSUがデビュー曲「Skibidi」をリリースし、賛否両論を巻き起こしている。彼女たちの活動が示す意味を探る。",
+    "body_md": "少女時代の新ユニットHYORYSU（ヒョリス）が8月31日にデジタルシングル「Skibidi」をリリースしたが、これがオンラインで大きな論争を巻き起こしている[1]。このユニットは、ヒョヨン、ユリ、チェ・スヨンの3人から成り、彼女たちの愉快な魅力を最大限に引き出すことを目的としている[4]。特に「Skibidi」はハウス調からヒップホップへと移り変わる多彩な構成が話題となっているが、そのタイトルが一部のファンからは嘲笑を受けている[1]。\n\nこのユニットの誕生は、ヒョヨンの個人YouTubeチャンネル「HYO's Level Up」の企画から始まったプロジェクトであり、メンバーがポジションを巡って競い合う姿が注目を集めた[4]。彼女たちは8月22日に開催された「2026 CassCool Festival」で初めて「Skibidi」と「Lowkey In Love」を披露し、観客から好評を得ていた[4]。しかし、オンラインでの反応は分かれており、特に「Skibidi」のタイトルが物議を醸している[1]。\n\n少女時代は、デビュー以来多くのヒット曲を生み出し、K-POPのトップグループとしての地位を確立してきた。しかし、今回のHYORYSUのデビューは、彼女たちが新しい挑戦を続けていることを示している。ファンの中には、彼女たちの新しい試みを歓迎する声もあるが、一方で長年のファン層からは「客観的に状況を把握すべき」との意見も出ている[3]。このような反応は、少女時代が持つ影響力の大きさを物語っていると言えるだろう。\n\nHYORYSUのデビューは、少女時代が新たなステージに進むための試金石となるかもしれない。彼女たちの活動がどのように進化していくのか、そしてファンや業界がそれにどう反応するのか、今後の展開が注目される。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "Girls’ Generation HyoRiSoo’s New Song Sparks Heated Controversy After Release",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/girls-generation-hyorisoo-song-heated-controversy/"
+      },
+      {
+        "n": 3,
+        "title": "Girls’ Generation Member’s Witty Response To Malicious Comment Goes Viral",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/girls-generation-yuri-responds-hate-comment-hyorisu/"
+      },
+      {
+        "n": 4,
+        "title": "少女時代ヒョヨン、ユリ、チェ・スヨンからなる新ユニット“HYORYSU（ヒョリス）”本格的デビューを果たす！配信シングル「Skibidi」リリース",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000873614/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-01T15:22:18.816Z"
+  },
+  {
+    "date": "2026-09-02",
+    "slug": "2026-09-02-3",
+    "topic": "AKB48",
+    "region": "jp",
+    "title": "AKB48の平田侑希、事務所移籍の背景と意義",
+    "dek": "AKB48の17期生平田侑希が新事務所への移籍を発表した。これにより彼女のキャリアは新たな局面を迎えることになる。",
+    "body_md": "AKB48の17期生である平田侑希が、株式会社Mi－Soに事務所を移籍することを発表した[1]。平田は2022年にAKB48に加入し、翌年にはシングル「どうしても君が好きだ」で初選抜入りを果たし、2024年には正規メンバーに昇格している[1]。この移籍は、彼女がアイドルとしてのキャリアをさらに広げるための重要なステップとなる。  \n  \nAKB48のメンバーが事務所を移籍することは珍しいことではないが、平田のように比較的若いメンバーが移籍するケースは注目に値する。彼女は新たな環境で「より一層成長していきたい」と意欲を示しており、これが彼女のキャリアにどのような影響を与えるかが今後の焦点となる[1]。  \n  \nAKB48のメンバーが事務所を移籍する背景には、個々の活動の幅を広げるための戦略的な意図があると見るのが自然だろう。特に、平田のようにまだキャリアの初期段階にあるメンバーにとって、新しい事務所での経験は、アイドル活動だけでなく、女優やタレントとしての道を模索する上で重要な意味を持つ。  \n  \nまた、同じ日にSTU48の甲斐心愛も事務所を移籍しており、彼女は新たな環境での挑戦を楽しみにしているとコメントしている[2]。このような動きは、48グループ全体でメンバーの個々の成長を促すための一環として位置づけられるだろう。  \n  \n平田侑希の事務所移籍は、彼女自身の成長と新たな挑戦を求める姿勢を示すものであり、ファンにとっても彼女の新しい一面を楽しむ機会となるだろう。これからの彼女の活動に注目が集まる。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "AKB48の17期生平田侑希、事務所移籍を報告「より一層成長していきたい」",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/akb48/news/202609010001547.html"
+      },
+      {
+        "n": 2,
+        "title": "STU48 甲斐心愛、千葉恵里（AKB48）ら所属のNEXT LEAPへ移籍 新たなアーティスト写真も公開",
+        "source": "Real Sound 音楽",
+        "url": "https://realsound.jp/2026/09/post-2509240.html"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-01T15:22:37.059Z"
+  },
+  {
     "date": "2026-09-01",
     "slug": "2026-09-01",
     "topic": "Snow Man",
