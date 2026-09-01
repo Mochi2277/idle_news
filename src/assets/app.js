@@ -25,12 +25,19 @@
       "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
     }[c]));
 
-  const fmtDate = (iso) => {
+  /** ISO文字列(記事の date は UTC) を JST(UTC+9) の YYYY-MM-DD にそろえる。
+     年月/日サイドバーとフィルタ、カードの日付表示の基準をすべて JST に統一する。 */
+  const jstYmd = (iso) => {
     const d = new Date(iso);
     if (isNaN(d)) return "";
-    return `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, "0")}/${String(
-      d.getDate()
-    ).padStart(2, "0")}`;
+    return new Date(d.getTime() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+  };
+
+  const fmtDate = (iso) => {
+    const ymd = jstYmd(iso);
+    if (!ymd) return "";
+    const [y, m, d] = ymd.split("-");
+    return `${y}/${m}/${d}`;
   };
 
   const ymLabel = (ym) => {
@@ -69,8 +76,8 @@
     const k = state.key;
     if (k === "jp") return a.region === "jp";
     if (k === "kr") return a.region === "kr";
-    if (k.startsWith("m:")) return (a.date || "").startsWith(k.slice(2));
-    if (k.startsWith("d:")) return (a.date || "").startsWith(k.slice(2));
+    if (k.startsWith("m:")) return jstYmd(a.date).startsWith(k.slice(2));
+    if (k.startsWith("d:")) return jstYmd(a.date) === k.slice(2);
     if (k.startsWith("g:")) return (a.groups || []).some((g) => g.slug === k.slice(2));
     return true;
   }
@@ -96,7 +103,7 @@
     const months = new Map(); // ym -> count
     const daysBy = new Map(); // ym -> Map(ymd -> count)
     for (const a of ALL) {
-      const ymd = (a.date || "").slice(0, 10);
+      const ymd = jstYmd(a.date);
       if (ymd.length !== 10) continue;
       const ym = ymd.slice(0, 7);
       months.set(ym, (months.get(ym) || 0) + 1);

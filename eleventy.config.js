@@ -13,12 +13,15 @@ export default function (eleventyConfig) {
       .replace(/\[(\d{1,2})\]/g, '<a class="cite" href="#src-$1">[$1]</a>');
   });
 
+  // 記事の date は UTC。ビルドは UTC ランナーで走るため、明示的に JST(UTC+9) へ寄せて表示する。
   eleventyConfig.addFilter("dateJP", (iso) => {
     const d = new Date(iso);
     if (isNaN(d)) return "";
-    return `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, "0")}/${String(
-      d.getDate()
-    ).padStart(2, "0")}`;
+    const [y, m, day] = new Date(d.getTime() + 9 * 3600 * 1000)
+      .toISOString()
+      .slice(0, 10)
+      .split("-");
+    return `${y}/${m}/${day}`;
   });
 
   eleventyConfig.addFilter("regionLabel", (r) =>
