@@ -4,7 +4,8 @@
  *  1. articles.json から「今日(JST)の 00:00〜現在」の記事を取り出す(少なすぎる時だけ直近48hに拡大)
  *  2. グループタグでクラスタ化し、報道量(件数・媒体数・日韓横断)でトピックをスコア順に並べる
  *  3. 直近数本 + 今日すでに書いたトピックを除き、上位から不足本数ぶんを対象にする
- *  4. トピックごとに、その記事の本文を用意して AI にコラムを書かせる(1トピック=1本)
+ *  4. トピックごとに、当日記事の本文 + 同一グループの過去記事(直近90日・最大5本)を「背景」として用意し、
+ *     日韓エンタメに詳しいコラムニストの立場で、事実(出典番号つき)と見解を分けたコラムを AI に書かせる(1トピック=1本)
  *  5. 出典リンク付きで src/_data/columns.json に追記(slug: 今日=YYYY-MM-DD、2本目以降は -2, -3 …)
  *
  * API キーが無い / 対象記事が無い / 今日ぶんが既に COLUMN_COUNT 本ある 場合は何もせず正常終了。
@@ -41,10 +42,13 @@ const DRY_RUN = process.env.COLUMN_DRY_RUN === "1";
 const COLUMN_COUNT = Number(process.env.COLUMN_COUNT || 3); // 1日に作る最大本数(ネタが無ければ減る)
 const FALLBACK_HOURS = 48;           // 今日ぶんが少なすぎる時だけ、この時間まで広げる
 const MIN_POOL = 20;                 // これ未満なら FALLBACK_HOURS に拡大
-const MAX_ARTICLES_PER_CLUSTER = 7;  // 1トピックあたりの参考記事数
+const MAX_ARTICLES_PER_CLUSTER = 7;  // 1トピックあたりの参考記事数(当日分)
 const MIN_CLUSTER_SIZE = 2;          // これ未満のクラスタは無視
 const MAX_EXTRACT_FETCHES = 30;      // 記事ページ抽出の最大回数(礼儀)
-const SOURCE_TEXT_MAX = 1200;        // 1記事あたり AI に渡す本文の最大文字数
+const SOURCE_TEXT_MAX = 1200;        // 当日記事: AI に渡す本文の最大文字数
+const BG_TEXT_MAX = 500;             // 背景記事: 同上(短め)
+const MAX_BACKGROUND = 5;            // 1トピックにつき付ける背景(過去)記事の最大数
+const BACKGROUND_DAYS = 90;          // 背景記事としてさかのぼる日数
 const KEEP_COLUMNS = 120;
 const AVOID_RECENT_TOPICS = 6;       // 直近N本と同じトピックは避ける
 
@@ -130,60 +134,99 @@ async function extractBody(url) {
   }
 }
 
-/** 候補記事に本文を用意し、番号付きソース一覧を作る。 */
-async function prepareSources(clusters) {
-  let n = 0;
-  let fetches = 0;
-  const out = [];
-  for (const c of clusters) {
-    const picked = c.items.slice(0, MAX_ARTICLES_PER_CLUSTER);
-    for (const a of picked) {
-      n += 1;
-      let text = (a.body || "").trim();
-      if (text.length < 400 && fetches < MAX_EXTRACT_FETCHES) {
-        fetches += 1;
-        const ex = await extractBody(a.link);
-        if (ex) text = ex;
-        await new Promise((r) => setTimeout(r, 400));
-      }
-      if (!text) text = a.summary || a.title;
-      out.push({
-        n,
-        cluster: c.name,
-        title: a.title_ja || a.title,
-        source: a.source,
-        url: a.link,
-        date: (a.date || "").slice(0, 10),
-        text: text.slice(0, SOURCE_TEXT_MAX)
-      });
-    }
+/** 1記事の本文テキストを用意する。短ければ実ページから抽出して補う。 */
+async function textFor(a, { maxLen, allowFetch, fetchState }) {
+  let text = (a.body || "").trim();
+  if (text.length < 400 && allowFetch && fetchState.n < MAX_EXTRACT_FETCHES) {
+    fetchState.n += 1;
+    const ex = await extractBody(a.link);
+    if (ex) text = ex;
+    await new Promise((r) => setTimeout(r, 400));
   }
+  if (!text) text = a.summary || a.title;
+  return String(text).slice(0, maxLen);
+}
+
+/**
+ * 1トピック分のソースを、通し番号つきのフラット配列で返す。
+ *  - kind:"today"      … 当日ウィンドウの記事。事実の主たる根拠。短い本文はページ抽出で補う。
+ *  - kind:"background" … 同一グループの過去記事(直近 BACKGROUND_DAYS 日 / 最大 MAX_BACKGROUND 本)。
+ *                        経緯・文脈の把握用。保存済みの本文/要約のみ使い、ページ抽出はしない。
+ */
+async function prepareSources(cluster, allArticles, dayStartMs) {
+  const fetchState = { n: 0 };
+  const out = [];
+  let n = 0;
+
+  const todayItems = cluster.items.slice(0, MAX_ARTICLES_PER_CLUSTER);
+  const todayIds = new Set(todayItems.map((a) => a.id));
+  for (const a of todayItems) {
+    n += 1;
+    out.push({
+      n,
+      kind: "today",
+      cluster: cluster.name,
+      title: a.title_ja || a.title,
+      source: a.source,
+      url: a.link,
+      date: (a.date || "").slice(0, 10),
+      text: await textFor(a, { maxLen: SOURCE_TEXT_MAX, allowFetch: true, fetchState })
+    });
+  }
+
+  const bgCutoff = Date.now() - BACKGROUND_DAYS * 864e5;
+  const background = (allArticles || [])
+    .filter((a) => !todayIds.has(a.id))
+    .filter((a) => (a.groups || []).some((g) => g.slug === cluster.slug))
+    .filter((a) => {
+      const t = new Date(a.date).getTime();
+      return Number.isFinite(t) && t < dayStartMs && t >= bgCutoff;
+    })
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, MAX_BACKGROUND);
+
+  for (const a of background) {
+    n += 1;
+    out.push({
+      n,
+      kind: "background",
+      cluster: cluster.name,
+      title: a.title_ja || a.title,
+      source: a.source,
+      url: a.link,
+      date: (a.date || "").slice(0, 10),
+      text: await textFor(a, { maxLen: BG_TEXT_MAX, allowFetch: false, fetchState })
+    });
+  }
+
   return out;
 }
 
 function buildPrompt(topicName, sources, todayStr) {
-  const list = sources
-    .map(
-      (s) =>
-        `【${s.n}】[配信 ${s.date || "不明"}] (${s.source}) ${s.title}\n${s.text}`
-    )
-    .join("\n\n");
-  return `あなたは日本と韓国のアイドルを専門に扱うニュースメディアの編集者だ。
-「${topicName}」に関する本日の動きをまとめるコラムを1本執筆する。以下の「参考記事」だけを情報源にすること。
-本日の日付は ${todayStr}。各参考記事には配信日を [配信 YYYY-MM-DD] で示している。
+  const fmt = (s) =>
+    `【${s.n}】[配信 ${s.date || "不明"}] (${s.source}) ${s.title}\n${s.text}`;
+  const todayList = sources.filter((s) => s.kind !== "background").map(fmt).join("\n\n");
+  const bg = sources.filter((s) => s.kind === "background");
+  const bgList = bg.length ? bg.map(fmt).join("\n\n") : "(なし)";
+  return `あなたは、日本と韓国のポップカルチャーとアイドルシーンを長年取材してきたコラムニストだ。
+署名コラムとして「${topicName}」をめぐる最新の動きを取り上げ、その背景と意味を読者にかみ砕いて伝える。
+本日の日付は ${todayStr}。各記事には配信日を [配信 YYYY-MM-DD] で示している。
 
-# 参考記事
-${list}
+# 本日の参考記事(事実の根拠はここから取る)
+${todayList}
 
-# 執筆ルール
+# 背景記事(経緯・文脈の把握に使う。古い情報なので最新の状況と混同しない)
+${bgList}
+
+# 書き方
 - topic は "${topicName}" とする。
-- 本文は日本語で 500〜900 文字。
-- 文体は「である・だ」調（常体）で統一する。「です・ます」調は使わない。
-- 事実は参考記事に明記されている内容だけを書く。推測・憶測、参考記事に無い固有名詞は書かない。
-- 年号・年月日・数値は、参考記事に明記がある場合だけそのまま書く。明記がなければ「今年11月」「先日」「来月」のように相対表現にする。西暦を推測で補わない。
-- 事実を述べた文の末尾に、根拠となる参考記事の番号を [1] [2] のように付ける。
-- 直接引用は1文以内・「」でくくる。参考記事の文章をそのまま長く写さない。
-- 中立的なトーン。誇張・断定・煽りを避ける。見出し(title)と dek も「である」調にする。見出しは40文字以内。
+- 本文は日本語・markdown で 900〜1400 文字。文体は「である・だ」調（常体）で統一する。「です・ます」調は使わない。
+- 構成の目安: (1) 本日何が起きたか (2) これまでの経緯・文脈 (3) コラムニストとしての見立て・意味づけ (4) 結び。段落は2〜4個。
+- 事実（出来事・発言・数値・日程）は「本日の参考記事」または「背景記事」に明記されたものだけを書き、その文末に根拠の番号を [1] [2] のように付ける。
+- 「見立て」「意味づけ」は書いてよいが、筆者の解釈だと分かる書き方にする（「〜と位置づけられる」「〜と見るのが自然だろう」等）。解釈だけの文には出典番号を付けない。
+- 未発表の予定、出るか分からない数字、関係者の内心、確認できない噂は書かない。参考記事に無い固有名詞・西暦は補わない。年月日が不明なものは「今年」「先日」「来月」のように相対表現にする。
+- 直接引用は1文以内・「」でくくる。原文をそのまま長く写さない。
+- 断定的な煽り・誇張は避ける。見出し(title)は40文字以内、dek はリード1〜2文。いずれも「である」調にする。
 - 出力は指定のJSONのみ。`;
 }
 
@@ -201,7 +244,7 @@ const REQUIRED_KEYS = ["topic", "title", "dek", "body_md", "used_sources"];
 function jsonFormatHint() {
   return `\n\n出力は次のキーだけを持つJSONオブジェクトを1つ、他の文字なしで返す:
 {"topic": "選んだトピック名", "title": "見出し(40字以内)", "dek": "リード1〜2文",
- "body_md": "本文(markdown, 500〜900字, 事実の文末に [1] のような出典番号)", "used_sources": [使った番号の配列]}`;
+ "body_md": "本文(markdown, 900〜1400字, 事実の文末に [1] のような出典番号)", "used_sources": [使った番号の配列]}`;
 }
 
 /** OpenAI Chat Completions (JSONモード)。 */
@@ -216,7 +259,7 @@ async function callOpenAI(prompt) {
       messages: [
         {
           role: "system",
-          content: "あなたは日本と韓国のアイドルを専門に扱うニュースメディアの編集者。指示に厳密に従い、JSONオブジェクトだけを返す。"
+          content: "あなたは日本と韓国のポップカルチャー/アイドルシーンを長年取材してきたコラムニスト。指示に厳密に従い、事実と見解を分けて書き、JSONオブジェクトだけを返す。"
         },
         { role: "user", content: prompt + jsonFormatHint() }
       ]
@@ -377,8 +420,9 @@ async function main() {
 
   if (DRY_RUN) {
     for (const c of targets) {
-      const src = await prepareSources([c]);
-      log(`\n===== DRY RUN: 「${c.name}」のプロンプト =====\n`);
+      const src = await prepareSources(c, articles, dayStart);
+      const bgN = src.filter((s) => s.kind === "background").length;
+      log(`\n===== DRY RUN: 「${c.name}」のプロンプト (当日 ${src.length - bgN}本 / 背景 ${bgN}本) =====\n`);
       log(buildPrompt(c.name, src, today));
     }
     return;
@@ -400,7 +444,9 @@ async function main() {
 
   const made = [];
   for (const cluster of targets) {
-    const src = await prepareSources([cluster]);
+    const src = await prepareSources(cluster, articles, dayStart);
+    const bgN = src.filter((s) => s.kind === "background").length;
+    if (bgN) log(`  ${cluster.name}: 背景記事 ${bgN} 本を追加`);
     let result, usedModel;
     try {
       ({ result, model: usedModel } = await generateColumn(buildPrompt(cluster.name, src, today)));

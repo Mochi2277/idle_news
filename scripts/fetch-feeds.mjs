@@ -24,9 +24,11 @@ const SUMMARY_MAX = 280;        // 要約の最大文字数
 const BODY_MAX = 3500;          // コラム生成用に保持する本文の最大文字数
 const KEEP_DAYS = 120;          // これより古い記事は捨てる
 
-const TRANSLATE = true;         // 英語(韓国系)記事の見出し・要約を日本語へ自動翻訳する
-const TRANSLATE_MAX = 50;       // 1回の実行で翻訳するフィールド数の上限(無料枠・レート制限の保護)
-                               // 既訳はキャッシュされるので、数回の実行で全記事が日本語化される
+// 英語記事の自動翻訳。無料の機械翻訳(MyMemory / 非公式Google)の品質が実用に耐えないため無効化し、
+// 英語記事は原文のまま表示する。再開する場合は true に戻すこと(既訳キャッシュの仕組みは残してある)。
+// false の間は、過去に付いた title_ja / summary_ja も書き出し時に取り除き、表示を英語へそろえる。
+const TRANSLATE = false;
+const TRANSLATE_MAX = 50;       // (TRANSLATE=true 時)1回の実行で翻訳するフィールド数の上限
 
 /**
  * mode:"strict" のフィードで「アイドル/アーティスト関連」と判定するためのキーワード。
@@ -326,7 +328,17 @@ async function translateToJa(text) {
 
 /** merged の英語記事に title_ja / summary_ja を付与(既訳はスキップ=キャッシュ)。 */
 async function translateArticles(articles) {
-  if (!TRANSLATE) return;
+  if (!TRANSLATE) {
+    // 翻訳を無効化している間は、過去に付いた訳文を取り除いて表示を英語へそろえる。
+    let removed = 0;
+    for (const a of articles) {
+      if ("title_ja" in a || "summary_ja" in a) removed += 1;
+      delete a.title_ja;
+      delete a.summary_ja;
+    }
+    if (removed) console.log(`翻訳: 無効化中のため既訳 ${removed} 件を除去(英語表示)`);
+    return;
+  }
   let done = 0;
   for (const a of articles) {
     if (translateBlocked || translateBudget <= 0) break;
