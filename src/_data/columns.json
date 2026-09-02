@@ -1,5 +1,104 @@
 [
   {
+    "date": "2026-09-02",
+    "slug": "2026-09-02",
+    "topic": "LE SSERAFIM",
+    "region": "jp",
+    "title": "LE SSERAFIM新作で示す進化と挑戦",
+    "dek": "LE SSERAFIMが新シングル「Made My Night」のビジュアルと音源を公開した。彼女たちの進化と挑戦が見える。",
+    "body_md": "本日、LE SSERAFIMが2ndシングル「Made My Night」の新たなビジュアルコンセプト「CHEMICAL NIGHT」を公開した[1]。このコンセプトは、メンバーたちが「何かに気づく瞬間」を経て自由になっていく姿を描いており、光を活用した柔らかく神秘的な雰囲気が特徴である[1]。また、実験室を彷彿とさせる小道具や2000年代のレトロなファッションが、コンセプト名に込められた化学や実験を表現している[1]。さらに、収録曲「Made My Night」と「AEIOU」のトラックサンプラーが公開され、前者はポップダンスの中毒性、後者はユーモア溢れるハウスサウンドが特徴である[1]。\n\nLE SSERAFIMのこれまでの活動を振り返ると、彼女たちは常に新しい挑戦を続けてきた。今回のリリースにおいても、人気ゲーム「オーバーウォッチ」とのコラボレーションが再び実現し、MVを共同制作することが発表された[2]。このコラボレーションは、2023年に「Perfect Night」を発表した際にも行われており、その際にはK-POPアーティストとして初めて「BlizzCon」のステージでパフォーマンスを披露している[2]。\n\nこれらの動きは、LE SSERAFIMが単なるアイドルグループにとどまらず、ポップカルチャーの枠を超えた存在へと進化していることを示していると位置づけられる。彼女たちは音楽だけでなく、ビジュアルやコラボレーションを通じて新たな価値を創造し続けている。特に「CHEMICAL NIGHT」のビジュアルは、現実と非現実の境界を行き来するかのような映像美を誇り、視覚的にも聴覚的にもファンを魅了する要素が満載である。\n\n今後、LE SSERAFIMは9月7日にハイライトメドレー、9月8日にMVティザー映像を公開する予定であり、これらのコンテンツがどのように彼女たちの進化をさらに押し進めるのか注目される[1]。彼女たちの挑戦は、K-POPシーンに新たな風を吹き込むと見るのが自然だろう。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "LE SSERAFIM「Made My Night」ふたつ目のビジュアルコンセプト「CHEMICAL NIGHT」の写真＆映像公開",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000874901/"
+      },
+      {
+        "n": 2,
+        "title": "【韓流】LE SSERAFIMが人気ゲーム「オーバーウオッチ」と２度目のコラボ",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202609020000051.html"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-02T11:26:34.543Z"
+  },
+  {
+    "date": "2026-09-02",
+    "slug": "2026-09-02-2",
+    "topic": "SixTONES",
+    "region": "jp",
+    "title": "SixTONES、次々と新たな挑戦を続ける",
+    "dek": "SixTONESが多方面での活躍を見せる。テレビ出演や新曲披露、映画主演と多忙な日々を送る彼らの動向を追う。",
+    "body_md": "SixTONESが、9月3日に放送される『THE突破ファイル』に松村北斗がゲスト出演することが話題だ。松村は、探知犬の知られざる能力に驚き、救助者たちの行動に感銘を受けたと語っている[1]。また、同日には『Star Song Special Season3』にグループとして初登場し、最新曲「Dance Forever」をフルコーラスで披露する予定である[2]。さらに、9月2日にはTBS『世界くらべてみたらSP』でクロアチアロケに参加し、メンバー全員が現地での撮影に挑んだ[7]。  \n  \nこれまでのSixTONESは、音楽活動のみならず、映画やテレビ番組への出演を通じて多様な表現活動を展開してきた。松村北斗は今田美桜とW主演を務める映画『白鳥とコウモリ』が9月4日に公開される予定であり、主題歌「灰色」も注目を集めている[4]。また、彼らは9月7日放送の『CDTVライブ！ライブ！』で新曲「マイオンリー」を披露することも決定している[5]。  \n  \nこのように、SixTONESは音楽、映画、バラエティと幅広いジャンルで活躍し続けている。彼らの活動は、単なるアイドルグループの枠を超え、エンターテインメント全般における存在感を増していると位置づけられる。特に、メンバーそれぞれが個々の活動を通じて個性を発揮し、グループ全体の魅力を高めている点が注目される。  \n  \n今後も彼らの活躍から目が離せない。新たな挑戦を続けるSixTONESが、どのようにファンを魅了し続けるのか、引き続き注目していきたい。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "SixTONES松村北斗『THE突破ファイル』でVTRに釘付け「（救助者たちの行動に）勇気をもらいました」",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000874993/"
+      },
+      {
+        "n": 2,
+        "title": "SixTONESが番組初登場『Star Song Special Season3』最新曲をフルコーラス披露！関西ジュニアにイジられまくる松村北斗",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000874556/"
+      },
+      {
+        "n": 4,
+        "title": "松村北斗×今田美桜W主演映画『白鳥とコウモリ』よりミセス大森元貴が手掛けた主題歌「灰色」特別映像解禁",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000873987/"
+      },
+      {
+        "n": 5,
+        "title": "SixTONES、次回『CDTVライブ！ライブ！』で新曲「マイオンリー」を歌唱！EBiDAN、AKB48、T.M.Revolutionはおかわりライブ",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000873736/"
+      },
+      {
+        "n": 7,
+        "title": "SixTONES、6人全員で『世界くらべてみたらSP』でクロアチアロケに参加",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000873272/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-02T11:26:40.983Z"
+  },
+  {
+    "date": "2026-09-02",
+    "slug": "2026-09-02-3",
+    "topic": "IVE",
+    "region": "kr",
+    "title": "IVE ジャン・ウォニョンのプロ意識と家族の魅力",
+    "dek": "IVEのジャン・ウォニョンが再び注目を集めている。彼女のプロ意識と家族の魅力が話題となっている。",
+    "body_md": "本日、IVEのジャン・ウォニョンに関する話題が再びネット上で注目を集めている。彼女の姉である女優のジャン・ダアがインスタグラムに投稿した写真が話題となり、その美しいビジュアルが多くのファンを魅了した[1]。また、ウォニョン自身のプロ意識についても、業界関係者から高く評価されている[2]。\n\nジャン・ウォニョンは、最近ではその仕事ぶりが称賛されている。ある業界関係者は、彼女が「3時間の撮影をわずか40分で終える」ほどの効率の良さを持ち、仕事とプライベートを明確に分けていると述べた[2]。このようなプロ意識は、彼女が業界内で「完璧なプロフェッショナル」として位置づけられる要因の一つであると言えるだろう。\n\n一方で、彼女の振る舞いに関する議論も続いている。先日、カメラマンに対する彼女の行動が「意地悪な女の子」として捉えられることがあったが、実際にはその行動が誤解されている可能性もある[3]。このような議論は、彼女の人気の高さゆえに生じるものであり、彼女が注目される存在であることを示している。\n\nジャン・ウォニョンの家族もまた注目を集めている。姉のジャン・ダアの写真が公開されると、その美しさが話題となり、「妹も美しいが、姉も美しい」といったコメントが寄せられた[1]。このように、彼女の家族が持つ遺伝的な美しさも、ファンの間で大きな関心を集めている。\n\nIVEのジャン・ウォニョンは、プロ意識と家族の魅力を兼ね備えた存在として、多くの人々に影響を与えている。彼女の今後の活躍に期待が寄せられる中、彼女がどのように成長し続けるのか注目されるだろう。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "IVE Jang Wonyoung’s Older Sister’s Shocking Visuals Go Viral",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/ive-jang-wonyoung-older-sister-jang-daah-instagram-photos-gain-attention/"
+      },
+      {
+        "n": 2,
+        "title": "Story About IVE Jang Wonyoung’s Work Attitude Goes Viral",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/story-ive-jang-wonyoung-work-attitude-goes-viral/"
+      },
+      {
+        "n": 3,
+        "title": "Clip Of IVE Wonyoung’s Behavior With Cameraman Goes Viral Amid “Mean Girl” Allegations",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/clip-ive-wonyoungs-behavior-cameraman-goes-viral-amid-mean-girl-allegations/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-02T11:26:48.920Z"
+  },
+  {
     "date": "2026-09-01",
     "slug": "2026-09-01",
     "topic": "Snow Man",
