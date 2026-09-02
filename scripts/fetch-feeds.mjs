@@ -235,9 +235,24 @@ function escapeRegex(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+/**
+ * グループ名の記号に全角/半角のブレがあっても拾えるようにするための正規化。
+ * NFKC で全角英数字(Ｍ！ＬＫ→m!lk)・全角記号(＝ ＆ ／ ： ＿ ＃ → = & / : _ #)・
+ * 全角数字(４６→46)・半角カナ(ﾐﾙｸ→ミルク)をまとめて畳む。
+ * これで "=LOVE" / "＝LOVE"、"M!LK" / "Ｍ！ＬＫ"、"22/7" / "22／7" などが
+ * どちらの表記でも同じ別名にヒットする。ハイヒフン類だけは NFKC 対象外なので個別に統一。
+ */
+function normText(s) {
+  return s
+    .normalize("NFKC")
+    .replace(/[‐‑‒–—―]/g, "-") // 各種ダッシュ → ハイフン(長音「ー」は対象外)
+    .toLowerCase();
+}
+
 /** グループ名 → URLハッシュ用スラッグ。日本語はそのまま残す(hashに載せられる)。 */
 function slugify(name) {
   return name
+    .normalize("NFKC")
     .toLowerCase()
     .replace(/[^\p{L}\p{N}]+/gu, "-")
     .replace(/^-+|-+$/g, "");
@@ -245,11 +260,11 @@ function slugify(name) {
 
 /** 記事テキストから該当グループの {name, slug} 配列を返す。 */
 function groupsFor(text) {
-  const hay = text.toLowerCase();
+  const hay = normText(text);
   const out = [];
   for (const [canon, aliases] of Object.entries(GROUPS)) {
     const hit = aliases.some((al) => {
-      const a = al.toLowerCase();
+      const a = normText(al);
       if (/^[\x00-\x7f]+$/.test(a) && a.length <= 4) {
         return new RegExp(`(^|[^a-z0-9])${escapeRegex(a)}([^a-z0-9]|$)`, "i").test(hay);
       }
