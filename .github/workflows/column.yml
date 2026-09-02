@@ -2,7 +2,7 @@ name: Daily Column
 
 on:
   schedule:
-    - cron: "0 11 * * *"   # 20:00 JST
+    - cron: "17 6 * * *"   # 目標 15:17 JST (06:17 UTC)。schedule遅延のバッファとして早めに設定
   workflow_dispatch:
 
 permissions:
