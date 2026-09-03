@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: ニュースアーカイブ
+description: 収集したアイドル関連ニュースの月別アーカイブ。
+permalink: /archive/
+---
+
+<article class="container archive-page">
+  <p class="col-kicker">アーカイブ</p>
+  <h1>ニュースアーカイブ</h1>
+  <p class="col-note">
+    収集したニュースの見出しを月ごとに保存しています。トップページの一覧は直近ぶんだけを表示しますが、
+    ここから全期間をさかのぼれます。見出しをクリックすると配信元の記事に移動します。
+  </p>
+
+  <ul class="archive-months">
+    {% for mo in archiveMonths %}
+    <li>
+      <a href="{{ ('/archive/' + mo.ym + '/') | url }}">{{ mo.ym }}</a>
+      <span class="sb-count">{{ mo.count }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <p class="back"><a href="{{ '/' | url }}">← 最新ニュース</a></p>
+</article>

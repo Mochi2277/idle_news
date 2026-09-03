@@ -1,12 +1,14 @@
 /**
- * 公式RSSからアイドル関連ニュースを収集し、src/_data/articles.json を更新する。
+ * 公式RSSからアイドル関連ニュースを収集し、月別アーカイブ archive/YYYY-MM.json を更新する。
  *
  * 方針:
- *  - 全文は保存しない。見出し + 数百字の要約(RSS由来) + 出典リンクのみ。
- *  - 取得に失敗したフィードはスキップして処理を続行する。
- *  - 既存データとマージし、重複(リンクのハッシュ)を除いて新しい順に MAX_ITEMS 件保持する。
+ *  - 見出し + 数百字の要約(RSS由来) + 出典リンクを、記事の配信月ごとのファイルに永続保存する(アーカイブ)。
+ *    上限件数は設けず「どんどん積む」。1回の実行で書き換わるのは基本的に当月ファイルだけ。
+ *  - コラム生成用の本文(body)は直近 BODY_KEEP_DAYS 日ぶんだけ保持し、古いものからは落として容量を抑える。
+ *  - 取得に失敗したフィードはスキップして処理を続行する。既存データとマージし重複(リンクのハッシュ)を除く。
+ *  - 除外ワード / strict フィードのキーワード判定は過去記事にも遡って適用する(相変わらず)。
  *
- * 後から「AI要約」を足したい場合は summarize() を差し替える。
+ * トップページの一覧に出るのは直近ぶんだけ(src/articles.json.njk が 600 件に絞る)。全期間は /archive/。
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -17,12 +19,12 @@ import Parser from "rss-parser";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const FEEDS_FILE = path.join(ROOT, "feeds.json");
-const OUT_FILE = path.join(ROOT, "src", "_data", "articles.json");
+const ARCHIVE_DIR = path.join(ROOT, "archive"); // 月別シャード archive/YYYY-MM.json
 
-const MAX_ITEMS = 300;          // 保持する記事の最大数
 const SUMMARY_MAX = 280;        // 要約の最大文字数
 const BODY_MAX = 3500;          // コラム生成用に保持する本文の最大文字数
-const KEEP_DAYS = 120;          // これより古い記事は捨てる
+const BODY_KEEP_DAYS = 21;      // 本文(body)を残す日数。これより古い記事は body を落とす
+const KEEP_DAYS = 3650;         // さすがにこれより古い記事は捨てる(実質無制限の安全弁)
 
 // 英語記事の自動翻訳。無料の機械翻訳(MyMemory / 非公式Google)の品質が実用に耐えないため無効化し、
 // 英語記事は原文のまま表示する。再開する場合は true に戻すこと(既訳キャッシュの仕組みは残してある)。
@@ -527,12 +529,57 @@ function toArticle(item, feed) {
   };
 }
 
+/** 月別アーカイブ(archive/YYYY-MM.json)を全部読み込んで 1 配列にする。 */
 function loadExisting() {
+  const out = [];
+  let files = [];
   try {
-    return JSON.parse(fs.readFileSync(OUT_FILE, "utf8"));
+    files = fs.readdirSync(ARCHIVE_DIR).filter((f) => /^\d{4}-\d{2}\.json$/.test(f));
   } catch {
-    return [];
+    return out;
   }
+  for (const f of files) {
+    try {
+      const arr = JSON.parse(fs.readFileSync(path.join(ARCHIVE_DIR, f), "utf8"));
+      if (Array.isArray(arr)) out.push(...arr);
+    } catch {
+      /* 壊れたシャードは無視 */
+    }
+  }
+  return out;
+}
+
+/**
+ * merged(全期間)を配信月ごとに分けて archive/YYYY-MM.json へ書き出す。
+ * 内容が変わったファイルだけ書き換える(当月以外は基本ノータッチ = git 差分が小さい)。
+ * 返り値は {written, months, total}。
+ */
+function writeArchive(merged) {
+  fs.mkdirSync(ARCHIVE_DIR, { recursive: true });
+  const byMonth = new Map();
+  for (const a of merged) {
+    const ym = String(a.date || "").slice(0, 7);
+    if (!/^\d{4}-\d{2}$/.test(ym)) continue;
+    if (!byMonth.has(ym)) byMonth.set(ym, []);
+    byMonth.get(ym).push(a);
+  }
+  let written = 0;
+  for (const [ym, items] of byMonth) {
+    items.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const file = path.join(ARCHIVE_DIR, `${ym}.json`);
+    const next = JSON.stringify(items, null, 2) + "\n";
+    let prev = "";
+    try {
+      prev = fs.readFileSync(file, "utf8");
+    } catch {
+      /* 新規月 */
+    }
+    if (next !== prev) {
+      fs.writeFileSync(file, next, "utf8");
+      written += 1;
+    }
+  }
+  return { written, months: byMonth.size, total: merged.length };
 }
 
 async function main() {
@@ -573,20 +620,27 @@ async function main() {
   };
 
   const cutoff = Date.now() - KEEP_DAYS * 864e5;
+  const bodyCutoff = Date.now() - BODY_KEEP_DAYS * 864e5;
   const merged = [...byId.values()]
     .filter((a) => !excludedNow(a))
     .filter((a) => !staleStrict(a))
     .filter((a) => new Date(a.date).getTime() >= cutoff)
-    // グループ辞書の更新を過去記事にも反映(常に付け直す)
-    .map((a) => ({ ...a, groups: groupsFor(`${a.title || ""} ${a.summary || ""}`) }))
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, MAX_ITEMS);
+    // アーティスト辞書の更新を過去記事にも反映(常に付け直す)
+    .map((a) => {
+      const b = { ...a, groups: groupsFor(`${a.title || ""} ${a.summary || ""}`) };
+      // 本文は直近ぶんだけ残す(コラム生成が使うのは新しい記事だけ)
+      if (b.body && new Date(b.date).getTime() < bodyCutoff) delete b.body;
+      return b;
+    })
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   await translateArticles(merged);
 
-  fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
-  fs.writeFileSync(OUT_FILE, JSON.stringify(merged, null, 2) + "\n", "utf8");
-  console.log(`\n合計 ${merged.length} 件を ${path.relative(ROOT, OUT_FILE)} に書き出しました。`);
+  const { written, months, total } = writeArchive(merged);
+  console.log(
+    `\n合計 ${total} 件 / ${months} ヶ月。更新したシャード: ${written} ファイル ` +
+      `(${path.relative(ROOT, ARCHIVE_DIR)}/YYYY-MM.json)`
+  );
 }
 
 main()

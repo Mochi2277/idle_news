@@ -624,3 +624,51 @@ a.col-card-topic:hover {
     background: rgba(0, 0, 0, .55);
   }
 }
+
+/* --- ニュースアーカイブ --- */
+.sb-archive-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--text-mute);
+}
+.sb-archive-link:hover { color: var(--pink); }
+.archive-page { max-width: 760px; }
+.archive-page h1 { margin: 4px 0 8px; }
+.archive-months {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+}
+.archive-months li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  border: 1px solid var(--border-hi);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+.archive-months a { font-weight: 600; }
+.archive-list { list-style: none; padding: 0; }
+.archive-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.archive-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: .72rem;
+  color: var(--text-mute);
+  margin-bottom: 4px;
+}
+.archive-title {
+  font-size: .98rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+.archive-title:hover { color: var(--pink); }

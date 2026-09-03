@@ -8,19 +8,23 @@
 ## 仕組み
 
 ```
-feeds.json ─▶ scripts/fetch-feeds.mjs ─▶ src/_data/articles.json ─▶ Eleventy ─▶ _site/（公開物）
-（収集元RSS）   （収集・要約・分類・重複除去）     （記事データ）           （静的HTML + data/articles.json）
+feeds.json ─▶ scripts/fetch-feeds.mjs ─▶ archive/YYYY-MM.json ─▶ Eleventy ─▶ _site/（公開物）
+（収集元RSS）   （収集・要約・分類・重複除去）    （月別アーカイブ）    （src/_data/articles.js が全月を結合）
 ```
 
 - **全文転載はしない**。RSSの説明文を整形した数百字の要約と、出典元へのリンクだけを載せます。
-- フィードごとに `mode` を指定：
-  - `strict` … `KEYWORDS`（アイドル/アーティスト関連語）に一致した記事だけ採用
-  - `loose` … `EXCLUDE`（グラビア・水着等）に当たらなければ採用
-- `GROUPS` 辞書で記事にグループ名を自動タグ付け（サイドバーの「グループ」欄になる）。
-- 英語（韓国系ソース）の見出し・要約は無料の翻訳API（MyMemory、失敗時はGoogle非公式）で
-  日本語化し `title_ja` / `summary_ja` に保存。一度訳したら再利用するので、毎回の実行では
-  新着分だけ翻訳する（1回あたり `TRANSLATE_MAX` 件まで）。無効化は `TRANSLATE = false`。
-- RSSに全文が入っている場合は `body` として保持（コラム生成用。クライアント配信用JSONからは除外）。
+- **アーカイブ**: 記事は配信月ごとの `archive/YYYY-MM.json` に上限なしで積んでいく。1回の実行で
+  書き換わるのは基本的に当月ファイルだけ（`fetch-feeds.mjs` が内容の変わったシャードだけ書き戻す）。
+  `KEEP_DAYS`(=3650) が実質無制限の安全弁。`src/_data/articles.js` が全シャードを結合して
+  Eleventy グローバル `articles` にする。
+- **個別記事ページは作らない**。一覧の見出しは配信元サイトへ直リンク。トップページの一覧は
+  `src/articles.json.njk` が直近 600 件に絞って `/data/articles.json` に出す（軽量化）。
+  全期間は `/archive/`（月別インデックス）→ `/archive/YYYY-MM/`（その月の見出し一覧）でさかのぼる。
+- `body`（RSS全文, コラム生成用）は直近 `BODY_KEEP_DAYS`(=21)日ぶんだけ保持し、古い記事からは落とす。
+- フィードごとに `mode`：`strict`=`KEYWORDS` 一致のみ採用 / `loose`=`EXCLUDE` に当たらなければ採用。
+- `GROUPS` 辞書で記事にアーティスト名（グループ／ソロ／バンド）を自動タグ付け。除外ワード・strict
+  判定・タグ付けは過去記事にも毎回さかのぼって適用。
+- 英語（韓国系ソース）の翻訳は品質の都合で現在 `TRANSLATE = false`（原文表示）。
 - 取得に失敗したフィードは自動スキップ。
 
 ## コラム（1日 最大4本・AI生成 / 狭め2本＋広め2本）
@@ -62,17 +66,18 @@ scripts/generate-column.mjs
 
 ## フロントエンド
 
-- トップページは `data/articles.json` を読み込んでクライアント側で描画（`src/assets/app.js`）。
-- 左サイドバー：キーワード検索 / エリア（日本・韓国）/ 年月 / グループ。
+- トップページは `data/articles.json`（直近600件）を読み込んでクライアント側で描画（`src/assets/app.js`）。
+- 左サイドバー：キーワード検索 / エリア（日本・韓国）/ 年月 / グループ。「全期間アーカイブ →」で `/archive/` へ。
 - グループを選ぶと、日韓どちらのソースの記事もまとめて表示される（例：Stray Kids）。
 - URLハッシュで状態を保持（`#jp` `#m:2026-08` `#g:stray-kids`）。
-- 各記事の個別ページ（`/articles/<id>/`）はEleventyが静的生成（共有・SEO用）。
+- 一覧の見出しは配信元サイトへ直リンク（個別記事ページは作らない）。全期間は
+  `/archive/`（月別インデックス）→ `/archive/YYYY-MM/` で閲覧。
 
 ## ローカルで動かす
 
 ```bash
 npm install
-npm run fetch     # RSSを取得して src/_data/articles.json を更新
+npm run fetch     # RSSを取得して archive/YYYY-MM.json を更新
 npm run dev       # http://localhost:8080/idle_news/ でプレビュー
 ```
 

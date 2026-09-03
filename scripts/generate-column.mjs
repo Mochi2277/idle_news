@@ -26,8 +26,28 @@ import { fileURLToPath } from "node:url";
 import { extract } from "@extractus/article-extractor";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const ARTICLES_FILE = path.join(ROOT, "src", "_data", "articles.json");
+const ARCHIVE_DIR = path.join(ROOT, "archive"); // 月別シャード archive/YYYY-MM.json
 const COLUMNS_FILE = path.join(ROOT, "src", "_data", "columns.json");
+
+/** 月別アーカイブを全部読み込んで 1 配列にする。 */
+function readArticles() {
+  const out = [];
+  let files = [];
+  try {
+    files = fs.readdirSync(ARCHIVE_DIR).filter((f) => /^\d{4}-\d{2}\.json$/.test(f));
+  } catch {
+    return out;
+  }
+  for (const f of files) {
+    try {
+      const arr = JSON.parse(fs.readFileSync(path.join(ARCHIVE_DIR, f), "utf8"));
+      if (Array.isArray(arr)) out.push(...arr);
+    } catch {
+      /* 壊れたシャードは無視 */
+    }
+  }
+  return out;
+}
 
 // OpenAI のキーがあればそちらを優先(有料アカウントで安定)。無ければ Gemini(無料)。
 const OPENAI_KEY = process.env.OPENAI_API_KEY || "";
@@ -568,7 +588,7 @@ async function main() {
     return;
   }
 
-  const articles = readJson(ARTICLES_FILE, []);
+  const articles = readArticles();
   let columns = readJson(COLUMNS_FILE, []);
   const today = jstDate();
 

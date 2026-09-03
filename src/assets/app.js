@@ -196,7 +196,7 @@
     <span class="src">${esc(a.source)}</span>
     <time>${fmtDate(a.date)}</time>
   </div>
-  <h2 class="card-title"><a href="articles/${esc(a.id)}/">${esc(title)}</a></h2>
+  <h2 class="card-title"><a href="${esc(a.link)}" target="_blank" rel="noopener nofollow">${esc(title)}</a></h2>
   ${orig}
   <p class="card-summary">${esc(summary)}</p>
   ${chips ? `<div class="chips">${chips}</div>` : ""}

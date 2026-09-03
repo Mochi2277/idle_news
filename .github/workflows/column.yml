@@ -46,7 +46,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/_data/articles.json src/_data/columns.json
+          git add archive src/_data/columns.json
           if git diff --staged --quiet; then echo "no data changes"; exit 0; fi
           git commit -m "chore: daily column + feeds"
           for i in 1 2 3; do
