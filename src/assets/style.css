@@ -234,6 +234,11 @@ a:hover { color: var(--pink); }
 .col-card h2 a { color: var(--text); }
 .col-card h2 a:hover { color: var(--pink); }
 .col-card p { margin: 0 0 10px; font-size: .88rem; color: var(--text-dim); }
+.col-card-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
 .col-card-topic {
   display: inline-block;
   font-size: .7rem;
@@ -486,7 +491,6 @@ a.col-card-topic:hover {
 }
 .tag-jp { background: linear-gradient(120deg, #3b6fd6, var(--jp)); }
 .tag-kr { background: linear-gradient(120deg, #d62b6a, var(--kr)); }
-.tag-broad { background: linear-gradient(120deg, #7a5cd6, #4b8fd6); }
 .src { color: var(--text-dim); font-weight: 600; }
 
 .card-title {

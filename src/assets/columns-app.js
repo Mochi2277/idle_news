@@ -38,6 +38,9 @@
     const t = String(s || "").replace(/[^\p{L}\p{N}]+/gu, "");
     return t ? "#" + t : "";
   };
+  // コラムに紐づくアーティスト(グループ)名。新データは配列 groups、旧データは topic 単体。
+  const groupsOf = (c) =>
+    Array.isArray(c.groups) && c.groups.length ? c.groups : c.topic ? [c.topic] : [];
 
   function readHash() {
     state.key = decodeURIComponent(location.hash.replace(/^#/, "")).trim() || "all";
@@ -50,8 +53,13 @@
     if (k.startsWith("m:")) return ymLabel(k.slice(2)) + "のコラム";
     if (k.startsWith("d:")) return ymdLabel(k.slice(2)) + "のコラム";
     if (k.startsWith("t:")) {
-      const c = ALL.find((x) => slug(x.topic) === k.slice(2));
-      return (c ? c.topic : "トピック") + "のコラム";
+      const key = k.slice(2);
+      let name = "トピック";
+      for (const c of ALL) {
+        const g = groupsOf(c).find((x) => slug(x) === key);
+        if (g) { name = g; break; }
+      }
+      return name + "のコラム";
     }
     return "コラム";
   }
@@ -62,7 +70,7 @@
     if (k === "kr") return c.region === "kr";
     if (k.startsWith("m:")) return (c.date || "").startsWith(k.slice(2));
     if (k.startsWith("d:")) return (c.date || "").startsWith(k.slice(2));
-    if (k.startsWith("t:")) return slug(c.topic) === k.slice(2);
+    if (k.startsWith("t:")) return groupsOf(c).some((g) => slug(g) === k.slice(2));
     return true;
   }
 
@@ -70,7 +78,7 @@
     const q = state.q.toLowerCase();
     return ALL.filter(matchesKey).filter((c) => {
       if (!q) return true;
-      const hay = `${c.title} ${c.dek} ${c.body_md} ${c.topic}`.toLowerCase();
+      const hay = `${c.title} ${c.dek} ${c.body_md} ${groupsOf(c).join(" ")}`.toLowerCase();
       return hay.includes(q);
     });
   }
@@ -115,11 +123,13 @@
 
     const topics = new Map();
     for (const c of ALL) {
-      if (!c.topic) continue;
-      const s = slug(c.topic);
-      const cur = topics.get(s) || { name: c.topic, n: 0 };
-      cur.n += 1;
-      topics.set(s, cur);
+      for (const g of groupsOf(c)) {
+        const s = slug(g);
+        if (!s) continue;
+        const cur = topics.get(s) || { name: g, n: 0 };
+        cur.n += 1;
+        topics.set(s, cur);
+      }
     }
     topicListEl.innerHTML = [...topics.entries()]
       .sort((a, b) => b[1].n - a[1].n || a[1].name.localeCompare(b[1].name))
@@ -161,24 +171,27 @@
         const rtag = c.region
           ? `<span class="tag tag-${c.region}">${c.region === "kr" ? "韓国" : "日本"}</span> `
           : "";
-        const btag = c.kind === "broad" ? `<span class="tag tag-broad">横断</span> ` : "";
+        const gs = groupsOf(c);
         const absUrl = new URL(c.slug + "/", location.href).href;
-        const tags = [hashtag(c.topic), "#Idol_Pulse"].filter(Boolean).join(" ");
+        const tags = [...gs.map(hashtag), "#Idol_Pulse"].filter(Boolean).join(" ");
         const shareText = `${c.title}\n${c.dek || ""}\n\n${tags}`;
         const shareHref =
           "https://twitter.com/intent/tweet?text=" +
           encodeURIComponent(shareText) +
           "&url=" +
           encodeURIComponent(absUrl);
+        const topicLinks = gs
+          .map((g) => `<a class="col-card-topic" href="#t:${slug(g)}">${esc(g)}</a>`)
+          .join(" ");
         return `<li class="col-card" style="animation-delay:${delay}ms">
-  <div class="col-card-meta">${rtag}${btag}<time>${esc(c.date)}</time>
+  <div class="col-card-meta">${rtag}<time>${esc(c.date)}</time>
     <a class="share-x share-x-sm" href="${shareHref}" target="_blank" rel="noopener" aria-label="Xでシェア">
       <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
     </a>
   </div>
   <h2><a href="${esc(c.slug)}/">${esc(c.title)}</a></h2>
   ${c.dek ? `<p>${esc(c.dek)}</p>` : ""}
-  ${c.topic ? `<a class="col-card-topic" href="#t:${slug(c.topic)}">${esc(c.topic)}</a>` : ""}
+  ${topicLinks ? `<div class="col-card-topics">${topicLinks}</div>` : ""}
 </li>`;
       })
       .join("");

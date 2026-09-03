@@ -43,6 +43,8 @@ scripts/generate-column.mjs
   == 共通 ==
   5. 出典リンク・kind(group|broad) 付きで src/_data/columns.json に追記
      slug は 今日=YYYY-MM-DD、2本目以降は -2 / -3 …（group を先に生成するので若い番号は group）
+     `groups` に「記事に登場するアーティスト名」を格納（group=クラスタ名 / broad=引用記事のタグを頻度順）。
+     一覧・詳細のタグはこの `groups` で、group/broad の区別は画面には出さない（kind は生成本数の制御用）。
   * broad が2本立たない日は group で埋めて常に最大 COLUMN_COUNT 本にする
 ```
 

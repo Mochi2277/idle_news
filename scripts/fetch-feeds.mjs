@@ -85,7 +85,7 @@ const EXCLUDE = [
 ];
 
 /**
- * グループ別サイドバー用のタグ付け辞書。
+ * アーティスト別サイドバー用のタグ付け辞書。グループだけでなくソロ/バンドも含む。
  * canonical名: [別名(日本語/英語/ハングル/略称) ...]
  * 記事タイトル+要約に別名が含まれると、その canonical 名がタグとして付く。
  * 3〜4文字以下の英字別名は前後が英数字でない場合のみ一致(誤爆防止)。
@@ -136,6 +136,8 @@ const GROUPS = {
   "izna": ["izna", "이즈나", "イズナ"],
   "MEOVV": ["meovv", "미야오", "ミャオ"],
   "ARTMS": ["artms", "아르테미스", "アルテミス"],
+  "MODYSSEY": ["modyssey", "모디세이", "モディッセイ"],
+  "BIGBANG": ["bigbang", "big bang", "빅뱅", "ビッグバン"],
   "fromis_9": ["fromis_9", "fromis 9", "프로미스나인", "プロミスナイン", "프로미스_9"],
   "STAYC": ["stayc", "스테이씨", "ステイシー"],
   "Kep1er": ["kep1er", "kep1ir", "케플러", "ケプラー"],
@@ -166,7 +168,12 @@ const GROUPS = {
   "乃木坂46": ["乃木坂46", "乃木坂", "nogizaka"],
   "櫻坂46": ["櫻坂46", "櫻坂", "sakurazaka"],
   "日向坂46": ["日向坂46", "日向坂", "hinatazaka"],
-  "AKB48": ["akb48"],
+  "AKB48": ["akb48", "エーケービー"],
+  "SKE48": ["ske48"],
+  "NMB48": ["nmb48"],
+  "HKT48": ["hkt48"],
+  "NGT48": ["ngt48"],
+  "STU48": ["stu48"],
   "=LOVE": ["=love", "イコラブ"],
   "≠ME": ["≠me", "ノイミー"],
   "Snow Man": ["snow man", "スノーマン", "スノ"],
@@ -228,7 +235,20 @@ const GROUPS = {
   "アップアップガールズ": ["アップアップガールズ"],
   "新しい学校のリーダーズ": ["新しい学校のリーダーズ", "新しい学校！"],
   "世が世なら!!!": ["世が世なら"],
-  "Lienel": ["lienel"]
+  "Lienel": ["lienel"],
+  // --- ソロ / バンド(グループ以外のアーティストも記事に登場すればタグ付けする) ---
+  "嵐": ["嵐", "arashi"],
+  "ゆず": ["ゆず", "yuzu"],
+  "Mrs. GREEN APPLE": ["mrs. green apple", "mrs.green apple", "ミセスグリーンアップル", "ミセス", "大森元貴"],
+  "Official髭男dism": ["official髭男dism", "ヒゲダン", "髭男"],
+  "星野源": ["星野源", "hoshino gen"],
+  "藤井風": ["藤井風", "fujii kaze"],
+  "米津玄師": ["米津玄師", "kenshi yonezu", "ハチ"],
+  "あいみょん": ["あいみょん", "aimyon"],
+  "King Gnu": ["king gnu", "キングヌー"],
+  "YOASOBI": ["yoasobi", "ヨアソビ"],
+  "中島健人": ["中島健人", "kento nakajima", "ケンティー"],
+  "山下達郎": ["山下達郎", "tatsuro yamashita"]
 };
 
 function escapeRegex(s) {

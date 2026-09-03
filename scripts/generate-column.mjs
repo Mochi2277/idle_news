@@ -354,8 +354,9 @@ async function callOpenAI(prompt, system) {
 async function callGeminiModel(model, prompt, system) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${API_KEY}`;
   const body = {
-    systemInstruction: { parts: [{ text: system }] },
-    contents: [{ role: "user", parts: [{ text: prompt }] }],
+    // system は専用フィールドではなくプロンプト先頭に畳む(古い/軽量モデルは
+    // systemInstruction を受け付けず HTTP 400 になることがあるため)。
+    contents: [{ role: "user", parts: [{ text: `${system}\n\n${prompt}` }] }],
     generationConfig: {
       temperature: 0.4,
       maxOutputTokens: 8192,
@@ -512,13 +513,15 @@ async function prepareBroadSources(theme) {
   let n = 0;
   for (const a of items) {
     n += 1;
+    const groupNames = (a.groups || []).map((g) => g.name);
     out.push({
       n,
       title: a.title_ja || a.title,
       source: a.source,
       url: a.link,
       date: (a.date || "").slice(0, 10),
-      group: (a.groups || []).map((g) => g.name).slice(0, 3).join("・"),
+      groupNames,
+      group: groupNames.slice(0, 3).join("・"),
       text: await textFor(a, { maxLen: BROAD_TEXT_MAX, allowFetch: true, fetchState })
     });
   }
@@ -602,9 +605,13 @@ async function main() {
   }
   log(`group 対象記事: ${recent.length} 件 / ${windowLabel}`);
 
-  // 避けるトピック = 直近N本 + 今日すでに書いたもの(FORCE時は後者なし)
+  // group コラムで避けるグループ = 直近N本の group コラム + 今日書いた group コラムの主題グループ。
+  // broad コラムが記事内で言及したグループは、深掘り対象から外さない(横断言及と深掘りは別)。
+  const groupTagsOf = (c) => (c.groups && c.groups.length ? c.groups : c.topic ? [c.topic] : []);
   const avoidGroup = new Set(
-    [...columns.slice(0, AVOID_RECENT_TOPICS).map((c) => c.topic), ...todaysExisting.map((c) => c.topic)]
+    [...columns.slice(0, AVOID_RECENT_TOPICS), ...todaysExisting]
+      .filter((c) => kindOf(c) === "group")
+      .flatMap(groupTagsOf)
       .filter(Boolean)
       .map(normName)
   );
@@ -617,10 +624,9 @@ async function main() {
     return Number.isFinite(t) && t >= broadCutoff;
   });
   const avoidBroad = new Set(
-    [
-      ...columns.slice(0, AVOID_RECENT_TOPICS).filter((c) => kindOf(c) === "broad").map((c) => c.topic),
-      ...todaysExisting.filter((c) => kindOf(c) === "broad").map((c) => c.topic)
-    ]
+    [...columns.slice(0, AVOID_RECENT_TOPICS), ...todaysExisting]
+      .filter((c) => kindOf(c) === "broad")
+      .map((c) => c.theme || c.topic) // 旧データは theme 名が topic に入っている
       .filter(Boolean)
       .map(normName)
   );
@@ -666,8 +672,14 @@ async function main() {
     return s;
   };
 
-  /** LLM 結果を columns.json のレコードに整える。title/body が無ければ null。 */
-  const toRecord = ({ result, usedModel, src, regionItems, topic, kind }) => {
+  /**
+   * LLM 結果を columns.json のレコードに整える。title/body が無ければ null。
+   * `label` は group ならクラスタ名(=グループ名)、broad ならテーマ名。
+   * サイドバー等に出す `groups` は「記事に登場するアーティストのグループ名」。
+   *  - group: クラスタ名そのもの
+   *  - broad: 実際に引用された参考記事に紐づくグループ名(登場頻度順)
+   */
+  const toRecord = ({ result, usedModel, src, regionItems, label, kind }) => {
     const body = String(result.body_md || "").trim();
     const title = String(result.title || "").trim();
     if (!body || !title) return null;
@@ -676,20 +688,38 @@ async function main() {
       ...[...body.matchAll(/\[(\d+)\]/g)].map((m) => Number(m[1]))
     ]);
     const byN = new Map(src.map((s) => [s.n, s]));
-    const usedSources = [...cited]
-      .filter((x) => byN.has(x))
-      .sort((a, b) => a - b)
-      .map((x) => {
-        const s = byN.get(x);
-        return { n: x, title: s.title, source: s.source, url: s.url };
-      });
+    const citedList = [...cited].filter((x) => byN.has(x)).sort((a, b) => a - b);
+    const usedSources = citedList.map((x) => {
+      const s = byN.get(x);
+      return { n: x, title: s.title, source: s.source, url: s.url };
+    });
+
+    let groups;
+    if (kind === "broad") {
+      const counts = new Map();
+      for (const x of citedList)
+        for (const gn of byN.get(x).groupNames || []) counts.set(gn, (counts.get(gn) || 0) + 1);
+      groups = [...counts.entries()]
+        .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+        .map((e) => e[0]);
+      if (groups.length === 0) {
+        const all = new Set();
+        for (const s of src) for (const gn of s.groupNames || []) all.add(gn);
+        groups = [...all];
+      }
+    } else {
+      groups = [label];
+    }
+
     const rc = { jp: 0, kr: 0 };
     for (const a of regionItems) if (rc[a.region] !== undefined) rc[a.region] += 1;
     return {
       date: today,
       slug: nextSlug(),
       kind,
-      topic,
+      topic: groups[0] || label, // 主タグ(ハッシュタグ等の後方互換用)
+      groups, // サイドバー/カードに出すグループ名(複数可)
+      ...(kind === "broad" ? { theme: label } : {}),
       region: rc.kr > rc.jp ? "kr" : "jp",
       title,
       dek: String(result.dek || "").trim(),
@@ -722,7 +752,7 @@ async function main() {
       usedModel,
       src,
       regionItems: cluster.items,
-      topic: cluster.name,
+      label: cluster.name,
       kind: "group"
     });
     if (!rec) {
@@ -777,7 +807,7 @@ async function main() {
       usedModel,
       src,
       regionItems: theme.items,
-      topic: theme.name,
+      label: theme.name,
       kind: "broad"
     });
     if (!rec) {
