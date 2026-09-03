@@ -37,7 +37,8 @@ jobs:
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-          COLUMN_COUNT: ${{ vars.COLUMN_COUNT }}   # 未設定なら 3
+          COLUMN_COUNT: ${{ vars.COLUMN_COUNT }}              # 未設定なら 4
+          COLUMN_BROAD_COUNT: ${{ vars.COLUMN_BROAD_COUNT }}  # うち横断テーマの本数。未設定なら 2
         run: node scripts/generate-column.mjs
 
       - name: Commit data

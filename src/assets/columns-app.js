@@ -161,6 +161,7 @@
         const rtag = c.region
           ? `<span class="tag tag-${c.region}">${c.region === "kr" ? "韓国" : "日本"}</span> `
           : "";
+        const btag = c.kind === "broad" ? `<span class="tag tag-broad">横断</span> ` : "";
         const absUrl = new URL(c.slug + "/", location.href).href;
         const tags = [hashtag(c.topic), "#Idol_Pulse"].filter(Boolean).join(" ");
         const shareText = `${c.title}\n${c.dek || ""}\n\n${tags}`;
@@ -170,7 +171,7 @@
           "&url=" +
           encodeURIComponent(absUrl);
         return `<li class="col-card" style="animation-delay:${delay}ms">
-  <div class="col-card-meta">${rtag}<time>${esc(c.date)}</time>
+  <div class="col-card-meta">${rtag}${btag}<time>${esc(c.date)}</time>
     <a class="share-x share-x-sm" href="${shareHref}" target="_blank" rel="noopener" aria-label="Xでシェア">
       <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
     </a>

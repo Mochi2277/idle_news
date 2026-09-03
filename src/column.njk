@@ -17,7 +17,7 @@ eleventyComputed:
 
 <article class="container col-detail">
   <div class="col-topbar">
-    <p class="col-kicker">コラム ・ {{ col.date }}</p>
+    <p class="col-kicker">{% if col.kind == "broad" %}横断コラム{% else %}コラム{% endif %} ・ {{ col.date }}</p>
     <a class="share-x" href="https://twitter.com/intent/tweet?text={{ shareText | urlencode }}&url={{ colUrl | urlencode }}" target="_blank" rel="noopener" aria-label="Xでシェア">
       <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       <span>シェア</span>
@@ -44,7 +44,11 @@ eleventyComputed:
   {% endif %}
 
   <p class="col-disclaimer">
+    {% if col.kind == "broad" %}
+    この記事は「{{ col.topic }}」というテーマで、直近1週間の複数の話題を横断して {{ col.model }} が作成しています。
+    {% else %}
     この記事は上記の参考記事および同トピックの過去記事をもとに {{ col.model }} が作成しています。
+    {% endif %}
     事実部分には出典番号を付けていますが、見解・考察は筆者(AI)によるもので、誤りが含まれる可能性があります。
   </p>
   <p class="back"><a href="{{ '/columns/' | url }}">← コラム一覧</a></p>
