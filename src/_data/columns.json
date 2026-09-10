@@ -1,5 +1,164 @@
 [
   {
+    "date": "2026-09-10",
+    "slug": "2026-09-10",
+    "kind": "group",
+    "topic": "BLACKPINK",
+    "groups": [
+      "BLACKPINK"
+    ],
+    "region": "kr",
+    "title": "BLACKPINKの最新動向とその背景",
+    "dek": "BLACKPINKのメンバーがそれぞれの活動で注目を集めている。特にロゼとリサの動きが話題である。",
+    "body_md": "本日、BLACKPINKのロゼとリサがそれぞれ異なる形で注目を集めている。ロゼは、Appleとのコラボレーションで新しいプロモーション写真を公開したが、その写真が編集されているとの疑惑が浮上し、ネット上で嘲笑の的となっている[1]。一方、リサはBVLGARIのイベントに出席し、その後のアフターパーティーでの大胆な衣装が話題をさらった[2]。さらに、リサはアン・ハサウェイやデュア・リパとの交流も報じられ、SNSで大きな反響を呼んでいる[3]。\n\nこれまでのBLACKPINKの動向を振り返ると、グループは今年10周年を迎え、ワールドツアーを終えた後、メンバーそれぞれがソロ活動に注力している[5]。特にリサは、ソロシングル「SaWaDiKa」をリリースし、今後の映画プロジェクトにも取り組んでいることが知られている[5]。また、リサは来週「The Tonight Show」に出演予定で、新しいEPやドキュメンタリー映画について語る予定である[6]。\n\nこれらの動きは、BLACKPINKがグループとしての活動を一時的に休止している中で、メンバー各自が個々のキャリアを築く重要な時期にあることを示していると位置づけられる。特にリサの華やかなイベント出席やロゼの国際的なブランドとのコラボレーションは、彼女たちがソロアーティストとしての地位を確立しつつあることを示している。\n\n結びとして、BLACKPINKのメンバーがそれぞれの道を歩みつつも、グループとしての存在感を維持し続けていることは、彼女たちの多様な才能と影響力を証明している。今後の彼女たちの活動にも注目が集まることだろう。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "BLACKPINK Rosé’s Recent Photo Mocked After Serious Editing Allegations",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/blackpink-rose-photo-iphone-accuse-edited/"
+      },
+      {
+        "n": 2,
+        "title": "BLACKPINK’s Lisa Shocks With Daring And Sexy Outfit At BVLGARI After-Party",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/blackpink-lisa-black-sexy-daring-outfit-bvlgari/"
+      },
+      {
+        "n": 3,
+        "title": "BLACKPINKリサがアン・ハサウェイと談笑＆デュア・リパとの豪華3ショットが話題！圧巻ビジュアルに「綺麗すぎる」「お人形さんすぎる」と反響",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000879454/"
+      },
+      {
+        "n": 5,
+        "title": "Lisa’s Comments About BLACKPINK’s Hiatus Spark Anger Amid Disbandment Rumors",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/lisa-comments-blackpinks-hiatus-spark-anger-amid-disbandment-rumors/"
+      },
+      {
+        "n": 6,
+        "title": "BLACKPINK’s Lisa To Appear On “The Tonight Show” Next Week",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1869372wpp/blackpinks-lisa-to-appear-on-the-tonight-show-next-week"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-10T11:27:53.506Z"
+  },
+  {
+    "date": "2026-09-10",
+    "slug": "2026-09-10-2",
+    "kind": "group",
+    "topic": "NCT",
+    "groups": [
+      "NCT"
+    ],
+    "region": "kr",
+    "title": "NCTと元メンバーの交流が生む波紋",
+    "dek": "NCTメンバーと元メンバーの交流がファンの間で議論を呼んでいる。友情か、それとも不安の種か。",
+    "body_md": "本日、NCTの元メンバーであるマーク・リーが新曲「My Friend」をリリースしたことが話題となった。これに対し、NCTのメンバーであるヘチャンがSNSで「My friend ❤️」とコメントを残し、交流を示したことがファンの間で賛否を巻き起こしている[1]。多くのファンはこの友情を支持しているが、一部のファンは「ファンにPTSDを与える」として不満を表明している[1]。\n\nNCTはこれまでにも多くのメンバーが入れ替わり、その度にファンの間で様々な反応が見られてきた。特に、メンバーの脱退や新メンバーの加入は、ファンにとって感情的な出来事であり、その後のメンバー間の交流が注目されることが多い。今回のヘチャンとマークの交流も、そうした文脈の中で理解することができる。ファンの中には、メンバーの個人的な交流を公にすることに対して警戒心を抱く者もいるが、逆にそれを歓迎する者もいる。\n\nコラムニストとしての見立てとしては、NCTのような大規模なグループにおいて、メンバー間の交流はファンの関心を集める重要な要素であると位置づけられる。特に、元メンバーとの交流は、グループの過去と現在を繋ぐ架け橋となり得る。しかし、ファンの中には、こうした交流がかえって不安を煽る要因になると感じる人もいるだろう。これは、ファンの期待と現実のギャップが生む問題であり、グループの運営にとっては慎重な対応が求められる。\n\n結びとして、NCTのメンバー間の交流は、ファンにとっては感情的なテーマであり続けるだろう。今後もメンバーの動向が注目される中で、彼らがどのようにファンとの関係を築いていくのかが問われる。ファンの多様な反応を理解しつつ、メンバー自身がどのような姿勢を示すかが鍵となるだろう。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "NCT Member Interacts With Ex-Member Mark Lee, Sparks Divided Response",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/nct-haechan-likes-mark-lee-post-sparks-backlash-among-fans/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-10T11:28:00.541Z"
+  },
+  {
+    "date": "2026-09-10",
+    "slug": "2026-09-10-3",
+    "kind": "broad",
+    "topic": "King & Prince",
+    "groups": [
+      "King & Prince",
+      "aespa",
+      "ATEEZ",
+      "BTS",
+      "CORTIS",
+      "ENHYPEN",
+      "ILLIT",
+      "LE SSERAFIM",
+      "Stray Kids"
+    ],
+    "theme": "チャート・セールス",
+    "region": "jp",
+    "title": "日韓の音楽チャート動向を探る",
+    "dek": "日本と韓国の音楽チャートで多様なアーティストが活躍している。ビルボードとオリコンでの動向を比較し、市場のトレンドを探る。",
+    "body_md": "最近の音楽チャートでは、日本と韓国のアーティストが多様な動きを見せている。日本では、EBiDANの「Yes! 東京」がオリコン週間合算シングルランキングで1位に返り咲き、累積ポイントは156.7万PTに達した[1]。また、King & Princeの『So Honey EP』もオリコン週間アルバムランキングで1位を獲得し、これで通算9作目の1位となった[2]。一方、韓国ではENHYPENの新作『THE SIN : BLISS』がビルボードのWorld Albums Chartで1位を獲得し、さらにBillboard 200でも初の1位を達成した[3]。\n\nそれぞれのチャートでの動向を見てみると、オリコンではKing & Princeが安定した人気を誇り、連続してアルバム1位を獲得していることが注目される[2]。一方、ビルボードではENHYPENが新たな記録を打ち立て、韓国の音楽シーンにおける影響力を示している[3]。このように、日韓それぞれの市場での成功には異なる要素が絡んでいることが分かる。\n\nこれらの動向から見えてくるのは、日韓の音楽市場での多様性と競争の激しさだ。日本では、オリコンランキングでの1位返り咲きや複数部門での1位獲得が、アーティストの持続的な人気を示している。一方、韓国では、ビルボードチャートでの新たな記録が、グローバルな視点での成功を意味していると位置づけられる。これらの動向は、アーティストが国内外での成功を目指し、異なる戦略を採用していることを示唆している。\n\n結論として、日韓の音楽チャートでの動向は、アーティストの多様な活動と市場の変化を反映している。特に、ビルボードとオリコンでの成功は、アーティストがどのようにして国際的な舞台での存在感を高めているかを示している。これからも、日韓の音楽シーンがどのように進化していくのか注目したい。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "EBiDAN「Yes! 東京」、King & Prince『So Honey EP』がオリコン週間合算ランキングで首位獲得",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000878717/"
+      },
+      {
+        "n": 2,
+        "title": "King & Prince『So Honey EP』がオリコン週間アルバムランキングで通算9作目の1位！シングルはEBiDAN「Yes! 東京」が首位返り咲き",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000877656/"
+      },
+      {
+        "n": 3,
+        "title": "ENHYPEN, Stray Kids, CORTIS, ATEEZ, BTS, LE SSERAFIM, aespa, ILLIT, And More Sweep Top Spots On Billboard World Albums Chart",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1868433wpp/enhypen-stray-kids-cortis-ateez-bts-le-sserafim-aespa-illit-and-more-sweep-top-spots-on-billboard-world-albums-chart"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-10T11:28:07.861Z"
+  },
+  {
+    "date": "2026-09-10",
+    "slug": "2026-09-10-4",
+    "kind": "broad",
+    "topic": "乃木坂46",
+    "groups": [
+      "乃木坂46",
+      "櫻坂46",
+      "僕が見たかった青空",
+      "日向坂46"
+    ],
+    "theme": "卒業・脱退・体制変更",
+    "region": "jp",
+    "title": "アイドルの卒業・体制変更が示す未来",
+    "dek": "今週、多くのアイドルグループで卒業や体制変更が発表された。これらの動きは、各グループの未来にどのような影響を与えるのか。",
+    "body_md": "今週、アイドルグループの卒業や体制変更が相次いで発表された。櫻坂46の松田里奈が年内での卒業を発表し、彼女の卒業セレモニーは11月に予定されている[1][2]。また、日向坂46の森本茉莉も12月に卒業することを公表した[3]。さらに、乃木坂46の公式ライバルグループ「僕が見たかった青空」からも二人のメンバーが来年1月に卒業することが発表された[4]。これらの動きは、アイドルシーンにおける重要な変化を示している。\n\n櫻坂46と日向坂46の卒業は、グループのキャプテンや中核メンバーの交代を伴うものである。櫻坂46では、松田が2代目キャプテンを務めていたが、彼女の卒業により新たなリーダーシップが求められることになる[1][2]。一方、日向坂46では、森本が18枚目シングルの活動をもって卒業する予定であり、これにより新たなメンバーがグループの中心となる可能性が高い[3]。これらの変化は、グループの方向性やパフォーマンスに影響を及ぼすだろう。\n\nまた、「僕が見たかった青空」では、結成からわずか数年での卒業が発表され、グループの成長過程における重要な転機となっている[4]。このような早期の卒業は、メンバーの個々のキャリア選択やグループの運営方針に影響を与える可能性がある。\n\nこれらの動きを横断的に見ると、アイドルグループにおける卒業や体制変更は、メンバーの個々のキャリア選択やグループの進化を促進する一方で、ファンにとっては感情的な影響を与えることが多い。卒業は新たなメンバーの加入や新体制の確立を促し、グループの新たな魅力を引き出す契機ともなり得る。筆者としては、これらの変化がグループにとっての成長のチャンスと位置づけられると見るのが自然だろう。\n\n結びとして、アイドルグループの卒業や体制変更は、常に変化し続けるエンターテインメント業界の中で、グループがどのように進化し続けるかを示す重要な指標である。これらの変化がファンにどのような影響を与えるか、そしてグループがどのように新たな魅力を発揮していくのか、今後の動向に注目したい。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "櫻坂46の2代目キャプテン松田里奈が卒業発表、乃木坂46では5月に3代目の梅澤美波が卒業",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202609090001775.html"
+      },
+      {
+        "n": 2,
+        "title": "櫻坂46松田里奈が卒業発表、年内の活動をもって 22年11月から2代目キャプテン務める",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202609090001761.html"
+      },
+      {
+        "n": 3,
+        "title": "日向坂46森本茉莉が卒業発表、20年2月加入の三期生 12・11ツアー東京公演最終日に卒セレ",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202609080001280.html"
+      },
+      {
+        "n": 4,
+        "title": "【全文】「僕が見たかった青空」西森杏弥と宮腰友里亜の卒業発表、来年１月「別の道に進みたい」",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202609060001919.html"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-10T11:28:19.609Z"
+  },
+  {
     "date": "2026-09-09",
     "slug": "2026-09-09",
     "kind": "group",
