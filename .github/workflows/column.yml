@@ -37,8 +37,9 @@ jobs:
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-          COLUMN_COUNT: ${{ vars.COLUMN_COUNT }}              # 未設定なら 4
-          COLUMN_BROAD_COUNT: ${{ vars.COLUMN_BROAD_COUNT }}  # うち横断テーマの本数。未設定なら 2
+          COLUMN_COUNT: ${{ vars.COLUMN_COUNT || '2' }}        # 1日の本数。未設定なら 2
+          # 横断(broad)コラムは廃止。復活させたいときだけ COLUMN_BROAD_COUNT に 1 以上を渡す。
+          COLUMN_BROAD_COUNT: "0"
         run: node scripts/generate-column.mjs
 
       - name: Commit data

@@ -1,9 +1,9 @@
 /**
- * 「今日のコラム」を1日 最大 COLUMN_COUNT 本(既定4)生成する。ネタが足りなければ本数は減る。
- * コラムには2種類ある:
- *   - group … 特定グループを深掘りする狭めのコラム(従来どおり)
- *   - broad … 「新人」「ライブ動員」「チャート」等のテーマで複数グループを横断比較する広めのコラム
- * 目標は group 2本 + broad 2本。broad が足りない日は group で埋めて常に最大 COLUMN_COUNT 本にする。
+ * 「今日のコラム」を1日 最大 COLUMN_COUNT 本(既定2)生成する。ネタが足りなければ本数は減る。
+ * コラムは特定グループを深掘りする group 型のみ。
+ *   - group … 特定グループを深掘りする狭めのコラム
+ *   - broad … 複数グループを横断比較する広めのコラム。既定では作らない(COLUMN_BROAD_COUNT=0)。
+ *             コードは残してあり、COLUMN_BROAD_COUNT に 1 以上を渡せば復活する。
  *
  *  1. articles.json から「今日(JST)の 00:00〜現在」の記事を取り出す(少なすぎる時だけ直近48hに拡大)。
  *     broad 用には直近 BROAD_WINDOW_DAYS 日(既定7)ぶんを別途プールする。
@@ -17,7 +17,7 @@
  * API キーが無い / 対象記事が無い / 今日ぶんが既に COLUMN_COUNT 本ある 場合は何もせず正常終了。
  * 予期しない失敗でもニュース側のデプロイを止めないよう、常に exit 0。
  * 環境変数: OPENAI_API_KEY か GEMINI_API_KEY(どちらか必須), OPENAI_MODEL / GEMINI_MODEL(任意),
- *           COLUMN_COUNT(1日の本数。既定4), COLUMN_BROAD_COUNT(広めの目標本数。既定2),
+ *           COLUMN_COUNT(1日の本数。既定2), COLUMN_BROAD_COUNT(広めの目標本数。既定0),
  *           COLUMN_FORCE=1(今日ぶんを作り直す), COLUMN_DRY_RUN=1(API未使用でトピックとプロンプトを表示)
  */
 import fs from "node:fs";
@@ -65,8 +65,8 @@ const MODEL_CANDIDATES = [
 const FORCE = process.env.COLUMN_FORCE === "1";
 const DRY_RUN = process.env.COLUMN_DRY_RUN === "1";
 
-const COLUMN_COUNT = Number(process.env.COLUMN_COUNT || 4); // 1日に作る最大本数(ネタが無ければ減る)
-const BROAD_COUNT = Number(process.env.COLUMN_BROAD_COUNT || 2); // うち「広め(broad)」の目標本数
+const COLUMN_COUNT = Number(process.env.COLUMN_COUNT || 2); // 1日に作る最大本数(ネタが無ければ減る)
+const BROAD_COUNT = Math.max(0, Number(process.env.COLUMN_BROAD_COUNT || 0)); // うち「広め(broad)」の目標本数。既定0(横断コラムは作らない)
 const FALLBACK_HOURS = 48;           // 今日ぶんが少なすぎる時だけ、この時間まで広げる
 const MIN_POOL = 20;                 // これ未満なら FALLBACK_HOURS に拡大
 const MAX_ARTICLES_PER_CLUSTER = 7;  // 1トピックあたりの参考記事数(当日分)
@@ -638,11 +638,15 @@ async function main() {
   const allClusters = buildClusters(recent).filter((c) => !avoidGroup.has(normName(c.name)));
 
   // --- broad 用: 直近 BROAD_WINDOW_DAYS 日ぶんをプールし、テーマ辞書をあてる ---
+  // BROAD_COUNT=0(既定)なら横断コラムは作らないので、候補計算ごとまるごとスキップする。
   const broadCutoff = Date.now() - BROAD_WINDOW_DAYS * 864e5;
-  const broadPool = articles.filter((a) => {
-    const t = new Date(a.date).getTime();
-    return Number.isFinite(t) && t >= broadCutoff;
-  });
+  const broadPool =
+    BROAD_COUNT > 0
+      ? articles.filter((a) => {
+          const t = new Date(a.date).getTime();
+          return Number.isFinite(t) && t >= broadCutoff;
+        })
+      : [];
   const avoidBroad = new Set(
     [...columns.slice(0, AVOID_RECENT_TOPICS), ...todaysExisting]
       .filter((c) => kindOf(c) === "broad")
@@ -650,15 +654,20 @@ async function main() {
       .filter(Boolean)
       .map(normName)
   );
-  const broadCandidates = matchThemes(broadPool)
-    .filter((th) => !avoidBroad.has(normName(th.name)))
-    .slice(0, BROAD_CANDIDATES);
-  log(
-    `broad 候補テーマ(${broadCandidates.length}) / プール ${broadPool.length}件: ` +
-      (broadCandidates
-        .map((t) => `${t.name}(タグ付${t.taggedCount}/${t.items.length}件・${t.groupCount}G/score ${t.score.toFixed(1)})`)
-        .join(", ") || "なし")
-  );
+  const broadCandidates =
+    BROAD_COUNT > 0
+      ? matchThemes(broadPool)
+          .filter((th) => !avoidBroad.has(normName(th.name)))
+          .slice(0, BROAD_CANDIDATES)
+      : [];
+  if (BROAD_COUNT > 0) {
+    log(
+      `broad 候補テーマ(${broadCandidates.length}) / プール ${broadPool.length}件: ` +
+        (broadCandidates
+          .map((t) => `${t.name}(タグ付${t.taggedCount}/${t.items.length}件・${t.groupCount}G/score ${t.score.toFixed(1)})`)
+          .join(", ") || "なし")
+    );
+  }
 
   if (DRY_RUN) {
     const wantBroadDry = Math.min(BROAD_COUNT, broadCandidates.length);
