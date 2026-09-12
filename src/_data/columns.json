@@ -1,5 +1,75 @@
 [
   {
+    "date": "2026-09-12",
+    "slug": "2026-09-12",
+    "kind": "group",
+    "topic": "SixTONES",
+    "groups": [
+      "SixTONES"
+    ],
+    "region": "jp",
+    "title": "SixTONESの最新動向とその背景を探る",
+    "dek": "SixTONESのメンバー、森本慎太郎と松村北斗によるツーショットがSNSで話題を呼んでいる。彼らの活動の背景を考察する。",
+    "body_md": "本日、SixTONESのメンバーである森本慎太郎と松村北斗のツーショットがSNSで公開され、ファンの間で大きな話題となっている。写真家の豊田亮が撮影したこの写真では、二人がデニムに白シャツを羽織った双子コーデで、木製のベンチに腰かけている姿が印象的である。日差しを背に受けた明るいシーンの中で、彼らはクールな表情を見せており、ファンからは「ほくしんかっこいい」「かわいいふたり」といった声が多く寄せられている[1]。  \n\nこのようなSNSでの活動は、SixTONESのメンバーが個々の魅力を発信する手段として重要な役割を果たしている。特に松村北斗は、現在ドラマ『告白－25年目の秘密－』で主演を務めており、その演技が注目を集めている。ドラマは純愛と狂気が交錯するラブサスペンスで、彼の役どころは25年間の片想いを続ける主人公という難しい役柄である[3]。このような多様な活動が、彼らのファン層を広げる一因となっている。  \n\nSixTONESの活動は、音楽だけでなく、ドラマや映画、そしてSNSを通じたファンとの交流にまで広がっている。特に松村北斗は、映画『白鳥とコウモリ』でも主演を務め、その演技力が高く評価されている[7]。これらの活動は、彼らが単なるアイドルグループにとどまらず、エンターテインメント全般での存在感を強めていることを示している。  \n\nこうした多方面での活動を通じて、SixTONESは新たなファン層を獲得し続けている。メンバーそれぞれが個々のプロジェクトで成功を収めることで、グループ全体のブランド力を高めていると見るのが自然だろう。今後も彼らの動向から目が離せない。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "森本慎太郎と松村北斗がデニムに白シャツを羽織った双子コーデでベンチにクールに腰かけた姿に「ほくしんかっこいい」「かわいいふたり」",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000880489/"
+      },
+      {
+        "n": 3,
+        "title": "ドラマ『告白－25年目の秘密－』最終回直前！爽太（松村北斗）が麻里子（岡崎紗絵）へ25年間のすべてを告白",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000880255/"
+      },
+      {
+        "n": 7,
+        "title": "松村北斗×今田美桜W主演映画『白鳥とコウモリ』晴れやかな表情が収められたクランクアップ写真解禁",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000879838/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-12T10:54:11.877Z"
+  },
+  {
+    "date": "2026-09-12",
+    "slug": "2026-09-12-2",
+    "kind": "group",
+    "topic": "SEVENTEEN",
+    "groups": [
+      "SEVENTEEN"
+    ],
+    "region": "kr",
+    "title": "SEVENTEENのホシ、軍服務中にACLを断裂",
+    "dek": "SEVENTEENのホシが軍服務中にACLを完全断裂し、手術とリハビリに専念することが明らかになった。",
+    "body_md": "本日、SEVENTEENのホシが軍服務中に前十字靭帯（ACL）を完全に断裂したことが明らかになった。ホシはWeverseを通じてこのニュースをファンに伝え、「軍のテコンドーデモンストレーションチームでの練習中に膝を負傷し、完全断裂と診断された」と述べた。彼は手術後のリハビリに専念するため、予定されていたイベントへの参加を見送ることになった[1][2]。\n\nこのニュースは、SEVENTEENにとって大きな打撃である。特に、ホシはテコンドーデモンストレーションチームのイベントに向けて準備を重ねていたため、参加できないことに対する無念さを表明している。彼はまた、同じチームのメンバーであるジフン（ウジ）への応援を呼びかけた[2]。\n\nSEVENTEENは最近、日本でのアルバムがミリオン認定を受けるなど、国際的な成功を収めている[5]。しかし、メンバーの軍服務や個々の活動が重なり、グループとしての活動が制限される状況にある。ホシの怪我は、こうした状況にさらに影響を与える可能性がある。\n\nホシの怪我は、アイドルとしてのキャリアと軍服務の両立の難しさを改めて浮き彫りにしている。韓国のアイドルにとって、軍服務は避けて通れない課題であり、その間の活動制限や健康管理が重要であると位置づけられる。ホシの回復を願うとともに、彼の復帰がグループ全体にどのような影響を与えるか、注目されるところである。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "SEVENTEEN’s Hoshi Revealed To Have Torn His ACL During Military Service",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1869882wpp/seventeens-hoshi-revealed-to-have-torn-his-acl-during-military-service"
+      },
+      {
+        "n": 2,
+        "title": "SEVENTEEN’s Hoshi Tears ACL — Faces Minimum 6 Month Recovery Time",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/seventeens-hoshi-tears-acl-faces-minimum-6-month-recovery-time/"
+      },
+      {
+        "n": 5,
+        "title": "SEVENTEEN, ATEEZ, IVE, NCT WISH, aespa, And ILLIT Earn RIAJ Million, Platinum, And Gold Certifications In Japan",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1869376wpp/seventeen-ateez-ive-nct-wish-aespa-and-illit-earn-riaj-million-platinum-and-gold-certifications-in-japan"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-12T10:54:17.806Z"
+  },
+  {
     "date": "2026-09-11",
     "slug": "2026-09-11",
     "kind": "group",
