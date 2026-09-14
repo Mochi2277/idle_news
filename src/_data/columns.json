@@ -1,5 +1,75 @@
 [
   {
+    "date": "2026-09-14",
+    "slug": "2026-09-14",
+    "kind": "group",
+    "topic": "ILLIT",
+    "groups": [
+      "ILLIT"
+    ],
+    "region": "kr",
+    "title": "ILLIT、新作『BREAK EVEN』で関係の転換を予告",
+    "dek": "ILLITが5thミニアルバム『BREAK EVEN』を10月26日にリリースすることが発表された。前作の成功を受け、新たなテーマでのカムバックが注目される。",
+    "body_md": "ILLITが10月26日に5thミニアルバム『BREAK EVEN』をリリースすることが発表された[1][2]。前作『It’s Me』の成功に続くこの新作は、タイトルが示す通り「損益分岐点」に由来し、報われない関係に対する率直な宣言を込めた作品である[1][2]。BELIFT LABは、このアルバムが「もう自分の気持ちや時間を費やすことはしない」というILLITの決意を表現していると説明している[1]。このテーマは、曖昧な態度を取る相手に対する警告として位置づけられ、ILLITの音楽的な成長と変化を示すものと見るのが自然だろう。\n\n今年4月にリリースされた4thミニアルバムのタイトル曲「It’s Me」は、K-POPトレンドを牽引するほどのヒットを記録した[1]。その強烈なサウンドとユニークなパフォーマンスは、国内外のファンを魅了し続けている[1]。また、LE SSERAFIMやKATSEYEとのコラボレーション「ICONIC BY MISTAKE」も、国際的なチャートで高評価を得た[1]。これまでの成功を背景に、ILLITの新作がどのように受け入れられるかが注目される。\n\nILLITの日本での人気も高まっている。日本2ndシングル「I Got Your Back (Feat.JISOO, MOMOKA of HANA)」は、ABEMAオリジナルドラマのオープニング曲に選ばれ、Billboard JAPANのチャートで2位を記録するなど、存在感を示している[1]。このような国際的な評価は、ILLITの音楽が多様な文化圏で受け入れられている証拠であり、今後の活動にも期待が寄せられる。\n\nILLITの新作『BREAK EVEN』は、これまでの成功を踏まえた上での新たな挑戦と見てよいだろう。彼女たちがどのようにして新たな音楽的境地を切り開くのか、その動向に注目が集まる。彼女たちのメッセージがどのようにリスナーに響くのか、そしてそれがどのような影響を及ぼすのか、今後の展開が楽しみである。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "ILLIT、ミニアルバム『BREAK EVEN』リリース決定！前作『It’s Me』の大ヒットの熱気冷めやらぬ中カムバック",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000881327/"
+      },
+      {
+        "n": 2,
+        "title": "ILLIT Announces Fall Comeback Date",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1870369wpp/illit-announces-fall-comeback-date"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-14T12:57:57.521Z"
+  },
+  {
+    "date": "2026-09-14",
+    "slug": "2026-09-14-2",
+    "kind": "group",
+    "topic": "Stray Kids",
+    "groups": [
+      "Stray Kids"
+    ],
+    "region": "kr",
+    "title": "Stray Kidsヒョンジンのファッションが話題に",
+    "dek": "Stray KidsのヒョンジンがDiorとA24のコラボTシャツを着用し注目を集めている。彼のスタイルとグループの動向を追う。",
+    "body_md": "本日、Stray KidsのヒョンジンがDiorとA24のコラボレーションによるロゴTシャツを着用した写真を公開し、SNSで大きな反響を呼んでいる[1]。このTシャツはBTSのジミンやBLACKPINKのジスも色違いで着用しており、ファンの間で「おそろコーデ」として話題になっている[1]。ヒョンジンはパープルのTシャツにデニムを合わせ、片手で顔を隠すポーズや、アジサイとの調和が美しいショットを披露した[1]。\n\nStray Kidsは最近、BillboardのWorld Albumsチャートで最新のミニアルバム『THIS & THAT』が再び1位に返り咲くなど、音楽面でも注目を集めている[3]。また、メンバーのハンは誕生日に100万ウォンを寄付するなど、社会貢献活動にも積極的である[2]。こうした活動は、彼らの音楽以外の面でもファンの支持を集める要因となっている。\n\nStray Kidsのメンバーは、個々の活動でも注目を集めており、ヒョンジンは最近Cartierのガラ・ディナーでの高貴な装いが話題となった[7]。ファッションアイコンとしての地位を確立しつつある彼は、DiorのTシャツを着用することで、そのスタイルをさらに強調したと言えるだろう。彼のファッションセンスは、グループのイメージ向上にも寄与している。\n\nStray Kidsは音楽だけでなく、ファッションや社会貢献活動を通じて多面的な魅力を発信している。これにより、彼らはK-popシーンだけでなく、国際的なポップカルチャーの中でもその存在感を増していると見るのが自然だろう。今後も彼らの活動から目が離せない。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "BTSジミン、スキズ・ヒョンジン、BLACKPINKジスがおそろコーデ！？“Dior×A24”の色違いTシャツを着こなす姿に大反響",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000881271/"
+      },
+      {
+        "n": 2,
+        "title": "Stray Kids’ Han Makes Meaningful Birthday Donation",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1870330wpp/stray-kids-han-makes-meaningful-birthday-donation"
+      },
+      {
+        "n": 3,
+        "title": "Stray Kids, ENHYPEN, NCT 127, CORTIS, BTS, ATEEZ, LE SSERAFIM, ILLIT, And More Sweep Top Spots On Billboard World Albums Chart",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1870250wpp/stray-kids-enhypen-nct-127-cortis-bts-ateez-le-sserafim-illit-and-more-sweep-top-spots-on-billboard-world-albums-chart"
+      },
+      {
+        "n": 7,
+        "title": "Stray KidsヒョンジンがCartierガラ・ディナーで“王子様ビジュ”炸裂！高貴なベルベッドジャケット姿に「美しすぎる」「本当にラグジュアリーな男」と反響",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000876012/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-14T12:58:05.991Z"
+  },
+  {
     "date": "2026-09-12",
     "slug": "2026-09-12",
     "kind": "group",
