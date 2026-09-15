@@ -1,5 +1,81 @@
 [
   {
+    "date": "2026-09-15",
+    "slug": "2026-09-15",
+    "kind": "group",
+    "topic": "LE SSERAFIM",
+    "groups": [
+      "LE SSERAFIM"
+    ],
+    "region": "jp",
+    "title": "LE SSERAFIMの最新動向とその背景",
+    "dek": "LE SSERAFIMが『MAQUIA』11月号の表紙を飾る。新曲のリミックスに関する論争も注目を集めている。",
+    "body_md": "本日、LE SSERAFIMの宮脇咲良が『MAQUIA』創刊22周年記念号の表紙を飾ることが発表された[1]。彼女はインタビューで「美の価値観は自分軸で持つ」と語り、自己の強さを示した[1]。この号には、SixTONESの京本大我や俳優の出口夏希も登場し、それぞれの特別なインタビューが掲載される予定である[1]。  \n\n一方、LE SSERAFIMは最近、新曲「Made My Night」のリミックスをリリースしたが、これが新たな論争を巻き起こしている[2]。このリミックスにはKPop Demon HuntersのEJAEが参加しているが、彼女が過去にLE SSERAFIMの歌唱力を批判していたという主張がSNSで広まり、ファンの間で波紋を呼んでいる[2]。この主張は、EJAEが2024年にバークリー音楽大学での講義中に行ったとされる発言に基づいている[2]。  \n\nLE SSERAFIMは、これまでも国際的な舞台での活躍を続けており、最近では『The Jennifer Hudson Show』への再出演も決まっている[6]。また、彼女たちのアルバムはBillboardのWorld Albumsチャートでも上位にランクインしている[5]。これらの事実は、グループの人気と影響力の高さを示していると言える。  \n\n宮脇咲良のインタビューからは、彼女の自己肯定感と独自の美学が伺える。これが彼女の国際的な成功の一因であると見るのが自然だろう。また、EJAEとの論争は、K-POP業界におけるアーティスト間の関係性や、ファンの期待がいかにデリケートであるかを浮き彫りにしている。LE SSERAFIMの今後の活動がどのように展開されるのか、注目が集まる。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "SixTONES京本大我、LE SSERAFIM宮脇咲良、出口夏希が『MAQUIA』創刊22周年記念号表紙に登場",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000881910/"
+      },
+      {
+        "n": 2,
+        "title": "EJAE Gets Accused Of Bashing LE SSERAFIM Following New Collaboration",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/ejae-accused-bashing-le-sserafim-following-collaboration/"
+      },
+      {
+        "n": 5,
+        "title": "Stray Kids, ENHYPEN, NCT 127, CORTIS, BTS, ATEEZ, LE SSERAFIM, ILLIT, And More Sweep Top Spots On Billboard World Albums Chart",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1870250wpp/stray-kids-enhypen-nct-127-cortis-bts-ateez-le-sserafim-illit-and-more-sweep-top-spots-on-billboard-world-albums-chart"
+      },
+      {
+        "n": 6,
+        "title": "LE SSERAFIM To Return To “The Jennifer Hudson Show” This Week",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1869039wpp/le-sserafim-to-return-to-the-jennifer-hudson-show-this-week"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-15T11:51:25.291Z"
+  },
+  {
+    "date": "2026-09-15",
+    "slug": "2026-09-15-2",
+    "kind": "group",
+    "topic": "timelesz",
+    "groups": [
+      "timelesz"
+    ],
+    "region": "jp",
+    "title": "timeleszと寺西拓人が注目される理由",
+    "dek": "timeleszの寺西拓人が注目を集めている。島田珠代が彼に対する「推し」を明かしたことで、その人気が再確認された。",
+    "body_md": "本日、吉本新喜劇の島田珠代が、東京グランド花月の初日公演でtimeleszの寺西拓人への「推し」を明かした[1]。彼女は「寺西君にハマってしまって」と語り、彼の魅力を強調した。この発言が注目を集め、寺西の人気が再確認された形だ。\n\n寺西拓人は、timeleszのメンバーとして活動しており、最近ではアディダスのABCマート限定モデル『TEKWEN』のキャンペーンアンバサダーとしても注目されている[4]。このキャンペーンでは、駅のホームでの待ち合わせをテーマにしたCMが放送され、メンバーそれぞれの個性が引き立つ内容となっている[5]。寺西の存在感は、こうしたキャンペーンを通じてさらに増している。\n\ntimeleszは、アディダスとのパートナーシップを2025年から開始し、今年で2年目を迎えている[4]。このような企業とのコラボレーションは、彼らのブランド価値を高めるとともに、メンバー個々の魅力を引き出す機会となっている。寺西拓人が注目される背景には、こうした活動があると見るのが自然だろう。\n\n寺西が注目される理由は、彼自身の魅力だけでなく、timelesz全体の活動の成果でもある。島田珠代の発言は、その人気を象徴する一例であり、今後も彼の活躍が期待される。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "島田珠代、東京グランド花月初日公演「寺西君に見てほしい」timelesz寺西拓人にハマる",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202609150001312.html"
+      },
+      {
+        "n": 4,
+        "title": "timelesz、アディダスのABCマート限定モデル新CM出演 駅のホームで“待ち合わせ”する8人を描く",
+        "source": "Real Sound 音楽",
+        "url": "https://realsound.jp/2026/09/post-2521905.html"
+      },
+      {
+        "n": 5,
+        "title": "timeleszが8人で待ち合わせ！ABCマート限定・アディダス「TEKWEN」を履きこなす新CM「さあ、いこう」篇公開",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000880833/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-15T11:51:35.563Z"
+  },
+  {
     "date": "2026-09-14",
     "slug": "2026-09-14",
     "kind": "group",
