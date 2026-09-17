@@ -1,5 +1,81 @@
 [
   {
+    "date": "2026-09-17",
+    "slug": "2026-09-17",
+    "kind": "group",
+    "topic": "BTS",
+    "groups": [
+      "BTS"
+    ],
+    "region": "jp",
+    "title": "BTSジンとBLACKPINKジス、才能への批判",
+    "dek": "BTSのジンとBLACKPINKのジスが、ネット上でその才能について厳しい批判を受けている。これが示すものは何かを考察する。",
+    "body_md": "本日、BTSのジンとBLACKPINKのジスが、ネット上でその才能について厳しい批判を受けていることが報じられた。特にジンは、2015年と2025年のダンスパフォーマンスを比較するクリップが拡散され、「未だにダンスが上達していない」との批判を受けている[1]。これに付随して、ジスもダンスの技術について同様の批判を受けている[1]。\n\nこのような批判は、K-POPアイドルに対する過度な期待とプレッシャーを象徴している。アイドルはしばしば完璧さを求められ、その結果、少しのミスや成長の遅れが大きな批判の対象となることがある。特に、BTSやBLACKPINKのような世界的な人気を誇るグループのメンバーは、その影響力の大きさゆえに、批判もまた大きくなりがちである。\n\nしかし、批判がある一方で、ジンはLANEIGEのグローバルアンバサダーとしての活動を通じて、そのビジュアルや魅力でファンを魅了し続けている[3]。また、ジョングクがCalvin Kleinのキャンペーンで絶賛されているように、BTSのメンバー全体が多様な分野で活躍している[2]。これらの活動は、彼らが単なるアイドルにとどまらず、グローバルな影響力を持つアーティストであることを示している。\n\n批判は避けられないが、彼らの多様な活動と影響力を見ると、単にダンスや歌の技術だけでなく、彼らが持つ全体的な魅力や影響力が評価されるべきであると考える。これにより、ファンはより多面的に彼らを理解し、支持することができるだろう。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "BTS And BLACKPINK Member Subject To Brutal Backlash For Talent",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/bts-member-blackpink-memebr-talent-backlash/"
+      },
+      {
+        "n": 2,
+        "title": "BTSジョングクの脚の長さに驚愕！2パターンのジーンズを履きこなす抜群のスタイルに「まじ足ながっ」「かっこよさにため息」と絶賛の声",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000883472/"
+      },
+      {
+        "n": 3,
+        "title": "BTSジンがパジャマ姿で寝そべり魅せた美しい横顔に悶絶！柔らかな笑顔＆クールな眼差しに「ビジュも肌も完璧」「美しさすごい」",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000883286/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-17T11:49:19.780Z"
+  },
+  {
+    "date": "2026-09-17",
+    "slug": "2026-09-17-2",
+    "kind": "group",
+    "topic": "aespa",
+    "groups": [
+      "aespa"
+    ],
+    "region": "kr",
+    "title": "aespaのWinterとGiselleが直面する試練",
+    "dek": "aespaのWinterとGiselleがそれぞれ異なる形で注目を浴びている。これらの事象が示すK-POP業界の現状とは何か。",
+    "body_md": "本日、aespaのメンバーであるWinterとGiselleがそれぞれ異なる形で注目を集めている。Winterは最近のコンサートでの映像がきっかけで、体型に対する悪質な批判を受けている[1]。一方、GiselleはInstagramの投稿内容が問題視され、韓国国内外で大きな論争を巻き起こしている[2][3]。これらの出来事は、K-POPアイドルが直面する厳しい現実を浮き彫りにしている。\n\nWinterに対する体型批判は、K-POP業界における美の基準がいかに厳しいかを改めて示している。特に女性アイドルは、常にスリムな体型を維持することが求められ、そのプレッシャーは計り知れない[4]。このような状況は、ファンやメディアの間での議論を引き起こし、アイドル自身の健康にも影響を及ぼす可能性がある。\n\n一方で、GiselleのInstagram投稿に対する批判は、K-POPアイドルがソーシャルメディアでの発信においても細心の注意を払わなければならない現実を示している。彼女の投稿は、暴力や犯罪者を美化しているとされ、特に韓国のネットユーザーから厳しい批判を受けている[2][3]。このような状況は、アイドルが個人としての表現と公人としての責任の間でどのようにバランスを取るべきかという課題を浮き彫りにしている。\n\nこれらの事象は、K-POP業界が抱える構造的な問題を反映していると見るのが自然だろう。アイドルたちは、個人としての自由な表現と、ファンや社会からの期待との間で常に葛藤している。WinterとGiselleのケースは、アイドルがどのようにしてこの二つの側面を調和させるかという、より広範な議論を呼び起こす契機となるかもしれない。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "aespa’s Winter Hit With Malicious Body-Shaming In Recent Concert Clip",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/aespa-winter-body-shaming-concert/"
+      },
+      {
+        "n": 2,
+        "title": "aespa Giselle’s “Pedophilic, Violent And Abusive” Instagram Sparks Massive Controversy In Korea",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/aespa-giselles-pedophilic-violent-abusive-instagram-content-sparks-massive-controversy-in-korea/"
+      },
+      {
+        "n": 3,
+        "title": "aespa Giselle’s “Pedophilic” Content Fuels Massive Backlash",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/aespa-giselles-pedophilic-content-fuels-massive-backlash/"
+      },
+      {
+        "n": 4,
+        "title": "aespa’s Winter Sparks Concern With Her Extremely Thin Appearance",
+        "source": "KBIZoom",
+        "url": "https://kbizoom.com/aespa-winter-sparks-concern-over-extremely-thin-appearance/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-17T11:49:28.023Z"
+  },
+  {
     "date": "2026-09-16",
     "slug": "2026-09-16",
     "kind": "group",
