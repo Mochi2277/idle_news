@@ -1,5 +1,81 @@
 [
   {
+    "date": "2026-09-18",
+    "slug": "2026-09-18",
+    "kind": "group",
+    "topic": "BLACKPINK",
+    "groups": [
+      "BLACKPINK"
+    ],
+    "region": "kr",
+    "title": "BLACKPINKメンバーの新たな動向とその背景",
+    "dek": "BLACKPINKのROSÉが新曲「New Trick」で音楽シーンに復帰した。同時に、Lisaは外見に関する批判を受けている。",
+    "body_md": "BLACKPINKのROSÉが新曲「New Trick」で音楽シーンに復帰した。この曲は、彼女のデビューソロアルバム以来、約2年ぶりの新作である。前作の『rosie』が個人的な感情とメランコリックなメロディに焦点を当てていたのに対し、「New Trick」はより大胆な一面を見せる楽曲となっている[1]。この曲は、2000年代のAppleのコマーシャルで流行したポップロックサウンドを彷彿とさせる要素を持ち、懐かしさと新しさを兼ね備えている[4]。しかし、リリース後の反応は賛否両論で、一部のファンはオリジナリティに欠けると指摘している[3]。\n\n一方、BLACKPINKのLisaは、最近のテレビ出演での外見に関する批判に直面している。彼女の鼻の整形手術が話題となり、SNS上で多くの否定的なコメントが寄せられている[2]。BLACKPINKはこれまでもメンバーの外見や活動に関する批判を受けてきたが、Lisaの今回のケースは特に注目を集めている。\n\nこれらの出来事は、BLACKPINKのメンバーが個々の活動を通じて新たな挑戦を続けていることを示している。ROSÉの新曲は、彼女が音楽的に新しい方向性を模索していることを示唆しており、Lisaの外見に関する批判は、アイドルとしてのプレッシャーの一端を垣間見せるものである。これらの動きは、BLACKPINKが今後どのように進化していくのかを考える上で重要な要素となるだろう。\n\n結びとして、BLACKPINKのメンバーたちは、それぞれの活動を通じて個々のアイデンティティを強化しつつ、グループとしての存在感を維持するという挑戦に直面している。彼女たちの今後の動向に注目が集まるのは間違いない。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "Only the iPhone 18 Pro Could Get BLACKPINK’s ROSÉ to Do This",
+        "source": "KBIZoom",
+        "url": "https://kbizoom.com/blackpink-rose-new-trick-music-video-shot-on-iphone-18-pro/"
+      },
+      {
+        "n": 2,
+        "title": "BLACKPINK’s Lisa Hit With Criticism For Alleged Nose Job During Recent Appearance",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/blackpinks-lisa-hit-malicious-hate-alleged-nose-job-recent-appearance/"
+      },
+      {
+        "n": 3,
+        "title": "BLACKPINK Rosé’s New Song Hit With Heavily Divided Reactions",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/blackpink-rose-new-song-heavily-divided-reactions/"
+      },
+      {
+        "n": 4,
+        "title": "Watch: Rosé Has A “new trick” For Bouncing Back From Heartbreak In New MV",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1871666wpp/watch-rose-has-a-new-trick-for-bouncing-back-from-heartbreak-in-new-mv"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-18T11:24:23.093Z"
+  },
+  {
+    "date": "2026-09-18",
+    "slug": "2026-09-18-2",
+    "kind": "group",
+    "topic": "Travis Japan",
+    "groups": [
+      "Travis Japan"
+    ],
+    "region": "jp",
+    "title": "Travis Japan、新曲「EGO」がドラマ主題歌に",
+    "dek": "Travis Japanの新曲「EGO」が、松田元太主演のドラマ『はだかんぼうたち』の主題歌に決定した。大人のラブソングとして注目を集めている。",
+    "body_md": "Travis Japanの新曲「EGO」が、松田元太が主演を務めるドラマ『はだかんぼうたち』の主題歌に決定した[1][2]。このドラマは、江國香織の恋愛長編小説を初めて映像化した作品で、10月3日から放送が開始される[2]。新曲「EGO」は、11月18日発売予定の4thアルバム『Jewelry Basket』に収録される予定であり、艶やかさと緊張感を纏ったダンスサウンドが特徴だ[1][2]。\n\nTravis Japanは、これまでも多くの楽曲でファンを魅了してきたが、今回の「EGO」は特に大人のラブソングとしての側面が強調されている。歌詞には「愛することはエゴなのか」という問いが描かれ、プライドや孤独といった感情が絡み合う[1][2]。このテーマは、ドラマ『はだかんぼうたち』の世界観とも深くリンクしており、視聴者に強い印象を与えるだろう[2]。\n\n松田元太が主演を務める『はだかんぼうたち』は、東京・表参道を舞台に、美しくも危険な大人の恋愛模様を描く[1][2]。彼が演じる靴職人・鯖崎涼は、年上の歯科医と親友の母親との間で揺れ動く複雑なキャラクターだ[4]。このような設定は、Travis Japanの楽曲が持つ情感豊かな表現力を引き立てる要素となる。\n\nTravis Japanは、これまでにも多様なエンターテインメントを提供してきた。彼らの音楽は、王道アイドルエンターテインメントを現代的に再解釈したものであり、ファンに多幸感を届けている[1]。今回の新曲「EGO」も、その流れを汲んだ作品であり、今後の活動においても重要な位置を占めるだろう。\n\nこのように、Travis Japanの新曲「EGO」がドラマ『はだかんぼうたち』の主題歌に選ばれたことは、彼らの音楽的な成長と、エンターテインメント界での存在感をさらに高める出来事と位置づけられる。今後の彼らの活動にも注目が集まることは間違いない。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "Travis Japan、新曲「EGO」が松田元太主演ドラマ『はだかんぼうたち』主題歌に決定",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000884383/"
+      },
+      {
+        "n": 2,
+        "title": "Travis Japan、4thアルバム収録の新曲「EGO」が松田元太主演ドラマ『はだかんぼうたち』主題歌に",
+        "source": "Real Sound 音楽",
+        "url": "https://realsound.jp/2026/09/post-2528731.html"
+      },
+      {
+        "n": 4,
+        "title": "松田元太（Travis Japan）主演ドラマ『はだかんぼうたち』靴職人に弟子入りした松田が驚異的な器用さを発揮",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000883132/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-18T11:24:29.766Z"
+  },
+  {
     "date": "2026-09-17",
     "slug": "2026-09-17",
     "kind": "group",
