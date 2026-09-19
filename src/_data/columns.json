@@ -1,5 +1,117 @@
 [
   {
+    "date": "2026-09-19",
+    "slug": "2026-09-19",
+    "kind": "group",
+    "topic": "timelesz",
+    "groups": [
+      "timelesz"
+    ],
+    "region": "jp",
+    "title": "timeleszメンバー逮捕がもたらす影響",
+    "dek": "人気グループ「timelesz」の猪俣周杜容疑者が逮捕された。今後の活動に影響を与える可能性がある。",
+    "body_md": "本日、人気グループ「timelesz」のメンバーである猪俣周杜容疑者が傷害の疑いで逮捕されたというニュースが報じられた[1]。事件は、江東区辰巳のコンビニ駐車場で知人女性と口論になり、顔面を殴打する暴行をしたとされる[1]。この逮捕を受けて、彼がレギュラー出演しているテレビ朝日の番組「ニカゲーム」について、同局は対応を検討中とコメントしている[1]。また、猪俣容疑者が出演しているCMも相次いで削除されており、AOKIや日清食品などの企業が公式サイトから彼の画像や映像を取り下げた[3][6]。\n\n「timelesz」は、今年に入ってからも新体制で全国ツアーを成功させるなど、順調に活動を続けていた[8]。しかし、今回の逮捕はグループにとって大きな打撃となる可能性がある。特に、CM出演が削除されるなど、経済的な影響も無視できない[4]。芸能界では、スキャンダルが起きるとスポンサーが離れることは珍しくなく、グループ全体の活動にも影響を及ぼすことが考えられる。\n\n楽しんごが指摘したように、売れている時ほど周囲のサポートが重要であるとされる[2]。若くして成功を収めた芸能人が、自己管理を怠ることでトラブルに巻き込まれるケースは少なくない。猪俣容疑者の逮捕は、事務所やマネージャーがどのようにタレントを支えるべきかを再考するきっかけとなるだろう。\n\n今後、グループとしての活動がどのように進むのか、ファンや業界関係者の注目が集まる。猪俣容疑者の処遇が決まるまで、グループの活動は一時的に制約される可能性があるが、他のメンバーがどのように対応するかも注目されるポイントだ。事務所としては、迅速かつ適切な対応が求められるだろう。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "猪俣周杜容疑者の逮捕にテレビ朝日「対応については検討中」番組「ニカゲーム」にレギュラー出演",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202609190001573.html"
+      },
+      {
+        "n": 2,
+        "title": "楽しんごが“売れてる芸能人”巡り私見「売れてる時ほど止めてくれる人が絶対に必要」",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202609190001287.html"
+      },
+      {
+        "n": 3,
+        "title": "猪俣周杜容疑者 逮捕を受けAOKIがグループCM出演サイトを削除",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202609190001277.html"
+      },
+      {
+        "n": 4,
+        "title": "猪俣周杜容疑者、単独初CM「ByGROW」公式から削除 timeleszのCMも続々",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202609190001210.html"
+      },
+      {
+        "n": 6,
+        "title": "猪俣周杜容疑者 日清食品「チキンラーメン」CM出演サイト削除 サイトトップ画像も差し替え",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202609190001087.html"
+      },
+      {
+        "n": 8,
+        "title": "timelesz新体制2度目の全国ツアーライブ映像作品のジャケット写真解禁＆マルチアングル映像一部公開",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000882924/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-19T11:08:09.962Z"
+  },
+  {
+    "date": "2026-09-19",
+    "slug": "2026-09-19-2",
+    "kind": "group",
+    "topic": "KATSEYE",
+    "groups": [
+      "KATSEYE"
+    ],
+    "region": "kr",
+    "title": "KATSEYE、マノン復帰の噂に答える",
+    "dek": "KATSEYEがマノンの復帰に関する噂に言及した。ファンの間で意見が分かれる中、彼女たちの発言はどのように受け止められるのか。",
+    "body_md": "KATSEYEがマノンの復帰に関する噂に初めて言及した。スウェーデンの番組「Lilla Aktuellt」のインタビューで、メンバーのララは「その噂は真実ではない」と明言した[1][4]。この発言はファンの間で様々な解釈を生んでいる。マノンは今年2月から健康上の理由で活動を休止しており、ソフィアもそれに続いて8月に休止を発表している[1][4]。\n\nKATSEYEは現在、THE WILDWORLD TOURのヨーロッパ公演を続けているが、彼女たちのマネジメントや今後の方向性についても議論が巻き起こっている。特に、ファンの中にはHYBEとGeffen Recordsからの離脱を望む声もあり、最近のファン投票ではわずか3%が現状のマネジメントに満足しているという結果が出た[3]。\n\nこれまでの経緯を振り返ると、KATSEYEは今年のツアー開始以来、様々な論争に巻き込まれてきた。例えば、観客の年齢層やパフォーマンスに対する批判、さらには新曲のビデオが「性的すぎる」との批判もあった[5][6][8][9]。これらの問題は、グループのイメージや今後の活動に影響を与える可能性がある。\n\n筆者の見立てとしては、KATSEYEが直面しているこれらの課題は、彼女たちの人気が高まるにつれて避けられないものであると見るのが自然だろう。特に、マノンとソフィアの復帰がいつになるかは不透明であるが、ララの発言からはグループとしての結束が感じられる。ファンの期待に応えるためには、彼女たち自身がどのようにこの状況を乗り越えるかが鍵となるだろう。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "KATSEYE Speaks Out About Manon’s Possible Return as Lara’s Answer Divides Fans",
+        "source": "KBIZoom",
+        "url": "https://kbizoom.com/katseye-addresses-manon-return-rumors-as-laras-response-divides-fans/"
+      },
+      {
+        "n": 3,
+        "title": "KATSEYE: Leaving HYBE And Geffen Records?",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/stories/katseye-leave-hybe-geffen-records/"
+      },
+      {
+        "n": 4,
+        "title": "KATSEYE Directly Address Manon’s Return To The Group",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/katseye-directly-address-manons-return-group/"
+      },
+      {
+        "n": 5,
+        "title": "“Protest” Outside KATSEYE’s Recent Concert Triggers Major Reactions",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/protest-outside-katseyes-recent-concert/"
+      },
+      {
+        "n": 6,
+        "title": "KATSEYE’s Controversial Concert Crowd Sparks Heated Debate",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/katseyes-controversial-concert-crowd-sparks-heated-debate/"
+      },
+      {
+        "n": 8,
+        "title": "KATSEYE Hit With Wave Of Criticism For Performance During First World Tour Concert",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/katseye-concert-criticism-performance-world-tour-performance/"
+      },
+      {
+        "n": 9,
+        "title": "KATSEYE Spark Even More Controversy With “Sexualized” Lyric Video",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/katseye-lyric-video-sexualized-controversy/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-19T11:08:15.830Z"
+  },
+  {
     "date": "2026-09-18",
     "slug": "2026-09-18",
     "kind": "group",
