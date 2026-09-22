@@ -1,5 +1,87 @@
 [
   {
+    "date": "2026-09-22",
+    "slug": "2026-09-22",
+    "kind": "group",
+    "topic": "ILLIT",
+    "groups": [
+      "ILLIT"
+    ],
+    "region": "jp",
+    "title": "ILLITのチケット販売不振とその背景",
+    "dek": "ILLITの韓国公演チケット販売が不振であることが話題となっている。背景には価格設定やファンの反応があるようだ。",
+    "body_md": "本日、韓国のガールズグループILLITが来月予定している韓国でのアンコールコンサートのチケット販売が不振であることが明らかになった。SNS上で拡散された動画によると、販売開始から1週間以上経過しても、まだ多くの席が空いている状態であることが確認された[1]。これに対して、ファンやネットユーザーからは「価格が高すぎる」との指摘や、HYBEの販売戦略に対する批判が寄せられている[1]。\n\nILLITは先日、日本で4thデジタルシングル「Swingin’ Magic」をリリースしたばかりであり、こちらは日本と韓国両国のファンから注目を集めている[2]。また、来月26日には5枚目のミニアルバム「BREAK EVEN」を発表予定であり、前作の成功を受けて次なる展開に期待が高まっている[2][5]。\n\nこのような状況下でのチケット販売不振は、ILLITにとって新たな試練となるだろう。特に、K-POP業界ではチケット販売がアーティストの人気を測る一つの指標とされるため、この結果は彼女たちの今後の活動に影響を与える可能性がある。価格設定やプロモーションの見直しが必要とされるかもしれない。\n\n一方で、ILLITは新曲やアルバムを通じて新たなファン層を獲得するチャンスもある。特に「BREAK EVEN」は、報われない関係に対する警告をテーマにしており、彼女たちのメッセージ性の強い作品として注目されるだろう[5][6]。これがファンの関心を引き、今後の公演にプラスの影響を与える可能性もある。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "ILLIT’s Shockingly Low Ticket Sales Spark Major Mocking",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/illit-low-ticket-sales-mocking/"
+      },
+      {
+        "n": 2,
+        "title": "【韓流】ILLITが新曲リリース 来月26日にはミニアルバム「BREAK EVEN」発表",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202609220000088.html"
+      },
+      {
+        "n": 5,
+        "title": "ILLIT、ミニアルバム『BREAK EVEN』リリース決定！前作『It’s Me』の大ヒットの熱気冷めやらぬ中カムバック",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000881327/"
+      },
+      {
+        "n": 6,
+        "title": "ILLIT Announces Fall Comeback Date",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1870369wpp/illit-announces-fall-comeback-date"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-22T11:46:43.253Z"
+  },
+  {
+    "date": "2026-09-22",
+    "slug": "2026-09-22-2",
+    "kind": "group",
+    "topic": "BLACKPINK",
+    "groups": [
+      "BLACKPINK"
+    ],
+    "region": "kr",
+    "title": "BLACKPINK Lisaの最新動向とその背景",
+    "dek": "BLACKPINKのLisaが最近注目を集めている。ファンとの交流や新たなコラボレーションが話題だが、賛否両論もある。",
+    "body_md": "本日、BLACKPINKのLisaがファンとの交流をめぐって大きな話題となっている。LisaはカナダのSickKids Hospitalのアンバサダーであるがんサバイバーのファンと対面し、その様子がオンラインで共有された。しかし、この交流は「患者を小道具にしている」として批判を浴びている。スタイリストがLisaのポーズを直し、フラッシュが一斉にたかれたことで、瞬間が演出されたものに見えたという指摘がある[1]。一方で、LisaはPlayStationとのコラボレーションも発表しており、彼女がデザインしたPS5コントローラーや関連グッズが発売される予定だ。このコラボレーションは彼女のファンにとって新たな楽しみとなるだろう[2]。\n\nこれまでの経緯として、LisaはYGエンターテインメントに対するコメントや、彼女の個人的な生活に関する噂など、さまざまな話題で注目されてきた。最近では、タイの俳優との交際が噂されており、その写真が公開されたことで「ハードローンチ」として話題になっている[3]。また、彼女の所属するBLACKPINK自体も、ソロ活動の成果が問われる中で、グループとしての存在感を維持するために奮闘している[5]。\n\nこれらの出来事を踏まえると、Lisaの活動は単なるエンターテインメントの枠を超え、彼女自身のブランドや影響力を強化するための戦略的な動きと位置づけられる。特に、PlayStationとのコラボレーションは、彼女が音楽以外の領域でもファンを楽しませる意欲を示していると見るのが自然だろう。ファンとの交流における批判も、彼女の影響力の大きさを示す一例といえる。\n\n結びとして、Lisaの動向は今後も注目され続けるだろう。彼女の活動がどのように進化し、ファンや業界にどのような影響を与えるのか、引き続き見守っていきたい。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "Recent Video Of BLACKPINK Lisa’s Interaction With Fan Sparks Hugely Divided Reactions",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/blackpink-lisa-patient-fan-interaction-divided-reactions/"
+      },
+      {
+        "n": 2,
+        "title": "BLACKPINK’s Lisa has designed her own PlayStation controller and gaming merch line",
+        "source": "NME K-POP",
+        "url": "https://www.nme.com/news/gaming-news/blackpink-lisa-playstation-collaboration-controller-ps5-merch-pre-order-3970148?utm_source=rss&utm_medium=rss&utm_campaign=blackpink-lisa-playstation-collaboration-controller-ps5-merch-pre-order"
+      },
+      {
+        "n": 3,
+        "title": "Past Photos Of BLACKPINK’s Lisa And Alleged Boyfriend Spark “Hard Launch” Allegations",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/past-photos-blackpinks-lisa-alleged-boyfriend-spark-hard-launch-allegations/"
+      },
+      {
+        "n": 5,
+        "title": "Accusations Of BLACKPINK “Downfall” With Their Recent Solo Tracks Spark Huge Reactions",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/accusations-blackpink-flopping-downfall-solo-stats/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-22T11:46:52.484Z"
+  },
+  {
     "date": "2026-09-21",
     "slug": "2026-09-21",
     "kind": "group",
