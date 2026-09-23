@@ -1,5 +1,81 @@
 [
   {
+    "date": "2026-09-23",
+    "slug": "2026-09-23",
+    "kind": "group",
+    "topic": "TWICE",
+    "groups": [
+      "TWICE"
+    ],
+    "region": "kr",
+    "title": "TWICEサナ、プラダのプリンセスとして輝く",
+    "dek": "TWICEのサナがミラノでのプラダショーに登場し、その美しさが話題を呼んでいる。彼女のファッションとその背景を考察する。",
+    "body_md": "本日、TWICEのサナがイタリア・ミラノで行われたプラダの2027春夏コレクションに出席し、その美しさが話題となっている。サナは黒のノースリーブワンピースに黒のベルトを合わせたミニマルなスタイルで登場し、ボリュームのあるウェーブヘアと輝くデコルテがゴージャスな印象を与えた[1]。この姿は「プラダのプリンセス」として多くのファンから絶賛され、SNS上で大きな反響を呼んでいる[1]。\n\nこのようなサナの活躍は、TWICEが世界的な影響力を持つガールグループとしての地位をさらに強固にしていることを示している。彼女たちは音楽だけでなく、ファッションやエンターテインメントの分野でも注目を集めている。例えば、TWICEの「Perfect World」がYouTubeで1億回再生を突破し、ガールグループとして最多のミュージックビデオがこの記録を達成している[3]。このような実績は、彼女たちが単なるアイドルグループに留まらず、文化的なアイコンとしての地位を確立していることを示している。\n\nまた、サナはNCTのジェヒョンと共にプラダのアフターパーティーにも出席しており、彼らの交流がネット上で話題となった[2]。このような異なるグループ間の交流は、K-POPシーンがますます国際的かつ多様性に富んだものになっていることを示している。特に、サナとジェヒョンが同じ場にいながらも直接的な交流がなかったことが、ファンの間でユーモラスに受け取られている[2]。\n\nこれらの動きは、TWICEが単に音楽活動にとどまらず、ファッションや国際的なイベントに積極的に参加することで、その影響力を広げていることを示している。今後も彼女たちの活動がどのように展開されるのか、注目が集まるだろう。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "女神の美しさ！TWICEサナのボリュームウェーブ＆ミニマル黒ワンピのゴージャスコーデに「プラダのプリンセス」と反響",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000886881/"
+      },
+      {
+        "n": 2,
+        "title": "NCT’s Jaehyun And TWICE’s Sana’s Interaction At After Party Sparks Massive Response",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/nct-jaehyun-twice-sana-fashion-week-sparks-massive-response/"
+      },
+      {
+        "n": 3,
+        "title": "TWICE’s “Perfect World” Extends Their Record As Girl Group With Most MVs To Hit 100 Million Views",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1872647wpp/twices-perfect-world-extends-their-record-as-girl-group-with-most-mvs-to-hit-100-million-views"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-23T11:46:22.033Z"
+  },
+  {
+    "date": "2026-09-23",
+    "slug": "2026-09-23-2",
+    "kind": "group",
+    "topic": "SEVENTEEN",
+    "groups": [
+      "SEVENTEEN"
+    ],
+    "region": "jp",
+    "title": "SEVENTEEN新ユニットJxJがデビューへ",
+    "dek": "SEVENTEENのJEONGHANとJOSHUAが新ユニットJxJを結成し、1stミニアルバム『DREAMSCAPE』でデビューする。",
+    "body_md": "SEVENTEENのメンバーであるJEONGHANとJOSHUAが新ユニットJxJを結成し、1stミニアルバム『DREAMSCAPE』でデビューすることが発表された。デビュー日は10月19日で、韓国でのリリースに続き、日本では翌日の10月20日に発売される予定である[1][2]。JxJは、SEVENTEENのVOCAL TEAMに所属する二人のメンバーによるユニットで、その甘美な音色と繊細な感情表現が特長とされている[1]。 \n\nこのユニット結成の背景には、SEVENTEENというグループの多様性とメンバー個々の才能を最大限に活かすという戦略があると考えられる。SEVENTEENはデビュー12年目を迎え、メンバーそれぞれが個別の活動やユニットを通じて新たな挑戦を続けている[3]。特にJOSHUAは最近、新曲「Baby Come Home」を発表し、音楽制作にも積極的に関与していることから、彼のクリエイティブな側面がさらに発揮される場としてJxJが機能するのではないかと期待される[4]。 \n\nこのユニットデビューは、SEVENTEENのファンだけでなく、K-POPシーン全体においても注目される動きである。JxJのデビュー作『DREAMSCAPE』は、「幻想と現実の境界を取り払い、新たな感覚の世界を広げていく」ことをテーマにしており、音楽を通じて視聴者に新たな体験を提供することを目指している[1]。このようなコンセプトは、SEVENTEENのこれまでの作品におけるテーマ性の強さを引き継ぎつつ、さらに新しいアプローチを試みるものと位置づけられる。 \n\n結びとして、JxJのデビューはSEVENTEENの新たなフェーズの幕開けを告げるものであり、彼らの音楽的探求がどのように進化していくのかが楽しみである。特に、JEONGHANとJOSHUAの個々の魅力がどのように融合し、新たな音楽的表現を生み出すのかが注目される。彼らが描く「夢境」がどのようにリスナーの心に響くのか、今後の展開が期待される。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "SEVENTEEN JEONGHAN＆JOSHUAが新ユニット JxJを結成 1stミニアルバム『DREAMSCAPE』でデビュー",
+        "source": "Real Sound 音楽",
+        "url": "https://realsound.jp/2026/09/post-2531854.html"
+      },
+      {
+        "n": 2,
+        "title": "Watch: SEVENTEEN’s Jeonghan X Joshua Announce JxJ Unit Debut Date And Details With “DREAMSCAPE” Teaser",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1872556wpp/watch-seventeens-jeonghan-x-joshua-announce-jxj-unit-debut-date-and-details-with-dreamscape-teaser"
+      },
+      {
+        "n": 3,
+        "title": "EXO’s Suho Expresses Regret As A Leader While Observing SEVENTEEN",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/exo-suho-expresses-regret-leader-observing-seventeen/"
+      },
+      {
+        "n": 4,
+        "title": "Watch: SEVENTEEN’s Joshua Says “Baby Come Home” In Beautiful New Live Clip Featuring WeiBird",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1871935wpp/watch-seventeens-joshua-unveils-live-clip-teaser-for-digital-single-baby-come-home"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-23T11:46:31.821Z"
+  },
+  {
     "date": "2026-09-22",
     "slug": "2026-09-22",
     "kind": "group",
