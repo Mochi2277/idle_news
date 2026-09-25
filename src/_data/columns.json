@@ -1,5 +1,87 @@
 [
   {
+    "date": "2026-09-25",
+    "slug": "2026-09-25",
+    "kind": "group",
+    "topic": "BTS",
+    "groups": [
+      "BTS"
+    ],
+    "region": "kr",
+    "title": "BTSの最新動向とその背景",
+    "dek": "BTSのメンバーが最近注目を集めている。Vの過去の動画やJungkookのビジュアルに関する議論が話題だ。",
+    "body_md": "本日、BTSのメンバーであるVとJungkookがそれぞれ異なる理由で注目を集めている。Vは、過去に撮影された動画が再び話題となり、彼のユーモラスな一面がネット上で大きな反響を呼んでいる。この動画では、Vがグループの活動中に学校での罰のように壁の前で手を上げて膝をつくことを提案し、その真剣な態度が「キンキー」だと冗談交じりに指摘されている[1]。一方、Jungkookは日本でのイベントに参加した際の写真がネットで議論を呼んでいる。彼の未編集の写真が公開されると、年齢を感じさせるビジュアルだと批判されたが、ファンはすぐに彼の魅力を擁護した[2][6]。この写真は後に削除され、HYBEが削除を指示したのではないかとの憶測が広がっている[2]。  \n\nこれまでのBTSの活動を振り返ると、彼らは常にメディアやファンの注目を浴び続けてきた。最近では、Jungkookが日本でのイベントに参加し、ファンの熱狂的な歓迎を受けたことが報じられている[7]。また、Vはプライベートな写真を公開し、ファンとの親密な交流を続けている[4]。このような活動は、彼らの人気がいまだ衰えないことを示している。  \n\nコラムニストとしての見立てとして、BTSのメンバーが個々の活動を通じて多様な魅力を発信し続けることは、グループ全体のブランド価値を高める戦略の一環と見るのが自然だろう。Vのユーモラスな一面やJungkookのビジュアルに関する議論は、彼らの人間味を感じさせ、ファンとの距離を縮める要素となっている。  \n\n結びとして、BTSはその多様な活動を通じて、常に新しい話題を提供し続けている。彼らの動向は、今後も多くのファンやメディアの注目を集め続けるだろう。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "Viral Video Of BTS V’s “Kinky” Side Sparks Major Reactions",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/bts-v-kinky-side-going-viral/"
+      },
+      {
+        "n": 2,
+        "title": "Media Outlet Deletes Photo Of BTS’s Jungkook After Extreme Criticism For Visuals",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/media-outlet-deletes-photo-btss-jungkook-after-extreme-criticism-visuals/"
+      },
+      {
+        "n": 4,
+        "title": "BTS Vとスタッフの密着プリクラに「羨ましい」の声続出！パク・ヒョンシクとのゴルフ姿などプライベートショットを多数公開",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000887839/"
+      },
+      {
+        "n": 6,
+        "title": "BTS’s Jungkook “Aging” Visuals Hit With Criticism In Unedited Photos",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/bts-jungkook-aging-visuals-hit-criticism-in-unedited-photos/"
+      },
+      {
+        "n": 7,
+        "title": "BTS・Jung Kook出没で銀座大フィーバー 約600万円腕時計装着し登場 黄色い歓声ににっこり",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202609240001496.html"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-25T11:57:18.877Z"
+  },
+  {
+    "date": "2026-09-25",
+    "slug": "2026-09-25-2",
+    "kind": "group",
+    "topic": "TOMORROW X TOGETHER",
+    "groups": [
+      "TOMORROW X TOGETHER"
+    ],
+    "region": "jp",
+    "title": "TXT、秋葉原での姿がファンを魅了",
+    "dek": "TXTが秋葉原でのショッピングを楽しむ姿が公開された。日本での人気を再確認する機会となった。",
+    "body_md": "本日、TOMORROW X TOGETHER（TXT）のメンバーが東京・秋葉原を訪れ、ご当地グルメのショッピングを楽しむ姿がフジテレビ系『ノンストップ！』で放送された[1]。彼らは秋葉原駅近くの商業施設「CHABARA」内にある「日本百貨店しょくひんかん」で、日本の美味しいものを探し、特に新米の季節にちなみ「ご飯のお供」人気No.1を当てるクイズに挑戦した。スビンとテヒョンが見事に正解し、長崎のご当地グルメ・トルコライスを堪能した[1]。この様子はSNS上でも大きな話題を呼び、「秋葉原にいたの！？」「新聖地爆誕」といった驚きの声が多く寄せられた[1]。\n\nTXTはこれまでも日本での活動を積極的に行っており、3度目の日本ドームツアーが決定している[1]。このツアーは、彼らの8thミニアルバムで扱った「風」をメインテーマにしており、福岡、東京、大阪、愛知の4都市で8公演が予定されている[6]。また、彼らの日本での人気は、RIAJのダブルプラチナ認定を受けるなど、音楽業界でも確固たる地位を築いていることが示されている[2]。\n\nTXTのメンバーが秋葉原で見せた親しみやすい姿は、ファンにとって新たな魅力を感じさせるものであった。特に、スビンが「こういう場所は初めてなので、もう少し買い物したい」とコメントしたことは、日本文化への関心と愛着を示すものであり、彼らの活動が単なるプロモーションに留まらないことを示している[1]。このような活動は、彼らが国際的なアイドルとしての地位をさらに強固にする要因となるだろう。\n\n結びに、TXTの日本での活動は、ファンとの距離を縮める重要な機会であると位置づけられる。彼らの親しみやすい姿勢と音楽への情熱は、多くのファンにとって魅力的であり、今後の活動にも期待が高まる。日本のファンにとって、秋葉原でのTXTの姿は、彼らが身近な存在であることを再確認する機会となった。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "TXT5人が秋葉原の駅前に集結！ご当地グルメショッピングを楽しむリアルな姿に「新聖地爆誕」「秋葉原にいたの！？」「いつの間に」と大反響",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000887942/"
+      },
+      {
+        "n": 2,
+        "title": "NCT WISH, TXT, ENHYPEN, RIIZE, TWS, ZEROBASEONE, LE SSERAFIM, And More Earn RIAJ Double Platinum And Gold Certifications In Japan",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1873066wpp/nct-wish-txt-enhypen-riize-tws-zerobaseone-le-sserafim-and-more-earn-riaj-double-platinum-and-gold-certifications-in-japan"
+      },
+      {
+        "n": 6,
+        "title": "TOMORROW X TOGETHER、3度目の日本ドームツアーが開催決定！福岡、東京、大阪、愛知の4都市8公演を発表",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000882119/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-25T11:57:25.663Z"
+  },
+  {
     "date": "2026-09-24",
     "slug": "2026-09-24",
     "kind": "group",
