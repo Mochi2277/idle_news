@@ -1,5 +1,52 @@
 [
   {
+    "date": "2026-09-26",
+    "slug": "2026-09-26",
+    "kind": "group",
+    "topic": "ATEEZ",
+    "groups": [
+      "ATEEZ"
+    ],
+    "region": "kr",
+    "title": "ATEEZのサン、デート疑惑を否定",
+    "dek": "ATEEZのサンがイタリアでのデート疑惑に対し、本人と所属事務所が否定した。背景にはファッションウィーク参加がある。",
+    "body_md": "本日、ATEEZのメンバーであるサンが、イタリアでのデート疑惑を否定した。先日、ミラノファッションウィークでのイベントに出席していたサンが、見知らぬ女性と共に歩いている動画がSNSで拡散され、デート疑惑が浮上した[1][2]。これに対し、サンはファン向けのコミュニケーションプラットフォームFrommで「デートの噂は事実ではない」と明言し、所属事務所のKQエンターテインメントも「その女性はミラノのブランドの代表であり、必要なアイテムを購入しに行く途中だった」と説明した[2]。\n\nこの出来事の背景には、ATEEZが国際的な人気を博していることがある。サンはDolce&Gabbanaのグローバルアンバサダーとしてミラノファッションウィークに参加しており、ファッション業界でも注目を集めている[1][2]。また、ATEEZは最近のカムバックで国内外での人気が急上昇しており、音楽番組での連続受賞や、ビルボードのワールドアルバムチャートでの上位ランクインも果たしている[3][4][5]。\n\nこのような背景から、サンの個人的な動向が注目されるのは自然な流れであると言える。しかし、今回のようなデート疑惑が浮上するのは、ファンの関心が高まっていることの裏返しとも言えるだろう。サン自身も「人々が自分を追いかけてくることに驚いている」と述べており、ファンとの距離感についての考えを示している[1]。\n\n結論として、今回のデート疑惑は誤解に基づくものであり、サンとATEEZの人気の高さが引き起こした現象であると見るのが自然だろう。今後も彼らの活動に注目が集まる中、こうした誤解を避けるためのコミュニケーションが一層重要になるだろう。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "ATEEZ’s San Personally Addresses Viral Dating Rumor With Mystery Woman",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/ateezs-san-personally-addresses-viral-dating-rumor-mystery-woman/"
+      },
+      {
+        "n": 2,
+        "title": "ATEEZ’s San Shuts Down Dating Rumors",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1873250wpp/ateezs-san-shuts-down-dating-rumors"
+      },
+      {
+        "n": 3,
+        "title": "ATEEZ Member Breaks Hearts With Painful Confession About Being Less Popular In The Group",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/ateez-member-painful-confession-less-popular-group/"
+      },
+      {
+        "n": 4,
+        "title": "Stray Kids, ENHYPEN, MONSTA X, EVAN, CORTIS, BTS, ATEEZ, LE SSERAFIM, And More Sweep Top Spots On Billboard World Albums Chart",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1871954wpp/stray-kids-enhypen-monsta-x-evan-cortis-bts-ateez-le-sserafim-and-more-sweep-top-spots-on-billboard-world-albums-chart"
+      },
+      {
+        "n": 5,
+        "title": "Watch: ATEEZ Snags 7th Win For “BAD” On “Inkigayo”; Performances By LE SSERAFIM, &TEAM, And More",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1871962wpp/watch-ateez-snags-7th-win-for-bad-on-inkigayo-performances-by-le-sserafim-team-and-more"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-26T11:31:43.901Z"
+  },
+  {
     "date": "2026-09-25",
     "slug": "2026-09-25",
     "kind": "group",
