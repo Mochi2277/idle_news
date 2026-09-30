@@ -1,5 +1,81 @@
 [
   {
+    "date": "2026-09-30",
+    "slug": "2026-09-30",
+    "kind": "group",
+    "topic": "BTS",
+    "groups": [
+      "BTS"
+    ],
+    "region": "jp",
+    "title": "BTSの最新動向とその意義",
+    "dek": "BTSのメンバーが個々の活動を通じて新たな魅力を発信している。特にジンとVの動きが注目されている。",
+    "body_md": "本日、BTSのジンが仁川国際空港での姿が話題となった。彼はメンバーのジョングクのプリントが施されたTシャツを着用しており、そのユニークなファッションセンスがファンの間で大きな話題を呼んでいる[1]。このようなメンバー間の親密さを示す行動は、ファンにとっても心温まるものである。\n\n一方、BTSのVは、ロンドン発のコンシューマー・テクノロジー・ブランド「Nothing」のグローバルアンバサダーとしての活動を続けている。彼は「Nothing」のビジュアル撮影時のオフショットをInstagramで公開し、その美しい横顔とスタイリッシュなモノトーンコーデがファンの間で絶賛されている[2]。このような活動は、Vの個性と魅力をさらに引き出すものであり、彼のブランド価値を高める一助となっている。\n\nこれまでBTSは、グループとしての活動だけでなく、個々のメンバーがそれぞれの特性を活かしたソロ活動を展開してきた。特にVのように、ブランドアンバサダーとしての活動は、彼のビジュアル的な魅力を最大限に引き出す場となっている。これにより、BTS全体のブランド力も強化されることが期待される。\n\nBTSのメンバーがそれぞれの活動を通じて新たな魅力を発信し続けることは、ファンにとっても嬉しいことである。彼らの個々の活動が、グループとしてのBTSの更なる飛躍に繋がると見るのが自然だろう。今後も彼らの動向に注目が集まることは間違いない。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "BTS Jin’s T-Shirt Goes Viral After Netizens Discover Who Is On It",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/bts-jin-wearing-jungkook-tshirt-airport-goes-viral/"
+      },
+      {
+        "n": 2,
+        "title": "BTS Vが黒シャツ×サングラス姿の美しい横顔公開！「Nothing」撮影オフショットに「ポーズかわいい」「腕の綺麗さたまらない」と絶賛の声",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000890579/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-30T12:43:39.654Z"
+  },
+  {
+    "date": "2026-09-30",
+    "slug": "2026-09-30-2",
+    "kind": "group",
+    "topic": "KATSEYE",
+    "groups": [
+      "KATSEYE"
+    ],
+    "region": "kr",
+    "title": "KATSEYE、世界的舞台での活躍と挑戦",
+    "dek": "KATSEYEが2026年のヴィクトリアズ・シークレット・ファッションショーに出演することが決定した。彼女たちの最近の活動を振り返りつつ、その意義を考察する。",
+    "body_md": "KATSEYEが2026年のヴィクトリアズ・シークレット・ファッションショーに出演することが決定した。HYBEとGeffen Recordsによれば、このショーはロサンゼルスで10月18日に開催される予定で、KATSEYEは他の著名なアーティストたちと共にステージに立つことになる[1]。この発表は、彼女たちの国際的な人気をさらに確固たるものにするだろう。\n\nKATSEYEは最近、アメリカの人気番組『Saturday Night Live』にも出演しており、そのパフォーマンスが話題を呼んだ。しかし、同時にそのパフォーマンスには批判も集まり、特にメンバーの一部が休止中であることが影響していると見られる[2][3]。また、メンバーのダニエラがSNS上での発言を巡って批判を受けるなど、個々の活動にも注目が集まっている[2]。\n\nこのような状況下でのヴィクトリアズ・シークレット・ファッションショーへの出演は、KATSEYEにとって大きなチャンスであると同時に、彼女たちのプロフェッショナリズムが問われる場でもある。彼女たちの楽曲「Animal」がビルボードのポップエアプレイチャートでトップ15に入るなど[5]、音楽的な成功も収めているが、それを超えてパフォーマンス全体での評価を高める必要があるだろう。\n\nKATSEYEはこれまでにも「Hootie Frutti」のミュージックビデオが公開から40日で1億回再生を達成するなど[7]、視覚的なインパクトでも注目を集めてきた。今回のファッションショー出演は、彼女たちのビジュアルと音楽の融合がどのように評価されるかを試す絶好の機会となるだろう。彼女たちの今後の動向がさらに注目される中、ファンや業界関係者はそのパフォーマンスに期待を寄せている。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "KATSEYE To Perform At 2026 Victoria’s Secret Fashion Show",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1874526wpp/katseye-to-perform-at-2026-victorias-secret-fashion-show"
+      },
+      {
+        "n": 2,
+        "title": "KATSEYE’s Daniela And Boyfriend Accused Of Shading Manon — Idol Responds To Criticism",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/katseye-daniela-boyfriend-accused-shading-manon-idol-responds-criticism/"
+      },
+      {
+        "n": 3,
+        "title": "KATSEYE’s Recent Performance Hit With Wave Of Brutal Criticism",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/katseye-performance-wave-brutal-criticism/"
+      },
+      {
+        "n": 5,
+        "title": "KATSEYE’s “Animal” Enters Top 15 Of Billboard’s Radio Pop Airplay Chart for 1st Time",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1872910wpp/katseyes-animal-enters-top-15-of-billboards-radio-pop-airplay-chart-for-1st-time"
+      },
+      {
+        "n": 7,
+        "title": "KATSEYE’s “Hootie Frutti” Becomes Their Fastest MV To Hit 100 Million Views",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1872707wpp/katseyes-hootie-frutti-becomes-their-fastest-mv-to-hit-100-million-views"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-09-30T12:43:46.776Z"
+  },
+  {
     "date": "2026-09-29",
     "slug": "2026-09-29",
     "kind": "group",
