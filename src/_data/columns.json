@@ -1,5 +1,75 @@
 [
   {
+    "date": "2026-10-06",
+    "slug": "2026-10-06",
+    "kind": "group",
+    "topic": "BLACKPINK",
+    "groups": [
+      "BLACKPINK"
+    ],
+    "region": "kr",
+    "title": "BLACKPINKの最新動向とその背景",
+    "dek": "BLACKPINKのメンバーが最近注目を集めている。ファッションショーやSNSでの活動が話題となっているが、その背景には何があるのか。",
+    "body_md": "BLACKPINKのメンバーが最近、さまざまな話題を提供している。まず、ジェニーがパリで行われたシャネルのファッションショーでのスタイリングを巡り、他のアイドルと比較される形で注目を集めた。ネット上では、ジェニーのスタイリングが他のアイドルよりも優遇されているとの声が上がっている[1]。一方で、リサは自身のInstagramに投稿した露出度の高い衣装が物議を醸し、韓国のネットユーザーから批判を受けている[2]。さらに、リサの「無礼な」行動を捉えたクリップが拡散され、議論を呼んでいるが、多くのファンは彼女を擁護している[3]。\n\nこれらの出来事は、BLACKPINKがデビュー以来築いてきた影響力を再確認させるものである。彼女たちのデビュー曲「BOOMBAYAH」のミュージックビデオが19億ビューを超え、K-POPデビューMVとして初の快挙を達成したことも、その影響力を裏付けている[4]。デビューから10年を経た現在も、彼女たちは新たな記録を打ち立て続けている。\n\nこれらの動きは、BLACKPINKが単なるアイドルグループを超え、ファッションや社会的な議論にまで影響を与える存在であることを示していると言えるだろう。ジェニーやリサがファッションや個人の表現を通して注目を集めることは、彼女たちがアイドルとしての枠を超えた活動を行っている証拠である。これにより、彼女たちの影響力は音楽だけにとどまらず、広範な分野に及んでいると位置づけられる。\n\n結びとして、BLACKPINKのメンバーはそれぞれが個々の活動を通じて新たな挑戦を続けている。これらの動きは、彼女たちが今後どのような方向に進むのかを示唆するものであり、ファンや業界関係者にとっても注目すべきポイントである。彼女たちが築く新たな歴史に、今後も目が離せない。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "BLACKPINK’s Jennie Allegedly Receives “Better” Treatment Compared To Another Female Idol",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/blackpink-jennie-allegedly-getting-better-treatment-chanel-illit-wonhee/"
+      },
+      {
+        "n": 2,
+        "title": "BLACKPINK Lisa’s Sexy And Revealing Outfits In Instagram Post Spark Major Backash",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/blackpink-lisa-sexy-revealing-outfits-in-instagram-post-spark-major-backash/"
+      },
+      {
+        "n": 3,
+        "title": "Viral Clip Of BLACKPINK Lisa’s “Rude” Behavior Sparks Heated Debate",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/clip-blackpink-lisa-rude-behavior-heated-debate/"
+      },
+      {
+        "n": 4,
+        "title": "【韓流】BLACKPINKのデビュー曲MVが19億ビュー超え 10年２カ月で",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202610060000299.html"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-10-06T13:24:22.868Z"
+  },
+  {
+    "date": "2026-10-06",
+    "slug": "2026-10-06-2",
+    "kind": "group",
+    "topic": "Mrs. GREEN APPLE",
+    "groups": [
+      "Mrs. GREEN APPLE"
+    ],
+    "region": "jp",
+    "title": "Mrs. GREEN APPLE、新曲制作の舞台裏に迫る",
+    "dek": "Mrs. GREEN APPLEが新曲「ア・ポステリオリ」の制作舞台裏を公開した。アルバム『POPS』の成功の背景を探る。",
+    "body_md": "本日、Mrs. GREEN APPLEが新曲「ア・ポステリオリ」の制作舞台裏を紹介する映像を公開した。この楽曲は、9月30日に発売されたアルバム『POPS』に収録されており、そのMVは光と影を駆使した大胆な映像表現で話題を集めている[1]。公開からわずか6日で700万回再生を突破するなど、ファンの関心を引き続けている[1]。  \n  \nアルバム『POPS』は、リリース直後からオリコン週間アルバムランキングで1位を獲得し、初週売上は64.6万枚を記録した[4]。この成功の背景には、楽曲制作の緻密さとメンバーの音楽に対する情熱がある。大森元貴がトータルプロデュースを手掛け、若井滉斗や藤澤涼架が変拍子を多用した難曲に挑んだことが、アルバムのクオリティを高めている[1]。  \n  \nMrs. GREEN APPLEの音楽は、単なるポップスの枠を超え、視覚的なインパクトと音楽的な挑戦を融合させていると見るのが自然だろう。彼らの楽曲は、聴く者に新たな体験を提供し、音楽の可能性を広げる役割を果たしている。特に「ア・ポステリオリ」のような作品は、彼らの音楽的探求心を象徴していると位置づけられる。  \n  \n今後もMrs. GREEN APPLEは、音楽の枠を広げ続けるだろう。彼らの活動は、ポップカルチャーの新たな潮流を生み出す可能性を秘めており、今後の展開にも注目が集まる。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "Mrs. GREEN APPLE、新曲「ア・ポステリオリ」の制作舞台裏に迫るBehind the Scenes映像公開",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000894861/"
+      },
+      {
+        "n": 4,
+        "title": "Mrs. GREEN APPLE、最新アルバム『POPS』が2作連続初週売上50万枚超えでオリコン1位に！シングルは日向坂46が18作連続首位獲得",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000894007/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-10-06T13:24:32.235Z"
+  },
+  {
     "date": "2026-10-05",
     "slug": "2026-10-05",
     "kind": "group",
