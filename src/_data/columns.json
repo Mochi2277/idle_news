@@ -1,5 +1,69 @@
 [
   {
+    "date": "2026-10-08",
+    "slug": "2026-10-08",
+    "kind": "group",
+    "topic": "INI",
+    "groups": [
+      "INI"
+    ],
+    "region": "jp",
+    "title": "INI、5周年を迎えたその強さと未来",
+    "dek": "INIが結成5周年を迎え、『Venue101』での特集が放送される。東京ドーム公演の成功も含め、彼らの成長とファンとの関係性に注目が集まる。",
+    "body_md": "本日、INIがNHK総合の音楽番組『Venue101』に出演することが発表された。番組では、結成5周年を迎えたINIのこれまでの歩みを振り返る特集が組まれており、彼らの過去の出演回をダイジェストで紹介する予定だ[1]。また、最新シングル『We Are』のパフォーマンスも披露される。この楽曲は彼らの初期を象徴する一曲であり、5年間の思いを込めた特別な演出が期待される[1]。\n\nINIは今年、9thシングル『ANTHEM』をリリースし、初週で82.3万枚を売り上げるなど、シングル10作連続でハーフミリオンを達成する快挙を成し遂げた[2]。さらに、先月には初の東京ドーム公演を成功させ、グループの成長を示す大きな節目となった[2]。このような成果は、デビュー前からの強固なファンダムと、デビュー後の新たなファン層の獲得によるものであると考えられる。彼らはファンクラブやYouTubeコンテンツを通じて、ファンとの日常的な接点を持ち続けており、これがファンの熱量を維持する要因となっている[2]。\n\nINIの成長は、サバイバルオーディション番組出身グループとしての特徴を活かしつつ、新たな物語を生み出し続けている点にあると見るのが自然だろう。デビュー時のファンの熱量だけでなく、新たな支持層を広げる努力が、彼らの現在の成功に繋がっている。既存ファンとの関係を深めつつ、新たなファンを獲得することで、彼らは今後も成長を続けるだろう。\n\n結びとして、INIが5周年を迎えた今、彼らの活動はますます多様化し、ファンとの関係もより深まっている。『Venue101』での特集は、彼らのこれまでの歩みを振り返ると同時に、これからの未来を見据える重要な機会となるだろう。INIのこれからの活躍に期待が高まる。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "次回『Venue101』にINI、imase、STU48、&TEAMが登場！番組最多出演のINIは全出演回をプレイバック",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000896329/"
+      },
+      {
+        "n": 2,
+        "title": "INI、5周年でなお伸び続ける強さ 『ANTHEM』82.3万枚、10作連続記録、初東京ドーム公演に結実した積み重ね",
+        "source": "Real Sound 音楽",
+        "url": "https://realsound.jp/2026/10/post-2544140.html"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-10-08T13:39:02.167Z"
+  },
+  {
+    "date": "2026-10-08",
+    "slug": "2026-10-08-2",
+    "kind": "group",
+    "topic": "ATEEZ",
+    "groups": [
+      "ATEEZ"
+    ],
+    "region": "kr",
+    "title": "ATEEZ、新作ティーザーでAI使用に批判殺到",
+    "dek": "ATEEZが新作ティーザーを公開し、AIの使用に対する批判が巻き起こっている。彼らの人気の高まりとともに、今回の騒動の背景と意味を探る。",
+    "body_md": "本日、ATEEZが新作「GOLDEN HOUR: Part 6」のティーザーを公開したが、その内容がネット上で大きな議論を呼んでいる。特にAIの大規模な使用が批判の的となっており、多くのネットユーザーがその影響を懸念している[1]。ATEEZはデビュー以来、独自のコンセプトで注目を集めてきたが、今回のティーザーは彼らの「海賊」テーマに回帰するものだった[1]。\n\nこれまでATEEZは、独創的なコンセプトとビジュアルでファンを魅了してきた。特に2018年のデビュー当初から「海賊」テーマを基軸にした作品は、彼らのユニークなスタイルとして定着している[1]。しかし、今回のティーザーが公開された直後から、AI技術の多用が「恐ろしい」との批判が噴出している[1]。AIの使用が音楽業界に与える影響については、これまでも議論が続いており、ATEEZのような人気グループがこの技術を採用することは、さらなる波紋を呼ぶ可能性がある。\n\nこの騒動は、ATEEZの人気が上昇していることも一因と考えられる。彼らは最近のビルボードワールドアルバムチャートでも上位にランクインしており[4]、その影響力は増すばかりである。こうした背景から、ファンや業界関係者が彼らの動向に注目しているのは自然なことだろう。AIの使用に対する批判は、彼らのクリエイティブな試みを制約するものではなく、むしろ新たな挑戦への期待の裏返しとも言える。\n\n結びとして、ATEEZの今回の騒動は、彼らのアーティストとしての成長過程の一部と見るのが自然だろう。AI技術の活用は賛否両論を生むが、彼らがどのようにこの技術を音楽に取り入れていくのか、今後の動向に注目が集まる。ファンの期待に応える形で、ATEEZが新たな地平を切り開くことを期待したい。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "ATEEZ Embroiled In Major Controversy With New Comeback — Inciting Fury",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/ateez-embroiled-in-major-controversy-new-comeback-inciting-fury/"
+      },
+      {
+        "n": 2,
+        "title": "Watch: ATEEZ Announces November Comeback Date With Exciting “CRASH TO BEGIN” Teaser",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1876093wpp/watch-ateez-announces-november-comeback-date-with-exciting-crash-to-begin-teaser"
+      },
+      {
+        "n": 4,
+        "title": "Stray Kids, EVAN, ENHYPEN, CORTIS, ILLIT, TUIDE, BTS, LE SSERAFIM, ATEEZ, And More Sweep Top Spots On Billboard World Albums Chart",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1875434wpp/stray-kids-evan-enhypen-cortis-illit-tuide-bts-le-sserafim-ateez-and-more-sweep-top-spots-on-billboard-world-albums-chart"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-10-08T13:39:10.812Z"
+  },
+  {
     "date": "2026-10-07",
     "slug": "2026-10-07",
     "kind": "group",
