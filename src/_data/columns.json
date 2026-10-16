@@ -1,5 +1,75 @@
 [
   {
+    "date": "2026-10-16",
+    "slug": "2026-10-16",
+    "kind": "group",
+    "topic": "BTS",
+    "groups": [
+      "BTS"
+    ],
+    "region": "jp",
+    "title": "BTSのRM、ランキングでの評価に賛否",
+    "dek": "BTSのRMが「2026年K-POP最もハンサムな顔」ランキングで20位に選ばれたが、ネット上で賛否両論が巻き起こっている。",
+    "body_md": "本日、BTSのRMが「2026年K-POP最もハンサムな顔」ランキングで20位にランクインしたことが報じられたが、これがネット上で大きな話題となっている[1]。このランキングは毎年恒例のもので、今年はAND2BLEのZhang Haoが1位を獲得した[1]。しかし、RMの順位に対しては、ネットユーザーからの厳しい意見が相次いでいる。「顎のラインがない」「ハンサムとRMを同じ文に使うな」といったコメントが見受けられ、RMの評価に対する反発が目立つ[1]。\n\n一方で、BTSの他のメンバーもSNSで話題を呼んでいる。ジミンは自身のInstagramで、ペルー公演での写真を公開し、その中で「浮いているように見える」写真が注目を集めた[2]。この写真は、ジョングクがジミンを支えているように見えるが、実際には誰もジミンを持ち上げていないことが動画で確認され、ファンの間で「天使のようだ」といった声が上がっている[2]。また、ジョングクはVの自然体の写真をInstagramで公開し、ファンからは「テテがいっぱい」「グクが撮るテテがかわいい」といった反響が寄せられている[3]。\n\nこれらの出来事は、BTSというグループが個々のメンバーの活動を通じて、いかに多様な反応を引き起こすかを示している。RMのランキングに対する反発は、彼のビジュアルに対する評価が分かれることを示しているが、これはK-POPの美的基準が多様化している証とも言えるだろう。一方で、ジミンやジョングクのSNS活動は、ファンとの交流を深め、彼らの魅力をさらに引き出す役割を果たしている。\n\nBTSの活動は、音楽だけでなく、メンバー個々の魅力やSNSでの発信を通じて、ファンとの絆を強めている。これからも彼らの動向に注目が集まることは間違いないだろう。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "BTS Member Brutally Mocked For Ranking On “Most Handsome Faces Of K-Pop”",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/bts-member-brutally-mocked-ranking-handsome-faces-kpop/"
+      },
+      {
+        "n": 2,
+        "title": "BTSジミンが“浮いて見える”と話題の集合ショットの裏側公開！「グクがひとりで持ち上げてる？」「誰も持ってないように見える」「さすがに天使としか…」の声",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000900561/"
+      },
+      {
+        "n": 3,
+        "title": "BTSジョングクが捉えたVの自然体ショットに絶賛の声！カメラをのぞき込む姿や優しい笑顔に「テテがいっぱい！！」「グクが撮るテテかわいい」と大反響",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000900188/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-10-16T11:32:34.911Z"
+  },
+  {
+    "date": "2026-10-16",
+    "slug": "2026-10-16-2",
+    "kind": "group",
+    "topic": "tripleS",
+    "groups": [
+      "tripleS"
+    ],
+    "region": "jp",
+    "title": "tripleS、Jiwooの負傷と新曲「Andless」",
+    "dek": "tripleSのJiwooが足首の負傷により活動を制限することが発表された。同時に、24人のフルメンバーで新曲「Andless」をリリースした。",
+    "body_md": "本日、韓国の人気ガールズグループtripleSのメンバーであるJiwooが、足首の軽い負傷により今後の活動で動きを制限することが発表された。所属事務所のMODHAUSは、Jiwooが今後の台北でのコンサートにおいて振り付けを控えることを公式に発表した[1]。このニュースはファンにとって驚きであり、彼女の回復を願う声が多く寄せられている。\n\n一方で、tripleSは本日新曲「Andless」をリリースした。この楽曲は、10月10日と11日にソウルで行われた『2026 tripleS World Tour ANDLESS in Seoul』で初披露されたものであり、24人のフルメンバーが持つエネルギーと可能性を音楽で表現している[2]。この新曲は「<LOVE&POP>シリーズ」の第2弾として位置づけられ、グループのさらなる進化を示すものとされている。\n\ntripleSは今年、24人の完全体として韓国で『ASSEMBLE26 ＜LOVE＆POP＞ pt.1』をリリースし、その世界観を広げる形で活動を続けている[4]。この流れの中でリリースされた「Andless」は、彼女たちの音楽的な成長と多様性を示す重要な作品であると見るのが自然だろう。特に、フルメンバーでの活動が続く中で、それぞれのメンバーがどのように個性を発揮し、グループ全体としてのシナジーを生み出していくかが注目される。\n\n今後の活動として、tripleSは10月31日に東京で『2026 tripleS World Tour ＜ANDLESS＞ in Tokyo』を開催する予定である[2]。この公演では、新曲「Andless」がどのように日本のファンに受け入れられるかが注目される。Jiwooの負傷によるパフォーマンスの制限がある中で、他のメンバーがどのようにその穴を埋めるのか、またグループ全体としてどのようなステージを見せるのかが期待される。\n\ntripleSの活動は、個々のメンバーの成長とグループ全体の進化を同時に追求するものであり、今後もその動向から目が離せない。彼女たちの音楽とパフォーマンスがどのように進化していくのか、ファンと共に見守りたい。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "tripleS’s Jiwoo To Limit Movements During Upcoming Schedules Due To Ankle Injury",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1879037wpp/tripless-jiwoo-to-limit-movements-during-upcoming-schedules-due-to-ankle-injury"
+      },
+      {
+        "n": 2,
+        "title": "tripleS、ニューシングル「Andless」リリース 24人フルメンバーのエネルギーと可能性を表現",
+        "source": "Real Sound 音楽",
+        "url": "https://realsound.jp/2026/10/post-2555615.html"
+      },
+      {
+        "n": 4,
+        "title": "tripleS日本オリジナルアルバムプロジェクト第三章となるtripleS neptune「Welcome to Heaven」が配信スタート",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000891019/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-10-16T11:32:39.805Z"
+  },
+  {
     "date": "2026-10-15",
     "slug": "2026-10-15",
     "kind": "group",
