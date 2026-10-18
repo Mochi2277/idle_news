@@ -1,5 +1,81 @@
 [
   {
+    "date": "2026-10-18",
+    "slug": "2026-10-18",
+    "kind": "group",
+    "topic": "BLACKPINK",
+    "groups": [
+      "BLACKPINK"
+    ],
+    "region": "jp",
+    "title": "BLACKPINKの動向とその背景を探る",
+    "dek": "BLACKPINKのメンバーたちが個々に注目を集める中、彼女たちの動向が話題を呼んでいる。",
+    "body_md": "BLACKPINKのメンバーたちがそれぞれの活動で注目を集めている。特に、ロサンゼルスで開催された第6回アカデミー博物館ガラに初めて参加したRoséの衣装が話題となった。彼女はアンソニー・ヴァカレロによるサンローランのシアーな黒いガウンを着用し、ティファニーのジュエリーでスタイリングを完成させた。しかし、ファンからは「退屈」との声が上がり、彼女のスタイリングに対する批判が集まった[1]。一方、Lisaは日本を訪れ、京都や奈良、大阪を巡る姿を自身のInstagramに投稿した。彼女の着物姿はファンから絶賛され、日本の文化を楽しむ様子が多くの支持を得ている[2]。\n\nこれまでの経緯を振り返ると、BLACKPINKのメンバーたちは個々の活動でも注目を集めてきた。JennieはNetflixの新作映画『STEPS』のために楽曲をリリースすることを発表し、これが彼女の道徳観に対する批判を引き起こした[3]。また、Lisaはタイの俳優「Blue」との交際が噂され、これがネット上で賛否両論を巻き起こしている[4]。\n\nこれらの動きから見えてくるのは、BLACKPINKのメンバーたちが個々の活動を通じて新たなファン層を開拓しているということだ。特にLisaの日本での活動は、彼女がアジア圏での支持をさらに強固にするための戦略と見るのが自然だろう。また、Roséのファッションに対する批判は、彼女がこれからどのようにスタイリングを進化させていくのか、ファンが注目していることを示している。\n\n結びとして、BLACKPINKのメンバーたちはそれぞれの道を歩みながらも、グループとしての存在感を維持している。彼女たちの個々の活動が、BLACKPINK全体のブランド価値を高めていると言えるだろう。今後の彼女たちの動向に注目が集まるのは間違いない。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "BLACKPINK’s Rosé Torn Apart For Latest Red Carpet Look",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/blackpinks-rose-torn-apart-latest-red-carpet-look/"
+      },
+      {
+        "n": 2,
+        "title": "BLACKPINKリサ、淡い黄色の着物姿で日本を満喫！金閣寺・東大寺・USJを巡る姿に「また来てね」「日本を楽しんでくれて嬉しい」「着物姿かわいい」",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000901540/"
+      },
+      {
+        "n": 3,
+        "title": "BLACKPINK Jennie’s New Announcement Incites Brutal Criticism Towards Idol’s Morals",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/blackpink-jennie-new-announcement-incites-brutal-criticism-towards-idols-morals/"
+      },
+      {
+        "n": 4,
+        "title": "Viral Photos Of BLACKPINK Lisa’s Recent Sighting With Rumored Boyfriend Hit With Hugely Divided Reactions",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/viral-photos-blackpink-lisa-rumored-boyfriend-divided-reactions/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-10-18T11:17:41.498Z"
+  },
+  {
+    "date": "2026-10-18",
+    "slug": "2026-10-18-2",
+    "kind": "group",
+    "topic": "IVE",
+    "groups": [
+      "IVE"
+    ],
+    "region": "kr",
+    "title": "IVEの最新動向とその背景を読み解く",
+    "dek": "IVEのメンバー、アン・ユジンが俳優ムン・サンミンとのデート疑惑に巻き込まれた。これが彼女たちの活動にどのような影響を与えるのか注目される。",
+    "body_md": "本日、IVEのアン・ユジンが俳優ムン・サンミンとのデート疑惑に巻き込まれたことが話題となっている[1]。この噂は、ムン・サンミンがInstagramに投稿した写真がすぐに削除されたことから始まった。写真には彼のサングラスに女性のシルエットが映り込んでおり、その服装がユジンが以前着ていたものと似ていると指摘された[1]。この出来事は、彼女たちのカムバックを控えたタイミングで起きたため、ファンの間で様々な意見が飛び交っている[1]。\n\nIVEは、10月19日に先行公開曲「Looks Can Kill」をリリースし、10月26日には5th EP『Looks Can Kill』を発売予定である[2]。このアルバムは、2ndフルアルバム『REVIVE+』以来約8カ月ぶりの新作であり、ファンの期待が高まっている[2]。ブランド評判ランキングでも2位にランクインしており、その人気は依然として高い[2]。\n\nこのような状況下でのデート疑惑は、IVEの活動にどのような影響を与えるのか。過去にも、アイドルのプライベートな噂が活動に影響を及ぼした例は少なくない。特に韓国のアイドル文化では、プライベートとプロフェッショナルの境界が曖昧であり、ファンの反応が活動に直接的な影響を与えることがある。今回の噂が彼女たちのカムバックにどのように影響するかは、今後の展開を見守る必要があるだろう。\n\n一方で、IVEのメンバーたちはそれぞれの個性を活かし、活動の幅を広げている。特にレイは自身のYouTubeチャンネルでセルフメイクや日常を紹介し、ファンとの距離を縮めている[7]。このような個々の活動がグループ全体のブランド力を支えていると見るのが自然だろう。\n\nこのように、IVEはデート疑惑や個々の活動を通じて、ファンとの関係性を再構築しつつある。今後の彼女たちの動向から目が離せない。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "IVE’s Yujin And Actor Moon Sang Min Embroiled In Viral Dating Rumors, “Proof Pic” Gets Abruptly Deleted",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/ive-yujin-moon-sang-min-dating-rumors/"
+      },
+      {
+        "n": 2,
+        "title": "“カムバック” IVE・RESCENEらが上位に！26年10月K-POPガールズグループ ブランド評判トップ5",
+        "source": "Danmee",
+        "url": "https://danmee.jp/knews/k-pop/brikorea-girlsgroup2610/"
+      },
+      {
+        "n": 7,
+        "title": "IVE レイが東京で過ごすオフの1日を紹介！超貴重なセルフメイク姿や母とカレーパンを分け合う様子に「微笑ましすぎる」と大反響",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000896738/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-10-18T11:17:47.219Z"
+  },
+  {
     "date": "2026-10-17",
     "slug": "2026-10-17",
     "kind": "group",
