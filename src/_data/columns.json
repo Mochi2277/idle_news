@@ -1,5 +1,81 @@
 [
   {
+    "date": "2026-10-19",
+    "slug": "2026-10-19",
+    "kind": "group",
+    "topic": "ILLIT",
+    "groups": [
+      "ILLIT"
+    ],
+    "region": "kr",
+    "title": "ILLIT、韓国でのアンコール公演とその波紋",
+    "dek": "ILLITが韓国・仁川でアンコール公演を開催。新曲披露やメンバーの絆が話題となる一方、観客数や衣装に関する議論も浮上している。",
+    "body_md": "ILLITが10月17日と18日に韓国・仁川で『PRESS START♡』のアンコール公演を開催した。この公演では、5thミニアルバム『BREAK EVEN』のタイトル曲「You’re Under Arrest」が初披露され、観客を魅了した。特に、ホイッスルを使ったパフォーマンスが印象的で、ファンも一緒にダンスやホイッスルを楽しんでいた[1]。また、休養中のメンバーMOKAが客席から参加し、グループの絆を感じさせた[1]。  \n\nしかし、この公演には別の側面もあった。ネット上では、会場の一部に空席が目立つ写真が出回り、ILLITの人気や集客力に疑問を投げかける声が上がった[2]。さらに、新曲のコンセプトである警察風の衣装が性的に過度であると批判され、HYBEが非難を浴びている[3]。  \n\nこれらの出来事は、ILLITの現在の立ち位置を考える上で重要だ。彼らはHYBEという大手事務所に所属しているが、国内外での人気に温度差があるように見える。このギャップは、彼らの戦略やファンダムの形成において、さらなる工夫が必要であることを示唆していると言えるだろう。また、衣装に関する議論は、K-POP業界全体におけるコンセプトの選択とその社会的影響について再考を促す契機となるかもしれない。  \n\nILLITは今後、10月23日と25日に「You’re Under Arrest」のMVティザーを公開し、26日には新譜の全曲音源とMV本編をリリースする予定だ[1]。このリリースが彼らの人気をどう変えるか、注目が集まる。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "【ライブレポート】ILLIT、韓国・仁川で『PRESS START♡』アンコール公演を開催！会場には、休養中のメンバーMOKAの姿も。「ILLITはいつでも5人」",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/report/0000902119/"
+      },
+      {
+        "n": 2,
+        "title": "ILLIT’s “Completely Empty” Concert Sparks Buzz Online",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/illits-completely-empty-concert-sparks-buzz-online/"
+      },
+      {
+        "n": 3,
+        "title": "ILLIT’s Comeback Accused Of Sexualizing Uniforms",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/illit-accused-sexualizing-police-uniforms/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-10-19T13:30:16.026Z"
+  },
+  {
+    "date": "2026-10-19",
+    "slug": "2026-10-19-2",
+    "kind": "group",
+    "topic": "Stray Kids",
+    "groups": [
+      "Stray Kids"
+    ],
+    "region": "jp",
+    "title": "Stray Kidsの最新動向とその背景",
+    "dek": "Stray Kidsがファッションと音楽の両面で注目を集めている。彼らの活動が示す意味を探る。",
+    "body_md": "Stray Kidsのヒョンジンが、ファッション誌『Esquire KOREA』の11月号で新しいヘアスタイルを披露し、大きな話題を呼んでいる。彼はDiorの2027年サマーコレクションを着用し、幼少期の写真を再現する動画が公開された。この動画では、70年代のロックミュージシャンを思わせるレトロなウェーブヘアで登場し、SNS上で「かっこいいのにかわいい」といった反響を集めている[1]。また、Stray KidsはBAPE STORE(R) DOSANに来店し、BAPE(R)とのコラボキャンペーンを開始した。このイベントでは、メンバー全員が参加し、特別なガチャマシンなどが登場した[2]。  \n  \nStray Kidsは、音楽面でも目覚ましい成果を上げている。彼らの10thミニアルバム『THIS & THAT』は、発売から9週目にしてBillboard 200のトップ30に再浮上し、自己最高記録を達成した。このアルバムはBillboardのWorld Albumsチャートでも1位に返り咲き、アメリカでの人気を再確認させる結果となった[3][4]。  \n  \nこれらの動きは、Stray Kidsがファッションと音楽の両面で国際的な影響力を持つアーティストとして成長していることを示している。特に、BAPEとのコラボレーションは、ストリートウェアと音楽の融合を体現するものであり、彼らの多面的な魅力を強調していると見るのが自然だろう。さらに、Billboard 200での成功は、彼らの音楽がアメリカ市場でも確固たる地位を築いていることを示している。  \n  \n結びとして、Stray Kidsは今後もその多様な活動を通じて、さらなる国際的な成功を収める可能性が高い。彼らの動向は、ファンのみならず、音楽業界全体にとっても注目すべきものである。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "Stray Kidsヒョンジンが重めウェーブヘアで幼少期ショットを完全再現！プク顔＆無邪気な姿に「かっこいいのにかわいい」「幼少期から仕上がってる」と反響",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000901981/"
+      },
+      {
+        "n": 2,
+        "title": "Stray Kid、BAPE STORE(R) DOSANに来店！コラボキャンペーン開始、特別なガチャマシンも登場",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000901736/"
+      },
+      {
+        "n": 3,
+        "title": "Stray Kids’ “THIS & THAT” Climbs Back Up Into Top 30 Of Billboard 200 In 9th Week",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1879449wpp/stray-kids-this-that-climbs-back-up-into-top-30-of-billboard-200-in-9th-week"
+      },
+      {
+        "n": 4,
+        "title": "Stray Kids, ENHYPEN, BOYNEXTDOOR, ALPHA DRIVE ONE, &TEAM, CORTIS, ILLIT, And More Sweep Top Spots On Billboard World Albums Chart",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1879304wpp/stray-kids-enhypen-boynextdoor-alpha-drive-one-team-cortis-illit-and-more-sweep-top-spots-on-billboard-world-albums-chart"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-10-19T13:30:34.763Z"
+  },
+  {
     "date": "2026-10-18",
     "slug": "2026-10-18",
     "kind": "group",
