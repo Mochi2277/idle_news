@@ -1,5 +1,81 @@
 [
   {
+    "date": "2026-10-20",
+    "slug": "2026-10-20",
+    "kind": "group",
+    "topic": "BTS",
+    "groups": [
+      "BTS"
+    ],
+    "region": "kr",
+    "title": "BTSとK-POP界の新たな波紋",
+    "dek": "BTSをめぐる最近の動きが、K-POP界に新たな波紋を投げかけている。EXOやBIGBANGとの関係性も注目される。",
+    "body_md": "本日、EXOのスホがBTSのJ-Hopeについての投稿を行い、ネット上で大きな反響を呼んでいる。スホのInstagramストーリーには「Thank you! My hope is Ho-seok」とのメッセージが添えられ、これが「憎悪」や「ファンダム戦争」の中での意外な展開として注目を集めている[1]。一方、BIGBANGのデソンは、G-DragonがK-POPの道を切り開いたと発言したことが物議を醸し、彼のInstagramがBTSファンのコメントで溢れている[2]。これらの出来事は、K-POP界におけるファンダム間の緊張を浮き彫りにしている。\n\nこれまでの経緯として、BTSは今年、Spotifyでの年間ストリーミング回数が100億回を突破し、グローバルな影響力を再確認させた[7]。また、J-Hopeはワールドツアー『BTS WORLD TOUR ‘ARIRANG’』のために訪れたチリでのオフショットを公開し、メンバーたちのリラックスした姿がファンを喜ばせた[3]。こうした活動が続く中で、BTSのメンバーは個人ブランド評判ランキングでも上位にランクインしており、その人気は衰えることを知らない[6]。\n\nこれらの動きは、BTSがK-POP界における中心的存在であり続けることを示している。EXOやBIGBANGとの関係性が注目される中、BTSの存在感はさらに強まっていると見るのが自然だろう。特に、ファンダム間の競争が激化する中で、BTSのメンバーがどのようにこの状況を乗り越えていくのかが注目される。\n\n結びとして、BTSを取り巻く最近の動きは、K-POP界における新たな波紋を投げかけている。彼らの活動や発言が、どのようにファンダムや他のアーティストに影響を与えるのか、今後も目が離せない状況が続くだろう。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "EXO Member’s Post About BTS Member Sparks Major Reactions Amid “Hate” Allegations",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/exo-members-post-bts-member-sparks-major-reactions-amid-hate-allegations/"
+      },
+      {
+        "n": 2,
+        "title": "Top Male Idol’s Instagram Flooded With Messages About BTS After Recent Controversial Comments",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/male-idol-instagram-comments-bts-controversial/"
+      },
+      {
+        "n": 3,
+        "title": "BTSジミンのニコニコ笑顔に反響！V、ジョングク、ジン、J-HOPEとの食事ショットに「めっちゃ楽しそう」「可愛い笑顔に癒される」の声",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000902525/"
+      },
+      {
+        "n": 6,
+        "title": "BTSメンバーが4人ランクイン！2026年10月K-POPボーイズ個人ブランド評判トップ5",
+        "source": "Danmee",
+        "url": "https://danmee.jp/knews/k-pop/brikorea-boysmember2610/"
+      },
+      {
+        "n": 7,
+        "title": "BTS、Spotifyの年間ストリーミングが100億回を突破！全世界グループ初の快挙",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000901539/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-10-20T11:47:12.588Z"
+  },
+  {
+    "date": "2026-10-20",
+    "slug": "2026-10-20-2",
+    "kind": "group",
+    "topic": "TOMORROW X TOGETHER",
+    "groups": [
+      "TOMORROW X TOGETHER"
+    ],
+    "region": "jp",
+    "title": "TXTの新作とスビンを巡る騒動の背景",
+    "dek": "TOMORROW X TOGETHERが新アルバム『PERFECT STORM』のトレーラーを公開した。同時に、メンバーのスビンを巡る騒動も注目を集めている。",
+    "body_md": "TOMORROW X TOGETHERが、9thミニアルバム『PERFECT STORM』のトレーラー映像を公開した。この作品は、Z世代の「青春痛」をテーマに、現実の重みと向き合う若者たちの心情を描くものである[1]。トレーラーでは、メンバーがそれぞれの方法で嵐に立ち向かう様子が感覚的に描かれており、視覚的にも音楽的にも没入感を高める仕上がりとなっている[1]。 \n\n一方で、メンバーのスビンを巡る騒動が注目を集めている。中国のSNSで、スビンがゲイデーティングアプリを使用しているという噂が広まり、彼の画像とされるものが拡散された。これらの画像はAIによるディープフェイクであるとファンは主張しており、HYBEに対して公式声明を求める声が高まっている[2]。ファンは組織的にメールを送り、会社に圧力をかける動きを見せている[2]。 \n\nこれまでTOMORROW X TOGETHERは、成長物語をテーマにしたアルバムを通じて、同世代の共感を集めてきた[1]。今回の『PERFECT STORM』もその延長線上にあり、より現実的なテーマに挑戦している。スビンを巡る騒動は、彼らのイメージに影響を与える可能性があるが、ファンの強い支持がある限り、乗り越える力があると見るのが自然だろう。 \n\n結びとして、TOMORROW X TOGETHERの新作とスビンを巡る騒動は、彼らが直面する現実の一部である。音楽活動を通じて、彼らがどのようにこの状況を乗り越えていくのか注目される。ファンの支持を受け、彼らが創り出す音楽がどのように進化していくのか、今後も目が離せない。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "TOMORROW X TOGETHER、“Z世代の青春痛”を描く『PERFECT STORM』トレーラー映像公開",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000902990/"
+      },
+      {
+        "n": 2,
+        "title": "Fans Demand HYBE Take Action Over TXT Soobin’s Alleged Explicit Gay Deepfakes",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/fans-demand-hybe-take-action-txt-soobins-gay-deep-fake-allegations/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-10-20T11:47:18.832Z"
+  },
+  {
     "date": "2026-10-19",
     "slug": "2026-10-19",
     "kind": "group",
