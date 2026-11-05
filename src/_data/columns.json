@@ -1,5 +1,81 @@
 [
   {
+    "date": "2026-11-05",
+    "slug": "2026-11-05",
+    "kind": "group",
+    "topic": "BTS",
+    "groups": [
+      "BTS"
+    ],
+    "region": "jp",
+    "title": "BTSの最新動向とその背景を探る",
+    "dek": "BTSメンバーの活動が再び注目を集めている。Jungkookの新しい写真が話題となり、JINとVの仲良しショットもファンを喜ばせた。",
+    "body_md": "本日、BTSのJungkookが新たに公開したブランドGRAFFとのキャンペーン写真がネット上で大きな話題となっている。これらの写真は、彼のビジュアルがあまりにも変わって見えるため、ファンやネットユーザーから「誰なのか」と驚かれている[1]。一部のファンは、写真が過度に編集されていることを指摘し、Jungkookの本来の魅力が失われていると感じているようだ[1]。\n\n一方で、BTSのJINがInstagramに投稿したオフショットがファンの間で注目を集めている。特に、VがJINの肩に腕を回し、膝の上に座っているように見える写真は「美しき兄弟」として多くの反響を呼んでいる[2]。この投稿は、BTSのワールドツアー『BTS WORLD TOUR ‘ARIRANG’』のブラジル・サンパウロ公演でのものであり、ツアー中のメンバー間の親密な関係を垣間見ることができる[2]。\n\nこれまでの経緯として、BTSは今年、Spotifyで年間100億回再生を突破し、グループとして世界初の快挙を達成した[4]。この成功は、3月にリリースされた5thフルアルバム『ARIRANG』の影響が大きいとされている[4]。メンバー全員が兵役を終え、再び集結したことがファンの関心を引きつけ、過去の楽曲も再び注目を浴びる結果となった[4]。\n\nこれらの動きを見ると、BTSは単なる音楽活動だけでなく、メンバー個々の活動やSNSでの発信が、ファンとの関係を深める重要な要素となっていると位置づけられる。Jungkookの写真に対する反応や、JINとVの親密なショットは、ファンがメンバーの個性や関係性に強い興味を持っていることを示している。これらの要素が、BTSの持続的な人気を支えていると言えるだろう。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "BTS Jungkook’s Unrecognizable Visuals In New Photos Become A Hot Topic",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/bts-jungkook-photos-unrecongizable-visuals/"
+      },
+      {
+        "n": 2,
+        "title": "BTSジンの肩に腕を回しニコニコのV！“テテジン”仲良しショットに「美しき兄弟」「悟りを開いたような表情（笑）」「ほんと可愛くて面白い」",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000913183/"
+      },
+      {
+        "n": 4,
+        "title": "BTS、グループ“世界初”の快挙 テイラー・スウィフト、バッド・バニーらに共通する世界的ヒットの条件とは",
+        "source": "Real Sound 音楽",
+        "url": "https://realsound.jp/2026/11/post-2566906.html"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-11-05T14:45:15.866Z"
+  },
+  {
+    "date": "2026-11-05",
+    "slug": "2026-11-05-2",
+    "kind": "group",
+    "topic": "TWICE",
+    "groups": [
+      "TWICE"
+    ],
+    "region": "jp",
+    "title": "TWICE・MOMO、ファッション界で新たな一歩",
+    "dek": "TWICEのMOMOがミュウミュウのホリデー広告キャンペーンに初登場。彼女の個性とブランドの調和が注目される。",
+    "body_md": "本日、TWICEのMOMOがミュウミュウの2026年ホリデー広告キャンペーンに初登場したことが発表された。彼女はアンバサダーとして、ブランドの楽しさや自由さを再確認し、特別なQ＆Aも公開された[2]。MOMOは「Miu Miuはファッションの楽しさや自由さを改めて気づかせてくれた」と語り、撮影現場での新鮮な体験を振り返っている[2]。\n\nTWICEはこれまでも個々のメンバーが多方面で活躍してきた。特に最近では、ツウィがコーセーの新WEB CMに出演し、独特の発音に苦戦しつつもその魅力を発揮している[3]。また、ナヨンはソロ活動として新シングル「NA-sty」のティーザーを公開し、11月20日にリリース予定である[7]。ジヒョも独立して新たなスタートを切り、個性を前面に出したプロファイル写真を公開している[8]。\n\nこれらの活動は、TWICEのメンバーがそれぞれの個性を活かし、グループとしての活動と並行して個々のキャリアを築いていることを示している。MOMOのミュウミュウでの活動も、彼女自身のファッションセンスとブランドのイメージが見事に融合した結果であると見るのが自然だろう。TWICEは、個々のメンバーが異なる分野で活躍することで、グループ全体の魅力をさらに高めている。\n\n今後もTWICEのメンバーたちがどのように個々のキャリアを築いていくのか注目したい。彼女たちの多様な活動が、ファンに新たな楽しみを提供し続けることは間違いない。",
+    "sources": [
+      {
+        "n": 2,
+        "title": "TWICE・MOMO、ミュウミュウホリデー広告キャンペーンに初登場！「Miu Miuはファッションの楽しさや自由さを改めて気づかせてくれた」",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000913139/"
+      },
+      {
+        "n": 3,
+        "title": "TWICEツウィ、コーセー新WEB CMで“ぽってりちゅるん”の発音に苦戦するも「“⾁球ぷにゅぷにゅ”がお気に⼊りです」",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000912447/"
+      },
+      {
+        "n": 7,
+        "title": "Watch: TWICE’s Nayeon Gears Up For Solo Comeback With Teaser For New Single “NA-sty”",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1881049wpp/watch-twices-nayeon-gears-up-for-solo-comeback-with-teaser-for-new-single-na-sty"
+      },
+      {
+        "n": 8,
+        "title": "TWICE’s Jihyo Poses For Beautiful Profile Photos",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1880725wpp/twices-jihyo-poses-for-beautiful-profile-photos"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-11-05T14:45:22.181Z"
+  },
+  {
     "date": "2026-11-04",
     "slug": "2026-11-04",
     "kind": "group",
@@ -4613,95 +4689,5 @@
     ],
     "model": "openai:gpt-4o",
     "generated_at": "2026-09-06T11:03:51.831Z"
-  },
-  {
-    "date": "2026-09-06",
-    "slug": "2026-09-06-2",
-    "kind": "group",
-    "topic": "NCT",
-    "groups": [
-      "NCT"
-    ],
-    "region": "kr",
-    "title": "NCTフリーマーケットでの物議とその背景",
-    "dek": "NCTの10周年を祝うイベントで、元メンバーの衣装が販売され物議を醸した。これまでの経緯とその意味を考察する。",
-    "body_md": "本日、NCTの10周年を記念するフリーマーケットがソウルファッションウィークと連携して開催された。このイベントは、現メンバーの愛用品やステージ衣装が販売されるチャリティー目的のものであった[1]。しかし、元メンバーで現在服役中のテイルが着用したとされるジャケットが出品されていたことが判明し、ネット上で批判が巻き起こった[1]。テイルは、過去に集団強姦で有罪判決を受け、3年の刑期に服している[1]。  \n\nこの事件の背景には、NCTのメンバーシップとその変動がある。先日、マーク・リーがNCTを脱退し、SMエンターテインメントからも離れたことが大きな話題となった[4]。また、NCT 127は新曲「Blingy」で音楽番組での初勝利を果たし、グループとしての勢いを示している[3]。一方で、他の新人グループとの競争も激化しており、ALPHA DRIVE ONEが音楽番組での勝利を重ねている[6]。  \n\n今回のフリーマーケットでの物議は、NCTの過去と現在のメンバーの関係性、そしてファンの感情が複雑に絡み合っていることを示している。特に、テイルのような問題を抱えた元メンバーのアイテムが出品されることは、ファンにとっては受け入れがたいものであると考えられる。これにより、NCTのブランドイメージにも影響を与える可能性がある。  \n\nこのような状況下で、NCTは今後どのようにファンとの信頼関係を再構築していくのかが注目される。特に、メンバーの個々の活動やグループ全体の方向性が再評価される中で、ファンの期待に応えることが求められるだろう。",
-    "sources": [
-      {
-        "n": 1,
-        "title": "Idol-Turned-Sex Offender Taeil’s Clothes Sold During NCT Event, Sparking Backlash",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/idol-turned-sex-offender-taeils-clothes-sold-nct-event-sparking-backlash/"
-      },
-      {
-        "n": 3,
-        "title": "Watch: NCT 127 Takes 1st Win For “Blingy” On “Music Core”; Performances By Girls’ Generation-HRS, MONSTA X, And More",
-        "source": "Soompi",
-        "url": "https://www.soompi.com/article/1868274wpp/watch-nct-127-takes-1st-win-for-blingy-on-music-core-performances-by-girls-generation-hrs-monsta-x-and-more"
-      },
-      {
-        "n": 4,
-        "title": "NCT 127 Expose New Details About Mark’s Departure And Contract Renewals",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/nct-127-expose-new-details-marks-departure-contract-renewals/"
-      },
-      {
-        "n": 6,
-        "title": "Watch: ALPHA DRIVE ONE Takes 3rd Win For “BORN DIRE” On “Music Bank”; Performances By Taemin, MONSTA X, And More",
-        "source": "Soompi",
-        "url": "https://www.soompi.com/article/1868197wpp/watch-alpha-drive-one-takes-3rd-win-for-born-dire-on-music-bank-performances-by-taemin-monsta-x-and-more"
-      }
-    ],
-    "model": "openai:gpt-4o",
-    "generated_at": "2026-09-06T11:03:57.017Z"
-  },
-  {
-    "date": "2026-09-06",
-    "slug": "2026-09-06-3",
-    "kind": "broad",
-    "topic": "世が世なら!!!",
-    "groups": [
-      "世が世なら!!!",
-      "モーニング娘。"
-    ],
-    "theme": "卒業・脱退・体制変更",
-    "region": "jp",
-    "title": "アイドルシーンの変化と新たな展望",
-    "dek": "今週、アイドルグループの卒業や新体制への移行が相次いでいる。これらの動きがグループや個人に与える影響を探る。",
-    "body_md": "今週、日本と韓国のアイドルシーンでは、卒業や新体制への移行が注目を集めている。モーニング娘。'26では、小田さくらが秋のツアーを最後に卒業することが発表された[1][3]。一方、世が世なら!!!は新メンバー4人を迎え、「真・世が世なら!!!」として新たなスタートを切った[2][4][5]。\n\nモーニング娘。'26の小田さくらは、2012年に加入し、23年からはサブリーダーとしてグループを支えてきた[1][3]。彼女の卒業は、長年のファンにとって大きな節目となるだろう。グループは18期メンバーを迎え入れ、11人体制での新たなステージを目指している[1]。一方で、世が世なら!!!は新メンバーの加入により8人体制となり、グループ名を「真・世が世なら!!!」に改名した[2][4][5]。このような体制変更は、グループの方向性やパフォーマンスに新たな風を吹き込むことが期待される。\n\nこれらの動きは、アイドルグループが常に新陳代謝を繰り返し、進化を続けることを示している。特に、モーニング娘。'26のように長い歴史を持つグループにおいては、メンバーの卒業と新メンバーの加入がグループの持続可能性を支えているといえる[1][3]。一方、「真・世が世なら!!!」のような新体制は、既存のファン層を維持しつつ、新たなファン層を獲得するための戦略的な動きと位置づけられる[2][4][5]。\n\nこれらの変化は、グループの未来を形作る重要な要素であり、ファンにとっても新たな期待を抱かせる要因となる。アイドルシーンは、個々のメンバーが新たなステージを切り開くことで、さらに多様性を増し、豊かなエンターテインメントを提供し続けるだろう。",
-    "sources": [
-      {
-        "n": 1,
-        "title": "【ライブレポート】モーニング娘。'26、秋のツアーの初日公演を開催！小田さくらの卒業公演も発表に",
-        "source": "The First Times",
-        "url": "https://www.thefirsttimes.jp/report/0000876857/"
-      },
-      {
-        "n": 2,
-        "title": "真・世が世なら!!!、新体制お披露目ライブで始まった新たな物語 〈まだまだ止まらないぜ！〉――目指す、もっと上のステージ",
-        "source": "Real Sound 音楽",
-        "url": "https://realsound.jp/2026/09/post-2514075.html"
-      },
-      {
-        "n": 3,
-        "title": "モー娘。小田さくら12・11横アリで卒業公演「その日までしかモーニング娘。ではないんだな」",
-        "source": "日刊スポーツ 芸能",
-        "url": "https://www.nikkansports.com/entertainment/news/202609050001766.html"
-      },
-      {
-        "n": 4,
-        "title": "世が世なら!!!、新メンバー4人加入で“真・世が世なら!!!”に改名 新体制初ミニアルバムリリース",
-        "source": "Real Sound 音楽",
-        "url": "https://realsound.jp/2026/09/post-2513554.html"
-      },
-      {
-        "n": 5,
-        "title": "真・世が世なら!!! ４人加入のお披露目イベント ８人で最後まで突っ走る！",
-        "source": "日刊スポーツ 芸能",
-        "url": "https://www.nikkansports.com/entertainment/news/202609040001602.html"
-      }
-    ],
-    "model": "openai:gpt-4o",
-    "generated_at": "2026-09-06T11:04:07.802Z"
   }
 ]
