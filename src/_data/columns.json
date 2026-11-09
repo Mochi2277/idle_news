@@ -1,5 +1,99 @@
 [
   {
+    "date": "2026-11-10",
+    "slug": "2026-11-10",
+    "kind": "group",
+    "topic": "BTS",
+    "groups": [
+      "BTS"
+    ],
+    "region": "kr",
+    "title": "BTSの最新動向とその影響を考察する",
+    "dek": "BTSが新たなツアー発表と共に批判を浴びている。背景には過去の活動やメンバー個々の動きがある。",
+    "body_md": "本日、BTSの新たなツアー発表が行われたが、ファンからの批判が相次いでいる。特にロンドン公演の映像がデジタル形式での配信に留まること、価格に対する内容の不満が指摘されている[3]。この背景には、過去のリリースと比較して物理的なコンテンツが不足していることがあるようだ。さらに、ソロ活動へのフォーカスが強調されていることも一部のファンには不満を与えている[3]。\n\nBTSは現在、ワールドツアー『ARIRANG』を開催中であり、南米ツアーを成功裏に終えたばかりである[4]。また、BTSはK-POPボーイズグループのブランド評判ランキングで17ヶ月連続で1位を維持しており、その影響力は依然として強大である[5]。しかし、RMの過去の問題発言が再び注目され、彼の影響力に対する批判も浮上している[2]。\n\nこれらの状況を踏まえると、BTSの活動は依然として多くの注目を集めているが、その影響力の大きさゆえに、細かな点でも批判が集まることが避けられない状況にあると言えるだろう。特に、メンバー個々の動きや発言がグループ全体の評価に影響を与えることが多く、今後も慎重な対応が求められる。\n\nBTSの活動は、彼らが築いてきたファンベースの期待に応える形で進化し続けているが、その過程での選択が常に支持を得られるとは限らない。彼らの今後の動きがどのようにファンや業界に影響を与えるのか、引き続き注目していきたい。",
+    "sources": [
+      {
+        "n": 2,
+        "title": "BTS Member’s Controversies And Problematic Personality Allegations Arise Amid Recent Announcement",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/bts-members-controversies-allegations-problematic-personality-arise-amid-recent-announcement/"
+      },
+      {
+        "n": 3,
+        "title": "BTS’s Latest Announcement Sparks A Wave Of Major Backlash",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/bts-latest-announcement-anger/"
+      },
+      {
+        "n": 4,
+        "title": "BTSジミンの愛らしい歯磨き姿から知的なハーフリムメガネ姿まで！ふり幅全開のオフショットに「心臓もたない」「沼すぎる」の声、7人の円陣ショットも話題",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000914893/"
+      },
+      {
+        "n": 5,
+        "title": "BTSが不動の1位をキープ！26年11月K-POPボーイズグループ ブランド評判トップ5",
+        "source": "Danmee",
+        "url": "https://danmee.jp/knews/k-pop/brikorea-boysgroup2611/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-11-09T16:31:59.244Z"
+  },
+  {
+    "date": "2026-11-10",
+    "slug": "2026-11-10-2",
+    "kind": "group",
+    "topic": "ILLIT",
+    "groups": [
+      "ILLIT"
+    ],
+    "region": "kr",
+    "title": "ILLITの快進撃とその背景を探る",
+    "dek": "ILLITが新たな音楽番組で2度目の勝利を収めた。彼女たちの成功の背景には何があるのか。",
+    "body_md": "ILLITが新たな音楽番組「SHOW K-POP」で「You’re Under Arrest」で2度目の勝利を収めた[1]。この番組は10月19日に始まり、毎週月曜日に放送されている。今回の勝利は、彼女たちが音楽業界での存在感をさらに強めていることを示している。\n\nILLITの成功は、彼女たちの最新ミニアルバム「BREAK EVEN」の好調な売り上げにも支えられている。このアルバムは、ビルボードのトップアルバムセールスチャートで1位を獲得し、ビルボード200でも6位にランクインした[3]。さらに、ハンテオチャートによれば、このアルバムは彼女たちの初週売上記録を更新した[4]。これらの成果は、彼女たちが国内外での人気を確固たるものにしていることを示している。\n\nILLITの成功の背景には、彼女たちの音楽的な進化と戦略的なマーケティングがあると見るのが自然だろう。「You’re Under Arrest」は、エレクトロポップの要素を取り入れた楽曲で、関係の終わりを告げる大胆なメッセージを持っている[6]。このようなテーマは、リスナーに強い印象を与えることができる。また、彼女たちの過去のヒット曲もYouTubeで高い視聴回数を記録しており、デジタルプラットフォームでの影響力も無視できない[9][10]。\n\nILLITの今後の展開は、さらに注目を集めるだろう。彼女たちの音楽とパフォーマンスは、既存のファン層を超えて新たなリスナーを引きつける可能性がある。彼女たちの活動がどのように進化していくのか、今後も目が離せない。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "Watch: ILLIT Takes 2nd Win For “You’re Under Arrest” On New Music Show “SHOW K-POP”",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1885347wpp/watch-illit-takes-2nd-win-for-youre-under-arrest-on-new-music-show-show-k-pop"
+      },
+      {
+        "n": 3,
+        "title": "ILLIT Debuts At No. 1 On Billboard Top Album Sales Chart + No. 6 On Billboard 200 With “BREAK EVEN”",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1885116wpp/illit-debuts-at-no-1-on-billboard-top-album-sales-chart-no-6-on-billboard-200-with-break-even"
+      },
+      {
+        "n": 4,
+        "title": "ILLIT Breaks Their 1st-Week Sales Record With “BREAK EVEN”",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1885108wpp/illit-breaks-their-1st-week-sales-record-with-break-even"
+      },
+      {
+        "n": 6,
+        "title": "Soompi’s K-Pop Music Chart 2026, November Week 2",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1885052wpp/soompis-k-pop-music-chart-2026-november-week-2"
+      },
+      {
+        "n": 9,
+        "title": "ILLIT’s “Tick-Tack” Becomes Their 5th MV To Hit 100 Million Views",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1884912wpp/illits-tick-tack-becomes-their-5th-mv-to-hit-100-million-views"
+      },
+      {
+        "n": 10,
+        "title": "LE SSERAFIM, ILLIT, And KATSEYE’s “ICONIC BY MISTAKE” MV Surpasses 200 Million Views",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1884909wpp/watch-le-sserafim-illit-and-katseyes-iconic-by-mistake-mv-surpasses-200-million-views"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-11-09T16:32:07.228Z"
+  },
+  {
     "date": "2026-11-08",
     "slug": "2026-11-08",
     "kind": "group",
@@ -4572,91 +4666,5 @@
     ],
     "model": "openai:gpt-4o",
     "generated_at": "2026-09-08T11:26:24.475Z"
-  },
-  {
-    "date": "2026-09-08",
-    "slug": "2026-09-08-2",
-    "kind": "group",
-    "topic": "TOMORROW X TOGETHER",
-    "groups": [
-      "TOMORROW X TOGETHER"
-    ],
-    "region": "jp",
-    "title": "TXTスビン、D&Gの新アンバサダーに就任",
-    "dek": "TXTのスビンがDolce&Gabbanaのグローバルアンバサダーに選ばれた。これは彼の個性とブランドの価値観が一致した結果である。",
-    "body_md": "本日、TOMORROW X TOGETHERのスビンがイタリアの高級ファッションブランド、Dolce&Gabbanaの新しいグローバルアンバサダーに選ばれたことが発表された[2]。Dolce&Gabbanaはスビンを選んだ理由として、彼の創造性、個性、自己表現の価値観がブランドと一致していることを挙げている[2]。\n\nこの発表は、スビンにとって新たなステージへの一歩となる。彼はこれまでにも多くのファッションイベントで注目を集めてきたが、今回のアンバサダー就任はその活動をさらに広げる契機となるだろう。これまでの経緯として、TOMORROW X TOGETHERは日本や韓国での活動を通じて、ファッションと音楽の両面でファンの支持を集めてきた[5][6][7]。\n\nこの動きは、K-POPアイドルがファッション界での影響力を増していることを示す一例であると位置づけられる。スビンの個性とDolce&Gabbanaのブランドイメージがどのように融合するのか、今後の展開が楽しみである。特に、スビンのファッションセンスがどのようにブランドの新しいコレクションに反映されるのかは注目に値する。\n\n結びとして、スビンのグローバルアンバサダー就任は、彼自身のキャリアにとって大きなステップであると同時に、TOMORROW X TOGETHER全体の国際的な存在感をさらに高めることになるだろう。ファッションと音楽のクロスオーバーがどのように進化していくのか、今後の動向に期待したい。",
-    "sources": [
-      {
-        "n": 2,
-        "title": "TXT’s Soobin Announced As New Global Ambassador For Dolce&Gabbana",
-        "source": "Soompi",
-        "url": "https://www.soompi.com/article/1868907wpp/txts-soobin-announced-as-new-global-ambassador-for-dolcegabbana"
-      },
-      {
-        "n": 5,
-        "title": "TXT5人の美しすぎるビジュアルに悶絶！遊園地＆カフェでのデート風ショットに「とんでもないビジュ」「心臓もたない」「美貌に酔ってしまう」",
-        "source": "The First Times",
-        "url": "https://www.thefirsttimes.jp/news/0000875261/"
-      },
-      {
-        "n": 6,
-        "title": "M!LK吉田仁人がニッコニコでK-POPダンス披露！TOMORROW X TOGETHERとのコラボに「笑顔かわいい」「吉田さんダンスうますぎ」「M!LKと違う雰囲気の振りが新鮮」",
-        "source": "The First Times",
-        "url": "https://www.thefirsttimes.jp/news/0000874646/"
-      },
-      {
-        "n": 7,
-        "title": "M!LKとTOMORROW X TOGETHERが“滅ポーズ”！10人並んだ華やかオフショットに「最強5人組アイドルの夢コラボ」「イケメン過多で滅」「画面割れるほどビジュイイじゃん」",
-        "source": "The First Times",
-        "url": "https://www.thefirsttimes.jp/news/0000873895/"
-      }
-    ],
-    "model": "openai:gpt-4o",
-    "generated_at": "2026-09-08T11:26:32.825Z"
-  },
-  {
-    "date": "2026-09-08",
-    "slug": "2026-09-08-3",
-    "kind": "broad",
-    "topic": "モーニング娘。",
-    "groups": [
-      "モーニング娘。",
-      "乃木坂46",
-      "僕が見たかった青空",
-      "日向坂46"
-    ],
-    "theme": "卒業・脱退・体制変更",
-    "region": "jp",
-    "title": "アイドルグループの変革期を迎えて",
-    "dek": "今週、複数のアイドルグループが卒業や体制変更を発表した。これらの動きは、各グループが新たなステージに向けて変化していることを示している。",
-    "body_md": "今週、アイドルグループの日向坂46、モーニング娘。'26、そして「世が世なら!!!」がそれぞれ卒業や体制変更を発表し、注目を集めている。日向坂46からは森本茉莉がグループを卒業することを発表し、12月11日の東京公演で卒業セレモニーを行う予定だ[1]。また、「僕が見たかった青空」では西森杏弥と宮腰友里亜が来年1月末での卒業を発表し、次のステップに進むことを決めた[2]。一方、モーニング娘。'26では小田さくらが12月11日の横浜アリーナ公演で卒業することが決まっており、18期メンバーの新加入もあり、グループは新たな体制での活動をスタートさせている[3][5]。  \n\nこれらの卒業や体制変更には、それぞれ異なる背景や規模がある。日向坂46の森本茉莉は、数年前から卒業を決意していたと明かし、ファンへの感謝を述べている[1]。一方、「僕が見たかった青空」の卒業はメンバー自身が「別の道に進みたい」との意向を示した結果であり、グループの活動を通じて次のステップを考える機会があったと考えられる[2]。モーニング娘。'26では、長年グループを支えてきた小田さくらが卒業する一方で、新メンバーが加入し、これからの活動に新しい風を吹き込んでいる[3][5]。  \n\nこれらの動きを横断して見ると、アイドルグループがそれぞれのステージで新たな挑戦を迎えていることがわかる。卒業や体制変更は一見ネガティブに捉えられがちだが、実際にはグループの成長や進化を促す重要な要素であると位置づけられる。新たなメンバーの加入や卒業メンバーの新しい道への挑戦は、グループの多様性を広げ、ファンに新しい魅力を提供する機会でもある。  \n\n結びとして、アイドルグループの卒業や体制変更は、単なる人員の入れ替えではなく、グループの未来を見据えた戦略的な選択であると見るのが自然だろう。ファンにとっては寂しさも伴うが、新たなメンバーとともに進む未来に期待を寄せることができるだろう。",
-    "sources": [
-      {
-        "n": 1,
-        "title": "日向坂46森本茉莉が卒業発表、20年2月加入の三期生 12・11ツアー東京公演最終日に卒セレ",
-        "source": "日刊スポーツ 芸能",
-        "url": "https://www.nikkansports.com/entertainment/news/202609080001280.html"
-      },
-      {
-        "n": 2,
-        "title": "【全文】「僕が見たかった青空」西森杏弥と宮腰友里亜の卒業発表、来年１月「別の道に進みたい」",
-        "source": "日刊スポーツ 芸能",
-        "url": "https://www.nikkansports.com/entertainment/news/202609060001919.html"
-      },
-      {
-        "n": 3,
-        "title": "【ライブレポート】モーニング娘。'26、秋のツアーの初日公演を開催！小田さくらの卒業公演も発表に",
-        "source": "The First Times",
-        "url": "https://www.thefirsttimes.jp/report/0000876857/"
-      },
-      {
-        "n": 5,
-        "title": "モー娘。小田さくら12・11横アリで卒業公演「その日までしかモーニング娘。ではないんだな」",
-        "source": "日刊スポーツ 芸能",
-        "url": "https://www.nikkansports.com/entertainment/news/202609050001766.html"
-      }
-    ],
-    "model": "openai:gpt-4o",
-    "generated_at": "2026-09-08T11:26:48.654Z"
   }
 ]
