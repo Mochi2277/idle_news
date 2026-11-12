@@ -1,5 +1,75 @@
 [
   {
+    "date": "2026-11-13",
+    "slug": "2026-11-13",
+    "kind": "group",
+    "topic": "Stray Kids",
+    "groups": [
+      "Stray Kids"
+    ],
+    "region": "kr",
+    "title": "Stray Kidsの最新動向とその背景",
+    "dek": "Stray Kidsのメンバーが多方面で活躍を見せている。特に注目すべきは、Lee KnowのソロデビューとChangbinに関する話題だ。",
+    "body_md": "Stray Kidsのメンバーが最近、多方面で活躍を見せている。特に注目すべきは、Lee KnowのソロデビューとChangbinに関する話題だ。Lee Knowは来年初頭にソロデビューを控えており、現在アルバムの最終準備を進めているという[3][4]。このソロデビューは、彼がStray Kidsのメンバーとして初めての試みであり、ファンの期待が高まっている。\n\n一方で、Changbinに関する話題もネット上で注目を集めている。ITZYのChaeryoungがソロデビュー曲「Lovesick」で見せたパフォーマンスビデオが、Changbinとの関係を示唆するものとして話題になった[1]。このビデオでは、Chaeryoungが男性ダンサーと親密なダンスを披露しており、そのダンサーがChangbinに似ているとの声が上がった。これにより、ネット上では二人の関係についての憶測が飛び交っている。\n\nさらに、Stray KidsはBAPE(R)のWINTER 2026キャンペーンにも起用され、メンバーそれぞれが個性豊かなスタイリングを披露している[2]。このキャンペーンでは、BAPE(R)のアイコニックなデザインとStray Kidsの独自の音楽性が交差し、新しいウィンタースタイルを提案している。\n\nこれらの動きは、Stray Kidsが音楽だけでなくファッションやパフォーマンスの分野でもその影響力を広げていることを示している。Lee Knowのソロデビューは、彼の個性をさらに引き出す機会となるだろうし、Changbinに関する話題はファンの関心を引き続ける要素となるだろう。これらの活動を通じて、Stray Kidsは新たなファン層を獲得し続けると見るのが自然だろう。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "Top Fourth-Gen Idol’s Intimate Dance With Male Dancer Sparks Speculations About Stray Kids Member",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/top-fourth-gen-idols-intimate-dance-male-dancer-linked-stray-kids-member/"
+      },
+      {
+        "n": 2,
+        "title": "Stray Kidsメンバーが個性豊かなスタイリングを披露！A BATHING APE(R)キャンペーンビジュアル公開",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000917678/"
+      },
+      {
+        "n": 3,
+        "title": "Stray Kids’ Lee Know Confirmed To Be Gearing Up For Solo Debut",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1886285wpp/stray-kids-lee-know-confirmed-to-be-gearing-up-for-solo-debut"
+      },
+      {
+        "n": 4,
+        "title": "Stray Kids’ Lee Know To Debut As Solo Artist",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/stray-kids-lee-know-debut-solo-artist/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-11-12T15:23:27.565Z"
+  },
+  {
+    "date": "2026-11-13",
+    "slug": "2026-11-13-2",
+    "kind": "group",
+    "topic": "BLACKPINK",
+    "groups": [
+      "BLACKPINK"
+    ],
+    "region": "kr",
+    "title": "BLACKPINKのジス、コーチェラ2027に出演決定",
+    "dek": "BLACKPINKのジスが、2027年のコーチェラに出演することが発表された。これは彼女のソロ活動の一環であると見られる。",
+    "body_md": "BLACKPINKのジスが、2027年のコーチェラのラインアップに名を連ねることが発表された。彼女は4月9日と16日の金曜日に出演する予定である[1]。このニュースは、彼女がソロアーティストとしての地位を確立しつつあることを示すものと位置づけられるだろう。コーチェラは世界的な音楽フェスティバルであり、ここに出演することはアーティストにとって大きな名誉である。ジスの出演は、BLACKPINKとしての活動だけでなく、個々のメンバーのソロ活動が注目されていることを示している。\n\nジスはまた、トミー ヒルフィガーの2026年冬のキャンペーン「パーフェクト・ホリデー」にも登場している。彼女は「お休みの日は、できるだけゆっくり寝て、できればディナーの時間くらいに起きたい」と語り、リラックスした休日の過ごし方を披露している[2]。このようなキャンペーンへの参加は、彼女のファッションアイコンとしての地位を強化するものである。\n\nBLACKPINKのメンバーたちは、個々の活動が増えている。ジスのコーチェラ出演やファッションキャンペーンへの参加は、その一環と見られる。これにより、彼女のソロアーティストとしてのブランド価値がさらに高まることが期待される。BLACKPINK全体としての活動も続けつつ、メンバーそれぞれが個別の道を切り開いていることは、グループの多様性と持続可能性を示している。\n\nBLACKPINKのメンバーが個々の活動を展開する中で、ファンはそれぞれのメンバーの新たな一面を発見することができる。ジスのコーチェラ出演は、彼女の音楽的才能を世界に示す絶好の機会であり、彼女のソロキャリアにおける重要なステップとなるだろう。これからの彼女の活躍に期待が高まる。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "BLACKPINK’s Jisoo, NCT, And BABYMONSTER Announced For Coachella 2027 Lineup",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1885928wpp/blackpinks-jisoo-nct-and-babymonster-announced-for-coachella-2027-lineup"
+      },
+      {
+        "n": 2,
+        "title": "BLACKPINK・JISOOトミー ヒルフィガー新キャンペーンに登場！「お休みの日は、できればディナーの時間くらいに起きたい」",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000916508/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-11-12T15:23:36.113Z"
+  },
+  {
     "date": "2026-11-11",
     "slug": "2026-11-11",
     "kind": "group",
@@ -4573,72 +4643,5 @@
     ],
     "model": "openai:gpt-4o",
     "generated_at": "2026-09-09T11:31:16.167Z"
-  },
-  {
-    "date": "2026-09-09",
-    "slug": "2026-09-09-2",
-    "kind": "group",
-    "topic": "ILLIT",
-    "groups": [
-      "ILLIT"
-    ],
-    "region": "jp",
-    "title": "ILLIT、ラーメンロケで見せた自由奔放な魅力",
-    "dek": "ILLITが『千鳥かまいたちゴールデンアワー』に出演し、自由奔放な行動でスタジオを沸かせた。彼らの活動は音楽界でも注目されている。",
-    "body_md": "本日、ILLITが日本テレビのバラエティ番組『千鳥かまいたちゴールデンアワー』にゲスト出演し、茨城のこってりラーメンに初挑戦する様子が放送された[1]。ILLITはラーメンが好きだと公言していたにもかかわらず、ラーメン以外の料理を注文するなど、自由奔放な行動でスタジオを爆笑の渦に巻き込んだ[1]。このようなマイペースな姿勢は、彼らの個性を際立たせる要素の一つである。\n\nILLITは音楽界でも注目を集めている。最近では、Circle ChartでNCT 127やALPHA DRIVE ONEと共にトップを飾り、その存在感を示している[2]。さらに、彼らの新曲「Swingin' Magic」は、TVアニメ『魔法の姉妹ルルットリリィ』の第2クールのオープニング主題歌に起用されることが決まっている[4]。この曲は、ニュージャックスウィングのリズミカルなグルーヴと洗練されたサウンドが特徴で、ILLITの音楽的な幅広さを示している。\n\nILLITの活動は、日本と韓国のポップカルチャーシーンにおいて、彼らのユニークなスタイルと音楽性を広める重要な役割を果たしていると位置づけられる。特に、バラエティ番組での自由な振る舞いは、彼らのキャラクターをより多くの観客に印象付ける機会となっている。音楽だけでなく、テレビ出演を通じて多面的な魅力を発揮することは、彼らのファン層を拡大する戦略としても効果的であると見るのが自然だろう。\n\nILLITの今後の活動にも注目が集まる。彼らがどのようにしてさらに多くのファンを魅了し、音楽シーンでの地位を確立していくのか、その動向を見守りたい。",
-    "sources": [
-      {
-        "n": 1,
-        "title": "ILLITがこってりラーメンに初挑戦！『千鳥かまいたちゴールデンアワー』ゲスト出演で自由過ぎる行動にスタジオ爆笑",
-        "source": "The First Times",
-        "url": "https://www.thefirsttimes.jp/news/0000878388/"
-      },
-      {
-        "n": 2,
-        "title": "NCT 127, ALPHA DRIVE ONE, RESCENE, ILLIT, And More Top Circle Weekly Charts",
-        "source": "Soompi",
-        "url": "https://www.soompi.com/article/1869117wpp/nct-127-alpha-drive-one-rescene-illit-and-more-top-circle-weekly-charts"
-      },
-      {
-        "n": 4,
-        "title": "ILLIT、新曲「Swingin' Magic」配信 TVアニメ『魔法の姉妹ルルットリリィ』第2クールOPに起用",
-        "source": "Real Sound 音楽",
-        "url": "https://realsound.jp/2026/09/post-2511634.html"
-      }
-    ],
-    "model": "openai:gpt-4o",
-    "generated_at": "2026-09-09T11:31:24.204Z"
-  },
-  {
-    "date": "2026-09-09",
-    "slug": "2026-09-09-3",
-    "kind": "broad",
-    "topic": "BTS",
-    "groups": [
-      "BTS",
-      "CORTIS",
-      "TOMORROW X TOGETHER"
-    ],
-    "theme": "ライブ・動員・ツアー",
-    "region": "jp",
-    "title": "多様な演出が彩るライブ・ツアーの現状",
-    "dek": "最近のアイドルシーンでは、多様なライブ演出がファンとの新たな関係性を模索している。異なるアプローチが見られる中で、各グループの個性が際立つ。",
-    "body_md": "今週、様々なアーティストがライブやツアーで異なるアプローチを見せている。例えば、BTSは北米ツアーを完走し、約192万人を動員した。ロサンゼルスのSoFiスタジアムでの公演では、観客が特別な瞬間を共有し、韓国民謡「アリラン」が響く中で太極旗が掲げられるなど、ファンとの一体感を強く感じさせる演出が行われた[4]。一方、CORTISは「スマートフォンを置け」という挑発的なテーマを掲げ、観客に音と身体だけに集中させる初のワールドツアーを展開した。彼らは飾り気のないステージで、観客との直接的なコミュニケーションを重視した[2]。\n\nそれぞれのツアーの規模や経緯も異なる。BTSは12都市31公演を通じて、北米だけで約192万人を動員するという大規模なツアーを実施し、SoFiスタジアムでの最多公演・最多観客グループとしての記録も更新した[4]。一方、CORTISのツアーはデビューからわずか1年での挑戦であり、北米やソウルを経て日本での初単独公演を成功させた。彼らのツアーは、観客との新しい関係性を築くための試みとして注目される[2]。\n\nこれらの動きから見えてくるのは、ライブやツアーが単なるエンターテインメントの提供を超え、ファンとの新たな関係性を模索する場となっているということだ。BTSのように大規模な動員を背景に、特別な瞬間を共有することでファンとの絆を深めるアプローチもあれば、CORTISのように演出を削ぎ落とし、音楽そのものに集中させることで新たな体験を提供する試みもある。これらは、どちらもファンの心に深く刻まれる体験を提供するための異なる手法と位置づけられるだろう。\n\n結びとして、アイドルシーンにおけるライブやツアーは、アーティストの個性やメッセージを伝える重要な場であり続けている。多様なアプローチが試みられる中で、ファンとの関係性をどう築いていくかが、今後のシーンの発展において鍵となるだろう。",
-    "sources": [
-      {
-        "n": 2,
-        "title": "CORTIS、号令「スマートフォンを置け」の真実 音と身体だけに賭けた初世界ツアーで証明する自分たちの輪郭",
-        "source": "Real Sound 音楽",
-        "url": "https://realsound.jp/2026/09/post-2516420.html"
-      },
-      {
-        "n": 4,
-        "title": "BTS、約192万人を動員した北米ツアー完走！「幸せだったからこそ、すべての瞬間があっという間に過ぎ去った」",
-        "source": "The First Times",
-        "url": "https://www.thefirsttimes.jp/news/0000877965/"
-      }
-    ],
-    "model": "openai:gpt-4o",
-    "generated_at": "2026-09-09T11:31:49.993Z"
   }
 ]
