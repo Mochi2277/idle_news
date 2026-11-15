@@ -1,5 +1,81 @@
 [
   {
+    "date": "2026-11-15",
+    "slug": "2026-11-15",
+    "kind": "group",
+    "topic": "BTS",
+    "groups": [
+      "BTS"
+    ],
+    "region": "kr",
+    "title": "BTS、2026年も輝き続ける理由",
+    "dek": "BTSが2026年のニコロデオン・キッズ・チョイス・アワードで3部門を制覇した。彼らの成功の背景には、音楽だけでなく、メンバー個々の活動がある。",
+    "body_md": "BTSが2026年のニコロデオン・キッズ・チョイス・アワードで、Favorite Music Group、Favorite Song（「SWIM」）、Favorite Album（「ARIRANG」）の3部門を制覇した[1]。この受賞は、彼らが世界的な音楽シーンで依然として強い影響力を持っていることを示している。特に「ARIRANG」は、メロンミュージックアワードでも「Album of the Year」に選ばれており、その音楽的評価の高さがうかがえる[4]。\n\nBTSのメンバー個々の活動も注目に値する。例えば、V（ヴィ）は『Harper’s BAZAAR Korea』のグラビアで、映画のワンシーンのような美しい映像を披露し、ファンの間で話題となっている[2]。このような個々の活動が、グループ全体のブランド価値を高める要因となっているのは間違いない。\n\nまた、BTSのメンバーは音楽活動だけでなく、ビジネス面でも積極的に動いている。Jinは最近、ソウルで商業ビルを購入し、その投資活動が注目を集めている[7]。このような多角的な活動が、彼らの長期的な成功を支えていると見るのが自然だろう。\n\nBTSは、音楽だけでなく、メンバー個々の活動やビジネス面での動きが相まって、2026年もその輝きを失わない。彼らの成功は、単なる音楽グループを超えた、文化的な現象として位置づけられるだろう。今後も彼らの動向から目が離せない。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "BTS, Rosé, Jennie, “KPop Demon Hunters,” And KATSEYE Win At 2026 Nickelodeon Kids’ Choice Awards",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1887086wpp/bts-rose-jennie-kpop-demon-hunters-and-katseye-win-at-2026-nickelodeon-kids-choice-awards"
+      },
+      {
+        "n": 2,
+        "title": "BTS・Vが物憂げに水辺で寝転ぶ美しすぎる姿が話題！髪をくしゃっとする仕草や凛とした視線にも「洋画みたいな儚さで美しい」「表情が素敵です」",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000919225/"
+      },
+      {
+        "n": 4,
+        "title": "Winners Of Melon Music Awards 2026 – DAY 1",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1886965wpp/winners-of-melon-music-awards-2026-day-1"
+      },
+      {
+        "n": 7,
+        "title": "BTS’s Jin Makes Yet Another Jaw-Dropping Real Estate Purchase",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/bts-jin-jaw-dropping-real-estate-purchase/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-11-15T14:02:25.298Z"
+  },
+  {
+    "date": "2026-11-15",
+    "slug": "2026-11-15-2",
+    "kind": "group",
+    "topic": "FRUITS ZIPPER",
+    "groups": [
+      "FRUITS ZIPPER"
+    ],
+    "region": "jp",
+    "title": "FRUITS ZIPPER、5周年スタジアムツアー発表",
+    "dek": "FRUITS ZIPPERが2027年にスタジアムツアーを開催することを発表した。紅白出場も決定し、勢いを増す彼女たちの動向に注目が集まる。",
+    "body_md": "FRUITS ZIPPERが、デビュー5周年を記念したスタジアムツアーを2027年に開催することを発表した[1]。この発表は、現在開催中の全国ホールツアー『FRUITS ZIPPER JAPAN TOUR 2026 – AUTUMN – Secret Code』の東京公演で行われ、メンバーたちはファンに直接このサプライズを伝えた[1]。ツアーは兵庫県のノエビアスタジアム神戸と東京都のMUFGスタジアム（国立競技場）で計4公演を予定しており、彼女たちの成長と人気の高まりを象徴するイベントとなる[1]。  \n  \nこのスタジアムツアーの発表と同時に、FRUITS ZIPPERは第77回紅白歌合戦への出場も決定したことを報告した[2]。メンバーの早瀬ノエルは、発表前夜に紅白出場を告げられる夢を見たと語り、その夢が現実となったことに驚きと喜びを表現した[2]。また、彼女たちはこれまでの活動を振り返り、5大ドームツアーや世界進出にも意欲を示している[4]。  \n  \nFRUITS ZIPPERのこれまでの活動は、彼女たちの音楽性とパフォーマンスが多くのファンに支持されてきたことを示している。特に、今年の東京ドーム公演や紅白出場は、彼女たちの人気と実力が広く認められている証拠であると位置づけられる。さらに、彼女たちは「NEW KAWAII」をテーマに掲げ、独自のスタイルでファンを魅了し続けている。  \n  \n今後のFRUITS ZIPPERの活動は、国内外でのさらなる飛躍が期待される。スタジアムツアーの成功はもちろん、彼女たちがどのように世界進出を果たしていくのか、その動向に注目が集まるだろう。彼女たちの挑戦は、アイドルシーンに新たな風を吹き込むものとなるに違いない。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "FRUITS ZIPPERスタジアムツアー開催決定！ノエビアスタジアム神戸＆MUFGスタジアム（国立競技場）で計4公演",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000919362/"
+      },
+      {
+        "n": 2,
+        "title": "FRUITS ZIPPER、紅白出場をファンに報告「発表前夜に…」早瀬ノエル正夢に笑顔",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202611150001898.html"
+      },
+      {
+        "n": 4,
+        "title": "FRUITS ZIPPER、５大ドーム＆世界進出宣言「世界に通用するアーティストに」",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202611150001596.html"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-11-15T14:02:34.644Z"
+  },
+  {
     "date": "2026-11-14",
     "slug": "2026-11-14",
     "kind": "group",
@@ -4560,72 +4636,5 @@
     ],
     "model": "openai:gpt-4o",
     "generated_at": "2026-09-10T11:27:53.506Z"
-  },
-  {
-    "date": "2026-09-10",
-    "slug": "2026-09-10-2",
-    "kind": "group",
-    "topic": "NCT",
-    "groups": [
-      "NCT"
-    ],
-    "region": "kr",
-    "title": "NCTと元メンバーの交流が生む波紋",
-    "dek": "NCTメンバーと元メンバーの交流がファンの間で議論を呼んでいる。友情か、それとも不安の種か。",
-    "body_md": "本日、NCTの元メンバーであるマーク・リーが新曲「My Friend」をリリースしたことが話題となった。これに対し、NCTのメンバーであるヘチャンがSNSで「My friend ❤️」とコメントを残し、交流を示したことがファンの間で賛否を巻き起こしている[1]。多くのファンはこの友情を支持しているが、一部のファンは「ファンにPTSDを与える」として不満を表明している[1]。\n\nNCTはこれまでにも多くのメンバーが入れ替わり、その度にファンの間で様々な反応が見られてきた。特に、メンバーの脱退や新メンバーの加入は、ファンにとって感情的な出来事であり、その後のメンバー間の交流が注目されることが多い。今回のヘチャンとマークの交流も、そうした文脈の中で理解することができる。ファンの中には、メンバーの個人的な交流を公にすることに対して警戒心を抱く者もいるが、逆にそれを歓迎する者もいる。\n\nコラムニストとしての見立てとしては、NCTのような大規模なグループにおいて、メンバー間の交流はファンの関心を集める重要な要素であると位置づけられる。特に、元メンバーとの交流は、グループの過去と現在を繋ぐ架け橋となり得る。しかし、ファンの中には、こうした交流がかえって不安を煽る要因になると感じる人もいるだろう。これは、ファンの期待と現実のギャップが生む問題であり、グループの運営にとっては慎重な対応が求められる。\n\n結びとして、NCTのメンバー間の交流は、ファンにとっては感情的なテーマであり続けるだろう。今後もメンバーの動向が注目される中で、彼らがどのようにファンとの関係を築いていくのかが問われる。ファンの多様な反応を理解しつつ、メンバー自身がどのような姿勢を示すかが鍵となるだろう。",
-    "sources": [
-      {
-        "n": 1,
-        "title": "NCT Member Interacts With Ex-Member Mark Lee, Sparks Divided Response",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/nct-haechan-likes-mark-lee-post-sparks-backlash-among-fans/"
-      }
-    ],
-    "model": "openai:gpt-4o",
-    "generated_at": "2026-09-10T11:28:00.541Z"
-  },
-  {
-    "date": "2026-09-10",
-    "slug": "2026-09-10-3",
-    "kind": "broad",
-    "topic": "King & Prince",
-    "groups": [
-      "King & Prince",
-      "aespa",
-      "ATEEZ",
-      "BTS",
-      "CORTIS",
-      "ENHYPEN",
-      "ILLIT",
-      "LE SSERAFIM",
-      "Stray Kids"
-    ],
-    "theme": "チャート・セールス",
-    "region": "jp",
-    "title": "日韓の音楽チャート動向を探る",
-    "dek": "日本と韓国の音楽チャートで多様なアーティストが活躍している。ビルボードとオリコンでの動向を比較し、市場のトレンドを探る。",
-    "body_md": "最近の音楽チャートでは、日本と韓国のアーティストが多様な動きを見せている。日本では、EBiDANの「Yes! 東京」がオリコン週間合算シングルランキングで1位に返り咲き、累積ポイントは156.7万PTに達した[1]。また、King & Princeの『So Honey EP』もオリコン週間アルバムランキングで1位を獲得し、これで通算9作目の1位となった[2]。一方、韓国ではENHYPENの新作『THE SIN : BLISS』がビルボードのWorld Albums Chartで1位を獲得し、さらにBillboard 200でも初の1位を達成した[3]。\n\nそれぞれのチャートでの動向を見てみると、オリコンではKing & Princeが安定した人気を誇り、連続してアルバム1位を獲得していることが注目される[2]。一方、ビルボードではENHYPENが新たな記録を打ち立て、韓国の音楽シーンにおける影響力を示している[3]。このように、日韓それぞれの市場での成功には異なる要素が絡んでいることが分かる。\n\nこれらの動向から見えてくるのは、日韓の音楽市場での多様性と競争の激しさだ。日本では、オリコンランキングでの1位返り咲きや複数部門での1位獲得が、アーティストの持続的な人気を示している。一方、韓国では、ビルボードチャートでの新たな記録が、グローバルな視点での成功を意味していると位置づけられる。これらの動向は、アーティストが国内外での成功を目指し、異なる戦略を採用していることを示唆している。\n\n結論として、日韓の音楽チャートでの動向は、アーティストの多様な活動と市場の変化を反映している。特に、ビルボードとオリコンでの成功は、アーティストがどのようにして国際的な舞台での存在感を高めているかを示している。これからも、日韓の音楽シーンがどのように進化していくのか注目したい。",
-    "sources": [
-      {
-        "n": 1,
-        "title": "EBiDAN「Yes! 東京」、King & Prince『So Honey EP』がオリコン週間合算ランキングで首位獲得",
-        "source": "The First Times",
-        "url": "https://www.thefirsttimes.jp/news/0000878717/"
-      },
-      {
-        "n": 2,
-        "title": "King & Prince『So Honey EP』がオリコン週間アルバムランキングで通算9作目の1位！シングルはEBiDAN「Yes! 東京」が首位返り咲き",
-        "source": "The First Times",
-        "url": "https://www.thefirsttimes.jp/news/0000877656/"
-      },
-      {
-        "n": 3,
-        "title": "ENHYPEN, Stray Kids, CORTIS, ATEEZ, BTS, LE SSERAFIM, aespa, ILLIT, And More Sweep Top Spots On Billboard World Albums Chart",
-        "source": "Soompi",
-        "url": "https://www.soompi.com/article/1868433wpp/enhypen-stray-kids-cortis-ateez-bts-le-sserafim-aespa-illit-and-more-sweep-top-spots-on-billboard-world-albums-chart"
-      }
-    ],
-    "model": "openai:gpt-4o",
-    "generated_at": "2026-09-10T11:28:07.861Z"
   }
 ]
