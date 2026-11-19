@@ -1,5 +1,81 @@
 [
   {
+    "date": "2026-11-20",
+    "slug": "2026-11-20",
+    "kind": "group",
+    "topic": "BTS",
+    "groups": [
+      "BTS"
+    ],
+    "region": "jp",
+    "title": "BTSジミンへの待遇にファンが反発",
+    "dek": "BTSのジミンがHYBEから不公平な待遇を受けたとされ、ファンの間で大きな反発が起きている。背景には何があるのか。",
+    "body_md": "BTSのジミンがHYBEから不公平な待遇を受けたとされ、ファンの間で大きな反発が起きている。事の発端は、BTSのメンバーがスケジュールのために車で移動する際、ジミンだけがスタッフ用の車に乗せられたという映像が公開されたことだ[1]。これに対し、ネット上では「同じBTSのメンバーでありながら、ジミンだけが不当な扱いを受けている」との批判が相次いでいる。\n\nこの背景には、BTSのメンバーたちが個々の活動を広げる中で、所属事務所との関係が変化している可能性がある。特に、HYBEがジミンに対して他のメンバーと異なる対応をしたという事実が、ファンの間で不信感を生んでいるようだ[1]。また、BTSは現在『BTS WORLD TOUR ‘ARIRANG’』を展開中であり、アジア各地での公演が続いている[4]。このツアーの中で、メンバー同士の仲睦まじい姿が度々報じられている一方で、こうした不和の兆しが見えることは、ファンにとってもショッキングな出来事である。\n\n筆者の見立てとしては、ジミンへの待遇が意図的なものであったかどうかは不明だが、こうした事態がファンの間で大きな波紋を呼ぶのは当然である。BTSはグローバルな影響力を持つアーティストであり、その活動は常に注目を浴びている。したがって、事務所側もファンの声に耳を傾け、透明性のある対応を取ることが求められるだろう。\n\n結びとして、BTSの今後の活動がどのように展開されるかは、ファンだけでなく業界全体にとっても大きな関心事である。ジミンを含むメンバー全員が公平に扱われ、ファンが安心して応援できる環境が整うことを期待したい。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "HYBE Incites Fury After Allegations Of Major Discrimination Toward BTS’s Jimin In New Clips",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/bts-jimin-hybe-fury-allegations-major-discrimination/"
+      },
+      {
+        "n": 4,
+        "title": "BTS、11月から12月にかけて高雄市、シンガポールがBTS一色に",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000922034/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-11-19T15:52:13.522Z"
+  },
+  {
+    "date": "2026-11-20",
+    "slug": "2026-11-20-2",
+    "kind": "group",
+    "topic": "IVE",
+    "groups": [
+      "IVE"
+    ],
+    "region": "kr",
+    "title": "ウォニョンのディズニー訪問が示すIVEの存在感",
+    "dek": "IVEのウォニョンが香港ディズニーランドでのイベントに参加し、話題を集めている。彼女の行動とその背景を考察する。",
+    "body_md": "IVEのウォニョンが香港ディズニーランドでのイベントに特別ゲストとして登場し、SNS上で大きな反響を呼んでいる[1]。彼女は真っ赤なプリンセスドレスに身を包み、クリスマスツリーの点灯式にも参加した。このような華やかな場での彼女の姿は、ファンにとってはまさに「リアルプリンセス」として映ったようだ[1]。\n\nウォニョンの今回のディズニー訪問は、IVEが国際的な舞台で注目を集めていることを示している。IVEは今年、EP「Looks Can Kill」でBillboard 200に初めてランクインし[8]、さらには「BANG BANG」がグラミー賞にノミネートされるなど、その存在感を増している[4]。このような背景から、ウォニョンのディズニーでの姿は、IVEの国際的なプロモーション戦略の一環と見ることができる。\n\n一方で、ウォニョンに関する議論も活発化している。彼女が使用したとされるトーンアップクリームや、写真の加工に関する議論がネット上で広がっている[2][3]。これらの議論は、アイドルの外見に対する期待やプレッシャーを反映していると言えるだろう。ファンの間では、彼女の自然な美しさと努力を評価する声も多く、ウォニョン自身が持つ影響力の大きさを物語っている。\n\nIVEの活動は、K-POPシーンにおける新たな潮流を示している。ウォニョンのようなメンバーが国際的なイベントで注目を集めることは、IVEが今後さらにグローバルな舞台で活躍する可能性を示唆している。彼女のディズニーランドでの姿は、単なるファンへのサービスにとどまらず、IVEのブランド力を高める戦略的な一手と見るのが自然だろう。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "IVEウォニョンが「リアルプリンセスすぎる」と話題！香港ディスニーランドで巨大ミルフィーユをもぐもぐする姿に「信じられないくらいきれい」",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000921829/"
+      },
+      {
+        "n": 2,
+        "title": "IVE’s Wonyoung Accused Of Using Tone-Up Cream To Lighten Her Skin",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/ive-wonyoung-tone-cream/"
+      },
+      {
+        "n": 3,
+        "title": "IVE Wonyoung’s Visuals In New Heavily “Filtered” Photos Trigger Debate About Plastic Surgery",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/ive-wonyoung-new-ig-photos-spark-debate-plastic-surgery/"
+      },
+      {
+        "n": 4,
+        "title": "Tame Impala & Jennie’s “Dracula,” IVE’s “BANG BANG,” And KiiiKiii’s “404 (NEW ERA)” Nominated For 2027 Grammys",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1887716wpp/tame-impala-jennies-dracula-ives-bang-bang-and-kiiikiiis-404-new-era-nominated-for-2027-grammys"
+      },
+      {
+        "n": 8,
+        "title": "IVE Scores 1st-Ever Entry On Billboard 200 With “Looks Can Kill”",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1885647wpp/ive-scores-1st-ever-entry-on-billboard-200-with-looks-can-kill"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-11-19T15:52:21.878Z"
+  },
+  {
     "date": "2026-11-19",
     "slug": "2026-11-19",
     "kind": "group",
@@ -4614,69 +4690,5 @@
     ],
     "model": "openai:gpt-4o",
     "generated_at": "2026-09-15T11:51:25.291Z"
-  },
-  {
-    "date": "2026-09-15",
-    "slug": "2026-09-15-2",
-    "kind": "group",
-    "topic": "timelesz",
-    "groups": [
-      "timelesz"
-    ],
-    "region": "jp",
-    "title": "timeleszと寺西拓人が注目される理由",
-    "dek": "timeleszの寺西拓人が注目を集めている。島田珠代が彼に対する「推し」を明かしたことで、その人気が再確認された。",
-    "body_md": "本日、吉本新喜劇の島田珠代が、東京グランド花月の初日公演でtimeleszの寺西拓人への「推し」を明かした[1]。彼女は「寺西君にハマってしまって」と語り、彼の魅力を強調した。この発言が注目を集め、寺西の人気が再確認された形だ。\n\n寺西拓人は、timeleszのメンバーとして活動しており、最近ではアディダスのABCマート限定モデル『TEKWEN』のキャンペーンアンバサダーとしても注目されている[4]。このキャンペーンでは、駅のホームでの待ち合わせをテーマにしたCMが放送され、メンバーそれぞれの個性が引き立つ内容となっている[5]。寺西の存在感は、こうしたキャンペーンを通じてさらに増している。\n\ntimeleszは、アディダスとのパートナーシップを2025年から開始し、今年で2年目を迎えている[4]。このような企業とのコラボレーションは、彼らのブランド価値を高めるとともに、メンバー個々の魅力を引き出す機会となっている。寺西拓人が注目される背景には、こうした活動があると見るのが自然だろう。\n\n寺西が注目される理由は、彼自身の魅力だけでなく、timelesz全体の活動の成果でもある。島田珠代の発言は、その人気を象徴する一例であり、今後も彼の活躍が期待される。",
-    "sources": [
-      {
-        "n": 1,
-        "title": "島田珠代、東京グランド花月初日公演「寺西君に見てほしい」timelesz寺西拓人にハマる",
-        "source": "日刊スポーツ 芸能",
-        "url": "https://www.nikkansports.com/entertainment/news/202609150001312.html"
-      },
-      {
-        "n": 4,
-        "title": "timelesz、アディダスのABCマート限定モデル新CM出演 駅のホームで“待ち合わせ”する8人を描く",
-        "source": "Real Sound 音楽",
-        "url": "https://realsound.jp/2026/09/post-2521905.html"
-      },
-      {
-        "n": 5,
-        "title": "timeleszが8人で待ち合わせ！ABCマート限定・アディダス「TEKWEN」を履きこなす新CM「さあ、いこう」篇公開",
-        "source": "The First Times",
-        "url": "https://www.thefirsttimes.jp/news/0000880833/"
-      }
-    ],
-    "model": "openai:gpt-4o",
-    "generated_at": "2026-09-15T11:51:35.563Z"
-  },
-  {
-    "date": "2026-09-14",
-    "slug": "2026-09-14",
-    "kind": "group",
-    "topic": "ILLIT",
-    "groups": [
-      "ILLIT"
-    ],
-    "region": "kr",
-    "title": "ILLIT、新作『BREAK EVEN』で関係の転換を予告",
-    "dek": "ILLITが5thミニアルバム『BREAK EVEN』を10月26日にリリースすることが発表された。前作の成功を受け、新たなテーマでのカムバックが注目される。",
-    "body_md": "ILLITが10月26日に5thミニアルバム『BREAK EVEN』をリリースすることが発表された[1][2]。前作『It’s Me』の成功に続くこの新作は、タイトルが示す通り「損益分岐点」に由来し、報われない関係に対する率直な宣言を込めた作品である[1][2]。BELIFT LABは、このアルバムが「もう自分の気持ちや時間を費やすことはしない」というILLITの決意を表現していると説明している[1]。このテーマは、曖昧な態度を取る相手に対する警告として位置づけられ、ILLITの音楽的な成長と変化を示すものと見るのが自然だろう。\n\n今年4月にリリースされた4thミニアルバムのタイトル曲「It’s Me」は、K-POPトレンドを牽引するほどのヒットを記録した[1]。その強烈なサウンドとユニークなパフォーマンスは、国内外のファンを魅了し続けている[1]。また、LE SSERAFIMやKATSEYEとのコラボレーション「ICONIC BY MISTAKE」も、国際的なチャートで高評価を得た[1]。これまでの成功を背景に、ILLITの新作がどのように受け入れられるかが注目される。\n\nILLITの日本での人気も高まっている。日本2ndシングル「I Got Your Back (Feat.JISOO, MOMOKA of HANA)」は、ABEMAオリジナルドラマのオープニング曲に選ばれ、Billboard JAPANのチャートで2位を記録するなど、存在感を示している[1]。このような国際的な評価は、ILLITの音楽が多様な文化圏で受け入れられている証拠であり、今後の活動にも期待が寄せられる。\n\nILLITの新作『BREAK EVEN』は、これまでの成功を踏まえた上での新たな挑戦と見てよいだろう。彼女たちがどのようにして新たな音楽的境地を切り開くのか、その動向に注目が集まる。彼女たちのメッセージがどのようにリスナーに響くのか、そしてそれがどのような影響を及ぼすのか、今後の展開が楽しみである。",
-    "sources": [
-      {
-        "n": 1,
-        "title": "ILLIT、ミニアルバム『BREAK EVEN』リリース決定！前作『It’s Me』の大ヒットの熱気冷めやらぬ中カムバック",
-        "source": "The First Times",
-        "url": "https://www.thefirsttimes.jp/news/0000881327/"
-      },
-      {
-        "n": 2,
-        "title": "ILLIT Announces Fall Comeback Date",
-        "source": "Soompi",
-        "url": "https://www.soompi.com/article/1870369wpp/illit-announces-fall-comeback-date"
-      }
-    ],
-    "model": "openai:gpt-4o",
-    "generated_at": "2026-09-14T12:57:57.521Z"
   }
 ]
