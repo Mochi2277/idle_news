@@ -1,5 +1,75 @@
 [
   {
+    "date": "2026-11-25",
+    "slug": "2026-11-25",
+    "kind": "group",
+    "topic": "BTS",
+    "groups": [
+      "BTS"
+    ],
+    "region": "kr",
+    "title": "BTSの最新動向とその背景",
+    "dek": "BTSのメンバーたちが最近の活動で注目を集めている。特に、ジョングクとリサの関係やVの軍隊訓練の様子が話題だ。",
+    "body_md": "BTSのメンバーたちが最近、さまざまな話題を提供している。特に、ジョングクとBLACKPINKのリサの関係に関する「ブラインドアイテム」が再び注目を集めている。このアイテムは、過去の関係が「再燃」したとする内容で、オンライン上で大きな論争を巻き起こしている[1]。また、BTSのVが予備役訓練に参加した際の様子も話題となっている。彼は他の予備役がスマートフォンを見ている中、唯一真剣に訓練に取り組んでいたという証言が出ている[2]。こうした行動はファンの間で高く評価されている。\n\nこれまでの経緯を振り返ると、ジョングクとリサの関係は長年にわたり噂されてきたものであり、今回の報道もその延長線上にあると言える。ファンの間では、二人の「カップルアイテム」が再び話題になるなど、根強い関心が続いている[1]。一方、Vの予備役訓練については、彼が軍隊生活を真剣に捉えていることを示す新たなエピソードとして受け止められている。彼のこうした姿勢は、ファンのみならず一般の人々にも強い印象を与えているようだ[2]。\n\nコラムニストとしての見立てを述べるならば、ジョングクとリサの関係については、ファンの関心を引き続き集める要素として、今後もさまざまな憶測が飛び交うだろうと見るのが自然だ。これに対し、Vの予備役訓練の話題は、彼のプロフェッショナリズムを示すものであり、BTSのメンバーが個々の活動においても高い意識を持っていることを象徴していると位置づけられる。\n\n結びとして、BTSはグローバルな影響力を持つグループとして、今後も多くの話題を提供し続けるだろう。彼らの活動やプライベートに関するニュースは、ファンにとってもメディアにとっても重要な関心事であり続けることは間違いない。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "“Blind Item” About BTS Jungkook And BLACKPINK Lisa’s Current Relationship Sparks Controversy",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/blind-item-bts-jungkook-blackpink-lisa-relationship/"
+      },
+      {
+        "n": 2,
+        "title": "BTS’s V Gets Early Release From Reserve Forces Training? Witnesses Share Stories: “He Was the Only One Taking It Seriously”",
+        "source": "KBIZoom",
+        "url": "https://kbizoom.com/bts-v-first-reserve-forces-training-witnesses-reactions/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-11-24T17:54:13.009Z"
+  },
+  {
+    "date": "2026-11-25",
+    "slug": "2026-11-25-2",
+    "kind": "group",
+    "topic": "乃木坂46",
+    "groups": [
+      "乃木坂46"
+    ],
+    "region": "jp",
+    "title": "乃木坂46一ノ瀬美空、新CMで新たな挑戦",
+    "dek": "乃木坂46の一ノ瀬美空が新たなCMに挑戦する。彼女の活躍が注目される。",
+    "body_md": "乃木坂46の一ノ瀬美空が、人気ゲーム『ドラゴンクエストモンスターズ4』の新CMに出演することが発表された。トム・ブラウンと共演するこのCMは、11月27日から放映される予定である[1][2]。CMでは、一ノ瀬が現実世界で『ドラゴンクエスト』シリーズのモンスターたちと共演し、「魔王みたいに強く育てちゃお！」と意気込む姿が描かれている[1]。さらに、WEB上では別バージョンを含む全6本の映像が公開される予定で、ファンの期待が高まっている[1]。\n\nこのCM出演は、一ノ瀬美空にとって大きなステップとなるだろう。乃木坂46はこれまでにも多くのメンバーが個々の活動を通じてグループの知名度を上げてきた。特に一ノ瀬は、これまでの活動で培った表現力を活かし、CMでもその魅力を発揮することが期待される。彼女のコミカルな演技は、視聴者に新たな楽しみを提供するだろう。\n\n乃木坂46は、12月2日にリリースされるニューシングル「君ロス」でも注目を集めている。このシングルには、5期生の井上和がセンターを務める表題曲や、6期生の鈴木佑捺がフォーメーションセンターを務める楽曲が収録されており、グループの新たな一面が披露される[6][7]。また、初回盤には『Live at 明治神宮野球場2026』の映像も収録される予定で、ファンには見逃せない内容となっている[6]。\n\n一ノ瀬美空のCM出演や新シングル「君ロス」のリリースは、乃木坂46の多様な魅力を再確認させるものとなるだろう。彼女たちの活動は、常に新しい風を吹き込み、ファンを魅了し続けている。今後の乃木坂46の展開にも注目が集まる。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "乃木坂46・一ノ瀬美空とトム・ブラウンが“配合”!?『ドラゴンクエストモンスターズ4』新CMが放映開始",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000925246/"
+      },
+      {
+        "n": 2,
+        "title": "一ノ瀬美空＆トムブラウンが「配！合！！」11・27放映開始「ドラクエモンスターズ４」新CM",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202611240002162.html"
+      },
+      {
+        "n": 6,
+        "title": "乃木坂46がニューシングル「君ロス」の収録楽曲を解禁！各曲の歌唱メンバーや初回盤付属の特典映像の内容も発表",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000924564/"
+      },
+      {
+        "n": 7,
+        "title": "乃木坂46、小川彩の“あーや軍団”など43枚目シングル「君ロス」収録曲詳細が一挙公開",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202611230001976.html"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-11-24T17:54:24.726Z"
+  },
+  {
     "date": "2026-11-24",
     "slug": "2026-11-24",
     "kind": "group",
@@ -4608,105 +4678,5 @@
     ],
     "model": "openai:gpt-4o",
     "generated_at": "2026-09-19T11:08:09.962Z"
-  },
-  {
-    "date": "2026-09-19",
-    "slug": "2026-09-19-2",
-    "kind": "group",
-    "topic": "KATSEYE",
-    "groups": [
-      "KATSEYE"
-    ],
-    "region": "kr",
-    "title": "KATSEYE、マノン復帰の噂に答える",
-    "dek": "KATSEYEがマノンの復帰に関する噂に言及した。ファンの間で意見が分かれる中、彼女たちの発言はどのように受け止められるのか。",
-    "body_md": "KATSEYEがマノンの復帰に関する噂に初めて言及した。スウェーデンの番組「Lilla Aktuellt」のインタビューで、メンバーのララは「その噂は真実ではない」と明言した[1][4]。この発言はファンの間で様々な解釈を生んでいる。マノンは今年2月から健康上の理由で活動を休止しており、ソフィアもそれに続いて8月に休止を発表している[1][4]。\n\nKATSEYEは現在、THE WILDWORLD TOURのヨーロッパ公演を続けているが、彼女たちのマネジメントや今後の方向性についても議論が巻き起こっている。特に、ファンの中にはHYBEとGeffen Recordsからの離脱を望む声もあり、最近のファン投票ではわずか3%が現状のマネジメントに満足しているという結果が出た[3]。\n\nこれまでの経緯を振り返ると、KATSEYEは今年のツアー開始以来、様々な論争に巻き込まれてきた。例えば、観客の年齢層やパフォーマンスに対する批判、さらには新曲のビデオが「性的すぎる」との批判もあった[5][6][8][9]。これらの問題は、グループのイメージや今後の活動に影響を与える可能性がある。\n\n筆者の見立てとしては、KATSEYEが直面しているこれらの課題は、彼女たちの人気が高まるにつれて避けられないものであると見るのが自然だろう。特に、マノンとソフィアの復帰がいつになるかは不透明であるが、ララの発言からはグループとしての結束が感じられる。ファンの期待に応えるためには、彼女たち自身がどのようにこの状況を乗り越えるかが鍵となるだろう。",
-    "sources": [
-      {
-        "n": 1,
-        "title": "KATSEYE Speaks Out About Manon’s Possible Return as Lara’s Answer Divides Fans",
-        "source": "KBIZoom",
-        "url": "https://kbizoom.com/katseye-addresses-manon-return-rumors-as-laras-response-divides-fans/"
-      },
-      {
-        "n": 3,
-        "title": "KATSEYE: Leaving HYBE And Geffen Records?",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/stories/katseye-leave-hybe-geffen-records/"
-      },
-      {
-        "n": 4,
-        "title": "KATSEYE Directly Address Manon’s Return To The Group",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/katseye-directly-address-manons-return-group/"
-      },
-      {
-        "n": 5,
-        "title": "“Protest” Outside KATSEYE’s Recent Concert Triggers Major Reactions",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/protest-outside-katseyes-recent-concert/"
-      },
-      {
-        "n": 6,
-        "title": "KATSEYE’s Controversial Concert Crowd Sparks Heated Debate",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/katseyes-controversial-concert-crowd-sparks-heated-debate/"
-      },
-      {
-        "n": 8,
-        "title": "KATSEYE Hit With Wave Of Criticism For Performance During First World Tour Concert",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/katseye-concert-criticism-performance-world-tour-performance/"
-      },
-      {
-        "n": 9,
-        "title": "KATSEYE Spark Even More Controversy With “Sexualized” Lyric Video",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/katseye-lyric-video-sexualized-controversy/"
-      }
-    ],
-    "model": "openai:gpt-4o",
-    "generated_at": "2026-09-19T11:08:15.830Z"
-  },
-  {
-    "date": "2026-09-18",
-    "slug": "2026-09-18",
-    "kind": "group",
-    "topic": "BLACKPINK",
-    "groups": [
-      "BLACKPINK"
-    ],
-    "region": "kr",
-    "title": "BLACKPINKメンバーの新たな動向とその背景",
-    "dek": "BLACKPINKのROSÉが新曲「New Trick」で音楽シーンに復帰した。同時に、Lisaは外見に関する批判を受けている。",
-    "body_md": "BLACKPINKのROSÉが新曲「New Trick」で音楽シーンに復帰した。この曲は、彼女のデビューソロアルバム以来、約2年ぶりの新作である。前作の『rosie』が個人的な感情とメランコリックなメロディに焦点を当てていたのに対し、「New Trick」はより大胆な一面を見せる楽曲となっている[1]。この曲は、2000年代のAppleのコマーシャルで流行したポップロックサウンドを彷彿とさせる要素を持ち、懐かしさと新しさを兼ね備えている[4]。しかし、リリース後の反応は賛否両論で、一部のファンはオリジナリティに欠けると指摘している[3]。\n\n一方、BLACKPINKのLisaは、最近のテレビ出演での外見に関する批判に直面している。彼女の鼻の整形手術が話題となり、SNS上で多くの否定的なコメントが寄せられている[2]。BLACKPINKはこれまでもメンバーの外見や活動に関する批判を受けてきたが、Lisaの今回のケースは特に注目を集めている。\n\nこれらの出来事は、BLACKPINKのメンバーが個々の活動を通じて新たな挑戦を続けていることを示している。ROSÉの新曲は、彼女が音楽的に新しい方向性を模索していることを示唆しており、Lisaの外見に関する批判は、アイドルとしてのプレッシャーの一端を垣間見せるものである。これらの動きは、BLACKPINKが今後どのように進化していくのかを考える上で重要な要素となるだろう。\n\n結びとして、BLACKPINKのメンバーたちは、それぞれの活動を通じて個々のアイデンティティを強化しつつ、グループとしての存在感を維持するという挑戦に直面している。彼女たちの今後の動向に注目が集まるのは間違いない。",
-    "sources": [
-      {
-        "n": 1,
-        "title": "Only the iPhone 18 Pro Could Get BLACKPINK’s ROSÉ to Do This",
-        "source": "KBIZoom",
-        "url": "https://kbizoom.com/blackpink-rose-new-trick-music-video-shot-on-iphone-18-pro/"
-      },
-      {
-        "n": 2,
-        "title": "BLACKPINK’s Lisa Hit With Criticism For Alleged Nose Job During Recent Appearance",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/blackpinks-lisa-hit-malicious-hate-alleged-nose-job-recent-appearance/"
-      },
-      {
-        "n": 3,
-        "title": "BLACKPINK Rosé’s New Song Hit With Heavily Divided Reactions",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/blackpink-rose-new-song-heavily-divided-reactions/"
-      },
-      {
-        "n": 4,
-        "title": "Watch: Rosé Has A “new trick” For Bouncing Back From Heartbreak In New MV",
-        "source": "Soompi",
-        "url": "https://www.soompi.com/article/1871666wpp/watch-rose-has-a-new-trick-for-bouncing-back-from-heartbreak-in-new-mv"
-      }
-    ],
-    "model": "openai:gpt-4o",
-    "generated_at": "2026-09-18T11:24:23.093Z"
   }
 ]
