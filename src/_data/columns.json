@@ -1,5 +1,81 @@
 [
   {
+    "date": "2026-11-27",
+    "slug": "2026-11-27",
+    "kind": "group",
+    "topic": "Stray Kids",
+    "groups": [
+      "Stray Kids"
+    ],
+    "region": "jp",
+    "title": "Stray Kids、日本での快挙とその背景",
+    "dek": "Stray Kidsが日本で4thミニアルバム『SUIATSU』をリリースし、ミリオンを達成した。これは彼らの日本での初のミリオンアルバムである。",
+    "body_md": "Stray Kidsが11月25日に日本で4thミニアルバム『SUIATSU』をリリースし、発売日時点で100万枚の出荷を記録した。これは彼らにとって日本での初のミリオンアルバムであり、過去最速の快挙である[1][4]。このリリースを記念して、彼らは渋谷のRAYARD MIYASHITA PARKをサプライズ訪問し、ファンを大いに沸かせた[1][3]。 \n\n『SUIATSU』は日本オリジナル楽曲で構成されており、プロデュースチーム・3RACHAが全楽曲を制作した。リード曲「SUIATSU」は、深海魚が水面に向かう過程をモチーフにしたロックナンバーで、深海の圧力を不安や苦痛に例えている[1][4]。この楽曲は先行配信時からSpotifyでグローバル1位を記録し、国内でも各配信サイトで1位を獲得するなど、大きな話題を呼んでいた[4]。 \n\nStray Kidsの日本での成功は、彼らがK-POP界での地位をさらに確固たるものにしていることを示している。日本市場におけるミリオン達成は、彼らの音楽が国境を越えて多くの人々に受け入れられている証拠である。特に、彼らの楽曲が日本オリジナルであることから、現地のファンに向けた特別なアプローチが功を奏したと見るのが自然だろう。 \n\nこの成功は、Stray Kidsが今後もグローバルな舞台で活躍するための大きなステップとなるだろう。彼らの音楽とパフォーマンスが、今後どのように進化していくのか注目される。彼らの次なる挑戦がどのようなものになるのか、ファンは期待を寄せているに違いない。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "Stray Kidsが渋谷に降臨！ミニアルバム『SUIATSU』発売日にRAYARD MIYASHITA PARKをサプライズ訪問",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000926734/"
+      },
+      {
+        "n": 3,
+        "title": "Stray Kidsが渋谷にサプライズ降臨！宮下パークでの遭遇報告に羨望の声「会いたかったー」「今日行けばよかった」",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000926352/"
+      },
+      {
+        "n": 4,
+        "title": "Stray Kidsミニアルバム『SUIATSU』ミリオン達成！自身最速で100万枚出荷を記録",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000926131/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-11-26T17:01:22.243Z"
+  },
+  {
+    "date": "2026-11-27",
+    "slug": "2026-11-27-2",
+    "kind": "group",
+    "topic": "LE SSERAFIM",
+    "groups": [
+      "LE SSERAFIM"
+    ],
+    "region": "jp",
+    "title": "LE SSERAFIMの京セラドーム公演とその意義",
+    "dek": "LE SSERAFIMが初の京セラドーム大阪公演を控え、ABEMAでの生中継が決定した。彼女たちの活動の広がりと影響を考察する。",
+    "body_md": "LE SSERAFIMが12月20日に初の京セラドーム大阪公演を開催し、その模様がABEMAで国内独占・無料生中継されることが発表された[1]。この公演は、彼女たちの2度目のワールドツアー『2026 LE SSERAFIM TOUR ‘PUREFLOW’』の一環であり、今年の7月から9月にかけて日本の5都市で行われた公演が大盛況だったことを受けて追加されたものである[1]。この動きは、LE SSERAFIMが日本においても確固たる人気を築いていることを示している。\n\n一方で、最近のLE SSERAFIMは、2026 MAMA Awardsでの衣装が「露出過多」としてネット上で大きな議論を巻き起こしている[2][6]。特にメンバーのユンジンやサクラの衣装が注目を集め、賛否両論を呼んでいる[2][8]。このようなファッションに対する反応は、K-POPアイドルが直面する文化的な期待と表現の自由の間での葛藤を象徴している。\n\nコラムニストとしての見立てとして、LE SSERAFIMの活動は、単なる音楽活動にとどまらず、ファッションや表現の自由に関する議論を巻き起こす存在としての役割を果たしていると見るのが自然だろう。彼女たちのスタイルやパフォーマンスは、既存の枠にとらわれない新しい価値観を提示しており、これがファンの支持を集める要因となっていると考えられる。\n\n結びとして、LE SSERAFIMの京セラドーム公演は、彼女たちの成長と影響力を再確認する機会となるだろう。ABEMAでの生中継を通じて、彼女たちのパフォーマンスがどのように受け止められるか注目したいところである。彼女たちの活動が今後どのように展開していくのか、引き続き注視していく必要がある。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "LE SSERAFIM初の京セラドーム大阪公演がABEMAにて国内独占・無料生中継！特別事前番組の放送も決定",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000926788/"
+      },
+      {
+        "n": 2,
+        "title": "LE SSERAFIM Yunjin’s “Revealing” Outfit In New Photoshoot Sparks Backlash Amid “MAMAs” Controversy",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/le-sserafim-yunjin-revealing-outfit-photoshoot-sparks-backlash-mamas-controversy/"
+      },
+      {
+        "n": 6,
+        "title": "LE SSERAFIM Hit With Extreme Backlash Over “Revealing” Outfits In Sexualized “Photo”",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/le-sserafim-hit-extreme-backlash-revealing-outfits-in-sexualized-photo/"
+      },
+      {
+        "n": 8,
+        "title": "LE SSERAFIM Sakura’s Bold “Underboob” Red Carpet Look Sparks Hot Reactions",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/le-sserafim-sakura-bold-underboob-red-carpet-look-sparks-hot-reactions-2026-mama-awards/"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-11-26T17:01:27.240Z"
+  },
+  {
     "date": "2026-11-26",
     "slug": "2026-11-26",
     "kind": "group",
@@ -4602,87 +4678,5 @@
     ],
     "model": "openai:gpt-4o",
     "generated_at": "2026-09-21T12:57:27.010Z"
-  },
-  {
-    "date": "2026-09-21",
-    "slug": "2026-09-21-2",
-    "kind": "group",
-    "topic": "LE SSERAFIM",
-    "groups": [
-      "LE SSERAFIM"
-    ],
-    "region": "kr",
-    "title": "LE SSERAFIMサクラの衣装が話題に",
-    "dek": "LE SSERAFIMのサクラがアメリカのフェスティバルで着用した衣装が話題を呼んでいる。これに対する反応とその背景を考察する。",
-    "body_md": "本日、LE SSERAFIMのサクラがアメリカのiHeartRadio Music Festivalで披露した「セクシーな」ブラ衣装がオンラインで大きな話題となっている[1]。この衣装は、最近の批判を受けてさらに注目を集めることとなった。ファンや批評家の間で賛否が分かれており、特に国際的なファンからは熱い反応が寄せられている[10]。\n\nこれまでの経緯を振り返ると、サクラは今年のアメリカツアーを機に髪型をピンクから黒髪ボブに変えたことでも注目を集めていた[7]。また、LE SSERAFIMは新曲「Made My Night」でより成熟した音楽スタイルを打ち出しており、これがグループの新たな方向性を示している[6]。これらの変化は、彼女たちがどのようにして国際的な舞台での存在感を高めようとしているのかを示している。\n\nコラムニストとしての見立てとしては、サクラの衣装は単なるファッションの選択以上の意味を持つと考えられる。これは、LE SSERAFIMが今後どのようにして自らのアイデンティティを国際的に確立しようとしているのかを示す一例である。特に、K-POPアーティストがグローバルな舞台でどのようにして注目を集め続けるかという点で、彼女たちの戦略は興味深い。\n\n結びとして、LE SSERAFIMの動きは、K-POPの国際的な広がりを象徴するものである。彼女たちの選択がどのようにファンや批評家に受け入れられるかは、今後の活動において重要な指標となるだろう。これからも彼女たちの挑戦を見守りたい。",
-    "sources": [
-      {
-        "n": 1,
-        "title": "LE SSERAFIM Sakura’s Sexy Bra Outfit Following Recent Criticism Is Going Viral",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/le-sserafim-sakura-bra-outfit-criticism-viral/"
-      },
-      {
-        "n": 6,
-        "title": "LE SSERAFIM – Made My Night Lyrics, Meaning and Song Credits",
-        "source": "KBIZoom",
-        "url": "https://kbizoom.com/le-sserafim-made-my-night-lyrics-meaning-and-song-credits/"
-      },
-      {
-        "n": 7,
-        "title": "LE SSERAFIMサクラがピンクヘアから黒髪ボブにイメチェン！清楚なドット柄ワンピ姿に「大人っぽい」「とても可愛い」の声",
-        "source": "The First Times",
-        "url": "https://www.thefirsttimes.jp/news/0000884181/"
-      },
-      {
-        "n": 10,
-        "title": "Criticism About LE SSERAFIM Sakura’s “Sexy” Concert Outfit Sparks Heated Reactions",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/le-sserafim-sexy-clothes-criticism-heated-reactions/"
-      }
-    ],
-    "model": "openai:gpt-4o",
-    "generated_at": "2026-09-21T12:57:35.231Z"
-  },
-  {
-    "date": "2026-09-20",
-    "slug": "2026-09-20",
-    "kind": "group",
-    "topic": "Snow Man",
-    "groups": [
-      "Snow Man"
-    ],
-    "region": "jp",
-    "title": "Snow Manの多彩な活動とその背景",
-    "dek": "Snow Manは多方面での活躍を見せている。佐久間大介の和装姿や、岩本照と深澤辰哉のダンス動画など、メンバーそれぞれが個性を発揮している。",
-    "body_md": "本日、Snow Manのメンバーがそれぞれ異なる場面で活躍する様子が報じられた。佐久間大介は『京都国際マンガ・アニメフェア2026』で和装姿を披露し、ピンクヘアと濃紺の着物のコントラストが話題となった[1]。また、岩本照と深澤辰哉は「グッタイム」のダンス動画を公開し、息の合ったパフォーマンスでファンを魅了した[2]。さらに、阿部亮平は『ピクサーの世界展』を訪れ、真っ赤なスクーターにまたがる姿をSNSに投稿した[3]。\n\nこれまでのSnow Manの活動を見ると、彼らは音楽だけでなく、ドラマやバラエティ、ファッションなど多岐にわたる分野で活躍している。特に佐久間大介は、アニメの声優としても活動し、その多才ぶりを発揮している[1]。また、渡辺翔太はテレビ番組のMCを務めるなど、メンバーそれぞれが個々の特性を活かした活動を展開している[4]。\n\nSnow Manのこうした多様な活動は、彼らのファン層を広げ、支持を集める要因となっていると見るのが自然だろう。特に、彼らのSNSでの発信は、ファンとの距離を縮める重要な役割を果たしている。佐久間の和装姿や、岩本と深澤のダンス動画など、SNSを通じてファンに直接届けられるコンテンツは、彼らの魅力をリアルタイムで感じさせるものとなっている[1][2]。\n\n結びに、Snow Manの今後の活動にも注目が集まる。彼らの多彩な才能と多方面での活躍は、これからもファンを楽しませ続けるだろう。特に、各メンバーが個々の特性を活かし、さらに新しい挑戦を続けることで、グループとしての成長も期待される。",
-    "sources": [
-      {
-        "n": 1,
-        "title": "佐久間大介の和装が美しい！気品あふれる着物姿から京都駅ホームでの私服姿まで。京都での思い出ショットを公開",
-        "source": "The First Times",
-        "url": "https://www.thefirsttimes.jp/news/0000885545/"
-      },
-      {
-        "n": 2,
-        "title": "岩本照＆深澤辰哉がふたりで手を合わせてハートを完成！「いわふか最高」「かわいすぎる」Snow Manのシンメならではのやりとりにファン歓喜",
-        "source": "The First Times",
-        "url": "https://www.thefirsttimes.jp/news/0000885462/"
-      },
-      {
-        "n": 3,
-        "title": "Snow Man阿部亮平「なかなか似合ってることない？」真っ赤なスクーターにまたがる凛々しい姿を公開！キスマイ玉森裕太に思いを馳せる場面も",
-        "source": "The First Times",
-        "url": "https://www.thefirsttimes.jp/news/0000885297/"
-      },
-      {
-        "n": 4,
-        "title": "Snow Manメンバーがカジュアルスタイルで登場！「目黒くんのメンカラ入ってる！」「スタイリングが新鮮！」「せーのがかわいい」「愛だね～」の声",
-        "source": "The First Times",
-        "url": "https://www.thefirsttimes.jp/news/0000885371/"
-      }
-    ],
-    "model": "openai:gpt-4o",
-    "generated_at": "2026-09-20T11:32:26.454Z"
   }
 ]
