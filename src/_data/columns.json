@@ -1,5 +1,81 @@
 [
   {
+    "date": "2026-11-28",
+    "slug": "2026-11-28",
+    "kind": "group",
+    "topic": "Snow Man",
+    "groups": [
+      "Snow Man"
+    ],
+    "region": "jp",
+    "title": "Snow Man、最新ライブ映像とメンバーの活躍",
+    "dek": "Snow Manが新たなライブBlu-ray＆DVDを発表し、メンバーの個々の活動も注目を集めている。彼らの多彩な魅力を探る。",
+    "body_md": "Snow Manの公式Xで、12月31日にファンクラブ会員限定で発売されるLIVE Blu-ray＆DVD『Snow Man Special Live ～みんなと楽しむ大晦日！2023-2025～』の一部が公開された。公開された映像には、メンバーがステージ裏で円陣を組む姿や、私服でのリハーサルの様子が収められている[1]。この映像は、彼らのライブパフォーマンスの裏側を垣間見ることができ、ファンにとって貴重なコンテンツとなっている。\n\nこれまでSnow Manは、YouTube生配信で日本記録を更新するなど、ライブパフォーマンスで大きな話題を集めてきた[1]。また、メンバー個々の活動も多岐にわたっており、ラウールは映画『ダーウィンズゲーム』で初の悪役に挑戦することが発表された[3]。彼の新たな挑戦は、Snow Manの多様性と個々の成長を象徴していると言える。\n\n阿部亮平もまた、情報番組やバラエティ番組での活躍が目立つ。彼の知性と誠実さは、番組出演時に際立っており、視聴者からの信頼を得ている[4]。こうした個々の活動は、グループ全体の魅力をさらに高めていると見るのが自然だろう。\n\nSnow Manの活動は、グループとしての一体感と個々の個性が絶妙に融合している。彼らのライブ映像や個々の活動は、ファンにとって新たな発見と楽しみを提供し続けている。今後も彼らの多様な活躍に注目していきたい。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "Snow Man9人が細身のストライプスーツで横一列に並ぶ姿が圧巻！本番直前の円陣や私服でのリハーサル、ステージ袖で笑い合う姿も「これだけで泣けちゃう」「ノーセットのぽやぽやめめかわいい」",
+        "source": "The First Times",
+        "url": "https://www.thefirsttimes.jp/news/0000927367/"
+      },
+      {
+        "n": 3,
+        "title": "ラウール「ダーウィンズゲーム」で人生初悪役、ドレッドヘアーにピアス「楽しんだ」",
+        "source": "日刊スポーツ 芸能",
+        "url": "https://www.nikkansports.com/entertainment/news/202611270000264.html"
+      },
+      {
+        "n": 4,
+        "title": "Snow Man 阿部亮平、努力・姿勢・結果で築いてきた信頼 33歳の誕生日に振り返る2026年の多彩な活躍",
+        "source": "Real Sound 音楽",
+        "url": "https://realsound.jp/2026/11/post-2595771.html"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-11-27T16:46:34.936Z"
+  },
+  {
+    "date": "2026-11-28",
+    "slug": "2026-11-28-2",
+    "kind": "group",
+    "topic": "TWICE",
+    "groups": [
+      "TWICE"
+    ],
+    "region": "kr",
+    "title": "TWICEの最新動向とその背景を探る",
+    "dek": "TWICEのメンバーたちが最近注目を集めている。Momoの衣装やDahyunの外見に対する反応、Jeongyeonの新たな活動が話題だ。",
+    "body_md": "TWICEのメンバーたちが最近様々な形で注目を集めている。特にMomoの衣装が物議を醸し出している。彼女は最近の化粧品広告で、ピンクのレースキャミソールを着用し、その大胆なデザインが日本のネットユーザーから批判を受けている。彼らは「下着のようだ」「子供への影響を考えるべきだ」といった意見を述べている[1]。一方、韓国のネットユーザーはこれに対してMomoを擁護する声が多く、文化の違いが浮き彫りになっている。\n\nまた、Dahyunも注目を集めている。彼女はシンガポールへの出発時にカジュアルな装いを披露し、その清潔感のある美しさが話題となった。しかし、彼女の外見に対する批判も一部で見られた。これに対して、Dahyunは自身のInstagramで写真を公開し、批判を一蹴する形となった[3]。\n\nさらに、Jeongyeonは新しい映画『New Recruit: Haunted Military Hospital』での役柄が注目されている。彼女は軍の看護師役を演じ、その演技が期待されている[5]。また、BTSのJiminとの関係についての噂が再燃しており、ファンの間で話題となっている[4]。\n\nこれらの出来事は、TWICEがいかに多様な形で注目を集め続けているかを示している。Momoの衣装に対する反応は、文化的背景やファン層の違いを反映しており、今後の活動においても彼女たちがどのように対応していくかが注目される。Dahyunの件は、アイドルが外見に対する批判とどのように向き合うかを示す一例であり、Jeongyeonの新たな挑戦は、彼女の演技者としての可能性を広げるものと位置づけられる。TWICEのメンバーたちは、それぞれが異なる形で注目を集めており、今後の活動からも目が離せない。",
+    "sources": [
+      {
+        "n": 1,
+        "title": "TWICE Momo’s Revealing “Underwear” Outfit Hit With Major Backlash",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/twice-momos-revealing-underwear-outfit-hit-major-backlash/"
+      },
+      {
+        "n": 3,
+        "title": "TWICE’s Dahyun Gracefully Silences Haters",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/twice-dahyun-gracefully-silences-haters/"
+      },
+      {
+        "n": 4,
+        "title": "Rumors About TWICE’s Jeongyeon And BTS’s Jimin Resurface After New Video With Two Idols",
+        "source": "Koreaboo",
+        "url": "https://www.koreaboo.com/news/rumors-twice-jeongyeon-new-video-bts-jimin/"
+      },
+      {
+        "n": 5,
+        "title": "TWICE’s Jeongyeon Transforms Into A Military Nurse Officer In New Film “New Recruit: Haunted Military Hospital”",
+        "source": "Soompi",
+        "url": "https://www.soompi.com/article/1890012wpp/twices-jeongyeon-transforms-into-a-military-nurse-officer-in-new-film-new-recruit-haunted-military-hospital"
+      }
+    ],
+    "model": "openai:gpt-4o",
+    "generated_at": "2026-11-27T16:46:41.640Z"
+  },
+  {
     "date": "2026-11-27",
     "slug": "2026-11-27",
     "kind": "group",
@@ -4602,81 +4678,5 @@
     ],
     "model": "openai:gpt-4o",
     "generated_at": "2026-09-22T11:46:43.253Z"
-  },
-  {
-    "date": "2026-09-22",
-    "slug": "2026-09-22-2",
-    "kind": "group",
-    "topic": "BLACKPINK",
-    "groups": [
-      "BLACKPINK"
-    ],
-    "region": "kr",
-    "title": "BLACKPINK Lisaの最新動向とその背景",
-    "dek": "BLACKPINKのLisaが最近注目を集めている。ファンとの交流や新たなコラボレーションが話題だが、賛否両論もある。",
-    "body_md": "本日、BLACKPINKのLisaがファンとの交流をめぐって大きな話題となっている。LisaはカナダのSickKids Hospitalのアンバサダーであるがんサバイバーのファンと対面し、その様子がオンラインで共有された。しかし、この交流は「患者を小道具にしている」として批判を浴びている。スタイリストがLisaのポーズを直し、フラッシュが一斉にたかれたことで、瞬間が演出されたものに見えたという指摘がある[1]。一方で、LisaはPlayStationとのコラボレーションも発表しており、彼女がデザインしたPS5コントローラーや関連グッズが発売される予定だ。このコラボレーションは彼女のファンにとって新たな楽しみとなるだろう[2]。\n\nこれまでの経緯として、LisaはYGエンターテインメントに対するコメントや、彼女の個人的な生活に関する噂など、さまざまな話題で注目されてきた。最近では、タイの俳優との交際が噂されており、その写真が公開されたことで「ハードローンチ」として話題になっている[3]。また、彼女の所属するBLACKPINK自体も、ソロ活動の成果が問われる中で、グループとしての存在感を維持するために奮闘している[5]。\n\nこれらの出来事を踏まえると、Lisaの活動は単なるエンターテインメントの枠を超え、彼女自身のブランドや影響力を強化するための戦略的な動きと位置づけられる。特に、PlayStationとのコラボレーションは、彼女が音楽以外の領域でもファンを楽しませる意欲を示していると見るのが自然だろう。ファンとの交流における批判も、彼女の影響力の大きさを示す一例といえる。\n\n結びとして、Lisaの動向は今後も注目され続けるだろう。彼女の活動がどのように進化し、ファンや業界にどのような影響を与えるのか、引き続き見守っていきたい。",
-    "sources": [
-      {
-        "n": 1,
-        "title": "Recent Video Of BLACKPINK Lisa’s Interaction With Fan Sparks Hugely Divided Reactions",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/blackpink-lisa-patient-fan-interaction-divided-reactions/"
-      },
-      {
-        "n": 2,
-        "title": "BLACKPINK’s Lisa has designed her own PlayStation controller and gaming merch line",
-        "source": "NME K-POP",
-        "url": "https://www.nme.com/news/gaming-news/blackpink-lisa-playstation-collaboration-controller-ps5-merch-pre-order-3970148?utm_source=rss&utm_medium=rss&utm_campaign=blackpink-lisa-playstation-collaboration-controller-ps5-merch-pre-order"
-      },
-      {
-        "n": 3,
-        "title": "Past Photos Of BLACKPINK’s Lisa And Alleged Boyfriend Spark “Hard Launch” Allegations",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/past-photos-blackpinks-lisa-alleged-boyfriend-spark-hard-launch-allegations/"
-      },
-      {
-        "n": 5,
-        "title": "Accusations Of BLACKPINK “Downfall” With Their Recent Solo Tracks Spark Huge Reactions",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/accusations-blackpink-flopping-downfall-solo-stats/"
-      }
-    ],
-    "model": "openai:gpt-4o",
-    "generated_at": "2026-09-22T11:46:52.484Z"
-  },
-  {
-    "date": "2026-09-21",
-    "slug": "2026-09-21",
-    "kind": "group",
-    "topic": "BTS",
-    "groups": [
-      "BTS"
-    ],
-    "region": "kr",
-    "title": "BTSメンバーの変化と噂が話題に",
-    "dek": "BTSのメンバーたちが最近の活動や変化で注目を集めている。特にSugaのフィジカルの変化とJungkookの交際噂が話題だ。",
-    "body_md": "本日、BTSのメンバーであるSugaがそのフィジカルの変化で大きな話題となっている。最近の写真では、彼の体つきが以前と比べて非常に筋肉質になっていることが注目されている。Sugaは軍隊からの除隊後、フィジカルの変化が話題となっていたが、今回の変化はさらに大きな驚きをもたらした[1]。また、BTSは最近アメリカで開催されたiHeart Radio Festivalから帰国したばかりで、その際の写真がネット上で拡散され、Sugaの変化が一層注目を集めている[1]。\n\n一方で、BTSのJungkookはaespaのWinterとの交際噂で再び注目されている。彼の最近の空港での姿がこの噂をさらに加熱させている。JungkookはiHeartRadio Music Festivalでのパフォーマンス後、他のメンバーよりも遅れて帰国したことが噂を呼んでいる[2]。さらに、LE SSERAFIMのChaewonとの交流も話題となっており、彼の行動が様々な憶測を生んでいる[6]。\n\nこれらの出来事は、BTSが常にファンやメディアの注目を集め続ける存在であることを再確認させる。Sugaのフィジカルの変化は、彼の自己管理能力とプロ意識の高さを示していると言えるだろう。一方、Jungkookの交際噂は、彼のプライベートが公の場でどのように扱われるかという問題を浮き彫りにしている。これらの現象は、アイドルとしての彼らが直面するプレッシャーと期待の大きさを物語っている。\n\n結びとして、BTSのメンバーたちはそれぞれが個性豊かであり、その活動や変化が常に話題を提供している。彼らの行動や変化は、ファンにとってもメディアにとっても興味深いものであり続けるだろう。今後も彼らの動向に注目が集まることは間違いない。",
-    "sources": [
-      {
-        "n": 1,
-        "title": "BTS Member Sparks Major Shock With Dramatic Change In Physical Appearance",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/bts-member-shock-dramatic-change-appearance/"
-      },
-      {
-        "n": 2,
-        "title": "BTS Jungkook’s Recent Airport Appearance Linked To Dating Rumors With aespa’s Winter",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/bts-jungkooks-recent-airport-appearance-linked-dating-rumors-aespas-winter/"
-      },
-      {
-        "n": 6,
-        "title": "BTS’s Jungkook “Flirting” With LE SSERAFIM’s Chaewon Sparks Heated Reactions",
-        "source": "Koreaboo",
-        "url": "https://www.koreaboo.com/news/btss-jungkook-flirting-le-sserafims-chaewon-sparks-heated-reactions/"
-      }
-    ],
-    "model": "openai:gpt-4o",
-    "generated_at": "2026-09-21T12:57:27.010Z"
   }
 ]
